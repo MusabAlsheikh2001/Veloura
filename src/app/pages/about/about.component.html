@@ -1,0 +1,91 @@
+<!-- Hero -->
+<section class="page-hero">
+  <span class="glow glow-burgundy page-hero__glow"></span>
+  <div class="container page-hero__inner">
+    <span class="eyebrow" appReveal>{{ t.ui().about.heroEyebrow }}</span>
+    <h1 class="page-hero__title" [appReveal]="60">{{ t.ui().about.heroTitle }}</h1>
+    <p class="lead page-hero__sub" [appReveal]="140">{{ t.ui().about.heroSubtitle }}</p>
+  </div>
+</section>
+
+<!-- Positioning statement -->
+<section class="section-tight positioning">
+  <div class="container narrow">
+    <span class="positioning__rule" aria-hidden="true"></span>
+    <p class="positioning__text" appReveal>{{ t.ui().about.positioningStatement }}</p>
+  </div>
+</section>
+
+<!-- Narrative -->
+<section class="section narrative">
+  <div class="container">
+    @for (block of blocks; track block.id; let i = $index) {
+      <article class="nrow" [appReveal]="0">
+        <div class="nrow__aside">
+          <span class="nrow__index">0{{ i + 1 }}</span>
+          <h2 class="nrow__title">{{ block.title() }}</h2>
+        </div>
+        <div class="nrow__body">
+          <p>{{ block.p1() }}</p>
+          <p>{{ block.p2() }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- Team, organized by discipline -->
+<section class="section team">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().about.teamEyebrow"
+      [title]="t.ui().about.teamTitle"
+      [subtitle]="t.ui().about.teamSubtitle"
+    />
+    <div class="grid grid-3 team__grid">
+      @for (d of disciplines; track d.title.en) {
+        <article class="vcard card card-hover" [appReveal]="$index % 3 * 90">
+          <span class="vcard__icon" aria-hidden="true">
+            <app-icon [name]="d.icon" />
+          </span>
+          <h3 class="vcard__title">{{ t.pick(d.title) }}</h3>
+          <p class="vcard__body">{{ t.pick(d.desc) }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section values-sec">
+  <div class="container">
+    <app-section-header [title]="t.ui().about.valuesTitle" />
+    <div class="grid grid-4 values-sec__grid">
+      @for (v of values; track v.title(); let i = $index) {
+        <article class="vcard card card-hover" [appReveal]="i * 90">
+          <span class="vcard__icon" aria-hidden="true">
+            <app-icon [name]="valueIcons[i]" />
+          </span>
+          <h3 class="vcard__title">{{ v.title() }}</h3>
+          <p class="vcard__body">{{ v.body() }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section class="section vision-sec">
+  <div class="container narrow">
+    <span class="eyebrow vision-sec__eyebrow" appReveal>{{ t.ui().about.visionTitle }}</span>
+    <p class="vision-sec__body" [appReveal]="80">{{ t.ui().about.visionBody }}</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container narrow about-cta" appReveal>
+    <h2>{{ t.ui().home.ctaTitle }}</h2>
+    <a class="btn btn-primary btn-lg" routerLink="/contact">{{ t.ui().common.startProject }}</a>
+  </div>
+</section>

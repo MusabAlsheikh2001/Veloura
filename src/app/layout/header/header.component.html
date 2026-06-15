@@ -1,0 +1,66 @@
+<header class="hdr" [class.is-scrolled]="scrolled()" [class.menu-open]="menuOpen()">
+  <div class="hdr__inner container">
+    <app-logo />
+
+    <nav class="hdr__nav" [attr.aria-label]="t.ui().nav.primaryNav">
+      @for (link of links; track link.key) {
+        <a
+          class="hdr__link"
+          [routerLink]="link.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+        >
+          {{ t.ui().nav[link.key] }}
+        </a>
+      }
+    </nav>
+
+    <div class="hdr__actions">
+      <app-language-toggle />
+      <app-theme-toggle />
+      <a class="btn btn-primary hdr__cta" routerLink="/contact">
+        {{ t.ui().nav.cta }}
+      </a>
+      <button
+        type="button"
+        class="hdr__burger"
+        (click)="toggleMenu()"
+        [attr.aria-label]="menuOpen() ? t.ui().nav.closeMenu : t.ui().nav.openMenu"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-menu"
+      >
+        <span class="hdr__burger-box" [class.is-open]="menuOpen()">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mnav" id="mobile-menu" [class.is-open]="menuOpen()" [attr.aria-hidden]="!menuOpen()">
+  <nav class="mnav__links" [attr.aria-label]="t.ui().nav.primaryNav">
+    @for (link of links; track link.key) {
+      <a
+        class="mnav__link"
+        [routerLink]="link.path"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        (click)="closeMenu()"
+      >
+        {{ t.ui().nav[link.key] }}
+      </a>
+    }
+  </nav>
+  <div class="mnav__footer">
+    <div class="mnav__controls">
+      <app-language-toggle />
+      <app-theme-toggle />
+    </div>
+    <a class="btn btn-primary btn-lg mnav__cta" routerLink="/contact" (click)="closeMenu()">
+      {{ t.ui().nav.cta }}
+    </a>
+  </div>
+</div>
+
+<div class="mnav__scrim" [class.is-open]="menuOpen()" (click)="closeMenu()" aria-hidden="true"></div>

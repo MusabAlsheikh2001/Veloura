@@ -1,0 +1,49 @@
+<!-- Hero -->
+<section class="page-hero">
+  <span class="glow glow-gold page-hero__glow"></span>
+  <div class="container page-hero__inner">
+    <span class="eyebrow" appReveal>{{ t.ui().blog.heroEyebrow }}</span>
+    <h1 class="page-hero__title" [appReveal]="60">{{ t.ui().blog.heroTitle }}</h1>
+    <p class="lead page-hero__sub" [appReveal]="140">{{ t.ui().blog.heroSubtitle }}</p>
+  </div>
+</section>
+
+<!-- Filters + grid -->
+<section class="section-tight section">
+  <div class="container">
+    <div class="filters" appReveal role="tablist" aria-label="Categories">
+      <button
+        type="button"
+        class="chip"
+        [class.is-active]="selected() === 'all'"
+        [attr.aria-selected]="selected() === 'all'"
+        (click)="select('all')"
+      >
+        {{ t.ui().blog.allCategory }}
+      </button>
+      @for (c of categories; track c.id) {
+        <button
+          type="button"
+          class="chip"
+          [class.is-active]="selected() === c.id"
+          [attr.aria-selected]="selected() === c.id"
+          (click)="select(c.id)"
+        >
+          {{ t.pick(c.label) }}
+        </button>
+      }
+    </div>
+
+    @if (posts().length) {
+      <div class="grid grid-3 blog-grid">
+        @for (post of posts(); track post.slug) {
+          <div [appReveal]="$index % 3 * 80">
+            <app-blog-card [post]="post" />
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="empty">{{ t.ui().blog.emptyState }}</p>
+    }
+  </div>
+</section>

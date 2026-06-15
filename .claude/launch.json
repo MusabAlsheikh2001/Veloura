@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "veloura",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 4250
+    },
+    {
+      "name": "alma-alrouh",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--prefix", "/Users/musab/Alma Alrouh", "--", "--port", "4300"],
+      "port": 4300
+    }
+  ]
+}

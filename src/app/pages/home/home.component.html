@@ -1,0 +1,209 @@
+<!-- 1. Hero -->
+<section class="hero">
+  <img class="hero__img" src="/img/hero.svg" alt="" fetchpriority="high" decoding="async" />
+  <span class="hero__scrim" aria-hidden="true"></span>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="eyebrow hero__eyebrow" appReveal>{{ t.ui().brand.tagline }}</span>
+      <h1 class="hero__title" [appReveal]="80">{{ t.ui().home.heroTitle }}</h1>
+      <p class="lead hero__sub" [appReveal]="180">{{ t.ui().home.heroSubtitle }}</p>
+
+      <div class="hero__cta" [appReveal]="260">
+        <a class="btn btn-primary btn-lg" routerLink="/services">
+          {{ t.ui().common.exploreServices }}
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+        <a class="btn btn-ghost btn-lg hero__ghost" routerLink="/contact">
+          {{ t.ui().common.contactUs }}
+        </a>
+      </div>
+
+      <dl class="hero__stats" [appReveal]="340">
+        <div class="hstat">
+          <dt class="hstat__n" appCountUp>10+</dt>
+          <dd class="hstat__l">{{ t.ui().home.heroStat1 }}</dd>
+        </div>
+        <span class="hstat__rule" aria-hidden="true"></span>
+        <div class="hstat">
+          <dt class="hstat__n" appCountUp>2</dt>
+          <dd class="hstat__l">{{ t.ui().home.heroStat2 }}</dd>
+        </div>
+        <span class="hstat__rule" aria-hidden="true"></span>
+        <div class="hstat">
+          <dt class="hstat__n" appCountUp>100%</dt>
+          <dd class="hstat__l">{{ t.ui().home.heroStat3 }}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <span class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-line"></span>
+    {{ t.ui().home.scrollHint }}
+  </span>
+</section>
+
+<!-- 2. Trust / positioning strip -->
+<section class="trust" aria-label="The Veloura standard">
+  <div class="container trust__inner">
+    @for (item of trust; track item.en) {
+      <div class="trust__item" [appReveal]="$index * 80">
+        <span class="trust__mark" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </span>
+        {{ t.pick(item) }}
+      </div>
+    }
+  </div>
+</section>
+
+<!-- 3. Services preview -->
+<section class="section">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().home.servicesEyebrow"
+      [title]="t.ui().home.servicesTitle"
+      [subtitle]="t.ui().home.servicesSubtitle"
+    />
+    <div class="grid grid-3 svc-grid">
+      @for (s of services; track s.id) {
+        <div [appReveal]="$index % 3 * 90">
+          <app-service-card [service]="s" />
+        </div>
+      }
+    </div>
+    <div class="center-cta" appReveal>
+      <a class="btn btn-ghost btn-lg" routerLink="/services">
+        {{ t.ui().common.viewAllServices }}
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- The Veloura model: custom scopes, no fixed packages -->
+<section class="section model">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().home.modelEyebrow"
+      [title]="t.ui().home.modelTitle"
+      [subtitle]="t.ui().home.modelSubtitle"
+    />
+    <div class="grid grid-2 model__grid">
+      <article class="model__card model__card--dont card" [appReveal]="0">
+        <h3 class="model__head">{{ t.ui().home.modelDontTitle }}</h3>
+        <ul class="model__list">
+          @for (item of modelDont; track item.en) {
+            <li class="model__item">
+              <span class="model__mark model__mark--x" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+              </span>
+              {{ t.pick(item) }}
+            </li>
+          }
+        </ul>
+      </article>
+      <article class="model__card model__card--do card" [appReveal]="100">
+        <h3 class="model__head">{{ t.ui().home.modelDoTitle }}</h3>
+        <ul class="model__list">
+          @for (item of modelDo; track item.en) {
+            <li class="model__item">
+              <span class="model__mark model__mark--check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+              </span>
+              {{ t.pick(item) }}
+            </li>
+          }
+        </ul>
+      </article>
+    </div>
+    <p class="model__line" appReveal>{{ t.ui().home.modelLine }}</p>
+  </div>
+</section>
+
+<!-- 4. Process -->
+<section class="section process">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().home.processEyebrow"
+      [title]="t.ui().home.processTitle"
+      [subtitle]="t.ui().home.processSubtitle"
+    />
+    <div class="grid grid-4 process__grid">
+      @for (step of process; track step.num) {
+        <div [appReveal]="$index * 110">
+          <app-process-step [step]="step" />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Built for your industry -->
+<section class="section industries">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().home.industriesEyebrow"
+      [title]="t.ui().home.industriesTitle"
+      [subtitle]="t.ui().home.industriesSubtitle"
+    />
+    <div class="grid grid-3 industries__grid">
+      @for (ind of industries; track ind.id) {
+        <article class="ind card card-hover" [appReveal]="$index % 3 * 90">
+          <h3 class="ind__name">{{ t.pick(ind.name) }}</h3>
+          <p class="ind__summary">{{ t.pick(ind.summary) }}</p>
+          <ul class="ind__tags">
+            @for (tag of ind.tags; track tag.en) {
+              <li class="ind__tag">{{ t.pick(tag) }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- 5. Featured value -->
+<section class="section">
+  <div class="container">
+    <app-section-header
+      [eyebrow]="t.ui().home.valueEyebrow"
+      [title]="t.ui().home.valueTitle"
+      [subtitle]="t.ui().home.valueSubtitle"
+    />
+    <div class="grid grid-3 value-grid">
+      @for (v of values; track v.title.en) {
+        <article class="value card card-hover" [appReveal]="$index * 100">
+          <span class="value__icon" aria-hidden="true">
+            <app-icon [name]="v.icon" />
+          </span>
+          <h3 class="value__title">{{ t.pick(v.title) }}</h3>
+          <p class="value__desc">{{ t.pick(v.desc) }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA band -->
+<section class="section">
+  <div class="container">
+    <app-cta-band
+      [title]="t.ui().home.ctaTitle"
+      [subtitle]="t.ui().home.ctaSubtitle"
+      [button]="t.ui().common.startProject"
+    />
+  </div>
+</section>

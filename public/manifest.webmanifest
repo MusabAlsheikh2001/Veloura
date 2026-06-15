@@ -1,0 +1,17 @@
+{
+  "name": "Veloura — Marketing & Digital Growth",
+  "short_name": "Veloura",
+  "description": "Premium marketing and digital growth agency. Strategy, elegant design, performance marketing, and digital systems built for measurable impact.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#5A1E2A",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

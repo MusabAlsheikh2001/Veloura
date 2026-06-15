@@ -1,0 +1,40 @@
+<!-- Hero -->
+<section class="page-hero">
+  <span class="glow glow-burgundy page-hero__glow"></span>
+  <div class="container page-hero__inner">
+    <span class="eyebrow" appReveal>{{ t.ui().services.heroEyebrow }}</span>
+    <h1 class="page-hero__title" [appReveal]="60">{{ t.ui().services.heroTitle }}</h1>
+    <p class="lead page-hero__sub" [appReveal]="140">{{ t.ui().services.heroSubtitle }}</p>
+  </div>
+</section>
+
+<!-- Services grid -->
+<section class="section">
+  <div class="container">
+    <div class="svc-list">
+      @for (s of services; track s.id; let i = $index) {
+        <article class="srv card card-hover" [id]="s.id" [appReveal]="i % 2 * 90">
+          <span class="srv__num">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+          <span class="srv__icon" aria-hidden="true">
+            <app-icon [name]="s.icon" />
+          </span>
+          <div class="srv__text">
+            <h2 class="srv__title">{{ t.pick(s.title) }}</h2>
+            <p class="srv__desc">{{ t.pick(s.desc) }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <app-cta-band
+      [title]="t.ui().services.ctaTitle"
+      [subtitle]="t.ui().services.ctaSubtitle"
+      [button]="t.ui().common.contactUs"
+    />
+  </div>
+</section>

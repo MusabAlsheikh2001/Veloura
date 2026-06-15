@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="vTile" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6A2533" />
+      <stop offset="1" stop-color="#3A0F18" />
+    </linearGradient>
+    <linearGradient id="vGold" x1="20" y1="28" x2="29" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B68A4E" />
+      <stop offset="1" stop-color="#E7D3B2" />
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="38" height="38" rx="11.5" fill="url(#vTile)" />
+  <rect x="1.6" y="1.6" width="36.8" height="36.8" rx="10.9" fill="none" stroke="#C6A77B" stroke-opacity="0.5" stroke-width="1.1" />
+  <path d="M11.3 12 20 27.4 28.7 10.6" fill="none" stroke="#F5EFE7" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M20 27.4 28.7 10.6" fill="none" stroke="url(#vGold)" stroke-width="2.8" stroke-linecap="round" />
+</svg>

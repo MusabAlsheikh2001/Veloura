@@ -1,0 +1,159 @@
+/* ---------- Narrative ---------- */
+.narrative .container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.nrow {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+}
+
+.nrow__index {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.nrow__title {
+  font-size: var(--fs-h2);
+}
+
+.nrow__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.nrow__body p {
+  color: var(--text-soft);
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ---------- Team / disciplines ---------- */
+.team {
+  background: var(--bg-2);
+}
+
+.team__grid {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+/* ---------- Values ---------- */
+.values-sec__grid {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.vcard {
+  padding: 1.6rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.vcard__icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 13px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+[data-theme='dark'] .vcard__icon {
+  color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.vcard__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.vcard__body {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+/* ---------- CTA ---------- */
+.about-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-cta h2 {
+  font-size: var(--fs-h2);
+  max-width: 18ch;
+}
+
+/* ---------- Positioning statement ---------- */
+.positioning {
+  text-align: center;
+}
+
+.positioning__rule {
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 0 auto 1.6rem;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+  border-radius: 2px;
+}
+
+.positioning__text {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 26ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+html[lang='ar'] .positioning__text {
+  font-family: var(--font-ar);
+  font-weight: 700;
+}
+
+/* ---------- Vision ---------- */
+.vision-sec {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.vision-sec__eyebrow {
+  justify-content: center;
+}
+
+.vision-sec__body {
+  margin: 1.2rem auto 0;
+  max-width: 62ch;
+  font-size: var(--fs-lead);
+  line-height: 1.75;
+  color: var(--text-soft);
+  font-weight: 300;
+}
+
+@media (max-width: 760px) {
+  .nrow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

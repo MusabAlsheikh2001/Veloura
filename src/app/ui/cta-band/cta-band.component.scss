@@ -1,0 +1,72 @@
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(198, 167, 123, 0.16), transparent 55%),
+    linear-gradient(135deg, var(--dark-wine), var(--velvet-burgundy));
+  border: 1px solid rgba(198, 167, 123, 0.22);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Velvet suede texture for a tactile, expensive surface. */
+.cta-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/img/texture-suede.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.32;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.cta-band__glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  inset-block-start: -160px;
+  inset-inline-end: -100px;
+  border-radius: 50%;
+  filter: blur(90px);
+  background: var(--glow-gold);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cta-band__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.cta-band__title {
+  font-size: var(--fs-h1);
+  color: var(--bone-ivory);
+  max-width: 18ch;
+}
+
+.cta-band__sub {
+  color: rgba(245, 239, 231, 0.78);
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  max-width: 48ch;
+}
+
+.cta-band__btn {
+  margin-top: 0.6rem;
+  background: var(--champagne-gold);
+  color: var(--smoky-black);
+}
+
+.cta-band__btn:hover {
+  background: #d8bd97;
+  transform: translateY(-2px);
+}
