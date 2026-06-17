@@ -1,0 +1,480 @@
+- generic [ref=e2]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Veloura" [ref=e8] [cursor=pointer]:
+        - /url: /en
+        - img [ref=e10]
+        - generic [ref=e15]: Veloura
+      - navigation "Primary" [ref=e16]:
+        - link "Home" [ref=e17] [cursor=pointer]:
+          - /url: /en
+        - link "About" [ref=e18] [cursor=pointer]:
+          - /url: /en/about
+        - button "Services" [ref=e20] [cursor=pointer]:
+          - text: Services
+          - generic [ref=e21]: ⌄
+        - link "Blog" [ref=e22] [cursor=pointer]:
+          - /url: /en/blog
+        - link "Contact" [ref=e23] [cursor=pointer]:
+          - /url: /en/contact
+      - generic [ref=e24]:
+        - group "Change language" [ref=e26]:
+          - button "EN" [pressed] [ref=e27] [cursor=pointer]
+          - button "AR" [ref=e28] [cursor=pointer]
+        - button "Switch to dark mode" [ref=e30] [cursor=pointer]:
+          - img [ref=e32]
+  - main [ref=e34]:
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: Premium Digital Growth Studio
+          - heading "Marketing that feels refined, performs with purpose." [level=1] [ref=e41]
+          - paragraph [ref=e42]: Veloura is a premium digital growth studio helping Gulf and international businesses build sharper brands, cleaner websites, stronger landing pages, campaign-ready creatives, content systems, and practical SEO foundations.
+          - generic [ref=e43]:
+            - link "Request a Strategic Audit" [ref=e44] [cursor=pointer]:
+              - /url: /en/contact
+              - text: Request a Strategic Audit
+              - img [ref=e45]
+            - link "View All Services" [ref=e47] [cursor=pointer]:
+              - /url: /en/services
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - term [ref=e50]: 0+
+              - definition [ref=e51]: GCC-first, remote-ready
+            - generic [ref=e53]:
+              - term [ref=e54]: "0"
+              - definition [ref=e55]: English & Arabic systems
+            - generic [ref=e57]:
+              - term [ref=e58]: 0%
+              - definition [ref=e59]: Senior-led diagnosis
+        - generic [ref=e60]: Scroll to explore
+      - region "The Veloura standard" [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - img [ref=e66]
+            - text: Strategy-led
+          - generic [ref=e68]:
+            - img [ref=e70]
+            - text: Design-focused
+          - generic [ref=e72]:
+            - img [ref=e74]
+            - text: Growth-driven
+          - generic [ref=e76]:
+            - img [ref=e78]
+            - text: Bilingual-ready
+      - generic [ref=e81]:
+        - article [ref=e82]:
+          - generic [ref=e83]: Gulf-first, remote-ready
+          - heading "Remote-first for GCC and global work." [level=2] [ref=e84]
+          - paragraph [ref=e85]: Veloura works remotely with Gulf/GCC and international businesses through bilingual strategy sessions, shared workspaces, clear approvals, and structured delivery.
+        - article [ref=e86]:
+          - generic [ref=e87]: Growth architecture
+          - heading "Not more content. A sharper system." [level=2] [ref=e88]
+          - paragraph [ref=e89]: "We study the business, audience, competitors, offer, and customer journey, then build the right mix: identity, UI/UX, website, landing pages, campaign creatives, content direction, basic SEO, and business communication."
+      - generic [ref=e91]:
+        - generic [ref=e93]:
+          - generic [ref=e94]: What we do
+          - heading "Focused digital systems, built around design, web, and communication." [level=2] [ref=e95]
+          - paragraph [ref=e96]: Brand identity, UI/UX, WordPress and custom-coded websites, landing pages, campaign creatives, content direction, AI video, competitor analysis, basic SEO, and business communication kits.
+        - generic [ref=e97]:
+          - link "Brand Identity & Visual Systems Strategy, logo, palette, typography, voice, and full brand guidelines — a premium identity applied consistently everywhere. Learn more" [ref=e100] [cursor=pointer]:
+            - /url: /en/services/brand-identity
+            - img [ref=e103]
+            - heading "Brand Identity & Visual Systems" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Strategy, logo, palette, typography, voice, and full brand guidelines — a premium identity applied consistently everywhere.
+            - generic [ref=e108]:
+              - text: Learn more
+              - img [ref=e109]
+          - link "UI/UX Design Wireframes, user journeys, prototypes, and conversion-focused interfaces designed in Figma around clarity and results. Learn more" [ref=e113] [cursor=pointer]:
+            - /url: /en/services/ui-ux-design
+            - img [ref=e116]
+            - heading "UI/UX Design" [level=3] [ref=e119]
+            - paragraph [ref=e120]: Wireframes, user journeys, prototypes, and conversion-focused interfaces designed in Figma around clarity and results.
+            - generic [ref=e121]:
+              - text: Learn more
+              - img [ref=e122]
+          - link "Website Development Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites. Learn more" [ref=e126] [cursor=pointer]:
+            - /url: /en/services/website-development
+            - img [ref=e129]
+            - heading "Website Development" [level=3] [ref=e132]
+            - paragraph [ref=e133]: Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
+            - generic [ref=e134]:
+              - text: Learn more
+              - img [ref=e135]
+          - link "Social Media Strategy Content direction, campaign ideas, post structure, calendars, captions, reels direction, and brand-consistent visual planning. Learn more" [ref=e139] [cursor=pointer]:
+            - /url: /en/services/social-media-strategy
+            - img [ref=e142]
+            - heading "Social Media Strategy" [level=3] [ref=e146]
+            - paragraph [ref=e147]: Content direction, campaign ideas, post structure, calendars, captions, reels direction, and brand-consistent visual planning.
+            - generic [ref=e148]:
+              - text: Learn more
+              - img [ref=e149]
+        - link "View All Services" [ref=e152] [cursor=pointer]:
+          - /url: /en/services
+          - text: View All Services
+          - img [ref=e153]
+      - generic [ref=e156]:
+        - generic [ref=e158]:
+          - generic [ref=e159]: The Veloura model
+          - heading "Custom scopes, not fixed packages." [level=2] [ref=e160]
+          - paragraph [ref=e161]: A restaurant group, clinic, real estate project, retail brand, training institute, and B2B firm do not need the same marketing rhythm. We diagnose first, then build a scope around your goals, budget, market, and operational reality.
+        - generic [ref=e162]:
+          - article [ref=e163]:
+            - heading "What we refuse to do" [level=3] [ref=e164]
+            - list [ref=e165]:
+              - listitem [ref=e166]:
+                - img [ref=e168]
+                - text: Sell fixed “10 posts a month” packages.
+              - listitem [ref=e170]:
+                - img [ref=e172]
+                - text: Run as a cheap, templated posting service.
+              - listitem [ref=e174]:
+                - img [ref=e176]
+                - text: Copy trends with no strategy behind them.
+              - listitem [ref=e178]:
+                - img [ref=e180]
+                - text: Overclaim beyond our real specialist scope.
+              - listitem [ref=e182]:
+                - img [ref=e184]
+                - text: Build websites with no conversion structure.
+          - article [ref=e186]:
+            - heading "How we work instead" [level=3] [ref=e187]
+            - list [ref=e188]:
+              - listitem [ref=e189]:
+                - img [ref=e191]
+                - text: Start every engagement with an audit, diagnosis, and positioning.
+              - listitem [ref=e193]:
+                - img [ref=e195]
+                - text: Build a custom scope around your goals, budget, and market.
+              - listitem [ref=e197]:
+                - img [ref=e199]
+                - text: Pair premium design with clear structure and conversion paths.
+              - listitem [ref=e201]:
+                - img [ref=e203]
+                - text: "Build assets that teams can actually use: sites, pages, kits, and content systems."
+              - listitem [ref=e205]:
+                - img [ref=e207]
+                - text: Use basic SEO and operational clarity as support, not as inflated promises.
+        - paragraph [ref=e209]: Every business has a different problem, therefore every business deserves a different marketing plan.
+      - generic [ref=e211]:
+        - generic [ref=e213]:
+          - generic [ref=e214]: How we work
+          - heading "Diagnosis before execution." [level=2] [ref=e215]
+          - paragraph [ref=e216]: We audit, diagnose, scope, build, launch, measure, and optimize — so every recommendation has a business reason behind it.
+        - generic [ref=e217]:
+          - article [ref=e220]:
+            - generic [ref=e221]:
+              - img [ref=e224]
+              - generic [ref=e227]: "01"
+            - heading "Audit" [level=3] [ref=e228]
+            - paragraph [ref=e229]: We study the brand, website, content, competitors, customer journey, and current lead flow.
+          - article [ref=e232]:
+            - generic [ref=e233]:
+              - img [ref=e236]
+              - generic [ref=e240]: "02"
+            - heading "Diagnose" [level=3] [ref=e241]
+            - paragraph [ref=e242]: "We identify the real constraint: positioning, trust, conversion, traffic, follow-up, or measurement."
+          - article [ref=e245]:
+            - generic [ref=e246]:
+              - img [ref=e249]
+              - generic [ref=e252]: "03"
+            - heading "Scope" [level=3] [ref=e253]
+            - paragraph [ref=e254]: We shape a custom growth scope around the market, budget, urgency, and operational reality.
+          - article [ref=e257]:
+            - generic [ref=e258]:
+              - img [ref=e261]
+              - generic [ref=e265]: "04"
+            - heading "Build" [level=3] [ref=e266]
+            - paragraph [ref=e267]: We create the identity, website, landing pages, campaign creatives, content direction, basic SEO, and business materials.
+          - article [ref=e270]:
+            - generic [ref=e271]:
+              - img [ref=e274]
+              - generic [ref=e278]: "05"
+            - heading "Launch" [level=3] [ref=e279]
+            - paragraph [ref=e280]: We move the system live with clear approvals, assets, tracking, and customer-facing touchpoints.
+          - article [ref=e283]:
+            - generic [ref=e284]:
+              - img [ref=e287]
+              - generic [ref=e291]: "06"
+            - heading "Measure" [level=3] [ref=e292]
+            - paragraph [ref=e293]: We read performance through real numbers, not impressions that cannot guide a decision.
+          - article [ref=e296]:
+            - generic [ref=e297]:
+              - img [ref=e300]
+              - generic [ref=e303]: "07"
+            - heading "Optimize" [level=3] [ref=e304]
+            - paragraph [ref=e305]: We refine the message, journey, creative, page structure, and contact path so the system compounds.
+      - generic [ref=e307]:
+        - generic [ref=e309]:
+          - generic [ref=e310]: Built for your industry
+          - heading "A plan shaped to the market you actually operate in." [level=2] [ref=e311]
+          - paragraph [ref=e312]: A clinic does not earn trust like a restaurant, and a real estate project does not convert like a B2B firm. The system changes with the business.
+        - generic [ref=e313]:
+          - article [ref=e314]:
+            - heading "Restaurants & Cafés" [level=3] [ref=e315]
+            - paragraph [ref=e316]: Story-led content, mouth-watering visuals, offers, Google Maps visibility, and WhatsApp reservations that fill tables.
+            - list [ref=e317]:
+              - listitem [ref=e318]: Food visuals
+              - listitem [ref=e319]: Google Maps
+              - listitem [ref=e320]: Reservations
+              - listitem [ref=e321]: Seasonal offers
+          - article [ref=e322]:
+            - heading "Clinics & Healthcare" [level=3] [ref=e323]
+            - paragraph [ref=e324]: Trust-first identity, doctor profiles, service pages, Google Business clarity, and booking-ready website paths.
+            - list [ref=e325]:
+              - listitem [ref=e326]: Trust & authority
+              - listitem [ref=e327]: Service SEO
+              - listitem [ref=e328]: Google Business
+              - listitem [ref=e329]: Booking flow
+          - article [ref=e330]:
+            - heading "Real Estate & Developers" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Project landing pages, campaign creatives, inquiry structure, and follow-up-ready pages that turn interest into viewings.
+            - list [ref=e333]:
+              - listitem [ref=e334]: Project pages
+              - listitem [ref=e335]: Lead-gen ads
+              - listitem [ref=e336]: Inquiry flow
+              - listitem [ref=e337]: Sales follow-up
+          - article [ref=e338]:
+            - heading "Retail & Ecommerce" [level=3] [ref=e339]
+            - paragraph [ref=e340]: Collection storytelling, ecommerce UX, campaign creatives, and product paths that move items with discipline.
+            - list [ref=e341]:
+              - listitem [ref=e342]: Ecommerce UX
+              - listitem [ref=e343]: Drops & launches
+              - listitem [ref=e344]: Campaign creative
+              - listitem [ref=e345]: Catalog systems
+          - article [ref=e346]:
+            - heading "Professional & B2B Firms" [level=3] [ref=e347]
+            - paragraph [ref=e348]: Clear positioning, authority websites, company profiles, proposal systems, and qualified B2B enquiry paths.
+            - list [ref=e349]:
+              - listitem [ref=e350]: Authority site
+              - listitem [ref=e351]: Proposals
+              - listitem [ref=e352]: Service SEO
+              - listitem [ref=e353]: Qualified leads
+          - article [ref=e354]:
+            - heading "Education & Training" [level=3] [ref=e355]
+            - paragraph [ref=e356]: Program pages, enrollment journeys, campaign ideas, and follow-up-ready structures for institutes, academies, and training companies.
+            - list [ref=e357]:
+              - listitem [ref=e358]: Program pages
+              - listitem [ref=e359]: Enrollment funnels
+              - listitem [ref=e360]: Campaigns
+              - listitem [ref=e361]: Inquiry flow
+      - generic [ref=e363]:
+        - generic [ref=e365]:
+          - generic [ref=e366]: Why Veloura
+          - heading "Built for brands that need more than attention." [level=2] [ref=e367]
+          - paragraph [ref=e368]: We connect brand perception, website clarity, campaign creative, content structure, and business communication so the brand is easier to trust, understand, and contact.
+        - generic [ref=e369]:
+          - article [ref=e370]:
+            - img [ref=e373]
+            - heading "Brand clarity" [level=3] [ref=e376]
+            - paragraph [ref=e377]: A sharp identity and message, so the market understands you instantly.
+          - article [ref=e378]:
+            - img [ref=e381]
+            - heading "Digital presence" [level=3] [ref=e384]
+            - paragraph [ref=e385]: Websites and channels that look premium and work flawlessly everywhere.
+          - article [ref=e386]:
+            - img [ref=e389]
+            - heading "Campaign clarity" [level=3] [ref=e392]
+            - paragraph [ref=e393]: Creative angles, pages, and messages shaped to make the next action clear.
+      - generic [ref=e395]:
+        - generic [ref=e397]:
+          - generic [ref=e398]: Journal
+          - heading "Ideas on brand, growth, and craft." [level=2] [ref=e399]
+          - paragraph [ref=e400]: Practical perspectives on building brands that look premium and perform in the market.
+        - generic [ref=e401]:
+          - link "Branding May 18, 2026 · 6 min read How Premium Branding Builds Trust Before the First Click Trust is decided in milliseconds. Here is how a considered brand earns it before a single word is read. Read article" [ref=e404] [cursor=pointer]:
+            - /url: /en/blog/premium-branding-builds-trust
+            - generic [ref=e406]: Branding
+            - generic [ref=e407]:
+              - generic [ref=e408]:
+                - generic [ref=e409]: May 18, 2026
+                - generic [ref=e410]: ·
+                - generic [ref=e411]: 6 min read
+              - heading "How Premium Branding Builds Trust Before the First Click" [level=3] [ref=e412]
+              - paragraph [ref=e413]: Trust is decided in milliseconds. Here is how a considered brand earns it before a single word is read.
+              - generic [ref=e414]:
+                - text: Read article
+                - img [ref=e415]
+          - link "Performance Apr 29, 2026 · 7 min read Why Landing Pages Fail — and How to Fix Them Most landing pages fail for the same three reasons. Each one is fixable in an afternoon. Read article" [ref=e419] [cursor=pointer]:
+            - /url: /en/blog/why-landing-pages-fail
+            - generic [ref=e421]: Performance
+            - generic [ref=e422]:
+              - generic [ref=e423]:
+                - generic [ref=e424]: Apr 29, 2026
+                - generic [ref=e425]: ·
+                - generic [ref=e426]: 7 min read
+              - heading "Why Landing Pages Fail — and How to Fix Them" [level=3] [ref=e427]
+              - paragraph [ref=e428]: Most landing pages fail for the same three reasons. Each one is fixable in an afternoon.
+              - generic [ref=e429]:
+                - text: Read article
+                - img [ref=e430]
+          - link "UI/UX Apr 10, 2026 · 6 min read The Role of UI/UX in Marketing Performance Great marketing brings people to the door. UI/UX decides whether they walk through it. Read article" [ref=e434] [cursor=pointer]:
+            - /url: /en/blog/role-of-uiux-in-marketing-performance
+            - generic [ref=e436]: UI/UX
+            - generic [ref=e437]:
+              - generic [ref=e438]:
+                - generic [ref=e439]: Apr 10, 2026
+                - generic [ref=e440]: ·
+                - generic [ref=e441]: 6 min read
+              - heading "The Role of UI/UX in Marketing Performance" [level=3] [ref=e442]
+              - paragraph [ref=e443]: Great marketing brings people to the door. UI/UX decides whether they walk through it.
+              - generic [ref=e444]:
+                - text: Read article
+                - img [ref=e445]
+        - link "Blog" [ref=e448] [cursor=pointer]:
+          - /url: /en/blog
+          - text: Blog
+          - img [ref=e449]
+      - generic [ref=e455]:
+        - heading "Ready to study your digital presence properly?" [level=2] [ref=e456]
+        - paragraph [ref=e457]: Tell us where the brand is now and where it needs to go. We'll start with diagnosis, then shape the right scope.
+        - link "Request a Strategic Audit" [ref=e458] [cursor=pointer]:
+          - /url: /en/contact
+          - text: Request a Strategic Audit
+          - img [ref=e459]
+  - contentinfo [ref=e462]:
+    - generic [ref=e463]:
+      - generic [ref=e464]:
+        - generic [ref=e465]:
+          - link "Veloura" [ref=e467] [cursor=pointer]:
+            - /url: /en
+            - img [ref=e469]
+            - generic [ref=e474]: Veloura
+          - paragraph [ref=e475]: A premium digital growth studio for Gulf and international businesses.
+          - list [ref=e476]:
+            - listitem [ref=e477]:
+              - link "LinkedIn" [ref=e478] [cursor=pointer]:
+                - /url: https://www.linkedin.com/
+                - img [ref=e479]
+            - listitem [ref=e481]:
+              - link "Instagram" [ref=e482] [cursor=pointer]:
+                - /url: https://www.instagram.com/
+                - img [ref=e483]
+            - listitem [ref=e485]:
+              - link "Facebook" [ref=e486] [cursor=pointer]:
+                - /url: https://www.facebook.com/
+                - img [ref=e487]
+        - navigation "Navigate" [ref=e489]:
+          - heading "Navigate" [level=4] [ref=e490]
+          - list [ref=e491]:
+            - listitem [ref=e492]:
+              - link "Home" [ref=e493] [cursor=pointer]:
+                - /url: /en
+            - listitem [ref=e494]:
+              - link "About" [ref=e495] [cursor=pointer]:
+                - /url: /en/about
+            - listitem [ref=e496]:
+              - link "Services" [ref=e497] [cursor=pointer]:
+                - /url: /en/services
+            - listitem [ref=e498]:
+              - link "Industries" [ref=e499] [cursor=pointer]:
+                - /url: /en/industries
+            - listitem [ref=e500]:
+              - link "Locations" [ref=e501] [cursor=pointer]:
+                - /url: /en/locations
+            - listitem [ref=e502]:
+              - link "Blog" [ref=e503] [cursor=pointer]:
+                - /url: /en/blog
+            - listitem [ref=e504]:
+              - link "Contact" [ref=e505] [cursor=pointer]:
+                - /url: /en/contact
+        - navigation "Services" [ref=e506]:
+          - heading "Services" [level=4] [ref=e507]
+          - list [ref=e508]:
+            - listitem [ref=e509]:
+              - link "Brand Identity & Visual Systems" [ref=e510] [cursor=pointer]:
+                - /url: /en/services/brand-identity
+            - listitem [ref=e511]:
+              - link "UI/UX Design" [ref=e512] [cursor=pointer]:
+                - /url: /en/services/ui-ux-design
+            - listitem [ref=e513]:
+              - link "Website Development" [ref=e514] [cursor=pointer]:
+                - /url: /en/services/website-development
+            - listitem [ref=e515]:
+              - link "Landing Pages & Case Studies" [ref=e516] [cursor=pointer]:
+                - /url: /en/services/landing-pages
+            - listitem [ref=e517]:
+              - link "Ad Designs & Campaign Creatives" [ref=e518] [cursor=pointer]:
+                - /url: /en/services/ad-designs-campaign-creatives
+            - listitem [ref=e519]:
+              - link "Social Media Strategy" [ref=e520] [cursor=pointer]:
+                - /url: /en/services/social-media-strategy
+        - navigation "Industries" [ref=e521]:
+          - heading "Industries" [level=4] [ref=e522]
+          - list [ref=e523]:
+            - listitem [ref=e524]:
+              - link "Clinics & Healthcare" [ref=e525] [cursor=pointer]:
+                - /url: /en/industries/clinics-healthcare
+            - listitem [ref=e526]:
+              - link "Aesthetic Clinics & Medical Centers" [ref=e527] [cursor=pointer]:
+                - /url: /en/industries/aesthetic-clinics
+            - listitem [ref=e528]:
+              - link "Restaurants & Cafés" [ref=e529] [cursor=pointer]:
+                - /url: /en/industries/restaurants-cafes
+            - listitem [ref=e530]:
+              - link "Hospitality, Hotels & Venues" [ref=e531] [cursor=pointer]:
+                - /url: /en/industries/hospitality-venues
+            - listitem [ref=e532]:
+              - link "Real Estate & Developers" [ref=e533] [cursor=pointer]:
+                - /url: /en/industries/real-estate
+            - listitem [ref=e534]:
+              - link "Retail, Fashion & Ecommerce" [ref=e535] [cursor=pointer]:
+                - /url: /en/industries/retail-fashion
+            - listitem [ref=e536]:
+              - link "Education & Training Institutions" [ref=e537] [cursor=pointer]:
+                - /url: /en/industries/education-training
+            - listitem [ref=e538]:
+              - link "Professional Services & B2B Firms" [ref=e539] [cursor=pointer]:
+                - /url: /en/industries/professional-services
+        - navigation "Locations" [ref=e540]:
+          - heading "Locations" [level=4] [ref=e541]
+          - list [ref=e542]:
+            - listitem [ref=e543]:
+              - link "Gulf / GCC" [ref=e544] [cursor=pointer]:
+                - /url: /en/locations/gcc
+            - listitem [ref=e545]:
+              - link "Saudi Arabia" [ref=e546] [cursor=pointer]:
+                - /url: /en/locations/saudi-arabia
+            - listitem [ref=e547]:
+              - link "Riyadh" [ref=e548] [cursor=pointer]:
+                - /url: /en/locations/riyadh
+            - listitem [ref=e549]:
+              - link "Jeddah" [ref=e550] [cursor=pointer]:
+                - /url: /en/locations/jeddah
+            - listitem [ref=e551]:
+              - link "United Arab Emirates" [ref=e552] [cursor=pointer]:
+                - /url: /en/locations/uae
+            - listitem [ref=e553]:
+              - link "Dubai" [ref=e554] [cursor=pointer]:
+                - /url: /en/locations/dubai
+            - listitem [ref=e555]:
+              - link "Abu Dhabi" [ref=e556] [cursor=pointer]:
+                - /url: /en/locations/abu-dhabi
+            - listitem [ref=e557]:
+              - link "Qatar" [ref=e558] [cursor=pointer]:
+                - /url: /en/locations/qatar
+        - generic [ref=e559]:
+          - heading "Contact" [level=4] [ref=e560]
+          - list [ref=e561]:
+            - listitem [ref=e562]:
+              - link "hello@veloura.com" [ref=e563] [cursor=pointer]:
+                - /url: mailto:hello@veloura.com
+            - listitem [ref=e564]: Remote across the Gulf and beyond
+          - link "Request an Audit" [ref=e565] [cursor=pointer]:
+            - /url: /en/contact
+      - separator [ref=e566]
+      - generic [ref=e567]:
+        - paragraph [ref=e568]: © 2026 Veloura. All rights reserved.
+        - navigation "Legal" [ref=e569]:
+          - link "Privacy Policy" [ref=e570] [cursor=pointer]:
+            - /url: /en/privacy-policy
+          - link "Terms & Conditions" [ref=e571] [cursor=pointer]:
+            - /url: /en/terms-and-conditions
+          - link "FAQs" [ref=e572] [cursor=pointer]:
+            - /url: /en/faqs
+        - paragraph [ref=e573]: Designed & built with intent.
+        - button "Back to top" [ref=e574] [cursor=pointer]:
+          - text: Back to top
+          - img [ref=e575]
