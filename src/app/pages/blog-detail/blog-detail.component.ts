@@ -28,7 +28,7 @@ export class BlogDetailComponent {
       const slug = params.get('slug');
       const found = BLOG_POSTS.find((p) => p.slug === slug);
       if (!found) {
-        this.router.navigate(['/blog']);
+        this.router.navigateByUrl(this.t.path('/blog'));
         return;
       }
       this.post.set(found);
@@ -56,7 +56,7 @@ export class BlogDetailComponent {
         publisher: { '@id': SITE.url + '/#organization' },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': absUrl('/blog/' + found.slug),
+          '@id': absUrl(this.t.path('/blog/' + found.slug)),
         },
       });
     });

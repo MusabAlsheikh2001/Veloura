@@ -61,6 +61,72 @@
                [placeholder]="t.ui().contact.companyPlaceholder" />
       </div>
 
+      <!-- Country / market -->
+      <div class="field">
+        <label for="country">{{ t.ui().contact.countryLabel }}</label>
+        <div class="select-wrap">
+          <select id="country" formControlName="country"
+                  [attr.aria-invalid]="invalid('country')"
+                  [attr.aria-describedby]="invalid('country') ? 'country-err' : null">
+            <option value="" disabled>{{ t.ui().contact.countryPlaceholder }}</option>
+            @for (market of markets; track market.id) {
+              <option [value]="market.id">{{ t.pick(market.label) }}</option>
+            }
+          </select>
+          <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        @if (invalid('country')) {
+          <p class="field__err" id="country-err">{{ t.ui().contact.errCountry }}</p>
+        }
+      </div>
+
+      <!-- Industry -->
+      <div class="field">
+        <label for="industry">{{ t.ui().contact.industryLabel }}</label>
+        <div class="select-wrap">
+          <select id="industry" formControlName="industry"
+                  [attr.aria-invalid]="invalid('industry')"
+                  [attr.aria-describedby]="invalid('industry') ? 'industry-err' : null">
+            <option value="" disabled>{{ t.ui().contact.industryPlaceholder }}</option>
+            @for (industry of industries; track industry.id) {
+              <option [value]="industry.id">{{ t.pick(industry.label) }}</option>
+            }
+          </select>
+          <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        @if (invalid('industry')) {
+          <p class="field__err" id="industry-err">{{ t.ui().contact.errIndustry }}</p>
+        }
+      </div>
+
+      <!-- Website / Instagram -->
+      <div class="field field--full">
+        <label for="website">
+          {{ t.ui().contact.websiteLabel }}
+          <span class="field__opt">{{ t.ui().contact.optional }}</span>
+        </label>
+        <input id="website" type="text" formControlName="website"
+               [placeholder]="t.ui().contact.websitePlaceholder" />
+      </div>
+
+      <!-- Improvement -->
+      <div class="field field--full">
+        <label for="improvement">{{ t.ui().contact.improvementLabel }}</label>
+        <textarea id="improvement" rows="3" formControlName="improvement"
+                  [placeholder]="t.ui().contact.improvementPlaceholder"
+                  [attr.aria-invalid]="invalid('improvement')"
+                  [attr.aria-describedby]="invalid('improvement') ? 'improvement-err' : null"></textarea>
+        @if (invalid('improvement')) {
+          <p class="field__err" id="improvement-err">{{ t.ui().contact.errImprovement }}</p>
+        }
+      </div>
+
       <!-- Service -->
       <div class="field">
         <label for="service">{{ t.ui().contact.serviceLabel }}</label>
@@ -94,6 +160,66 @@
             <option value="" disabled>{{ t.ui().contact.budgetPlaceholder }}</option>
             @for (b of budgets; track b.id) {
               <option [value]="b.id">{{ t.pick(b.label) }}</option>
+            }
+          </select>
+          <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="field">
+        <label for="timeline">
+          {{ t.ui().contact.timelineLabel }}
+          <span class="field__opt">{{ t.ui().contact.optional }}</span>
+        </label>
+        <div class="select-wrap">
+          <select id="timeline" formControlName="timeline">
+            <option value="" disabled>{{ t.ui().contact.timelinePlaceholder }}</option>
+            @for (timeline of timelines; track timeline.id) {
+              <option [value]="timeline.id">{{ t.pick(timeline.label) }}</option>
+            }
+          </select>
+          <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Preferred language -->
+      <div class="field">
+        <label for="preferredLanguage">
+          {{ t.ui().contact.preferredLanguageLabel }}
+          <span class="field__opt">{{ t.ui().contact.optional }}</span>
+        </label>
+        <div class="select-wrap">
+          <select id="preferredLanguage" formControlName="preferredLanguage">
+            <option value="" disabled>{{ t.ui().contact.preferredLanguagePlaceholder }}</option>
+            @for (language of languages; track language.id) {
+              <option [value]="language.id">{{ t.pick(language.label) }}</option>
+            }
+          </select>
+          <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Contact method -->
+      <div class="field field--full">
+        <label for="contactMethod">
+          {{ t.ui().contact.contactMethodLabel }}
+          <span class="field__opt">{{ t.ui().contact.optional }}</span>
+        </label>
+        <div class="select-wrap">
+          <select id="contactMethod" formControlName="contactMethod">
+            <option value="" disabled>{{ t.ui().contact.contactMethodPlaceholder }}</option>
+            @for (method of contactMethods; track method.id) {
+              <option [value]="method.id">{{ t.pick(method.label) }}</option>
             }
           </select>
           <svg class="select-wrap__chev" width="16" height="16" viewBox="0 0 24 24"

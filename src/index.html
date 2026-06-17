@@ -2,23 +2,26 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Veloura — Premium Marketing & Digital Growth</title>
+  <title>Premium Marketing & Digital Growth Agency for Gulf Brands | Veloura</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Veloura is a premium marketing and digital growth agency. We help brands grow through strategy, elegant design, performance marketing, and digital systems built for measurable impact.">
-  <link rel="canonical" href="https://veloura.com/">
+    content="Veloura is a remote-first boutique marketing and digital growth agency helping Gulf and international brands grow through branding, websites, campaigns, SEO, CRM, analytics, and business communication systems.">
+  <link rel="canonical" href="https://veloura.com/en">
+  <link rel="alternate" hreflang="en" href="https://veloura.com/en">
+  <link rel="alternate" hreflang="ar" href="https://veloura.com/ar">
+  <link rel="alternate" hreflang="x-default" href="https://veloura.com/en">
   <meta name="theme-color" content="#F5EFE7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Veloura">
-  <meta property="og:title" content="Veloura — Premium Marketing & Digital Growth">
+  <meta property="og:title" content="Premium Marketing & Digital Growth Agency for Gulf Brands | Veloura">
   <meta property="og:description"
-    content="Marketing that feels refined, performs with purpose. Strategy, design, performance marketing, and digital systems for brands that want to grow smarter.">
-  <meta property="og:url" content="https://veloura.com/">
+    content="Remote-first boutique marketing and digital growth for Gulf and international brands across branding, websites, campaigns, SEO, CRM, analytics, and business communication.">
+  <meta property="og:url" content="https://veloura.com/en">
   <meta property="og:image" content="https://veloura.com/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,9 +31,9 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Veloura — Premium Marketing & Digital Growth">
+  <meta name="twitter:title" content="Premium Marketing & Digital Growth Agency for Gulf Brands | Veloura">
   <meta name="twitter:description"
-    content="Marketing that feels refined, performs with purpose. Strategy, design, performance marketing, and digital systems for brands that want to grow smarter.">
+    content="Remote-first boutique marketing and digital growth for Gulf and international brands across branding, websites, campaigns, SEO, CRM, analytics, and business communication.">
   <meta name="twitter:image" content="https://veloura.com/img/og-image.jpg">
 
   <!-- Icons + PWA -->
@@ -62,8 +65,10 @@
         "logo": "https://veloura.com/icon-512.png",
         "image": "https://veloura.com/img/og-image.jpg",
         "email": "hello@veloura.com",
-        "description": "Premium marketing and digital growth agency — strategy, elegant design, performance marketing, and digital systems built for measurable impact.",
-        "knowsLanguage": ["en", "ar"]
+        "description": "Remote-first premium boutique marketing and digital growth agency for Gulf and international brands.",
+        "knowsLanguage": ["en", "ar"],
+        "areaServed": ["Saudi Arabia", "United Arab Emirates", "Qatar", "Kuwait", "Bahrain", "Oman", "Jordan"],
+        "knowsAbout": ["Brand identity", "Website development", "SEO", "GEO", "Paid advertising", "CRM automation", "Analytics"]
       },
       {
         "@type": "WebSite",
@@ -72,6 +77,16 @@
         "url": "https://veloura.com/",
         "inLanguage": ["en", "ar"],
         "publisher": { "@id": "https://veloura.com/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://veloura.com/#professional-service",
+        "name": "Veloura",
+        "url": "https://veloura.com/",
+        "image": "https://veloura.com/img/og-image.jpg",
+        "priceRange": "$$",
+        "areaServed": ["GCC", "Saudi Arabia", "United Arab Emirates", "Qatar", "Kuwait", "Bahrain", "Oman", "Jordan"],
+        "parentOrganization": { "@id": "https://veloura.com/#organization" }
       }
     ]
   }
@@ -85,7 +100,8 @@
         if (t !== 'light' && t !== 'dark') {
           t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
-        var l = localStorage.getItem('veloura-lang');
+        var p = window.location.pathname.split('/').filter(Boolean)[0];
+        var l = (p === 'en' || p === 'ar') ? p : localStorage.getItem('veloura-lang');
         if (l !== 'en' && l !== 'ar') { l = 'en'; }
         var root = document.documentElement;
         root.setAttribute('data-theme', t);

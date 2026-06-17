@@ -1,0 +1,56 @@
+@if (page(); as p) {
+  <section class="page-hero">
+    <span class="glow glow-burgundy page-hero__glow"></span>
+    <div class="container page-hero__inner">
+      <span class="eyebrow" appReveal>{{ t.ui().nav.locations }}</span>
+      <h1 class="page-hero__title" [appReveal]="60">{{ t.pick(p.h1) }}</h1>
+      <p class="lead page-hero__sub" [appReveal]="140">{{ t.pick(p.intro) }}</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container location-layout">
+      <article class="remote-card card" appReveal>
+        <span class="eyebrow">{{ t.isArabic() ? 'نموذج التنفيذ' : 'Delivery model' }}</span>
+        <h2>{{ t.isArabic() ? 'عن بُعد، بوضوح كامل.' : 'Remote-first, with clear structure.' }}</h2>
+        <p>{{ t.pick(p.proof) }}</p>
+      </article>
+
+      <div class="market-list" [appReveal]="100">
+        @for (item of p.markets; track item.en) {
+          <article class="market-item card">
+            <span>{{ $index + 1 }}</span>
+            <p>{{ t.pick(item) }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section services-sec">
+    <div class="container">
+      <span class="eyebrow" appReveal>{{ t.isArabic() ? 'ما يمكن بناؤه' : 'What we can build' }}</span>
+      <div class="grid grid-3 service-grid">
+        @for (service of services; track service.slug) {
+          <a class="service-card card card-hover" [routerLink]="t.path('/services/' + service.slug)" [appReveal]="$index % 3 * 80">
+            <span class="service-card__icon" aria-hidden="true">
+              <app-icon [name]="service.icon" />
+            </span>
+            <h2>{{ t.pick(service.title) }}</h2>
+            <p>{{ t.pick(service.metaDesc) }}</p>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <app-cta-band
+        [title]="t.ui().home.ctaTitle"
+        [subtitle]="t.ui().home.ctaSubtitle"
+        [button]="t.ui().common.requestAudit"
+      />
+    </div>
+  </section>
+}

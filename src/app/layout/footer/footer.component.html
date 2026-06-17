@@ -31,7 +31,7 @@
         <h4 class="ft__heading">{{ t.ui().footer.quickLinks }}</h4>
         <ul>
           @for (l of navLinks; track l.key) {
-            <li><a [routerLink]="l.path">{{ t.ui().nav[l.key] }}</a></li>
+            <li><a [routerLink]="t.path(l.path)">{{ t.ui().nav[l.key] }}</a></li>
           }
         </ul>
       </nav>
@@ -40,7 +40,25 @@
         <h4 class="ft__heading">{{ t.ui().footer.servicesCol }}</h4>
         <ul>
           @for (s of services; track s.id) {
-            <li><a routerLink="/services" [fragment]="s.id">{{ t.pick(s.title) }}</a></li>
+            <li><a [routerLink]="t.path('/services/' + serviceSlug(s.id))">{{ t.pick(s.title) }}</a></li>
+          }
+        </ul>
+      </nav>
+
+      <nav class="ft__col" [attr.aria-label]="t.ui().nav.industries">
+        <h4 class="ft__heading">{{ t.ui().nav.industries }}</h4>
+        <ul>
+          @for (ind of industries; track ind.id) {
+            <li><a [routerLink]="t.path('/industries/' + ind.slug)">{{ t.pick(ind.title) }}</a></li>
+          }
+        </ul>
+      </nav>
+
+      <nav class="ft__col" [attr.aria-label]="t.ui().nav.locations">
+        <h4 class="ft__heading">{{ t.ui().nav.locations }}</h4>
+        <ul>
+          @for (loc of locations; track loc.id) {
+            <li><a [routerLink]="t.path('/locations/' + loc.slug)">{{ t.pick(loc.title) }}</a></li>
           }
         </ul>
       </nav>
@@ -52,7 +70,7 @@
           <li><a [href]="whatsappLink" target="_blank" rel="noopener">{{ contact.whatsappDisplay }}</a></li>
           <li>{{ t.ui().contact.locationValue }}</li>
         </ul>
-        <a class="btn btn-ghost ft__cta" routerLink="/contact">{{ t.ui().nav.cta }}</a>
+        <a class="btn btn-ghost ft__cta" [routerLink]="t.path('/contact')">{{ t.ui().nav.cta }}</a>
       </div>
     </div>
 

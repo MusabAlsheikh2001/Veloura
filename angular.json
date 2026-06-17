@@ -56,7 +56,18 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "security": {
+              "allowedHosts": []
+            },
+            "prerender": {
+              "routesFile": "src/prerender-routes.txt",
+              "discoverRoutes": true
+            },
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {

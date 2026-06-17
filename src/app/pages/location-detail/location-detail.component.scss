@@ -1,0 +1,98 @@
+.location-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: stretch;
+}
+
+.remote-card {
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.remote-card h2 {
+  font-size: var(--fs-h2);
+  max-width: 12ch;
+}
+
+.remote-card p {
+  color: var(--text-soft);
+  font-size: var(--fs-lead);
+}
+
+.market-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.market-item {
+  padding: 1.2rem 1.3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.market-item span {
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.market-item p {
+  color: var(--text-soft);
+}
+
+.services-sec {
+  background: var(--bg-2);
+}
+
+.service-grid {
+  margin-top: 2rem;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  border-radius: 14px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+[data-theme='dark'] .service-card__icon {
+  color: var(--gold);
+  background: var(--gold-soft);
+  border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+}
+
+.service-card h2 {
+  font-size: 1.25rem;
+}
+
+.service-card p {
+  color: var(--text-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .location-layout {
+    grid-template-columns: 1fr;
+  }
+  .remote-card h2 {
+    max-width: none;
+  }
+}

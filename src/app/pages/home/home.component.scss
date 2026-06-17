@@ -221,8 +221,68 @@
   margin-top: 3rem;
 }
 
+.strategy-sec {
+  background: var(--bg-2);
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.strategy-copy {
+  min-height: 420px;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(120% 100% at 100% 0%, var(--gold-soft), transparent 58%),
+    var(--surface);
+  box-shadow: var(--shadow-sm), var(--card-hi);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.strategy-copy--dark {
+  background:
+    radial-gradient(100% 100% at 100% 0%, rgba(198, 167, 123, 0.2), transparent 54%),
+    linear-gradient(135deg, var(--dark-wine), var(--velvet-burgundy));
+  color: var(--bone-ivory);
+  border-color: rgba(198, 167, 123, 0.22);
+}
+
+.strategy-copy h2 {
+  font-size: var(--fs-h2);
+  max-width: 13ch;
+}
+
+.strategy-copy p {
+  color: var(--text-soft);
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+}
+
+.strategy-copy--dark h2 {
+  color: var(--bone-ivory);
+}
+
+.strategy-copy--dark p {
+  color: rgba(245, 239, 231, 0.78);
+}
+
 .process {
   background: var(--bg-2);
+}
+
+.insights-sec {
+  background: var(--bg-2);
+}
+
+.insights-grid {
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 /* Values */
@@ -397,6 +457,15 @@ html[lang='ar'] .model__line {
   }
   .hero__scroll {
     display: none;
+  }
+  .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+  .strategy-copy {
+    min-height: auto;
+  }
+  .strategy-copy h2 {
+    max-width: none;
   }
 }
 

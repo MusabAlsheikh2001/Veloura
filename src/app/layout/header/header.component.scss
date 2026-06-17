@@ -199,13 +199,13 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 940px) {
+@media (max-width: 1120px) {
   .hdr__nav { display: none; }
   .hdr__cta { display: none; }
   .hdr__burger { display: inline-flex; }
 }
 
-@media (min-width: 941px) {
+@media (min-width: 1121px) {
   .mnav { display: none; }
 }
 

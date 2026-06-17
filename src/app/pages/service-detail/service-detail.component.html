@@ -1,0 +1,112 @@
+@if (page(); as p) {
+  <section class="page-hero detail-hero">
+    <span class="glow glow-burgundy page-hero__glow"></span>
+    <div class="container page-hero__inner">
+      <span class="eyebrow" appReveal>{{ t.ui().nav.services }}</span>
+      <span class="detail-hero__icon" aria-hidden="true" [appReveal]="40">
+        <app-icon [name]="p.icon" />
+      </span>
+      <h1 class="page-hero__title" [appReveal]="80">{{ t.pick(p.h1) }}</h1>
+      <p class="lead page-hero__sub" [appReveal]="150">{{ t.pick(p.intro) }}</p>
+      <div class="detail-hero__actions" [appReveal]="220">
+        <a class="btn btn-primary btn-lg" [routerLink]="t.path('/contact')">{{ t.ui().common.requestAudit }}</a>
+        <a class="btn btn-ghost btn-lg" [routerLink]="t.path('/services')">{{ t.ui().common.viewAllServices }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight detail-grid-sec">
+    <div class="container detail-grid">
+      <article class="detail-card card" appReveal>
+        <span class="detail-card__kicker">{{ t.isArabic() ? 'لمن تناسب؟' : 'Who it is for' }}</span>
+        <ul>
+          @for (item of p.audience; track item.en) {
+            <li>{{ t.pick(item) }}</li>
+          }
+        </ul>
+      </article>
+      <article class="detail-card card" [appReveal]="90">
+        <span class="detail-card__kicker">{{ t.isArabic() ? 'ما الذي تعالجه؟' : 'Problems it solves' }}</span>
+        <ul>
+          @for (item of p.problems; track item.en) {
+            <li>{{ t.pick(item) }}</li>
+          }
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section detail-band">
+    <div class="container">
+      <div class="detail-split">
+        <div class="detail-split__copy" appReveal>
+          <span class="eyebrow">{{ t.isArabic() ? 'ما نقدمه' : 'What Veloura delivers' }}</span>
+          <h2>{{ t.isArabic() ? 'كل جزء له دور في النظام.' : 'Every piece has a role in the system.' }}</h2>
+          <p>{{ t.isArabic() ? 'لا نضيف مخرجات للعرض فقط. نحدد ما يحتاجه العمل، ثم نبني الأصول التي تجعل العلامة أوضح وأكثر قابلية للقياس.' : 'We do not add deliverables for display. We define what the business needs, then build the assets that make the brand clearer and more measurable.' }}</p>
+        </div>
+        <ul class="deliverables" [appReveal]="100">
+          @for (item of p.deliverables; track item.en) {
+            <li>{{ t.pick(item) }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow" appReveal>{{ t.isArabic() ? 'العملية' : 'Process' }}</span>
+      <div class="steps">
+        @for (step of p.process; track step.en; let i = $index) {
+          <article class="step-card card" [appReveal]="i * 80">
+            <span class="step-card__num">0{{ i + 1 }}</span>
+            <p>{{ t.pick(step) }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  @if (relatedServices(p).length) {
+    <section class="section related">
+      <div class="container">
+        <span class="eyebrow" appReveal>{{ t.isArabic() ? 'خدمات مرتبطة' : 'Related services' }}</span>
+        <div class="grid grid-3 related__grid">
+          @for (item of relatedServices(p); track item.slug) {
+            <a class="related-card card card-hover" [routerLink]="t.path('/services/' + item.slug)" [appReveal]="$index * 80">
+              <span class="related-card__icon" aria-hidden="true">
+                <app-icon [name]="item.icon" />
+              </span>
+              <h3>{{ t.pick(item.title) }}</h3>
+              <p>{{ t.pick(item.metaDesc) }}</p>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  <section class="section-tight faq-sec">
+    <div class="container narrow">
+      <span class="eyebrow" appReveal>{{ t.isArabic() ? 'أسئلة شائعة' : 'FAQ' }}</span>
+      <div class="faq-list">
+        @for (faq of p.faqs; track faq.q.en) {
+          <details class="faq card" appReveal>
+            <summary>{{ t.pick(faq.q) }}</summary>
+            <p>{{ t.pick(faq.a) }}</p>
+          </details>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <app-cta-band
+        [title]="t.ui().home.ctaTitle"
+        [subtitle]="t.ui().home.ctaSubtitle"
+        [button]="t.ui().common.requestAudit"
+      />
+    </div>
+  </section>
+}

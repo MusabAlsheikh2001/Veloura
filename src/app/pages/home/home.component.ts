@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   INDUSTRIES,
+  BLOG_POSTS,
   MODEL_DO,
   MODEL_DONT,
   PROCESS,
@@ -14,6 +15,7 @@ import { RevealDirective } from '../../core/reveal.directive';
 import { SeoService } from '../../core/seo.service';
 import { TranslationService } from '../../core/translation.service';
 import { CtaBandComponent } from '../../ui/cta-band/cta-band.component';
+import { BlogCardComponent } from '../../ui/blog-card/blog-card.component';
 import { IconComponent } from '../../ui/icon/icon.component';
 import { ProcessStepComponent } from '../../ui/process-step/process-step.component';
 import { SectionHeaderComponent } from '../../ui/section-header/section-header.component';
@@ -30,6 +32,7 @@ import { ServiceCardComponent } from '../../ui/service-card/service-card.compone
     ServiceCardComponent,
     ProcessStepComponent,
     IconComponent,
+    BlogCardComponent,
     CtaBandComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -46,6 +49,7 @@ export class HomeComponent {
   protected industries = INDUSTRIES;
   protected modelDo = MODEL_DO;
   protected modelDont = MODEL_DONT;
+  protected posts = BLOG_POSTS.slice(0, 3);
 
   constructor(seo: SeoService) {
     seo.set(

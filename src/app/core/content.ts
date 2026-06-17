@@ -116,13 +116,13 @@ export const SERVICES: Service[] = [
     },
   },
   {
-    id: 'whatsapp-crm',
+    id: 'crm-lead-flow-automation',
     icon: 'automation',
     featured: true,
-    title: { en: 'WhatsApp API & CRM Automation', ar: 'واتساب API وأتمتة الـCRM' },
+    title: { en: 'CRM, Lead Flow & Business Automation', ar: 'CRM وتدفقات العملاء والأتمتة' },
     desc: {
-      en: 'WhatsApp flows, auto-replies, booking, and a CRM pipeline so leads are captured, segmented, and followed up automatically.',
-      ar: 'تدفقات واتساب وردود تلقائية وحجوزات وخط CRM، لتُلتقط الفرص وتُصنَّف وتُتابَع تلقائياً.',
+      en: 'CRM structure, lead capture, follow-up flows, booking paths, and automation so every serious enquiry has a clear next step.',
+      ar: 'بنية CRM، التقاط الفرص، مسارات متابعة وحجوزات وأتمتة تجعل لكل استفسار جاد خطوة تالية واضحة.',
     },
   },
   {
@@ -323,37 +323,64 @@ export const PROCESS: ProcessStep[] = [
   {
     num: '01',
     icon: 'discover',
-    title: { en: 'Discover', ar: 'نكتشف' },
+    title: { en: 'Audit', ar: 'ندقق' },
     desc: {
-      en: 'We learn the business, audience, and market — the truth before the polish.',
-      ar: 'نفهم العمل والجمهور والسوق — الحقيقة قبل اللمسة الأخيرة.',
+      en: 'We study the brand, website, content, competitors, customer journey, and current lead flow.',
+      ar: 'ندرس العلامة والموقع والمحتوى والمنافسين ورحلة العميل وتدفق الفرص الحالي.',
     },
   },
   {
     num: '02',
     icon: 'position',
-    title: { en: 'Position', ar: 'نحدد التوجه' },
+    title: { en: 'Diagnose', ar: 'نشخّص' },
     desc: {
-      en: 'We define a clear, ownable position and the message that carries it.',
-      ar: 'نحدّد موقعاً واضحاً ومميّزاً والرسالة التي تحمله.',
+      en: 'We identify the real constraint: positioning, trust, conversion, traffic, follow-up, or measurement.',
+      ar: 'نحدد العائق الحقيقي: التموضع، الثقة، التحويل، الزيارات، المتابعة، أو القياس.',
     },
   },
   {
     num: '03',
     icon: 'design',
-    title: { en: 'Design', ar: 'نصمم' },
+    title: { en: 'Scope', ar: 'نحدد النطاق' },
     desc: {
-      en: 'We craft the identity, interface, and creative that make it real.',
-      ar: 'نصوغ الهوية والواجهة والإبداع الذي يجعلها واقعاً.',
+      en: 'We shape a custom growth scope around the market, budget, urgency, and operational reality.',
+      ar: 'نبني نطاق نمو مخصصاً حول السوق والميزانية والاستعجال والواقع التشغيلي.',
     },
   },
   {
     num: '04',
     icon: 'launch',
-    title: { en: 'Launch & Optimize', ar: 'نطلق ونحسّن' },
+    title: { en: 'Build', ar: 'نبني' },
     desc: {
-      en: 'We go live, measure against real numbers, and refine for compounding growth.',
-      ar: 'ننطلق، ونقيس بأرقام حقيقية، ونحسّن لنموٍّ متراكم.',
+      en: 'We create the identity, website, campaigns, content, CRM, tracking, and business materials.',
+      ar: 'نصمم الهوية والموقع والحملات والمحتوى والـCRM والتتبع ومواد التواصل المؤسسي.',
+    },
+  },
+  {
+    num: '05',
+    icon: 'launch',
+    title: { en: 'Launch', ar: 'نطلق' },
+    desc: {
+      en: 'We move the system live with clear approvals, assets, tracking, and customer-facing touchpoints.',
+      ar: 'نطلق النظام بموافقات واضحة وأصول جاهزة وتتبع ونقاط تواصل مهيّأة للعميل.',
+    },
+  },
+  {
+    num: '06',
+    icon: 'analytics',
+    title: { en: 'Measure', ar: 'نقيس' },
+    desc: {
+      en: 'We read performance through real numbers, not impressions that cannot guide a decision.',
+      ar: 'نقرأ الأداء عبر أرقام حقيقية، لا عبر انطباعات لا تقود إلى قرار.',
+    },
+  },
+  {
+    num: '07',
+    icon: 'performance',
+    title: { en: 'Optimize', ar: 'نحسّن' },
+    desc: {
+      en: 'We refine the message, journey, creative, media, and lead flow so the system compounds.',
+      ar: 'نحسّن الرسالة والرحلة والإبداع والإعلانات وتدفق الفرص ليصبح النظام تراكمياً.',
     },
   },
 ];
@@ -983,11 +1010,57 @@ export const BLOG_POSTS: BlogPost[] = [
 
 /* ---------- Contact form options ---------- */
 export const BUDGET_RANGES: { id: string; label: Localized }[] = [
-  { id: 'under-3k', label: { en: 'Under $3,000', ar: 'أقل من 3,000$' } },
-  { id: '3k-8k', label: { en: '$3,000 – $8,000', ar: '3,000$ – 8,000$' } },
-  { id: '8k-20k', label: { en: '$8,000 – $20,000', ar: '8,000$ – 20,000$' } },
-  { id: 'over-20k', label: { en: '$20,000+', ar: 'أكثر من 20,000$' } },
+  { id: 'under-500', label: { en: 'Under $500', ar: 'أقل من 500$' } },
+  { id: '500-1500', label: { en: '$500 – $1,500', ar: '500$ – 1,500$' } },
+  { id: '1500-3000', label: { en: '$1,500 – $3,000', ar: '1,500$ – 3,000$' } },
+  { id: '3000-7000', label: { en: '$3,000 – $7,000', ar: '3,000$ – 7,000$' } },
+  { id: '7000-plus', label: { en: '$7,000+', ar: 'أكثر من 7,000$' } },
   { id: 'not-sure', label: { en: 'Not sure yet', ar: 'غير محدّد بعد' } },
+];
+
+export const MARKET_OPTIONS: { id: string; label: Localized }[] = [
+  { id: 'saudi-arabia', label: { en: 'Saudi Arabia', ar: 'السعودية' } },
+  { id: 'uae', label: { en: 'United Arab Emirates', ar: 'الإمارات' } },
+  { id: 'qatar', label: { en: 'Qatar', ar: 'قطر' } },
+  { id: 'kuwait', label: { en: 'Kuwait', ar: 'الكويت' } },
+  { id: 'bahrain', label: { en: 'Bahrain', ar: 'البحرين' } },
+  { id: 'oman', label: { en: 'Oman', ar: 'عُمان' } },
+  { id: 'jordan', label: { en: 'Jordan', ar: 'الأردن' } },
+  { id: 'mena', label: { en: 'MENA / other', ar: 'الشرق الأوسط / أخرى' } },
+  { id: 'worldwide', label: { en: 'Worldwide remote', ar: 'عميل دولي عن بُعد' } },
+];
+
+export const INDUSTRY_OPTIONS: { id: string; label: Localized }[] = [
+  { id: 'clinics-healthcare', label: { en: 'Clinics & healthcare', ar: 'العيادات والرعاية الصحية' } },
+  { id: 'aesthetic-clinics', label: { en: 'Aesthetic clinics & medical centers', ar: 'عيادات التجميل والمراكز الطبية' } },
+  { id: 'restaurants-cafes', label: { en: 'Restaurants & cafés', ar: 'المطاعم والمقاهي' } },
+  { id: 'real-estate', label: { en: 'Real estate & construction', ar: 'العقارات والإنشاءات' } },
+  { id: 'retail-fashion', label: { en: 'Retail, fashion & ecommerce', ar: 'التجزئة والأزياء والمتاجر الإلكترونية' } },
+  { id: 'personal-brands', label: { en: 'Personal brands & consultants', ar: 'العلامات الشخصية والاستشاريون' } },
+  { id: 'training-academies', label: { en: 'Training academies', ar: 'الأكاديميات التدريبية' } },
+  { id: 'interior-design', label: { en: 'Interior design studios', ar: 'استوديوهات التصميم الداخلي' } },
+  { id: 'professional-services', label: { en: 'Professional service firms', ar: 'شركات الخدمات المهنية' } },
+  { id: 'premium-local-services', label: { en: 'Premium local services', ar: 'الخدمات المحلية الراقية' } },
+];
+
+export const TIMELINE_OPTIONS: { id: string; label: Localized }[] = [
+  { id: 'urgent', label: { en: 'Urgent / this month', ar: 'عاجل / هذا الشهر' } },
+  { id: '1-3-months', label: { en: '1–3 months', ar: 'خلال 1–3 أشهر' } },
+  { id: '3-6-months', label: { en: '3–6 months', ar: 'خلال 3–6 أشهر' } },
+  { id: 'exploring', label: { en: 'Exploring options', ar: 'استكشاف الخيارات' } },
+];
+
+export const LANGUAGE_OPTIONS: { id: string; label: Localized }[] = [
+  { id: 'english', label: { en: 'English', ar: 'الإنجليزية' } },
+  { id: 'arabic', label: { en: 'Arabic', ar: 'العربية' } },
+  { id: 'both', label: { en: 'English & Arabic', ar: 'العربية والإنجليزية' } },
+];
+
+export const CONTACT_METHOD_OPTIONS: { id: string; label: Localized }[] = [
+  { id: 'email', label: { en: 'Email', ar: 'البريد الإلكتروني' } },
+  { id: 'phone', label: { en: 'Phone call', ar: 'مكالمة هاتفية' } },
+  { id: 'whatsapp', label: { en: 'WhatsApp message', ar: 'رسالة واتساب' } },
+  { id: 'meeting', label: { en: 'Online meeting', ar: 'اجتماع أونلاين' } },
 ];
 
 /* Contact + WhatsApp details (placeholders) */

@@ -1,0 +1,37 @@
+<section class="page-hero">
+  <span class="glow glow-burgundy page-hero__glow"></span>
+  <div class="container page-hero__inner">
+    <span class="eyebrow" appReveal>{{ t.ui().locations.heroEyebrow }}</span>
+    <h1 class="page-hero__title" [appReveal]="60">{{ t.ui().locations.heroTitle }}</h1>
+    <p class="lead page-hero__sub" [appReveal]="140">{{ t.ui().locations.heroSubtitle }}</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="location-note card" appReveal>
+      <span class="eyebrow">{{ t.ui().home.gulfEyebrow }}</span>
+      <p>{{ t.ui().home.gulfBody }}</p>
+    </div>
+
+    <div class="grid grid-4 loc-grid">
+      @for (loc of locations; track loc.id) {
+        <a class="loc-card card card-hover" [routerLink]="t.path('/locations/' + loc.slug)" [appReveal]="$index % 4 * 70">
+          <span>{{ t.isArabic() ? 'سوق' : 'Market' }}</span>
+          <h2>{{ t.pick(loc.title) }}</h2>
+          <p>{{ t.pick(loc.metaDesc) }}</p>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-cta-band
+      [title]="t.ui().home.ctaTitle"
+      [subtitle]="t.ui().home.ctaSubtitle"
+      [button]="t.ui().common.requestAudit"
+    />
+  </div>
+</section>

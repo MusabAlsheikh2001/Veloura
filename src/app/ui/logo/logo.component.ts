@@ -8,7 +8,7 @@ import { TranslationService } from '../../core/translation.service';
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <a class="logo" routerLink="/" [attr.aria-label]="t.ui().brand.name">
+    <a class="logo" [routerLink]="t.path('/')" [attr.aria-label]="t.ui().brand.name">
       <span class="logo__mark" aria-hidden="true">
         <svg viewBox="0 0 40 40" fill="none">
           <rect x="1" y="1" width="38" height="38" rx="11.5" fill="url(#vTile)" />

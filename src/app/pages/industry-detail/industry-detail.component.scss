@@ -1,0 +1,99 @@
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.industry-panel {
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.panel-kicker {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html[lang='ar'] .panel-kicker {
+  letter-spacing: 0.02em;
+}
+
+.industry-panel li {
+  position: relative;
+  padding-inline-start: 1.3rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.industry-panel li + li {
+  margin-top: 0.75rem;
+}
+
+.industry-panel li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.8em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.journey-sec {
+  background: var(--bg-2);
+}
+
+.journey-card {
+  padding: clamp(1.8rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.journey-card p {
+  font-size: var(--fs-lead);
+  color: var(--text-soft);
+}
+
+.service-links {
+  margin-top: 2rem;
+}
+
+.service-link {
+  min-height: 190px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-link__icon {
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  border-radius: 14px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+[data-theme='dark'] .service-link__icon {
+  color: var(--gold);
+  background: var(--gold-soft);
+  border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+}
+
+.service-link h2 {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 760px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}

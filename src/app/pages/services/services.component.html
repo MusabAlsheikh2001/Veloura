@@ -13,7 +13,7 @@
   <div class="container">
     <div class="svc-list">
       @for (s of services; track s.id; let i = $index) {
-        <article class="srv card card-hover" [id]="s.id" [appReveal]="i % 2 * 90">
+        <a class="srv card card-hover" [id]="s.id" [routerLink]="t.path('/services/' + serviceSlug(s.id))" [appReveal]="i % 2 * 90">
           <span class="srv__num">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
           <span class="srv__icon" aria-hidden="true">
             <app-icon [name]="s.icon" />
@@ -22,7 +22,7 @@
             <h2 class="srv__title">{{ t.pick(s.title) }}</h2>
             <p class="srv__desc">{{ t.pick(s.desc) }}</p>
           </div>
-        </article>
+        </a>
       }
     </div>
   </div>
@@ -34,7 +34,7 @@
     <app-cta-band
       [title]="t.ui().services.ctaTitle"
       [subtitle]="t.ui().services.ctaSubtitle"
-      [button]="t.ui().common.contactUs"
+      [button]="t.ui().common.requestAudit"
     />
   </div>
 </section>

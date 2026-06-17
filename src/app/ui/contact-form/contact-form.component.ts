@@ -4,7 +4,16 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { BUDGET_RANGES, CONTACT, SERVICES } from '../../core/content';
+import {
+  BUDGET_RANGES,
+  CONTACT,
+  CONTACT_METHOD_OPTIONS,
+  INDUSTRY_OPTIONS,
+  LANGUAGE_OPTIONS,
+  MARKET_OPTIONS,
+  SERVICES,
+  TIMELINE_OPTIONS,
+} from '../../core/content';
 import { TranslationService } from '../../core/translation.service';
 
 @Component({
@@ -21,6 +30,11 @@ export class ContactFormComponent {
 
   protected services = SERVICES;
   protected budgets = BUDGET_RANGES;
+  protected markets = MARKET_OPTIONS;
+  protected industries = INDUSTRY_OPTIONS;
+  protected timelines = TIMELINE_OPTIONS;
+  protected languages = LANGUAGE_OPTIONS;
+  protected contactMethods = CONTACT_METHOD_OPTIONS;
   protected submitted = signal(false);
 
   protected form = this.fb.nonNullable.group({
@@ -28,8 +42,15 @@ export class ContactFormComponent {
     email: ['', [Validators.required, Validators.email]],
     phone: [''],
     company: [''],
+    country: ['', [Validators.required]],
+    industry: ['', [Validators.required]],
+    website: [''],
+    improvement: ['', [Validators.required, Validators.minLength(6)]],
     service: ['', [Validators.required]],
     budget: [''],
+    timeline: [''],
+    preferredLanguage: [''],
+    contactMethod: [''],
     message: ['', [Validators.required, Validators.minLength(10)]],
   });
 

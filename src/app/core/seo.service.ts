@@ -1,7 +1,9 @@
+import { DOCUMENT } from '@angular/common';
 import { effect, inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { localizePath, splitLocalizedUrl, SUPPORTED_LANGS } from './localized-routes';
 import { absUrl, SITE } from './site.config';
 import { TranslationService } from './translation.service';
 
@@ -19,6 +21,7 @@ export class SeoService {
   private readonly titleFn = signal<StringGetter | null>(null);
   private readonly descFn = signal<StringGetter | null>(null);
   private readonly t = inject(TranslationService);
+  private readonly document = inject(DOCUMENT);
 
   constructor(private title: Title, private meta: Meta, private router: Router) {
     // Title + description + OG/Twitter text + locale — reactive to language.
@@ -57,37 +60,66 @@ export class SeoService {
   set(title: StringGetter, description: StringGetter): void {
     this.titleFn.set(title);
     this.descFn.set(description);
+    this.setCanonical(this.currentUrl());
   }
 
   /** Replace the page-level JSON-LD block (e.g. BlogPosting on an article). */
   setJsonLd(data: unknown): void {
-    if (typeof document === 'undefined') return;
-    let el = document.getElementById('ld-page') as HTMLScriptElement | null;
+    let el = this.document.getElementById('ld-page') as HTMLScriptElement | null;
     if (!el) {
-      el = document.createElement('script');
+      el = this.document.createElement('script');
       el.type = 'application/ld+json';
       el.id = 'ld-page';
-      document.head.appendChild(el);
+      this.document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(data);
   }
 
   private clearJsonLd(): void {
-    if (typeof document === 'undefined') return;
-    document.getElementById('ld-page')?.remove();
+    this.document.getElementById('ld-page')?.remove();
   }
 
   private setCanonical(url: string): void {
-    if (typeof document === 'undefined') return;
     const path = url.split(/[?#]/)[0] || '/';
-    const href = absUrl(path);
-    let link = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+    const split = splitLocalizedUrl(path);
+    const lang = split.lang || this.t.lang();
+    const localizedPath = localizePath(lang, split.path);
+    const href = absUrl(localizedPath);
+    let link = this.document.querySelector<HTMLLinkElement>("link[rel='canonical']");
     if (!link) {
-      link = document.createElement('link');
+      link = this.document.createElement('link');
       link.rel = 'canonical';
-      document.head.appendChild(link);
+      this.document.head.appendChild(link);
     }
     link.href = href;
     this.meta.updateTag({ property: 'og:url', content: href });
+
+    for (const code of SUPPORTED_LANGS) {
+      const alternateHref = absUrl(localizePath(code, split.path));
+      let alt = this.document.querySelector<HTMLLinkElement>(`link[rel='alternate'][hreflang='${code}']`);
+      if (!alt) {
+        alt = this.document.createElement('link');
+        alt.rel = 'alternate';
+        alt.hreflang = code;
+        this.document.head.appendChild(alt);
+      }
+      alt.href = alternateHref;
+    }
+
+    let xDefault = this.document.querySelector<HTMLLinkElement>("link[rel='alternate'][hreflang='x-default']");
+    if (!xDefault) {
+      xDefault = this.document.createElement('link');
+      xDefault.rel = 'alternate';
+      xDefault.hreflang = 'x-default';
+      this.document.head.appendChild(xDefault);
+    }
+    xDefault.href = absUrl(localizePath('en', split.path));
+  }
+
+  private currentUrl(): string {
+    const routerUrl = this.router.url;
+    if (routerUrl && routerUrl !== '/') return routerUrl;
+    const location = this.document.location;
+    return `${location.pathname || '/'}${location.search || ''}`;
   }
 }

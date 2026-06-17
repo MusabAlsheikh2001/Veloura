@@ -14,7 +14,7 @@ import { ThemeToggleComponent } from '../../ui/theme-toggle/theme-toggle.compone
 
 interface NavLink {
   path: string;
-  key: 'home' | 'about' | 'services' | 'blog' | 'contact';
+  key: 'home' | 'about' | 'services' | 'industries' | 'locations' | 'blog' | 'contact';
   exact: boolean;
 }
 
@@ -43,6 +43,8 @@ export class HeaderComponent {
     { path: '/', key: 'home', exact: true },
     { path: '/about', key: 'about', exact: false },
     { path: '/services', key: 'services', exact: false },
+    { path: '/industries', key: 'industries', exact: false },
+    { path: '/locations', key: 'locations', exact: false },
     { path: '/blog', key: 'blog', exact: false },
     { path: '/contact', key: 'contact', exact: false },
   ];

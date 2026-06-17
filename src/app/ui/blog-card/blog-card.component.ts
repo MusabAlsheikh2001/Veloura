@@ -9,7 +9,7 @@ import { TranslationService } from '../../core/translation.service';
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <a class="post card card-hover" [routerLink]="['/blog', post.slug]">
+    <a class="post card card-hover" [routerLink]="t.path('/blog/' + post.slug)">
       <div class="post__thumb media media--warm">
         <img [src]="post.image" alt="" loading="lazy" decoding="async" />
         <span class="post__cat">{{ t.pick(post.category) }}</span>

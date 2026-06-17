@@ -1,0 +1,64 @@
+@if (page(); as p) {
+  <section class="page-hero">
+    <span class="glow glow-gold page-hero__glow"></span>
+    <div class="container page-hero__inner">
+      <span class="eyebrow" appReveal>{{ t.ui().nav.industries }}</span>
+      <h1 class="page-hero__title" [appReveal]="60">{{ t.pick(p.h1) }}</h1>
+      <p class="lead page-hero__sub" [appReveal]="140">{{ t.pick(p.intro) }}</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container two-col">
+      <article class="industry-panel card" appReveal>
+        <span class="panel-kicker">{{ t.isArabic() ? 'نقاط الألم' : 'Pain points' }}</span>
+        <ul>
+          @for (item of p.painPoints; track item.en) {
+            <li>{{ t.pick(item) }}</li>
+          }
+        </ul>
+      </article>
+      <article class="industry-panel card" [appReveal]="90">
+        <span class="panel-kicker">{{ t.isArabic() ? 'النظام المقترح' : 'Recommended system' }}</span>
+        <ul>
+          @for (item of p.system; track item.en) {
+            <li>{{ t.pick(item) }}</li>
+          }
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section journey-sec">
+    <div class="container narrow journey-card card" appReveal>
+      <span class="eyebrow">{{ t.isArabic() ? 'رحلة العميل' : 'Customer journey' }}</span>
+      <p>{{ t.pick(p.journey) }}</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow" appReveal>{{ t.isArabic() ? 'خدمات مناسبة' : 'Suggested services' }}</span>
+      <div class="grid grid-4 service-links">
+        @for (service of linkedServices(p); track service.slug) {
+          <a class="service-link card card-hover" [routerLink]="t.path('/services/' + service.slug)" [appReveal]="$index * 80">
+            <span class="service-link__icon" aria-hidden="true">
+              <app-icon [name]="service.icon" />
+            </span>
+            <h2>{{ t.pick(service.title) }}</h2>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <app-cta-band
+        [title]="t.ui().home.ctaTitle"
+        [subtitle]="t.ui().home.ctaSubtitle"
+        [button]="t.ui().common.requestAudit"
+      />
+    </div>
+  </section>
+}

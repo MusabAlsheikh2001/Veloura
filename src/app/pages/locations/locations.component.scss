@@ -1,0 +1,48 @@
+.location-note {
+  max-width: 920px;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-align: center;
+}
+
+.location-note p {
+  color: var(--text-soft);
+  font-size: var(--fs-lead);
+}
+
+.loc-grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.loc-card {
+  min-height: 240px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.loc-card span {
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html[lang='ar'] .loc-card span {
+  letter-spacing: 0.02em;
+}
+
+.loc-card h2 {
+  font-size: 1.2rem;
+}
+
+.loc-card p {
+  color: var(--text-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}

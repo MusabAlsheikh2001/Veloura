@@ -6,7 +6,7 @@
       @for (link of links; track link.key) {
         <a
           class="hdr__link"
-          [routerLink]="link.path"
+          [routerLink]="t.path(link.path)"
           routerLinkActive="is-active"
           [routerLinkActiveOptions]="{ exact: link.exact }"
         >
@@ -18,7 +18,7 @@
     <div class="hdr__actions">
       <app-language-toggle />
       <app-theme-toggle />
-      <a class="btn btn-primary hdr__cta" routerLink="/contact">
+      <a class="btn btn-primary hdr__cta" [routerLink]="t.path('/contact')">
         {{ t.ui().nav.cta }}
       </a>
       <button
@@ -43,7 +43,7 @@
     @for (link of links; track link.key) {
       <a
         class="mnav__link"
-        [routerLink]="link.path"
+        [routerLink]="t.path(link.path)"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: link.exact }"
         (click)="closeMenu()"
@@ -57,7 +57,7 @@
       <app-language-toggle />
       <app-theme-toggle />
     </div>
-    <a class="btn btn-primary btn-lg mnav__cta" routerLink="/contact" (click)="closeMenu()">
+    <a class="btn btn-primary btn-lg mnav__cta" [routerLink]="t.path('/contact')" (click)="closeMenu()">
       {{ t.ui().nav.cta }}
     </a>
   </div>

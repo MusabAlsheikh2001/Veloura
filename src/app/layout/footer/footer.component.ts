@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CONTACT, SERVICES, SOCIALS } from '../../core/content';
+import { INDUSTRY_PAGES, LOCATION_PAGES, serviceSlugById } from '../../core/market-content';
 import { TranslationService } from '../../core/translation.service';
 import { LogoComponent } from '../../ui/logo/logo.component';
 
@@ -17,6 +18,9 @@ export class FooterComponent {
   protected year = new Date().getFullYear();
 
   protected services = SERVICES.slice(0, 6);
+  protected industries = INDUSTRY_PAGES.slice(0, 6);
+  protected locations = LOCATION_PAGES.slice(0, 8);
+  protected serviceSlug = serviceSlugById;
   protected socials = SOCIALS;
   protected contact = CONTACT;
 
@@ -24,6 +28,8 @@ export class FooterComponent {
     { path: '/', key: 'home' as const },
     { path: '/about', key: 'about' as const },
     { path: '/services', key: 'services' as const },
+    { path: '/industries', key: 'industries' as const },
+    { path: '/locations', key: 'locations' as const },
     { path: '/blog', key: 'blog' as const },
     { path: '/contact', key: 'contact' as const },
   ];

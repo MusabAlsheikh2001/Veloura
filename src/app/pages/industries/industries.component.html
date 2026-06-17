@@ -1,0 +1,39 @@
+<section class="page-hero">
+  <span class="glow glow-burgundy page-hero__glow"></span>
+  <div class="container page-hero__inner">
+    <span class="eyebrow" appReveal>{{ t.ui().industries.heroEyebrow }}</span>
+    <h1 class="page-hero__title" [appReveal]="60">{{ t.ui().industries.heroTitle }}</h1>
+    <p class="lead page-hero__sub" [appReveal]="140">{{ t.ui().industries.heroSubtitle }}</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="grid grid-3 ind-grid">
+      @for (ind of industries; track ind.id) {
+        <a class="ind-card card card-hover" [routerLink]="t.path('/industries/' + ind.slug)" [appReveal]="$index % 3 * 80">
+          <span class="ind-card__kicker">{{ t.isArabic() ? 'قطاع' : 'Industry' }}</span>
+          <h2>{{ t.pick(ind.title) }}</h2>
+          <p>{{ t.pick(ind.intro) }}</p>
+          <span class="ind-card__more">
+            {{ t.ui().common.learnMore }}
+            <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-cta-band
+      [title]="t.ui().home.ctaTitle"
+      [subtitle]="t.ui().home.ctaSubtitle"
+      [button]="t.ui().common.requestAudit"
+    />
+  </div>
+</section>
