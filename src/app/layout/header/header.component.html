@@ -4,6 +4,66 @@
 
     <nav class="hdr__nav" [attr.aria-label]="t.ui().nav.primaryNav">
       @for (link of links; track link.key) {
+        @if (link.key === 'blog') {
+          <div
+            class="hdr__group"
+            (mouseenter)="openMega()"
+            (mouseleave)="closeMega()"
+          >
+            <button
+              type="button"
+              class="hdr__link hdr__link--trigger"
+              [class.is-active]="solutionsActive()"
+              [attr.aria-expanded]="megaOpen()"
+              aria-controls="solutions-menu"
+              (click)="toggleMega()"
+            >
+              {{ t.ui().nav.services }}
+              <span class="hdr__chev" aria-hidden="true">⌄</span>
+            </button>
+            <div class="hdr__mega" id="solutions-menu" [class.is-open]="megaOpen()">
+              <div class="hdr__mega-col">
+                <a class="hdr__mega-title" [routerLink]="t.path('/services')">
+                  {{ t.ui().nav.services }}
+                </a>
+                @for (s of services; track s.id) {
+                  <a class="hdr__mega-link" [routerLink]="t.path('/services/' + serviceSlug(s.id))">
+                    {{ t.pick(s.title) }}
+                  </a>
+                }
+                <a class="hdr__mega-more" [routerLink]="t.path('/services')">
+                  {{ t.ui().common.viewAllServices }}
+                </a>
+              </div>
+              <div class="hdr__mega-col">
+                <a class="hdr__mega-title" [routerLink]="t.path('/industries')">
+                  {{ t.ui().nav.industries }}
+                </a>
+                @for (ind of industries; track ind.slug) {
+                  <a class="hdr__mega-link" [routerLink]="t.path('/industries/' + ind.slug)">
+                    {{ t.pick(ind.title) }}
+                  </a>
+                }
+                <a class="hdr__mega-more" [routerLink]="t.path('/industries')">
+                  {{ t.ui().common.viewAllIndustries }}
+                </a>
+              </div>
+              <div class="hdr__mega-col">
+                <a class="hdr__mega-title" [routerLink]="t.path('/locations')">
+                  {{ t.ui().nav.locations }}
+                </a>
+                @for (loc of locations; track loc.slug) {
+                  <a class="hdr__mega-link" [routerLink]="t.path('/locations/' + loc.slug)">
+                    {{ t.pick(loc.title) }}
+                  </a>
+                }
+                <a class="hdr__mega-more" [routerLink]="t.path('/locations')">
+                  {{ t.ui().common.viewAllLocations }}
+                </a>
+              </div>
+            </div>
+          </div>
+        }
         <a
           class="hdr__link"
           [routerLink]="t.path(link.path)"
@@ -41,6 +101,43 @@
 <div class="mnav" id="mobile-menu" [class.is-open]="menuOpen()" [attr.aria-hidden]="!menuOpen()">
   <nav class="mnav__links" [attr.aria-label]="t.ui().nav.primaryNav">
     @for (link of links; track link.key) {
+      @if (link.key === 'blog') {
+        <details class="mnav__group" open>
+          <summary>{{ t.ui().nav.services }}</summary>
+          <div class="mnav__mega">
+            <div>
+              <a class="mnav__section-link" [routerLink]="t.path('/services')" (click)="closeMenu()">
+                {{ t.ui().nav.services }}
+              </a>
+              @for (s of services; track s.id) {
+                <a [routerLink]="t.path('/services/' + serviceSlug(s.id))" (click)="closeMenu()">
+                  {{ t.pick(s.title) }}
+                </a>
+              }
+            </div>
+            <div>
+              <a class="mnav__section-link" [routerLink]="t.path('/industries')" (click)="closeMenu()">
+                {{ t.ui().nav.industries }}
+              </a>
+              @for (ind of industries; track ind.slug) {
+                <a [routerLink]="t.path('/industries/' + ind.slug)" (click)="closeMenu()">
+                  {{ t.pick(ind.title) }}
+                </a>
+              }
+            </div>
+            <div>
+              <a class="mnav__section-link" [routerLink]="t.path('/locations')" (click)="closeMenu()">
+                {{ t.ui().nav.locations }}
+              </a>
+              @for (loc of locations; track loc.slug) {
+                <a [routerLink]="t.path('/locations/' + loc.slug)" (click)="closeMenu()">
+                  {{ t.pick(loc.title) }}
+                </a>
+              }
+            </div>
+          </div>
+        </details>
+      }
       <a
         class="mnav__link"
         [routerLink]="t.path(link.path)"

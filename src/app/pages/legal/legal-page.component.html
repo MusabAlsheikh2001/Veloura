@@ -1,0 +1,52 @@
+@if (page(); as p) {
+  <section class="page-hero legal-hero">
+    <span class="glow glow-burgundy page-hero__glow"></span>
+    <div class="container narrow page-hero__inner">
+      <span class="eyebrow" appReveal>{{ t.ui().footer.legalLinks }}</span>
+      <h1 class="page-hero__title" [appReveal]="60">{{ t.pick(p.h1) }}</h1>
+      <p class="lead page-hero__sub" [appReveal]="140">{{ t.pick(p.intro) }}</p>
+      <p class="legal-hero__date" [appReveal]="180">
+        {{ t.isArabic() ? 'آخر تحديث: 17 يونيو 2026' : 'Last updated: June 17, 2026' }}
+      </p>
+    </div>
+  </section>
+
+  @if (p.sections.length) {
+    <section class="section-tight">
+      <div class="container narrow legal-stack">
+        @for (section of p.sections; track section.title.en; let i = $index) {
+          <article class="legal-card card" [appReveal]="i * 70">
+            <h2>{{ t.pick(section.title) }}</h2>
+            @for (paragraph of section.body; track paragraph.en) {
+              <p>{{ t.pick(paragraph) }}</p>
+            }
+          </article>
+        }
+      </div>
+    </section>
+  }
+
+  @if (p.faqs.length) {
+    <section class="section legal-faq">
+      <div class="container narrow">
+        <span class="eyebrow" appReveal>{{ t.ui().footer.faqs }}</span>
+        <div class="faq-list">
+          @for (faq of p.faqs; track faq.q.en; let i = $index) {
+            <details class="faq card" [appReveal]="i * 60">
+              <summary>{{ t.pick(faq.q) }}</summary>
+              <p>{{ t.pick(faq.a) }}</p>
+            </details>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  <section class="section-tight legal-links">
+    <div class="container narrow legal-links__inner">
+      <a class="btn btn-ghost" [routerLink]="t.path('/privacy-policy')">{{ t.ui().footer.privacy }}</a>
+      <a class="btn btn-ghost" [routerLink]="t.path('/terms-and-conditions')">{{ t.ui().footer.terms }}</a>
+      <a class="btn btn-ghost" [routerLink]="t.path('/faqs')">{{ t.ui().footer.faqs }}</a>
+    </div>
+  </section>
+}

@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
+import { SERVICES } from '../../core/content';
+import { INDUSTRY_PAGES, LOCATION_PAGES, serviceSlugById } from '../../core/market-content';
 import { TranslationService } from '../../core/translation.service';
 import { LanguageToggleComponent } from '../../ui/language-toggle/language-toggle.component';
 import { LogoComponent } from '../../ui/logo/logo.component';
@@ -14,7 +16,7 @@ import { ThemeToggleComponent } from '../../ui/theme-toggle/theme-toggle.compone
 
 interface NavLink {
   path: string;
-  key: 'home' | 'about' | 'services' | 'industries' | 'locations' | 'blog' | 'contact';
+  key: 'home' | 'about' | 'blog' | 'contact';
   exact: boolean;
 }
 
@@ -38,21 +40,26 @@ export class HeaderComponent {
 
   protected scrolled = signal(false);
   protected menuOpen = signal(false);
+  protected megaOpen = signal(false);
 
   protected links: NavLink[] = [
     { path: '/', key: 'home', exact: true },
     { path: '/about', key: 'about', exact: false },
-    { path: '/services', key: 'services', exact: false },
-    { path: '/industries', key: 'industries', exact: false },
-    { path: '/locations', key: 'locations', exact: false },
     { path: '/blog', key: 'blog', exact: false },
     { path: '/contact', key: 'contact', exact: false },
   ];
+  protected services = SERVICES.slice(0, 6);
+  protected industries = INDUSTRY_PAGES.slice(0, 6);
+  protected locations = LOCATION_PAGES.slice(0, 6);
+  protected serviceSlug = serviceSlugById;
 
   constructor() {
     this.router.events
       .pipe(filter((e) => e instanceof NavigationEnd))
-      .subscribe(() => this.closeMenu());
+      .subscribe(() => {
+        this.closeMenu();
+        this.closeMega();
+      });
   }
 
   @HostListener('window:scroll')
@@ -72,9 +79,27 @@ export class HeaderComponent {
     }
   }
 
+  openMega(): void {
+    this.megaOpen.set(true);
+  }
+
+  closeMega(): void {
+    this.megaOpen.set(false);
+  }
+
+  toggleMega(): void {
+    this.megaOpen.update((open) => !open);
+  }
+
+  protected solutionsActive(): boolean {
+    const path = this.router.url.split(/[?#]/)[0];
+    return path.includes('/services') || path.includes('/industries') || path.includes('/locations');
+  }
+
   @HostListener('document:keydown.escape')
   onEscape(): void {
     this.closeMenu();
+    this.closeMega();
   }
 
   private setBodyLock(locked: boolean): void {

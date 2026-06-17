@@ -36,6 +36,8 @@ export class ContactFormComponent {
   protected languages = LANGUAGE_OPTIONS;
   protected contactMethods = CONTACT_METHOD_OPTIONS;
   protected submitted = signal(false);
+  protected whatsappNumber = CONTACT.whatsapp.replace(/[^\d]/g, '');
+  protected hasWhatsapp = this.whatsappNumber.length > 0;
 
   protected form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -55,13 +57,12 @@ export class ContactFormComponent {
   });
 
   get whatsappLink(): string {
-    const number = CONTACT.whatsapp.replace(/[^\d]/g, '');
     const text = encodeURIComponent(
       this.t.lang() === 'ar'
         ? 'مرحباً فيلورا، أودّ مناقشة مشروع.'
         : "Hi Veloura, I'd like to discuss a project."
     );
-    return `https://wa.me/${number}?text=${text}`;
+    return `https://wa.me/${this.whatsappNumber}?text=${text}`;
   }
 
   invalid(control: string): boolean {

@@ -1,0 +1,41 @@
+# Veloura
+
+Veloura is a premium boutique digital growth studio for GCC and international businesses.
+Veloura helps companies look sharper, convert better, and communicate more professionally through focused brand, web, landing page, creative, content, communication, and practical SEO work.
+
+## Core Services
+
+- Brand Identity and Visual Systems: strategy, logo direction, color palette, typography, brand voice, and consistent visual systems.
+- UI/UX Design: wireframes, user journeys, prototypes, and conversion-focused Figma interfaces.
+- Website Development: refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
+- Landing Pages and Case Studies: focused persuasive pages for offers, launches, services, and case studies.
+- Ad Designs and Campaign Creatives: static ads, stories, carousels, and creative angles for Meta, TikTok, Snapchat, and Google campaign use.
+- Social Media Strategy: content direction, campaign ideas, post structure, calendars, captions, reels direction, and brand-consistent visual planning.
+- AI Video and Motion Content: AI-assisted short clips, reels, motion visuals, and premium-looking branded video content.
+- Competition Analysis: clear analysis of competitor branding, websites, content, ads, positioning, and market gaps.
+- Business Communication Kit: company profiles, pitch decks, proposals, letterheads, branded invoices, and serious business documents.
+- Basic SEO: practical website SEO only, including technical basics, on-page structure, metadata, headings, performance, local SEO basics, and content direction.
+
+## Best Fit
+
+Veloura is built for companies, clinics, hospitality venues, real estate projects, restaurants, retail brands, ecommerce businesses, education and training providers, professional service firms, construction and interior firms, automotive businesses, local service companies, and other serious business entities.
+
+Veloura does not focus on standalone individual creator projects.
+
+## Service Model
+
+Veloura is remote-first for GCC and international clients. Work begins with diagnosis, then a custom scope is built around the business goal, current assets, market, budget, and decision journey. Veloura does not sell fixed monthly posting packages.
+
+## Important Limits
+
+Veloura is not positioned as a search-only agency, media-buying agency, analytics consultancy, large systems provider, or CRM implementation firm. Those areas may be mentioned only as light supporting add-ons when needed.
+
+## Canonical Pages
+
+- Home: https://veloura.com/en
+- Services: https://veloura.com/en/services
+- Industries: https://veloura.com/en/industries
+- Locations: https://veloura.com/en/locations
+- FAQs: https://veloura.com/en/faqs
+- Contact: https://veloura.com/en/contact
+- Full LLM context: https://veloura.com/llms-full.txt

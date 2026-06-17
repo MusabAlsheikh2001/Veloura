@@ -1,0 +1,69 @@
+.legal-hero {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.legal-hero__date {
+  margin-top: 0.3rem;
+  font-size: var(--fs-sm);
+  color: var(--text-mute);
+}
+
+.legal-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.legal-card {
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.legal-card h2 {
+  font-size: var(--fs-h3);
+  margin-bottom: 0.8rem;
+}
+
+.legal-card p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.legal-card p + p {
+  margin-top: 0.75rem;
+}
+
+.legal-faq {
+  background: var(--bg-2);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.faq {
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq summary {
+  cursor: pointer;
+  padding: 1.15rem 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.faq p {
+  padding: 0 1.25rem 1.25rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.legal-links__inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}

@@ -68,7 +68,7 @@ export class ServiceDetailComponent {
             name: this.t.pick(page.title),
             description: this.t.pick(page.metaDesc),
             provider: { '@id': SITE.url + '/#organization' },
-            areaServed: ['Saudi Arabia', 'United Arab Emirates', 'Qatar', 'Kuwait', 'Bahrain', 'Oman', 'Jordan'],
+            areaServed: ['GCC', 'Saudi Arabia', 'United Arab Emirates', 'Qatar', 'Kuwait', 'Bahrain', 'Oman', 'International'],
             url,
             serviceType: this.t.pick(page.title),
           },

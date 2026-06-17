@@ -46,8 +46,8 @@ export const SERVICES: Service[] = [
     featured: true,
     title: { en: 'Website Development', ar: 'تطوير المواقع' },
     desc: {
-      en: 'Fast, refined WordPress and custom-coded sites — corporate, e-commerce, booking, and portfolio — built to convert, not just exist.',
-      ar: 'مواقع ووردبريس ومواقع مبرمجة سريعة وأنيقة — مؤسسية، متاجر، حجوزات، ومعارض — مبنية لتُحقّق لا لتوجد فقط.',
+      en: 'Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.',
+      ar: 'مواقع ووردبريس ومواقع مبرمجة سريعة وأنيقة للشركات والعيادات ومعارض الأعمال والخدمات والمواقع المبنية حول صفحات هبوط.',
     },
   },
   {
@@ -64,18 +64,18 @@ export const SERVICES: Service[] = [
     icon: 'ads',
     title: { en: 'Ad Designs & Campaign Creatives', ar: 'التصاميم والحملات الإعلانية' },
     desc: {
-      en: 'Scroll-stopping statics, stories, and carousels — multiple creative angles tested and refined, never one design called a campaign.',
-      ar: 'تصاميم ثابتة وقصص وكاروسيل تُوقف التمرير — زوايا إبداعية متعددة تُختبَر وتُحسَّن، لا تصميم واحد يُسمّى حملة.',
+      en: 'Static ads, stories, carousels, and creative angles designed for Meta, TikTok, Snapchat, and Google campaign use.',
+      ar: 'إعلانات ثابتة وقصص وكاروسيل وزوايا إبداعية مصممة للاستخدام في حملات ميتا وتيك توك وسناب وجوجل.',
     },
   },
   {
     id: 'social-media',
     icon: 'social',
     featured: true,
-    title: { en: 'Social Media Strategy & Management', ar: 'استراتيجية وإدارة وسائل التواصل' },
+    title: { en: 'Social Media Strategy', ar: 'استراتيجية وسائل التواصل' },
     desc: {
-      en: 'Content strategy, calendars, reels, and community — shaped around your business, not a fixed monthly post count.',
-      ar: 'استراتيجية محتوى، جداول، ريلز، وإدارة مجتمع — مبنية على عملك لا على عدد منشورات ثابت.',
+      en: 'Content direction, campaign ideas, post structure, calendars, captions, reels direction, and brand-consistent visual planning.',
+      ar: 'توجيه محتوى، أفكار حملات، بنية منشورات، جداول، كابشن، اتجاه ريلز، وتخطيط بصري ثابت مع الهوية.',
     },
   },
   {
@@ -88,22 +88,12 @@ export const SERVICES: Service[] = [
     },
   },
   {
-    id: 'paid-advertising',
-    icon: 'paidads',
-    featured: true,
-    title: { en: 'Paid Advertising', ar: 'الإعلانات المدفوعة' },
-    desc: {
-      en: 'Meta, Google, TikTok, and Snapchat campaigns with audiences, tracking, and creative testing — no spend without a goal and a path.',
-      ar: 'حملات ميتا وجوجل وتيك توك وسناب مع جماهير وتتبّع واختبار إبداعي — لا إنفاق دون هدف ومسار واضح.',
-    },
-  },
-  {
-    id: 'seo-geo',
+    id: 'basic-seo',
     icon: 'seo',
-    title: { en: 'SEO, GEO & Testing', ar: 'تحسين البحث، GEO، والاختبار' },
+    title: { en: 'Basic SEO', ar: 'السيو الأساسي' },
     desc: {
-      en: 'Technical, on-page, and local SEO plus GEO — visibility in Google and the new AI answer engines, measured over time.',
-      ar: 'سيو تقني وداخلي ومحلي إضافة إلى GEO — ظهور في جوجل وفي محرّكات الإجابة الذكية الجديدة، يُقاس مع الوقت.',
+      en: 'Practical website SEO: technical basics, on-page structure, metadata, headings, performance, local SEO basics, and content direction.',
+      ar: 'سيو عملي للمواقع: أساسيات تقنية، بنية صفحات، ميتا، عناوين، أداء، أساسيات السيو المحلي، وتوجيه محتوى.',
     },
   },
   {
@@ -111,27 +101,8 @@ export const SERVICES: Service[] = [
     icon: 'analysis',
     title: { en: 'Competition Analysis', ar: 'تحليل المنافسين' },
     desc: {
-      en: 'Clear reads on competitors’ brand, content, ads, and SEO — turning market gaps into a sharper position for you.',
-      ar: 'قراءة واضحة لعلامة المنافسين ومحتواهم وإعلاناتهم وتحسين بحثهم — نحوّل فجوات السوق إلى موقع أقوى لك.',
-    },
-  },
-  {
-    id: 'crm-lead-flow-automation',
-    icon: 'automation',
-    featured: true,
-    title: { en: 'CRM, Lead Flow & Business Automation', ar: 'CRM وتدفقات العملاء والأتمتة' },
-    desc: {
-      en: 'CRM structure, lead capture, follow-up flows, booking paths, and automation so every serious enquiry has a clear next step.',
-      ar: 'بنية CRM، التقاط الفرص، مسارات متابعة وحجوزات وأتمتة تجعل لكل استفسار جاد خطوة تالية واضحة.',
-    },
-  },
-  {
-    id: 'analytics-tracking',
-    icon: 'analytics',
-    title: { en: 'Analytics, Tracking & Google Automation', ar: 'التحليلات والتتبّع وأتمتة جوجل' },
-    desc: {
-      en: 'GA4, Tag Manager, conversion tracking, and Looker Studio dashboards — so every decision rests on real numbers.',
-      ar: 'GA4 ومدير الوسوم وتتبّع التحويلات ولوحات لوكر ستوديو — لتُبنى كل قرار على أرقام حقيقية.',
+      en: 'Clear analysis of competitors’ branding, websites, content, ads, positioning, and market gaps.',
+      ar: 'تحليل واضح لهوية المنافسين ومواقعهم ومحتواهم وإعلاناتهم وتموضعهم وفجوات السوق.',
     },
   },
   {
@@ -152,16 +123,16 @@ export const MODEL_DONT: Localized[] = [
   { en: 'Sell fixed “10 posts a month” packages.', ar: 'نبيع باقات ثابتة بعدد منشورات شهري.' },
   { en: 'Run as a cheap, templated posting service.', ar: 'نعمل كخدمة نشر رخيصة بقوالب جاهزة.' },
   { en: 'Copy trends with no strategy behind them.', ar: 'نقلّد الترندات دون استراتيجية خلفها.' },
-  { en: 'Launch ads without tracking or a clear goal.', ar: 'نطلق إعلانات دون تتبّع أو هدف واضح.' },
+  { en: 'Overclaim beyond our real specialist scope.', ar: 'نضخّم نطاقنا خارج خبرتنا الحقيقية.' },
   { en: 'Build websites with no conversion structure.', ar: 'نبني مواقع دون بنية تحويل.' },
 ];
 
 export const MODEL_DO: Localized[] = [
   { en: 'Start every engagement with an audit, diagnosis, and positioning.', ar: 'نبدأ كل تعاون بتدقيق وتشخيص وتحديد موقع.' },
   { en: 'Build a custom scope around your goals, budget, and market.', ar: 'نبني نطاقاً مخصّصاً حول أهدافك وميزانيتك وسوقك.' },
-  { en: 'Pair premium design with conversion and real tracking.', ar: 'نجمع التصميم الراقي مع التحويل والتتبّع الحقيقي.' },
-  { en: 'Launch, measure against real numbers, then optimize.', ar: 'نطلق، ونقيس بأرقام حقيقية، ثم نحسّن.' },
-  { en: 'Treat brand, web, ads, and automation as one system.', ar: 'نتعامل مع الهوية والويب والإعلانات والأتمتة كنظام واحد.' },
+  { en: 'Pair premium design with clear structure and conversion paths.', ar: 'نجمع التصميم الراقي مع بنية واضحة ومسارات تحويل.' },
+  { en: 'Build assets that teams can actually use: sites, pages, kits, and content systems.', ar: 'نبني أصولاً يمكن للفرق استخدامها فعلاً: مواقع وصفحات وحقائب وأنظمة محتوى.' },
+  { en: 'Use basic SEO and operational clarity as support, not as inflated promises.', ar: 'نستخدم السيو الأساسي والوضوح التشغيلي كدعم لا كوعود مبالغ بها.' },
 ];
 
 /* ---------- Industry-tailored scopes ---------- */
@@ -188,25 +159,11 @@ export const INDUSTRIES: Industry[] = [
     ],
   },
   {
-    id: 'retail',
-    name: { en: 'Retail & Fashion', ar: 'التجزئة والأزياء' },
-    summary: {
-      en: 'Collection storytelling, an e-commerce that sells, paid retargeting, and a WhatsApp catalog that moves stock.',
-      ar: 'سرد للمجموعات، متجر إلكتروني يبيع فعلاً، إعادة استهداف مدفوعة، وكتالوج واتساب يحرّك المخزون.',
-    },
-    tags: [
-      { en: 'E-commerce', ar: 'متجر إلكتروني' },
-      { en: 'Drops & launches', ar: 'إطلاقات' },
-      { en: 'Retargeting', ar: 'إعادة استهداف' },
-      { en: 'Catalog', ar: 'كتالوج' },
-    ],
-  },
-  {
     id: 'clinics',
     name: { en: 'Clinics & Healthcare', ar: 'العيادات والرعاية الصحية' },
     summary: {
-      en: 'Trust-first identity, doctor profiles, service SEO pages, a Google Business Profile, and booking automation.',
-      ar: 'هوية تبني الثقة أولاً، ملفات أطباء، صفحات خدمات محسّنة للبحث، ملف نشاط على جوجل، وأتمتة الحجز.',
+      en: 'Trust-first identity, doctor profiles, service pages, Google Business clarity, and booking-ready website paths.',
+      ar: 'هوية تبني الثقة أولاً، ملفات أطباء، صفحات خدمات، وضوح على Google Business، ومسارات موقع جاهزة للحجز.',
     },
     tags: [
       { en: 'Trust & authority', ar: 'ثقة ومصداقية' },
@@ -217,30 +174,58 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     id: 'real-estate',
-    name: { en: 'Real Estate', ar: 'العقارات' },
+    name: { en: 'Real Estate & Developers', ar: 'العقارات والمطورون' },
     summary: {
-      en: 'Property landing pages, lead-gen ads, a CRM pipeline, and WhatsApp follow-up that turns enquiries into viewings.',
-      ar: 'صفحات هبوط للعقارات، إعلانات لجذب العملاء، خط CRM، ومتابعة عبر واتساب تحوّل الاستفسارات إلى معاينات.',
+      en: 'Project landing pages, campaign creatives, inquiry structure, and follow-up-ready pages that turn interest into viewings.',
+      ar: 'صفحات هبوط للمشاريع، إبداع حملات، بنية استفسار، وصفحات جاهزة للمتابعة تحوّل الاهتمام إلى معاينات.',
     },
     tags: [
-      { en: 'Property pages', ar: 'صفحات العقارات' },
+      { en: 'Project pages', ar: 'صفحات المشاريع' },
       { en: 'Lead-gen ads', ar: 'إعلانات العملاء' },
-      { en: 'CRM pipeline', ar: 'خط CRM' },
-      { en: 'WhatsApp follow-up', ar: 'متابعة واتساب' },
+      { en: 'Inquiry flow', ar: 'مسار استفسار' },
+      { en: 'Sales follow-up', ar: 'متابعة المبيعات' },
     ],
   },
   {
-    id: 'personal-brands',
-    name: { en: 'Personal Brands', ar: 'العلامات الشخصية' },
+    id: 'retail',
+    name: { en: 'Retail & Ecommerce', ar: 'التجزئة والمتاجر الإلكترونية' },
     summary: {
-      en: 'Positioning, a portfolio site, thought-leadership content, a media kit, and LinkedIn that builds real authority.',
-      ar: 'تحديد الموقع، موقع أعمال، محتوى ريادة فكرية، حقيبة إعلامية، ولينكدإن يبني مصداقية حقيقية.',
+      en: 'Collection storytelling, ecommerce UX, campaign creatives, and product paths that move items with discipline.',
+      ar: 'سرد للمجموعات، UX للمتاجر، إبداع حملات، ومسارات منتجات تحرّك العناصر بانضباط.',
     },
     tags: [
-      { en: 'Positioning', ar: 'تحديد الموقع' },
-      { en: 'Portfolio site', ar: 'موقع أعمال' },
-      { en: 'Media kit', ar: 'حقيبة إعلامية' },
-      { en: 'LinkedIn', ar: 'لينكدإن' },
+      { en: 'Ecommerce UX', ar: 'تجربة المتجر' },
+      { en: 'Drops & launches', ar: 'إطلاقات' },
+      { en: 'Campaign creative', ar: 'إبداع حملات' },
+      { en: 'Catalog systems', ar: 'أنظمة كتالوج' },
+    ],
+  },
+  {
+    id: 'professional-services',
+    name: { en: 'Professional & B2B Firms', ar: 'الشركات المهنية وB2B' },
+    summary: {
+      en: 'Clear positioning, authority websites, company profiles, proposal systems, and qualified B2B enquiry paths.',
+      ar: 'تموضع واضح، مواقع سلطة، بروفايلات شركات، أنظمة مقترحات، ومسارات استفسار B2B مؤهلة.',
+    },
+    tags: [
+      { en: 'Authority site', ar: 'موقع سلطة' },
+      { en: 'Proposals', ar: 'مقترحات' },
+      { en: 'Service SEO', ar: 'سيو الخدمات' },
+      { en: 'Qualified leads', ar: 'فرص مؤهلة' },
+    ],
+  },
+  {
+    id: 'education-training',
+    name: { en: 'Education & Training', ar: 'التعليم والتدريب' },
+    summary: {
+      en: 'Program pages, enrollment journeys, campaign ideas, and follow-up-ready structures for institutes, academies, and training companies.',
+      ar: 'صفحات برامج، رحلات تسجيل، أفكار حملات، وبنى جاهزة للمتابعة للمعاهد والأكاديميات وشركات التدريب.',
+    },
+    tags: [
+      { en: 'Program pages', ar: 'صفحات البرامج' },
+      { en: 'Enrollment funnels', ar: 'مسارات التسجيل' },
+      { en: 'Campaigns', ar: 'حملات' },
+      { en: 'Inquiry flow', ar: 'مسار استفسار' },
     ],
   },
 ];
@@ -289,16 +274,16 @@ export const DISCIPLINES: Discipline[] = [
     icon: 'performance',
     title: { en: 'Performance & Growth', ar: 'الأداء والنمو' },
     desc: {
-      en: 'Paid media, SEO, GEO, and conversion optimization.',
-      ar: 'إعلانات مدفوعة، سيو، GEO، وتحسين التحويل.',
+      en: 'Landing pages, basic SEO, campaign creative, and conversion structure.',
+      ar: 'صفحات هبوط، سيو أساسي، إبداع حملات، وبنية تحويل.',
     },
   },
   {
     icon: 'automation',
-    title: { en: 'Automation & Data', ar: 'الأتمتة والبيانات' },
+    title: { en: 'Digital Operations', ar: 'العمليات الرقمية' },
     desc: {
-      en: 'WhatsApp, CRM, GA4, and dashboards that tell the truth.',
-      ar: 'واتساب، CRM، GA4، ولوحات تقول الحقيقة.',
+      en: 'Digital operations support, handoff structure, forms, and light measurement setup.',
+      ar: 'دعم عمليات رقمية، بنية تسليم، نماذج، وإعداد قياس خفيف.',
     },
   },
 ];
@@ -352,8 +337,8 @@ export const PROCESS: ProcessStep[] = [
     icon: 'launch',
     title: { en: 'Build', ar: 'نبني' },
     desc: {
-      en: 'We create the identity, website, campaigns, content, CRM, tracking, and business materials.',
-      ar: 'نصمم الهوية والموقع والحملات والمحتوى والـCRM والتتبع ومواد التواصل المؤسسي.',
+      en: 'We create the identity, website, landing pages, campaign creatives, content direction, basic SEO, and business materials.',
+      ar: 'نصمم الهوية والموقع وصفحات الهبوط وإبداع الحملات وتوجيه المحتوى والسيو الأساسي ومواد التواصل المؤسسي.',
     },
   },
   {
@@ -379,8 +364,8 @@ export const PROCESS: ProcessStep[] = [
     icon: 'performance',
     title: { en: 'Optimize', ar: 'نحسّن' },
     desc: {
-      en: 'We refine the message, journey, creative, media, and lead flow so the system compounds.',
-      ar: 'نحسّن الرسالة والرحلة والإبداع والإعلانات وتدفق الفرص ليصبح النظام تراكمياً.',
+      en: 'We refine the message, journey, creative, page structure, and contact path so the system compounds.',
+      ar: 'نحسّن الرسالة والرحلة والإبداع وبنية الصفحة ومسار التواصل ليصبح النظام تراكمياً.',
     },
   },
 ];
@@ -411,10 +396,10 @@ export const VALUE_CARDS: ValueCard[] = [
   },
   {
     icon: 'performance',
-    title: { en: 'Campaign performance', ar: 'أداء الحملات' },
+    title: { en: 'Campaign clarity', ar: 'وضوح الحملات' },
     desc: {
-      en: 'Creative and media tuned to convert — measured, tested, improved.',
-      ar: 'إبداع وإعلانات مهيّأة لتحقيق النتائج — تُقاس، تُختبر، وتتحسّن.',
+      en: 'Creative angles, pages, and messages shaped to make the next action clear.',
+      ar: 'زوايا إبداعية وصفحات ورسائل مصممة لتجعل الخطوة التالية واضحة.',
     },
   },
 ];
@@ -625,7 +610,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         kind: 'p',
         text: {
-          en: 'Marketing and product are usually run by separate teams, measured by separate numbers, and discussed in separate meetings. The customer, however, experiences them as a single thing. A brilliant campaign that lands on a confusing page is a campaign quietly wasting its own budget — the click was paid for, and then thrown away at the threshold.',
+          en: 'Marketing and product are usually run by separate teams, measured by separate numbers, and discussed in separate meetings. The customer, however, experiences them as a single thing. A brilliant campaign that lands on a confusing page is a campaign quietly wasting its own budget — the click was earned, and then thrown away at the threshold.',
           ar: 'عادةً ما يُدار التسويق والمنتج بفريقين منفصلين، ويُقاسان بأرقام منفصلة، ويُناقشان في اجتماعات منفصلة. لكن العميل يعيشهما كشيء واحد. الحملة الرائعة التي تصل إلى صفحة مربكة هي حملة تهدر ميزانيتها بهدوء — دُفع ثمن النقرة، ثم أُلقيت عند العتبة.',
         },
       },
@@ -760,8 +745,8 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         kind: 'p',
         text: {
-          en: 'A campaign is a sprint; a system is an engine. Sprints are exciting and visible, which is why teams keep reaching for them — but the brands that grow steadily, year after year, are quietly running engines. Content that compounds, automation that never sleeps, and measurement that learns are not as thrilling as a launch, yet they are what keeps the curve climbing after the launch is forgotten.',
-          ar: 'الحملة سباق قصير، أما النظام فمحرّك. السباقات مثيرة وظاهرة، ولهذا تظلّ الفرق تلجأ إليها — لكن العلامات التي تنمو باطّراد، عاماً بعد عام، تُشغّل محرّكات بهدوء. المحتوى الذي يتراكم، والأتمتة التي لا تنام، والقياس الذي يتعلّم، ليست بإثارة الإطلاق، لكنها ما يبقي المنحنى صاعداً بعد أن يُنسى الإطلاق.',
+          en: 'A campaign is a sprint; a system is an engine. Sprints are exciting and visible, which is why teams keep reaching for them — but the brands that grow steadily are usually built on quieter foundations: clearer positioning, stronger pages, consistent content, useful creative, and simple feedback loops that keep the work improving after launch.',
+          ar: 'الحملة سباق قصير، أما النظام فمحرّك. السباقات مثيرة وظاهرة، ولهذا تظل الفرق تلجأ إليها — لكن العلامات التي تنمو بثبات تُبنى غالباً على أسس أهدأ: تموضع أوضح، صفحات أقوى، محتوى متسق، إبداع مفيد، وحلقات ملاحظات بسيطة تجعل العمل يتحسن بعد الإطلاق.',
         },
       },
       {
@@ -1025,7 +1010,6 @@ export const MARKET_OPTIONS: { id: string; label: Localized }[] = [
   { id: 'kuwait', label: { en: 'Kuwait', ar: 'الكويت' } },
   { id: 'bahrain', label: { en: 'Bahrain', ar: 'البحرين' } },
   { id: 'oman', label: { en: 'Oman', ar: 'عُمان' } },
-  { id: 'jordan', label: { en: 'Jordan', ar: 'الأردن' } },
   { id: 'mena', label: { en: 'MENA / other', ar: 'الشرق الأوسط / أخرى' } },
   { id: 'worldwide', label: { en: 'Worldwide remote', ar: 'عميل دولي عن بُعد' } },
 ];
@@ -1034,13 +1018,15 @@ export const INDUSTRY_OPTIONS: { id: string; label: Localized }[] = [
   { id: 'clinics-healthcare', label: { en: 'Clinics & healthcare', ar: 'العيادات والرعاية الصحية' } },
   { id: 'aesthetic-clinics', label: { en: 'Aesthetic clinics & medical centers', ar: 'عيادات التجميل والمراكز الطبية' } },
   { id: 'restaurants-cafes', label: { en: 'Restaurants & cafés', ar: 'المطاعم والمقاهي' } },
-  { id: 'real-estate', label: { en: 'Real estate & construction', ar: 'العقارات والإنشاءات' } },
+  { id: 'hospitality-venues', label: { en: 'Hospitality, hotels & venues', ar: 'الضيافة والفنادق والقاعات' } },
+  { id: 'real-estate', label: { en: 'Real estate & developers', ar: 'العقارات والمطورون' } },
   { id: 'retail-fashion', label: { en: 'Retail, fashion & ecommerce', ar: 'التجزئة والأزياء والمتاجر الإلكترونية' } },
-  { id: 'personal-brands', label: { en: 'Personal brands & consultants', ar: 'العلامات الشخصية والاستشاريون' } },
-  { id: 'training-academies', label: { en: 'Training academies', ar: 'الأكاديميات التدريبية' } },
-  { id: 'interior-design', label: { en: 'Interior design studios', ar: 'استوديوهات التصميم الداخلي' } },
-  { id: 'professional-services', label: { en: 'Professional service firms', ar: 'شركات الخدمات المهنية' } },
-  { id: 'premium-local-services', label: { en: 'Premium local services', ar: 'الخدمات المحلية الراقية' } },
+  { id: 'education-training', label: { en: 'Education & training institutions', ar: 'مؤسسات التعليم والتدريب' } },
+  { id: 'interior-architecture-construction', label: { en: 'Interior, architecture & construction firms', ar: 'شركات التصميم الداخلي والعمارة والإنشاءات' } },
+  { id: 'professional-services', label: { en: 'Professional service & B2B firms', ar: 'شركات الخدمات المهنية وB2B' } },
+  { id: 'home-local-services', label: { en: 'Home services & local service companies', ar: 'خدمات المنازل والشركات المحلية' } },
+  { id: 'automotive-mobility', label: { en: 'Automotive & mobility businesses', ar: 'السيارات والتنقل' } },
+  { id: 'fitness-beauty-wellness', label: { en: 'Fitness, beauty & wellness centers', ar: 'مراكز اللياقة والجمال والعافية' } },
 ];
 
 export const TIMELINE_OPTIONS: { id: string; label: Localized }[] = [
@@ -1066,8 +1052,8 @@ export const CONTACT_METHOD_OPTIONS: { id: string; label: Localized }[] = [
 /* Contact + WhatsApp details (placeholders) */
 export const CONTACT = {
   email: 'hello@veloura.com',
-  whatsapp: '+962700000000',
-  whatsappDisplay: '+962 7 0000 0000',
+  whatsapp: '',
+  whatsappDisplay: '',
 };
 
 export const SOCIALS: { id: string; label: string; href: string }[] = [

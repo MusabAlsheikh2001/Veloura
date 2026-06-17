@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://veloura.com/sitemap.xml
+
+# LLM-readable site context
+# https://veloura.com/llms.txt
+# https://veloura.com/llms-full.txt

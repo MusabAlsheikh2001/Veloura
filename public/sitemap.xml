@@ -20,32 +20,38 @@
   <url><loc>https://veloura.com/ar/services/social-media-strategy</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/en/services/ai-video-motion-content</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veloura.com/ar/services/ai-video-motion-content</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veloura.com/en/services/paid-advertising</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veloura.com/ar/services/paid-advertising</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veloura.com/en/services/seo-geo-testing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veloura.com/ar/services/seo-geo-testing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veloura.com/en/services/basic-seo</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/ar/services/basic-seo</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/en/services/competition-analysis</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veloura.com/ar/services/competition-analysis</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veloura.com/en/services/crm-lead-flow-automation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veloura.com/ar/services/crm-lead-flow-automation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://veloura.com/en/services/analytics-tracking-google-automation</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veloura.com/ar/services/analytics-tracking-google-automation</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/en/services/business-communication-kit</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veloura.com/ar/services/business-communication-kit</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veloura.com/en/industries</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://veloura.com/ar/industries</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://veloura.com/en/industries/clinics-healthcare</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/ar/industries/clinics-healthcare</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/en/industries/aesthetic-clinics</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/ar/industries/aesthetic-clinics</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/en/industries/restaurants-cafes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/ar/industries/restaurants-cafes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/en/industries/hospitality-venues</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/hospitality-venues</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/en/industries/real-estate</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/ar/industries/real-estate</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/en/industries/retail-fashion</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veloura.com/ar/industries/retail-fashion</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://veloura.com/en/industries/personal-brands</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veloura.com/ar/industries/personal-brands</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veloura.com/en/industries/professional-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veloura.com/ar/industries/professional-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/en/industries/education-training</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/education-training</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/en/industries/professional-services</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/ar/industries/professional-services</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veloura.com/en/industries/interior-architecture-construction</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/interior-architecture-construction</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/en/industries/home-local-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/home-local-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/en/industries/automotive-mobility</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/automotive-mobility</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/en/industries/fitness-beauty-wellness</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veloura.com/ar/industries/fitness-beauty-wellness</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/en/locations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://veloura.com/ar/locations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://veloura.com/en/locations/gcc</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
@@ -72,8 +78,6 @@
   <url><loc>https://veloura.com/ar/locations/bahrain</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/en/locations/oman</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/ar/locations/oman</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://veloura.com/en/locations/jordan</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://veloura.com/ar/locations/jordan</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veloura.com/en/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/ar/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/en/blog/premium-branding-builds-trust</loc><lastmod>2026-05-18</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
@@ -92,6 +96,12 @@
   <url><loc>https://veloura.com/ar/blog/what-makes-a-website-feel-expensive</loc><lastmod>2026-01-28</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://veloura.com/en/blog/measure-what-matters</loc><lastmod>2026-01-12</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://veloura.com/ar/blog/measure-what-matters</loc><lastmod>2026-01-12</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://veloura.com/en/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veloura.com/ar/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veloura.com/en/terms-and-conditions</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veloura.com/ar/terms-and-conditions</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veloura.com/en/faqs</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veloura.com/ar/faqs</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://veloura.com/en/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veloura.com/ar/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
 </urlset>

@@ -5,7 +5,7 @@ const localizedRoutes: Routes = [
     path: '',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
-    title: 'Veloura — Marketing & Digital Growth',
+    title: 'Veloura — Premium Digital Growth Studio',
   },
   {
     path: 'about',
@@ -75,6 +75,27 @@ const localizedRoutes: Routes = [
       import('./pages/contact/contact.component').then((m) => m.ContactComponent),
     title: 'Contact — Veloura',
   },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./pages/legal/legal-page.component').then((m) => m.LegalPageComponent),
+    data: { legalPage: 'privacy-policy' },
+    title: 'Privacy Policy — Veloura',
+  },
+  {
+    path: 'terms-and-conditions',
+    loadComponent: () =>
+      import('./pages/legal/legal-page.component').then((m) => m.LegalPageComponent),
+    data: { legalPage: 'terms-and-conditions' },
+    title: 'Terms & Conditions — Veloura',
+  },
+  {
+    path: 'faqs',
+    loadComponent: () =>
+      import('./pages/legal/legal-page.component').then((m) => m.LegalPageComponent),
+    data: { legalPage: 'faqs' },
+    title: 'FAQs — Veloura',
+  },
 ];
 
 export const routes: Routes = [
@@ -97,5 +118,8 @@ export const routes: Routes = [
   { path: 'blog', pathMatch: 'full', redirectTo: 'en/blog' },
   { path: 'blog/:slug', redirectTo: 'en/blog/:slug' },
   { path: 'contact', pathMatch: 'full', redirectTo: 'en/contact' },
+  { path: 'privacy-policy', pathMatch: 'full', redirectTo: 'en/privacy-policy' },
+  { path: 'terms-and-conditions', pathMatch: 'full', redirectTo: 'en/terms-and-conditions' },
+  { path: 'faqs', pathMatch: 'full', redirectTo: 'en/faqs' },
   { path: '**', redirectTo: 'en' },
 ];

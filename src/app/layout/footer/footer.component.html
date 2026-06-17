@@ -67,7 +67,9 @@
         <h4 class="ft__heading">{{ t.ui().footer.contactCol }}</h4>
         <ul class="ft__contact">
           <li><a [href]="mailto">{{ contact.email }}</a></li>
-          <li><a [href]="whatsappLink" target="_blank" rel="noopener">{{ contact.whatsappDisplay }}</a></li>
+          @if (hasWhatsapp) {
+            <li><a [href]="whatsappLink" target="_blank" rel="noopener">{{ contact.whatsappDisplay }}</a></li>
+          }
           <li>{{ t.ui().contact.locationValue }}</li>
         </ul>
         <a class="btn btn-ghost ft__cta" [routerLink]="t.path('/contact')">{{ t.ui().nav.cta }}</a>
@@ -78,6 +80,11 @@
 
     <div class="ft__bottom">
       <p class="ft__copy">{{ t.ui().footer.rights }}</p>
+      <nav class="ft__legal" [attr.aria-label]="t.ui().footer.legalLinks">
+        <a [routerLink]="t.path('/privacy-policy')">{{ t.ui().footer.privacy }}</a>
+        <a [routerLink]="t.path('/terms-and-conditions')">{{ t.ui().footer.terms }}</a>
+        <a [routerLink]="t.path('/faqs')">{{ t.ui().footer.faqs }}</a>
+      </nav>
       <p class="ft__built">{{ t.ui().footer.builtLine }}</p>
       <button type="button" class="ft__top-btn" (click)="backToTop()">
         {{ t.ui().footer.backToTop }}

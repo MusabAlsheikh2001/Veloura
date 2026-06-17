@@ -13,9 +13,9 @@ const STORAGE_KEY = 'veloura-lang';
  */
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
-  readonly lang = signal<Lang>(this.readInitial());
   private readonly router = inject(Router);
   private readonly document = inject(DOCUMENT);
+  readonly lang = signal<Lang>(this.readInitial());
 
   /** Current UI dictionary — reactive; read in templates as `t.ui().nav.home`. */
   readonly ui = computed(() => UI[this.lang()]);
@@ -26,7 +26,7 @@ export class TranslationService {
   readonly isArabic = computed(() => this.lang() === 'ar');
 
   constructor() {
-    this.syncFromUrl(this.router.url);
+    this.syncFromUrl(this.router.url || this.currentDocumentPath());
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
       .subscribe((e) => this.syncFromUrl(e.urlAfterRedirects));
@@ -70,12 +70,17 @@ export class TranslationService {
 
   private syncFromUrl(url: string): void {
     const { lang } = splitLocalizedUrl(url);
-    if (lang && lang !== this.lang()) {
-      this.lang.set(lang);
+    const routeLang = lang || splitLocalizedUrl(this.currentDocumentPath()).lang;
+    if (routeLang && routeLang !== this.lang()) {
+      this.lang.set(routeLang);
     }
   }
 
   private readInitial(): Lang {
+    const routeLang =
+      splitLocalizedUrl(this.router.url).lang || splitLocalizedUrl(this.currentDocumentPath()).lang;
+    if (routeLang) return routeLang;
+
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === 'en' || stored === 'ar') return stored;
@@ -83,5 +88,15 @@ export class TranslationService {
       /* ignore */
     }
     return 'en';
+  }
+
+  private currentDocumentPath(): string {
+    try {
+      const locationPath = this.document.location?.pathname;
+      if (locationPath) return locationPath;
+      return new URL(this.document.URL).pathname;
+    } catch {
+      return '/';
+    }
   }
 }

@@ -18,7 +18,7 @@ export class FooterComponent {
   protected year = new Date().getFullYear();
 
   protected services = SERVICES.slice(0, 6);
-  protected industries = INDUSTRY_PAGES.slice(0, 6);
+  protected industries = INDUSTRY_PAGES.slice(0, 8);
   protected locations = LOCATION_PAGES.slice(0, 8);
   protected serviceSlug = serviceSlugById;
   protected socials = SOCIALS;
@@ -35,7 +35,9 @@ export class FooterComponent {
   ];
 
   protected mailto = `mailto:${CONTACT.email}`;
-  protected whatsappLink = `https://wa.me/${CONTACT.whatsapp.replace(/[^\d]/g, '')}`;
+  protected whatsappNumber = CONTACT.whatsapp.replace(/[^\d]/g, '');
+  protected hasWhatsapp = this.whatsappNumber.length > 0;
+  protected whatsappLink = this.hasWhatsapp ? `https://wa.me/${this.whatsappNumber}` : '';
 
   backToTop(): void {
     if (typeof window !== 'undefined') {

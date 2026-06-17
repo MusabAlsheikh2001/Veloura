@@ -19,12 +19,11 @@
   box-shadow: 0 8px 30px -22px rgba(0, 0, 0, 0.4);
 }
 
-/* 3-column grid keeps the nav optically centered without ever overlapping
-   the logo or actions (works identically in LTR and RTL). */
 .hdr__inner {
+  position: relative;
   height: var(--hdr-h);
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: clamp(1rem, 3vw, 2.5rem);
 }
@@ -34,6 +33,9 @@
 }
 
 .hdr__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 0.2rem;
@@ -46,8 +48,104 @@
   border-radius: 100px;
   font-size: 0.92rem;
   font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
   color: var(--text-soft);
   transition: color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.hdr__group {
+  position: relative;
+}
+
+.hdr__link--trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hdr__chev {
+  font-size: 0.85em;
+  line-height: 1;
+  color: currentColor;
+  transform: translateY(-1px);
+}
+
+.hdr__mega {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  width: min(920px, calc(100vw - 3rem));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow-lg), var(--card-hi);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+}
+
+.hdr__mega.is-open,
+.hdr__group:hover .hdr__mega,
+.hdr__group:focus-within .hdr__mega {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.hdr__mega-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0.55rem;
+}
+
+.hdr__mega-title,
+.hdr__mega-more {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+html[lang='ar'] .hdr__mega-title,
+html[lang='ar'] .hdr__mega-more {
+  letter-spacing: 0.02em;
+}
+
+.hdr__mega-link {
+  padding: 0.48rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--text-soft);
+  transition: color 0.25s var(--ease), padding-inline-start 0.25s var(--ease);
+}
+
+.hdr__mega-link:hover,
+.hdr__mega-more:hover,
+.hdr__mega-title:hover {
+  color: var(--text);
+}
+
+.hdr__mega-link:hover {
+  padding-inline-start: 0.25rem;
+}
+
+.hdr__mega-more {
+  margin-top: 0.5rem;
+  color: var(--gold);
 }
 
 .hdr__link::after {
@@ -171,6 +269,54 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
   padding-inline-start: 0.5rem;
 }
 
+.mnav__group {
+  border-bottom: 1px solid var(--border);
+  padding-block: 0.5rem 0.9rem;
+}
+
+.mnav__group summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.mnav__group summary::-webkit-details-marker {
+  display: none;
+}
+
+.mnav__mega {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.mnav__mega div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.mnav__mega a {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--text-soft);
+}
+
+.mnav__mega .mnav__section-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+html[lang='ar'] .mnav__mega .mnav__section-link {
+  letter-spacing: 0.02em;
+}
+
 [data-theme='dark'] .mnav__link:hover,
 [data-theme='dark'] .mnav__link.is-active {
   color: var(--gold);
@@ -203,6 +349,10 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
   .hdr__nav { display: none; }
   .hdr__cta { display: none; }
   .hdr__burger { display: inline-flex; }
+}
+
+@media (min-width: 1121px) and (max-width: 1320px) {
+  .hdr__cta { display: none; }
 }
 
 @media (min-width: 1121px) {

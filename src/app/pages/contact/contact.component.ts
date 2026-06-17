@@ -17,7 +17,9 @@ export class ContactComponent {
   protected t = inject(TranslationService);
   protected contact = CONTACT;
   protected mailto = `mailto:${CONTACT.email}`;
-  protected whatsappLink = `https://wa.me/${CONTACT.whatsapp.replace(/[^\d]/g, '')}`;
+  protected whatsappNumber = CONTACT.whatsapp.replace(/[^\d]/g, '');
+  protected hasWhatsapp = this.whatsappNumber.length > 0;
+  protected whatsappLink = this.hasWhatsapp ? `https://wa.me/${this.whatsappNumber}` : '';
 
   constructor(seo: SeoService) {
     seo.set(

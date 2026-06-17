@@ -112,6 +112,27 @@ html[lang='ar'] .ft__heading {
   color: var(--text-mute);
 }
 
+.ft__legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+}
+
+.ft__legal a {
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+  transition: color 0.3s var(--ease);
+}
+
+.ft__legal a:hover {
+  color: var(--accent);
+}
+
+[data-theme='dark'] .ft__legal a:hover {
+  color: var(--gold);
+}
+
 .ft__top-btn {
   display: inline-flex;
   align-items: center;
