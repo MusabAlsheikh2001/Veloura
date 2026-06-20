@@ -22,10 +22,13 @@ export const LEGAL_PAGES: LegalPage[] = [
     id: 'privacy-policy',
     title: { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
     h1: { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
-    metaTitle: { en: 'Privacy Policy | Veloura', ar: 'سياسة الخصوصية | Veloura' },
+    metaTitle: {
+      en: 'Privacy Policy and Data Handling Practices | Veloura',
+      ar: 'سياسة الخصوصية وحماية بيانات العملاء الرقمية | Veloura',
+    },
     metaDesc: {
-      en: 'How Veloura handles enquiries, project information, website analytics, and client communication data.',
-      ar: 'كيف تتعامل Veloura مع بيانات الاستفسارات ومعلومات المشاريع وتحليلات الموقع وبيانات التواصل مع العملاء.',
+      en: 'Learn how Veloura collects, uses, and protects enquiry and project information, website analytics, and client communication data across its digital services.',
+      ar: 'تعرّف على كيفية جمع Veloura لبيانات الاستفسارات والمشاريع وتحليلات الموقع واتصالات العملاء، واستخدامها وحفظها وحمايتها ضمن خدماتها الرقمية بكل وضوح تام.',
     },
     intro: {
       en: 'This policy explains what information Veloura may collect, why it is used, and how it is handled when a business contacts us or works with us.',
@@ -104,10 +107,13 @@ export const LEGAL_PAGES: LegalPage[] = [
     id: 'terms-and-conditions',
     title: { en: 'Terms & Conditions', ar: 'الشروط والأحكام' },
     h1: { en: 'Terms & Conditions', ar: 'الشروط والأحكام' },
-    metaTitle: { en: 'Terms & Conditions | Veloura', ar: 'الشروط والأحكام | Veloura' },
+    metaTitle: {
+      en: 'Terms and Conditions for Veloura Digital Client Projects',
+      ar: 'الشروط والأحكام لمشاريع Veloura وخدماتها الرقمية للعملاء',
+    },
     metaDesc: {
-      en: 'The working terms for Veloura enquiries, proposals, project scopes, payments, revisions, approvals, and digital deliverables.',
-      ar: 'شروط العمل الخاصة باستفسارات Veloura والعروض ونطاقات المشاريع والمدفوعات والتعديلات والموافقات والمخرجات الرقمية.',
+      en: 'Review Veloura terms for enquiries, proposals, project scopes, payments, revisions, approvals, intellectual property, and delivery of digital work for clients.',
+      ar: 'راجع شروط Veloura للاستفسارات والعروض ونطاقات المشاريع والمدفوعات والتعديلات والموافقات والملكية الفكرية وتسليم الأعمال الرقمية للعملاء بكل وضوح وشفافية.',
     },
     intro: {
       en: 'These terms describe how Veloura works with businesses. A signed proposal, invoice, or written scope may add project-specific terms.',
@@ -186,10 +192,13 @@ export const LEGAL_PAGES: LegalPage[] = [
     id: 'faqs',
     title: { en: 'FAQs', ar: 'الأسئلة الشائعة' },
     h1: { en: 'Frequently Asked Questions', ar: 'الأسئلة الشائعة' },
-    metaTitle: { en: 'Veloura FAQs | Services, SEO, GEO and Remote Work', ar: 'أسئلة Veloura | الخدمات والسيو وGEO والعمل عن بُعد' },
+    metaTitle: {
+      en: 'Veloura FAQs Guide | Services, SEO, GEO and Remote Work',
+      ar: 'دليل أسئلة Veloura | الخدمات والسيو وGEO والعمل عن بُعد',
+    },
     metaDesc: {
-      en: 'Answers about Veloura services, industries, remote GCC delivery, practical SEO, GEO readiness, websites, branding, and project scopes.',
-      ar: 'إجابات حول خدمات Veloura والقطاعات والتنفيذ عن بُعد في الخليج والسيو العملي وجاهزية GEO والمواقع والهوية ونطاقات المشاريع.',
+      en: 'Find answers about Veloura services, industries, remote GCC delivery, practical SEO, GEO readiness, websites, branding, timelines, and custom project scopes.',
+      ar: 'اعثر على إجابات حول خدمات Veloura والقطاعات والتنفيذ عن بُعد في الخليج والسيو العملي وجاهزية GEO والمواقع والهوية والجداول ونطاقات المشاريع المخصصة هنا.',
     },
     intro: {
       en: 'Short answers for businesses evaluating whether Veloura is the right fit.',

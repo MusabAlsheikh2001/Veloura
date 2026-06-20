@@ -116,7 +116,63 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export const SERVICES_PREVIEW = SERVICES.filter((s) => s.featured);
+/** Six concise homepage categories. Each links to the closest detailed service page. */
+export const SERVICES_PREVIEW: Service[] = [
+  {
+    id: 'brand-identity',
+    icon: 'branding',
+    title: { en: 'Brand Identity & Visual Systems', ar: 'الهوية والأنظمة البصرية' },
+    desc: {
+      en: 'Positioning, visual identity, and practical rules that make every brand touchpoint feel intentional.',
+      ar: 'تموضع وهوية بصرية وقواعد عملية تجعل كل نقطة تواصل مع العلامة مقصودة ومتّسقة.',
+    },
+  },
+  {
+    id: 'ui-ux',
+    icon: 'uiux',
+    title: { en: 'UI/UX Design', ar: 'تصميم UI/UX' },
+    desc: {
+      en: 'Clear journeys and conversion-minded interfaces shaped around real customer decisions.',
+      ar: 'رحلات واضحة وواجهات تراعي التحويل وتُبنى حول قرارات العملاء الحقيقية.',
+    },
+  },
+  {
+    id: 'web-development',
+    icon: 'wordpress',
+    title: { en: 'Websites & Landing Pages', ar: 'المواقع وصفحات الهبوط' },
+    desc: {
+      en: 'Refined websites and focused landing pages built to earn trust and prompt action.',
+      ar: 'مواقع مصقولة وصفحات هبوط مركّزة مصممة لبناء الثقة ودفع الخطوة التالية.',
+    },
+  },
+  {
+    id: 'ad-designs',
+    icon: 'ads',
+    title: { en: 'Campaign Creatives & Content Direction', ar: 'إبداع الحملات وتوجيه المحتوى' },
+    desc: {
+      en: 'Campaign concepts, branded creative, and content direction that keep the message coherent.',
+      ar: 'مفاهيم حملات وإبداع بصري وتوجيه محتوى يحافظ على وضوح الرسالة واتساقها.',
+    },
+  },
+  {
+    id: 'ai-video',
+    icon: 'video',
+    title: { en: 'AI Video & Motion Content', ar: 'فيديو AI ومحتوى الموشن' },
+    desc: {
+      en: 'Premium AI-assisted video and motion content designed to feel polished, useful, and on-brand.',
+      ar: 'فيديو وموشن بمساعدة الذكاء الاصطناعي يبدو مصقولاً وعملياً ومتّسقاً مع العلامة.',
+    },
+  },
+  {
+    id: 'basic-seo',
+    icon: 'analysis',
+    title: { en: 'SEO, Competitor Analysis & Communication Kits', ar: 'السيو وتحليل المنافسين وحقائب التواصل' },
+    desc: {
+      en: 'Practical SEO, market analysis, and business materials that strengthen visibility and credibility.',
+      ar: 'سيو عملي وتحليل للسوق ومواد أعمال تعزّز الظهور والمصداقية.',
+    },
+  },
+];
 
 /* ---------- The Veloura model: what we refuse vs. how we work ---------- */
 export const MODEL_DONT: Localized[] = [
@@ -352,6 +408,15 @@ export const PROCESS: ProcessStep[] = [
   },
   {
     num: '06',
+    icon: 'comms',
+    title: { en: 'Connect', ar: 'نربط' },
+    desc: {
+      en: 'We organize the contact paths, forms, follow-up flow, communication materials, and handoff points.',
+      ar: 'ننظّم مسارات التواصل والنماذج وتدفق المتابعة ومواد الاتصال ونقاط التسليم.',
+    },
+  },
+  {
+    num: '07',
     icon: 'analytics',
     title: { en: 'Measure', ar: 'نقيس' },
     desc: {
@@ -360,7 +425,7 @@ export const PROCESS: ProcessStep[] = [
     },
   },
   {
-    num: '07',
+    num: '08',
     icon: 'performance',
     title: { en: 'Optimize', ar: 'نحسّن' },
     desc: {
@@ -1051,13 +1116,12 @@ export const CONTACT_METHOD_OPTIONS: { id: string; label: Localized }[] = [
 
 /* Contact + WhatsApp details (placeholders) */
 export const CONTACT = {
-  email: 'hello@veloura.com',
+  email: 'info@veloura-marketing.com',
   whatsapp: '',
   whatsappDisplay: '',
 };
 
 export const SOCIALS: { id: string; label: string; href: string }[] = [
-  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/' },
-  { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/' },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/veloura.marketingco/' },
+  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/veloura-marketing/' },
 ];

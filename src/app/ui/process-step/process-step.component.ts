@@ -24,6 +24,7 @@ import { IconComponent } from '../icon/icon.component';
     `
       .step {
         position: relative;
+        height: 100%;
         padding-top: 1.6rem;
         display: flex;
         flex-direction: column;

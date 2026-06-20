@@ -1,6 +1,18 @@
 <!-- 1. Hero -->
 <section class="hero">
-  <img class="hero__img" src="/img/hero.svg" alt="" fetchpriority="high" decoding="async" />
+  <img
+    class="hero__img hero__img--light"
+    src="/img/hero-light-premium.svg"
+    alt=""
+    fetchpriority="high"
+    decoding="async"
+  />
+  <img
+    class="hero__img hero__img--dark"
+    src="/img/hero-dark-original.svg"
+    alt=""
+    decoding="async"
+  />
   <span class="hero__scrim" aria-hidden="true"></span>
 
   <div class="container hero__inner">
@@ -150,7 +162,7 @@
 </section>
 
 <!-- 4. Process -->
-<section class="section process">
+<section class="section process" id="model">
   <div class="container">
     <app-section-header
       [eyebrow]="t.ui().home.processEyebrow"

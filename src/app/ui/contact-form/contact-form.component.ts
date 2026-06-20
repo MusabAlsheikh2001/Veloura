@@ -1,20 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import {
-  BUDGET_RANGES,
-  CONTACT,
-  CONTACT_METHOD_OPTIONS,
-  INDUSTRY_OPTIONS,
-  LANGUAGE_OPTIONS,
-  MARKET_OPTIONS,
-  SERVICES,
-  TIMELINE_OPTIONS,
-} from '../../core/content';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslationService } from '../../core/translation.service';
+
+const FORM_NAME = 'veloura-contact';
 
 @Component({
   selector: 'app-contact-form',
@@ -28,73 +16,66 @@ export class ContactFormComponent {
   protected t = inject(TranslationService);
   private fb = inject(FormBuilder);
 
-  protected services = SERVICES;
-  protected budgets = BUDGET_RANGES;
-  protected markets = MARKET_OPTIONS;
-  protected industries = INDUSTRY_OPTIONS;
-  protected timelines = TIMELINE_OPTIONS;
-  protected languages = LANGUAGE_OPTIONS;
-  protected contactMethods = CONTACT_METHOD_OPTIONS;
   protected submitted = signal(false);
-  protected whatsappNumber = CONTACT.whatsapp.replace(/[^\d]/g, '');
-  protected hasWhatsapp = this.whatsappNumber.length > 0;
+  protected submitting = signal(false);
+  protected submitFailed = signal(false);
+  private attempted = signal(false);
 
   protected form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    phone: [''],
-    company: [''],
-    country: ['', [Validators.required]],
-    industry: ['', [Validators.required]],
-    website: [''],
-    improvement: ['', [Validators.required, Validators.minLength(6)]],
-    service: ['', [Validators.required]],
-    budget: [''],
-    timeline: [''],
-    preferredLanguage: [''],
-    contactMethod: [''],
     message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
-  get whatsappLink(): string {
-    const text = encodeURIComponent(
-      this.t.lang() === 'ar'
-        ? 'مرحباً فيلورا، أودّ مناقشة مشروع.'
-        : "Hi Veloura, I'd like to discuss a project."
-    );
-    return `https://wa.me/${this.whatsappNumber}?text=${text}`;
-  }
-
   invalid(control: string): boolean {
-    const c = this.form.get(control);
-    return !!c && c.invalid && (c.touched || this.attempted());
+    const field = this.form.get(control);
+    return !!field && field.invalid && (field.touched || this.attempted());
   }
 
-  private attempted = signal(false);
-
-  submit(): void {
+  async submit(): Promise<void> {
     this.attempted.set(true);
+    this.submitFailed.set(false);
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
-      // Move focus to the first invalid field for accessibility.
-      const firstInvalid = Object.keys(this.form.controls).find((k) =>
-        this.form.get(k)?.invalid
+      const firstInvalid = Object.keys(this.form.controls).find((key) =>
+        this.form.get(key)?.invalid
       );
-      if (firstInvalid) {
+      if (firstInvalid && typeof document !== 'undefined') {
         document.getElementById(firstInvalid)?.focus();
       }
       return;
     }
-    // Frontend-only: no backend wired up, so we simply confirm receipt.
-    this.submitted.set(true);
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: window.scrollY - 80, behavior: 'smooth' });
+
+    this.submitting.set(true);
+    const body = new URLSearchParams({
+      'form-name': FORM_NAME,
+      ...this.form.getRawValue(),
+    });
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+      if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+      this.submitted.set(true);
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: window.scrollY - 80, behavior: 'smooth' });
+      }
+    } catch {
+      this.submitFailed.set(true);
+    } finally {
+      this.submitting.set(false);
     }
   }
 
   reset(): void {
     this.form.reset();
     this.attempted.set(false);
+    this.submitFailed.set(false);
     this.submitted.set(false);
   }
 }

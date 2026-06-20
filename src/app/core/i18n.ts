@@ -60,7 +60,7 @@ const UI_EN = {
   home: {
     metaTitle: 'Branding & Web Growth Studio for GCC Businesses | Veloura',
     metaDesc:
-      'Veloura helps GCC and international businesses look sharper and convert better through branding, UI/UX, websites, landing pages, campaign creatives, content systems, and basic SEO.',
+      'Veloura helps GCC and international businesses grow through premium branding, UI/UX, websites, landing pages, campaign creatives, content systems, and SEO.',
     heroTitle: 'Marketing that feels refined, performs with purpose.',
     heroSubtitle:
       'Veloura is a premium digital growth studio helping Gulf and international businesses build sharper brands, cleaner websites, stronger landing pages, campaign-ready creatives, content systems, and practical SEO foundations.',
@@ -72,10 +72,10 @@ const UI_EN = {
     servicesTitle: 'Focused digital systems, built around design, web, and communication.',
     servicesSubtitle:
       'Brand identity, UI/UX, WordPress and custom-coded websites, landing pages, campaign creatives, content direction, AI video, competitor analysis, basic SEO, and business communication kits.',
-    processEyebrow: 'How we work',
+    processEyebrow: 'The Veloura model',
     processTitle: 'Diagnosis before execution.',
     processSubtitle:
-      'We audit, diagnose, scope, build, launch, measure, and optimize — so every recommendation has a business reason behind it.',
+      'We audit, diagnose, scope, build, launch, connect, measure, and optimize — so every recommendation has a business reason behind it.',
     valueEyebrow: 'Why Veloura',
     valueTitle: 'Built for brands that need more than attention.',
     valueSubtitle:
@@ -110,7 +110,7 @@ const UI_EN = {
   about: {
     metaTitle: 'About Veloura | Boutique Digital Growth Studio',
     metaDesc:
-      'Veloura helps GCC and international businesses build sharper brands, refined websites, landing pages, campaign creatives, content systems, and business communication.',
+      'Meet Veloura, a boutique digital growth studio helping GCC and international businesses build sharper brands, websites, landing pages, and content systems.',
     heroEyebrow: 'About Veloura',
     heroTitle: 'A boutique studio built on clarity and craft.',
     heroSubtitle:
@@ -157,7 +157,7 @@ const UI_EN = {
   services: {
     metaTitle: 'Branding, Web & Growth Services for GCC Businesses | Veloura',
     metaDesc:
-      'Explore Veloura services: brand identity, UI/UX, websites, landing pages, campaign creatives, social strategy, AI video, competitor analysis, basic SEO, and business communication.',
+      'Explore Veloura services for GCC businesses: branding, UI/UX, websites, landing pages, campaign creative, social strategy, AI video, SEO, and communication.',
     heroEyebrow: 'Capabilities',
     heroTitle: 'Focused services for businesses that need to look sharper and convert better.',
     heroSubtitle:
@@ -169,7 +169,7 @@ const UI_EN = {
   industries: {
     metaTitle: 'Industries Served by Veloura | Digital Growth by Industry',
     metaDesc:
-      'Explore Veloura systems for clinics, restaurants, hospitality, real estate, retail, education, construction, professional services, and local service businesses in GCC markets.',
+      'Explore the industries Veloura supports with tailored branding, websites, landing pages, campaign creative, content systems, SEO, and business communication.',
     heroEyebrow: 'Industries',
     heroTitle: 'Different businesses need different growth systems.',
     heroSubtitle:
@@ -178,7 +178,7 @@ const UI_EN = {
   locations: {
     metaTitle: 'GCC Locations Served by Veloura | Remote Digital Growth Studio',
     metaDesc:
-      'Veloura serves GCC and international businesses remotely through branding, UI/UX, websites, landing pages, campaign creatives, content systems, basic SEO, and communication kits.',
+      'Explore the GCC markets Veloura serves remotely with bilingual branding, UI/UX, websites, landing pages, campaign creative, SEO, and business communication.',
     heroEyebrow: 'Locations',
     heroTitle: 'Remote-first digital growth for Gulf and international businesses.',
     heroSubtitle:
@@ -187,7 +187,7 @@ const UI_EN = {
   blog: {
     metaTitle: 'Digital Growth, Branding & Web Design Blog | Veloura',
     metaDesc:
-      'Perspectives on marketing strategy, branding, UI/UX, performance, and business growth from the Veloura team.',
+      'Read practical ideas on branding, UI/UX, websites, landing pages, content systems, campaign creative, SEO, and digital growth for ambitious GCC businesses.',
     heroEyebrow: 'Journal',
     heroTitle: 'Ideas on brand, growth, and craft.',
     heroSubtitle:
@@ -250,6 +250,7 @@ const UI_EN = {
     successTitle: 'Thank you — your enquiry is in.',
     successBody:
       "We've received your details and will reply within one business day.",
+    submitError: 'Something went wrong. Please try again or email us directly.',
     sendAnother: 'Send another enquiry',
     errName: 'Please enter your name.',
     errEmail: 'Please enter a valid email address.',
@@ -261,8 +262,9 @@ const UI_EN = {
   },
   footer: {
     description:
-      'A premium digital growth studio for Gulf and international businesses.',
+      'Design, web, and communication systems for brands ready to grow.',
     quickLinks: 'Navigate',
+    modelLink: 'Model',
     servicesCol: 'Services',
     contactCol: 'Contact',
     followCol: 'Follow',
@@ -331,10 +333,10 @@ const UI_AR: Dict = {
     servicesTitle: 'أنظمة رقمية مركزة مبنية حول التصميم والموقع والتواصل.',
     servicesSubtitle:
       'هوية، UI/UX، مواقع ووردبريس ومواقع مخصصة، صفحات هبوط، إبداع حملات، توجيه محتوى، فيديو AI، تحليل منافسين، سيو أساسي، وحقائب تواصل مؤسسي.',
-    processEyebrow: 'كيف نعمل',
+    processEyebrow: 'منهج فيلورا',
     processTitle: 'التشخيص قبل التنفيذ.',
     processSubtitle:
-      'ندقق، نشخّص، نحدد النطاق، نبني، نطلق، نقيس، ونحسّن — حتى يكون لكل توصية سبب تجاري واضح.',
+      'ندقق، نشخّص، نحدد النطاق، نبني، نطلق، نربط، نقيس، ونحسّن — حتى يكون لكل توصية سبب تجاري واضح.',
     valueEyebrow: 'لماذا فيلورا',
     valueTitle: 'مصممة للعلامات التي تحتاج أكثر من الانتباه.',
     valueSubtitle:
@@ -506,6 +508,7 @@ const UI_AR: Dict = {
     sending: 'جارٍ الإرسال…',
     successTitle: 'شكراً لك — وصلنا استفسارك.',
     successBody: 'استلمنا تفاصيلك وسنردّ عليك خلال يوم عمل واحد.',
+    submitError: 'حدث خطأ. حاول مرة أخرى أو راسلنا مباشرة عبر البريد الإلكتروني.',
     sendAnother: 'إرسال استفسار آخر',
     errName: 'الرجاء إدخال اسمك.',
     errEmail: 'الرجاء إدخال بريد إلكتروني صحيح.',
@@ -517,8 +520,9 @@ const UI_AR: Dict = {
   },
   footer: {
     description:
-      'استوديو نمو رقمي راقٍ للأعمال الخليجية والدولية.',
+      'أنظمة تصميم وويب وتواصل لعلامات مستعدة للنمو.',
     quickLinks: 'التنقّل',
+    modelLink: 'المنهج',
     servicesCol: 'الخدمات',
     contactCol: 'تواصل',
     followCol: 'تابعنا',

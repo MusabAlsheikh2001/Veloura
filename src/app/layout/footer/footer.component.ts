@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CONTACT, SERVICES, SOCIALS } from '../../core/content';
-import { INDUSTRY_PAGES, LOCATION_PAGES, serviceSlugById } from '../../core/market-content';
+import { CONTACT, SOCIALS } from '../../core/content';
 import { TranslationService } from '../../core/translation.service';
 import { LogoComponent } from '../../ui/logo/logo.component';
 
@@ -15,29 +14,9 @@ import { LogoComponent } from '../../ui/logo/logo.component';
 })
 export class FooterComponent {
   protected t = inject(TranslationService);
-  protected year = new Date().getFullYear();
-
-  protected services = SERVICES.slice(0, 6);
-  protected industries = INDUSTRY_PAGES.slice(0, 8);
-  protected locations = LOCATION_PAGES.slice(0, 8);
-  protected serviceSlug = serviceSlugById;
   protected socials = SOCIALS;
   protected contact = CONTACT;
-
-  protected navLinks = [
-    { path: '/', key: 'home' as const },
-    { path: '/about', key: 'about' as const },
-    { path: '/services', key: 'services' as const },
-    { path: '/industries', key: 'industries' as const },
-    { path: '/locations', key: 'locations' as const },
-    { path: '/blog', key: 'blog' as const },
-    { path: '/contact', key: 'contact' as const },
-  ];
-
   protected mailto = `mailto:${CONTACT.email}`;
-  protected whatsappNumber = CONTACT.whatsapp.replace(/[^\d]/g, '');
-  protected hasWhatsapp = this.whatsappNumber.length > 0;
-  protected whatsappLink = this.hasWhatsapp ? `https://wa.me/${this.whatsappNumber}` : '';
 
   backToTop(): void {
     if (typeof window !== 'undefined') {

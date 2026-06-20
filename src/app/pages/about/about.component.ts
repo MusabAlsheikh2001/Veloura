@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DISCIPLINES, IconName } from '../../core/content';
 import { RevealDirective } from '../../core/reveal.directive';
 import { SeoService } from '../../core/seo.service';
+import { absUrl } from '../../core/site.config';
+import { pageSchema } from '../../core/structured-data';
 import { TranslationService } from '../../core/translation.service';
 import { IconComponent } from '../../ui/icon/icon.component';
 import { SectionHeaderComponent } from '../../ui/section-header/section-header.component';
@@ -61,5 +63,19 @@ export class AboutComponent {
       () => this.t.ui().about.metaTitle,
       () => this.t.ui().about.metaDesc
     );
+
+    effect(() => {
+      const url = absUrl(this.t.path('/about'));
+      seo.setJsonLd(pageSchema({
+        url,
+        name: this.t.ui().about.metaTitle,
+        description: this.t.ui().about.metaDesc,
+        language: this.t.lang(),
+        breadcrumbs: [
+          { name: this.t.ui().nav.home, path: this.t.path('/') },
+          { name: this.t.ui().nav.about, path: this.t.path('/about') },
+        ],
+      }));
+    });
   }
 }

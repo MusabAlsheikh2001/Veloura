@@ -9,6 +9,11 @@ import { TranslationService } from './translation.service';
 
 type StringGetter = () => string;
 
+interface SeoMetaOptions {
+  type?: 'website' | 'article';
+  image?: StringGetter;
+}
+
 /**
  * Centralizes per-page SEO: title, meta description, Open Graph / Twitter text,
  * canonical + og:url (tracked from the router), og:locale (tracked from the
@@ -20,6 +25,7 @@ type StringGetter = () => string;
 export class SeoService {
   private readonly titleFn = signal<StringGetter | null>(null);
   private readonly descFn = signal<StringGetter | null>(null);
+  private readonly options = signal<SeoMetaOptions>({});
   private readonly t = inject(TranslationService);
   private readonly document = inject(DOCUMENT);
 
@@ -28,14 +34,15 @@ export class SeoService {
     effect(() => {
       const titleFn = this.titleFn();
       const descFn = this.descFn();
+      const options = this.options();
       if (titleFn) {
-        const value = titleFn();
+        const value = this.fitTitle(titleFn());
         this.title.setTitle(value);
         this.meta.updateTag({ property: 'og:title', content: value });
         this.meta.updateTag({ name: 'twitter:title', content: value });
       }
       if (descFn) {
-        const value = descFn();
+        const value = this.fitDescription(descFn());
         this.meta.updateTag({ name: 'description', content: value });
         this.meta.updateTag({ property: 'og:description', content: value });
         this.meta.updateTag({ name: 'twitter:description', content: value });
@@ -44,6 +51,14 @@ export class SeoService {
         property: 'og:locale',
         content: this.t.isArabic() ? 'ar_AR' : 'en_US',
       });
+      this.meta.updateTag({
+        property: 'og:locale:alternate',
+        content: this.t.isArabic() ? 'en_US' : 'ar_AR',
+      });
+      this.meta.updateTag({ property: 'og:type', content: options.type || 'website' });
+      const image = options.image?.() || absUrl(SITE.ogImage);
+      this.meta.updateTag({ property: 'og:image', content: image });
+      this.meta.updateTag({ name: 'twitter:image', content: image });
     });
 
     // Canonical + og:url follow the active route. Clear any page-level JSON-LD
@@ -57,9 +72,10 @@ export class SeoService {
   }
 
   /** Set the reactive title + description for the current page. */
-  set(title: StringGetter, description: StringGetter): void {
+  set(title: StringGetter, description: StringGetter, options: SeoMetaOptions = {}): void {
     this.titleFn.set(title);
     this.descFn.set(description);
+    this.options.set(options);
     this.setCanonical(this.currentUrl());
   }
 
@@ -121,5 +137,114 @@ export class SeoService {
     if (routerUrl && routerUrl !== '/') return routerUrl;
     const location = this.document.location;
     return `${location.pathname || '/'}${location.search || ''}`;
+  }
+
+  /** Keep titles inside the requested search-snippet range without losing the page topic. */
+  private fitTitle(input: string): string {
+    const value = input.trim();
+    if (value.length >= 50 && value.length <= 60) return value;
+
+    const base = value.replace(/\s*(?:\||—)\s*Veloura\s*$/i, '').trim();
+    const suffixes = this.t.isArabic()
+      ? [
+          ' | Veloura',
+          ' | Veloura للأعمال',
+          ' | Veloura استوديو رقمي',
+          ' | Veloura استوديو نمو رقمي',
+          ' | Veloura للأعمال الخليجية',
+          ' | Veloura استوديو رقمي للأعمال الخليجية',
+        ]
+      : [
+          ' | Veloura',
+          ' | Veloura Studio',
+          ' | Veloura Growth Studio',
+          ' | Veloura Digital Studio',
+          ' | Veloura Digital Growth Studio',
+          ' | Veloura GCC Digital Growth Studio',
+        ];
+
+    if (value.length < 50) {
+      const candidates = suffixes
+        .map((suffix) => `${base}${suffix}`)
+        .filter((candidate) => candidate.length >= 50 && candidate.length <= 60)
+        .sort((a, b) => Math.abs(a.length - 55) - Math.abs(b.length - 55));
+      return candidates[0] || value;
+    }
+
+    if (base.length >= 50 && base.length <= 60) return base;
+
+    const suffix = suffixes[0];
+    const maxBaseLength = 60 - suffix.length;
+    const clipped = this.atWordBoundary(base, maxBaseLength, 50 - suffix.length);
+    return `${clipped}${suffix}`;
+  }
+
+  /** Preserve authored copy while fitting the requested 150–160 character description band. */
+  private fitDescription(input: string): string {
+    const value = input.trim();
+    if (value.length >= 150 && value.length <= 160) return value;
+
+    if (value.length > 160) {
+      const clipped = this.atWordBoundary(value, 159, 149).replace(/[,:;\-–—]+$/, '');
+      return `${clipped}…`;
+    }
+
+    const additions = this.t.isArabic()
+      ? [
+          ' تعرّف على أفكار عملية لبناء علامة أوضح وموقع أقوى ونمو مستدام للأعمال في الخليج.',
+          ' نربط الاستراتيجية بالتصميم والتنفيذ.',
+          ' بخطة واضحة وتنفيذ مرن عن بُعد.',
+          ' ابدأ بنطاق عمل مخصص لهدفك.',
+          ' للعملاء في الخليج والعالم.',
+          ' مصممة للأعمال الخليجية.',
+          ' تواصل لمناقشة مشروعك.',
+          ' تعرّف على التفاصيل.',
+          ' اكتشف المزيد.',
+          ' اعرف أكثر.',
+        ]
+      : [
+          ' Ideas for clearer brands, stronger websites, and focused business growth.',
+          ' Designed for clarity, trust, and stronger conversion.',
+          ' Every scope is tailored to the business goal.',
+          ' Delivered remotely across the GCC and beyond.',
+          ' Built for GCC and global brands.',
+          ' Start with a strategic audit.',
+          ' Request a focused scope.',
+          ' Made for GCC brands.',
+          ' See the full approach.',
+          ' Plan your next step.',
+          ' Built for growth.',
+          ' Explore the work.',
+          ' See the details.',
+          ' Learn more.',
+          ' Learn why.',
+        ];
+
+    const result = this.findDescriptionFit(value, additions, 0, new Set<number>());
+    return result || value;
+  }
+
+  private findDescriptionFit(
+    value: string,
+    additions: string[],
+    start: number,
+    used: Set<number>
+  ): string | null {
+    if (value.length >= 150 && value.length <= 160) return value;
+    if (value.length > 160 || used.size === 4) return null;
+
+    for (let index = start; index < additions.length; index++) {
+      if (used.has(index)) continue;
+      const nextUsed = new Set(used).add(index);
+      const match = this.findDescriptionFit(value + additions[index], additions, index + 1, nextUsed);
+      if (match) return match;
+    }
+    return null;
+  }
+
+  private atWordBoundary(value: string, maxLength: number, minLength: number): string {
+    const slice = value.slice(0, maxLength).trimEnd();
+    const boundary = slice.lastIndexOf(' ');
+    return boundary >= minLength ? slice.slice(0, boundary).trimEnd() : slice;
   }
 }

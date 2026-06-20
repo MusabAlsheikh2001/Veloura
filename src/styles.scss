@@ -11,6 +11,7 @@
   --bone-ivory: #F5EFE7;
   --smoky-black: #121212;
   --champagne-gold: #C6A77B;
+  --logo-ivory: #FBF7F4;
 
   /* Fonts */
   --font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -19,10 +20,10 @@
   --font: var(--font-en);
 
   /* Semantic — Light mode (default) */
-  --bg: #F5EFE7;
-  --bg-2: #EFE7DB;
-  --surface: #FBF8F2;
-  --surface-2: #F2EADC;
+  --bg: #FBF7F4;
+  --bg-2: #F5ECE8;
+  --surface: #FFFCFA;
+  --surface-2: #F8EFEB;
   --text: #161313;
   --text-soft: rgba(22, 19, 19, 0.66);
   --text-mute: rgba(22, 19, 19, 0.48);
@@ -35,12 +36,12 @@
   --border-strong: rgba(22, 19, 19, 0.18);
 
   --btn-bg: #5A1E2A;
-  --btn-text: #F5EFE7;
+  --btn-text: #FBF7F4;
   --btn-hover: #3A0F18;
 
   --glow-burgundy: rgba(90, 30, 42, 0.20);
   --glow-gold: rgba(198, 167, 123, 0.30);
-  --nav-bg: rgba(245, 239, 231, 0.72);
+  --nav-bg: rgba(251, 247, 244, 0.78);
   --nav-border: rgba(22, 19, 19, 0.08);
 
   --shadow-sm: 0 1px 2px rgba(22, 19, 19, 0.04), 0 2px 8px rgba(22, 19, 19, 0.05);
@@ -72,16 +73,17 @@
   --radius: 20px;
   --radius-lg: 28px;
   --radius-xl: 36px;
-  --section-y: clamp(4.5rem, 9vw, 9rem);
+  --section-y: clamp(4.25rem, 7vw, 7rem);
+  --section-content-gap: clamp(2.25rem, 3.5vw, 3rem);
   --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-theme='dark'] {
-  --bg: #121212;
-  --bg-2: #0C0A0B;
-  --surface: #1A1316;
-  --surface-2: #221619;
+  --bg: #0D080A;
+  --bg-2: #080405;
+  --surface: #171013;
+  --surface-2: #211419;
   --text: #F5EFE7;
   --text-soft: rgba(245, 239, 231, 0.72);
   --text-mute: rgba(245, 239, 231, 0.52);
@@ -99,7 +101,7 @@
 
   --glow-burgundy: rgba(90, 30, 42, 0.55);
   --glow-gold: rgba(198, 167, 123, 0.22);
-  --nav-bg: rgba(18, 18, 18, 0.62);
+  --nav-bg: rgba(13, 8, 10, 0.68);
   --nav-border: rgba(245, 239, 231, 0.10);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.4);

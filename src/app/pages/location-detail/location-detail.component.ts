@@ -4,6 +4,7 @@ import { findLocationPage, LocationPage, SERVICE_PAGES } from '../../core/market
 import { RevealDirective } from '../../core/reveal.directive';
 import { SeoService } from '../../core/seo.service';
 import { absUrl } from '../../core/site.config';
+import { pageSchema } from '../../core/structured-data';
 import { TranslationService } from '../../core/translation.service';
 import { CtaBandComponent } from '../../ui/cta-band/cta-band.component';
 import { IconComponent } from '../../ui/icon/icon.component';
@@ -49,26 +50,17 @@ export class LocationDetailComponent {
       const page = this.page();
       if (!page) return;
       const url = absUrl(this.t.path('/locations/' + page.slug));
-      seo.setJsonLd({
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: this.t.ui().nav.home, item: absUrl(this.t.path('/')) },
-              { '@type': 'ListItem', position: 2, name: this.t.ui().nav.locations, item: absUrl(this.t.path('/locations')) },
-              { '@type': 'ListItem', position: 3, name: this.t.pick(page.title), item: url },
-            ],
-          },
-          {
-            '@type': 'WebPage',
-            name: this.t.pick(page.h1),
-            description: this.t.pick(page.metaDesc),
-            url,
-            inLanguage: this.t.lang(),
-          },
+      seo.setJsonLd(pageSchema({
+        url,
+        name: this.t.pick(page.metaTitle),
+        description: this.t.pick(page.metaDesc),
+        language: this.t.lang(),
+        breadcrumbs: [
+          { name: this.t.ui().nav.home, path: this.t.path('/') },
+          { name: this.t.ui().nav.locations, path: this.t.path('/locations') },
+          { name: this.t.pick(page.title), path: this.t.path(`/locations/${page.slug}`) },
         ],
-      });
+      }));
     });
   }
 }
