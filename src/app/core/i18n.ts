@@ -103,6 +103,11 @@ const UI_EN = {
     systemTitle: 'Not more content. A sharper system.',
     systemBody:
       'We study the business, audience, competitors, offer, and customer journey, then build the right mix: identity, UI/UX, website, landing pages, campaign creatives, content direction, basic SEO, and business communication.',
+    faqEyebrow: 'Questions & answers',
+    faqTitle: 'Clear answers, before you ask.',
+    faqSubtitle:
+      'The essentials on how Veloura scopes, prices, and delivers — for businesses deciding whether we are the right fit.',
+    faqMore: 'See all FAQs',
   },
   trust: {
     eyebrow: 'The Veloura standard',
@@ -262,12 +267,14 @@ const UI_EN = {
   },
   footer: {
     description:
-      'Design, web, and communication systems for brands ready to grow.',
+      'A boutique digital growth studio — design, web, and communication systems for brands ready to grow.',
     quickLinks: 'Navigate',
+    exploreCol: 'Explore',
     modelLink: 'Model',
     servicesCol: 'Services',
-    contactCol: 'Contact',
+    contactCol: 'Get in touch',
     followCol: 'Follow',
+    remoteNote: 'Remote-first across the GCC and beyond.',
     rights: '© 2026 Veloura. All rights reserved.',
     builtLine: 'Designed & built with intent.',
     backToTop: 'Back to top',
@@ -364,6 +371,11 @@ const UI_AR: Dict = {
     systemTitle: 'نظام أوضح للنمو.',
     systemBody:
       'ندرس العمل والجمهور والمنافسين والعرض ورحلة العميل، ثم نبني المزيج المناسب: الهوية، UI/UX، الموقع، صفحات الهبوط، إبداع الحملات، توجيه المحتوى، السيو الأساسي، والتواصل المؤسسي.',
+    faqEyebrow: 'أسئلة وأجوبة',
+    faqTitle: 'إجابات واضحة قبل أن تسأل.',
+    faqSubtitle:
+      'الأساسيات حول كيف تشخّص فيلورا وتسعّر وتسلّم — للأعمال التي تقيّم مدى ملاءمتنا لها.',
+    faqMore: 'كل الأسئلة الشائعة',
   },
   trust: {
     eyebrow: 'معايير فيلورا',
@@ -520,12 +532,14 @@ const UI_AR: Dict = {
   },
   footer: {
     description:
-      'أنظمة تصميم وويب وتواصل لعلامات مستعدة للنمو.',
+      'استوديو نمو رقمي بوتيك — أنظمة تصميم وويب وتواصل لعلامات مستعدة للنمو.',
     quickLinks: 'التنقّل',
+    exploreCol: 'استكشف',
     modelLink: 'المنهج',
     servicesCol: 'الخدمات',
-    contactCol: 'تواصل',
+    contactCol: 'تواصل معنا',
     followCol: 'تابعنا',
+    remoteNote: 'نعمل عن بُعد في الخليج وخارجه.',
     rights: '© 2026 فيلورا. جميع الحقوق محفوظة.',
     builtLine: 'صُمّم وبُني بعناية.',
     backToTop: 'العودة للأعلى',

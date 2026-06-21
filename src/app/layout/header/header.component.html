@@ -19,46 +19,53 @@
               (click)="toggleMega()"
             >
               {{ t.ui().nav.services }}
-              <span class="hdr__chev" aria-hidden="true">⌄</span>
+              <svg class="hdr__chev" width="11" height="11" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                   stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </button>
             <div class="hdr__mega" id="solutions-menu" [class.is-open]="megaOpen()">
               <div class="hdr__mega-col">
-                <a class="hdr__mega-title" [routerLink]="t.path('/services')">
+                <a class="hdr__mega-title" [routerLink]="t.path('/services')" (click)="closeMega()">
                   {{ t.ui().nav.services }}
                 </a>
                 @for (s of services; track s.id) {
-                  <a class="hdr__mega-link" [routerLink]="t.path('/services/' + serviceSlug(s.id))">
+                  <a class="hdr__mega-link" [routerLink]="t.path('/services/' + serviceSlug(s.id))" (click)="closeMega()">
                     {{ t.pick(s.title) }}
                   </a>
                 }
-                <a class="hdr__mega-more" [routerLink]="t.path('/services')">
+                <a class="hdr__mega-more" [routerLink]="t.path('/services')" (click)="closeMega()">
                   {{ t.ui().common.viewAllServices }}
+                  <span class="hdr__mega-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
               <div class="hdr__mega-col">
-                <a class="hdr__mega-title" [routerLink]="t.path('/industries')">
+                <a class="hdr__mega-title" [routerLink]="t.path('/industries')" (click)="closeMega()">
                   {{ t.ui().nav.industries }}
                 </a>
                 @for (ind of industries; track ind.slug) {
-                  <a class="hdr__mega-link" [routerLink]="t.path('/industries/' + ind.slug)">
+                  <a class="hdr__mega-link" [routerLink]="t.path('/industries/' + ind.slug)" (click)="closeMega()">
                     {{ t.pick(ind.title) }}
                   </a>
                 }
-                <a class="hdr__mega-more" [routerLink]="t.path('/industries')">
+                <a class="hdr__mega-more" [routerLink]="t.path('/industries')" (click)="closeMega()">
                   {{ t.ui().common.viewAllIndustries }}
+                  <span class="hdr__mega-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
               <div class="hdr__mega-col">
-                <a class="hdr__mega-title" [routerLink]="t.path('/locations')">
+                <a class="hdr__mega-title" [routerLink]="t.path('/locations')" (click)="closeMega()">
                   {{ t.ui().nav.locations }}
                 </a>
                 @for (loc of locations; track loc.slug) {
-                  <a class="hdr__mega-link" [routerLink]="t.path('/locations/' + loc.slug)">
+                  <a class="hdr__mega-link" [routerLink]="t.path('/locations/' + loc.slug)" (click)="closeMega()">
                     {{ t.pick(loc.title) }}
                   </a>
                 }
-                <a class="hdr__mega-more" [routerLink]="t.path('/locations')">
+                <a class="hdr__mega-more" [routerLink]="t.path('/locations')" (click)="closeMega()">
                   {{ t.ui().common.viewAllLocations }}
+                  <span class="hdr__mega-arrow" aria-hidden="true">→</span>
                 </a>
               </div>
             </div>

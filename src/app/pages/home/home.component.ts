@@ -11,6 +11,7 @@ import {
   VALUE_CARDS,
 } from '../../core/content';
 import { CountUpDirective } from '../../core/count-up.directive';
+import { findLegalPage } from '../../core/legal-content';
 import { serviceSlugById } from '../../core/market-content';
 import { RevealDirective } from '../../core/reveal.directive';
 import { SeoService } from '../../core/seo.service';
@@ -53,6 +54,7 @@ export class HomeComponent {
   protected modelDo = MODEL_DO;
   protected modelDont = MODEL_DONT;
   protected posts = BLOG_POSTS.slice(0, 3);
+  protected faqs = findLegalPage('faqs')?.faqs.slice(0, 6) ?? [];
 
   constructor(seo: SeoService) {
     seo.set(
@@ -80,6 +82,18 @@ export class HomeComponent {
               type: 'Service',
             }))
           ),
+          {
+            '@type': 'FAQPage',
+            '@id': `${url}#faq`,
+            mainEntity: this.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: this.t.pick(faq.q),
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: this.t.pick(faq.a),
+              },
+            })),
+          },
         ],
       }));
     });
