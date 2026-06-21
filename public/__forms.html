@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <title>Veloura — form registration</title>
+</head>
+<body>
+  <!--
+    Static copy of the contact form so Netlify's build-time form detector can
+    register "veloura-contact". The real, interactive form lives in the Angular
+    app (src/app/ui/contact-form/contact-form.component.html) and submits via
+    fetch POST to "/". Field names here MUST match that form.
+    This page is never linked or shown to users.
+  -->
+  <form name="veloura-contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="veloura-contact" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" />
+  </form>
+</body>
+</html>
