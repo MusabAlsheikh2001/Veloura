@@ -10,6 +10,22 @@
   padding-block: clamp(6rem, 12vh, 8.5rem) clamp(4rem, 7vh, 5.5rem);
 }
 
+.hero__art {
+  position: absolute;
+  inset: -2%;
+  z-index: 0;
+  overflow: hidden;
+  transform: rotate(0deg) scale(1.04);
+  transform-origin: center;
+  transition: transform 1.8s var(--ease-out);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+[data-theme='dark'] .hero__art {
+  transform: rotate(180deg) scale(1.04);
+}
+
 .hero__img {
   position: absolute;
   inset: 0;
@@ -17,37 +33,64 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: 0;
   transform: scale(1.02);
-  animation: heroDrift 26s var(--ease) infinite alternate;
-  transition: opacity 0.45s var(--ease);
+  animation: heroDrift 30s ease-in-out infinite alternate;
+  filter: saturate(0.96) contrast(1.01);
+  transition: filter 1.5s var(--ease);
+  backface-visibility: hidden;
+  will-change: transform, filter;
 }
 
-.hero__img--dark {
-  opacity: 0;
-}
-
-[data-theme='dark'] .hero__img--light {
-  opacity: 0;
-}
-
-[data-theme='dark'] .hero__img--dark {
-  opacity: 1;
+[data-theme='dark'] .hero__img {
+  filter: brightness(0.7) saturate(0.82) contrast(1.04);
 }
 
 .hero__scrim {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: linear-gradient(to top,
-    rgba(251, 247, 244, 0.92) 0%, rgba(251, 247, 244, 0.76) 28%,
-    rgba(251, 247, 244, 0.58) 54%, rgba(251, 247, 244, 0.34) 78%, rgba(251, 247, 244, 0.18) 100%);
+  pointer-events: none;
 }
 
-[data-theme='dark'] .hero__scrim {
-  background: linear-gradient(to top,
-    rgba(9, 5, 6, 0.95) 0%, rgba(9, 5, 6, 0.82) 28%,
-    rgba(9, 5, 6, 0.55) 54%, rgba(9, 5, 6, 0.28) 78%, rgba(9, 5, 6, 0.1) 100%);
+.hero__scrim::before,
+.hero__scrim::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: opacity 1.35s var(--ease);
+}
+
+.hero__scrim::before {
+  opacity: 1;
+  background:
+    radial-gradient(ellipse 64% 76% at 50% 51%,
+      rgba(251, 247, 244, 0.68) 0%, rgba(251, 247, 244, 0.48) 48%,
+      rgba(251, 247, 244, 0.12) 82%, transparent 100%),
+    linear-gradient(90deg,
+      rgba(251, 247, 244, 0.55) 0%, rgba(251, 247, 244, 0.36) 45%,
+      rgba(251, 247, 244, 0.10) 80%, transparent 100%),
+    linear-gradient(to top,
+      rgba(251, 247, 244, 0.56) 0%, rgba(251, 247, 244, 0.22) 48%,
+      rgba(251, 247, 244, 0.06) 100%);
+}
+
+.hero__scrim::after {
+  opacity: 0;
+  background:
+    radial-gradient(ellipse 66% 78% at 50% 51%,
+      rgba(18, 11, 13, 0.58) 0%, rgba(18, 11, 13, 0.44) 52%,
+      rgba(18, 11, 13, 0.18) 84%, transparent 100%),
+    linear-gradient(to top,
+      rgba(18, 11, 13, 0.62) 0%, rgba(18, 11, 13, 0.30) 52%,
+      rgba(18, 11, 13, 0.16) 100%);
+}
+
+[data-theme='dark'] .hero__scrim::before {
+  opacity: 0;
+}
+
+[data-theme='dark'] .hero__scrim::after {
+  opacity: 1;
 }
 
 .hero__inner {
@@ -155,7 +198,9 @@
 .hstat__rule {
   width: 1px;
   height: 38px;
-  background: linear-gradient(color-mix(in srgb, var(--accent) 58%, transparent), transparent);
+  color: color-mix(in srgb, var(--accent) 58%, transparent);
+  background: linear-gradient(currentColor, transparent);
+  transition: color 1.1s var(--ease);
 }
 
 .hero__scroll {
@@ -182,6 +227,29 @@
   animation: scrollPulse 2.2s var(--ease) infinite;
 }
 
+.hero__eyebrow,
+.hero__title,
+.hero__sub,
+.hstat__n,
+.hstat__l,
+.hero__scroll {
+  transition: color 1.1s var(--ease);
+}
+
+.hero__stats {
+  transition: border-color 1.1s var(--ease);
+}
+
+.hero .btn-primary,
+.hero__ghost {
+  transition:
+    transform 0.35s var(--ease),
+    color 0.9s var(--ease),
+    background-color 0.9s var(--ease),
+    border-color 0.9s var(--ease),
+    box-shadow 0.9s var(--ease);
+}
+
 [data-theme='dark'] .hero__eyebrow { color: var(--gold-bright); }
 [data-theme='dark'] .hero__title,
 [data-theme='dark'] .hstat__n { color: var(--bone-ivory); }
@@ -198,7 +266,7 @@
 [data-theme='dark'] .hero__stats { border-top-color: rgba(245, 239, 231, 0.16); }
 [data-theme='dark'] .hstat__l { color: rgba(245, 239, 231, 0.66); }
 [data-theme='dark'] .hstat__rule {
-  background: linear-gradient(rgba(198, 167, 123, 0.75), transparent);
+  color: rgba(198, 167, 123, 0.75);
 }
 [data-theme='dark'] .hero__scroll { color: rgba(245, 239, 231, 0.62); }
 
