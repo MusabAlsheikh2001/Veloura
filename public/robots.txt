@@ -16,8 +16,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://veloura.com/sitemap.xml
+Sitemap: https://veloura-marketing.com/sitemap.xml
 
 # LLM-readable site context
-# https://veloura.com/llms.txt
-# https://veloura.com/llms-full.txt
+# https://veloura-marketing.com/llms.txt
+# https://veloura-marketing.com/llms-full.txt

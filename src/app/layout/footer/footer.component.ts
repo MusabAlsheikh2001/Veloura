@@ -16,7 +16,9 @@ export class FooterComponent {
   protected t = inject(TranslationService);
   protected socials = SOCIALS;
   protected contact = CONTACT;
-  protected mailto = `mailto:${CONTACT.email}`;
+  /** Opens a Gmail compose window addressed to the studio inbox (works without
+     a desktop mail client). Opened in a new tab from the template. */
+  protected emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT.email)}`;
 
   backToTop(): void {
     if (typeof window !== 'undefined') {

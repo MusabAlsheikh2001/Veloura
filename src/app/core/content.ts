@@ -1123,5 +1123,7 @@ export const CONTACT = {
 
 export const SOCIALS: { id: string; label: string; href: string }[] = [
   { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/veloura.marketingco/' },
+  { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61591287625583' },
+  { id: 'pinterest', label: 'Pinterest', href: 'https://www.pinterest.com/velouramarketing' },
   { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/veloura-marketing/' },
 ];

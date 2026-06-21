@@ -331,7 +331,7 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
 }
 
 .mnav__link {
-  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  font-size: clamp(1.4rem, 5.2vw, 1.75rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -354,7 +354,7 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
 .mnav__group summary {
   cursor: pointer;
   list-style: none;
-  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  font-size: clamp(1.4rem, 5.2vw, 1.75rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);

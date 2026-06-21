@@ -6,7 +6,7 @@
 
 export const SITE = {
   /** Production origin, no trailing slash. Used for canonical + OG + sitemap. */
-  url: 'https://veloura.com',
+  url: 'https://veloura-marketing.com',
   name: 'Veloura',
   /** Default share image (1200×630). Absolute URL is derived from `url`. */
   ogImage: '/img/og-image.jpg',

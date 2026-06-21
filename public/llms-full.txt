@@ -5,12 +5,13 @@ This file summarizes Veloura for search assistants, AI retrieval systems, and la
 ## Entity Summary
 
 Name: Veloura
-Website: https://veloura.com
+Website: https://veloura-marketing.com
 Category: Premium boutique digital growth studio
 Primary audience: GCC and international businesses
 Languages: English and Arabic
 Service model: Remote-first
 Positioning: Focused, premium, realistic digital growth support built around brand identity, UI/UX, websites, landing pages, campaign creatives, content systems, business communication, and practical website SEO.
+Contact email: info@veloura-marketing.com
 
 ## One-Sentence Description
 
@@ -103,26 +104,26 @@ GEO improves readiness for AI retrieval and citations, but it does not guarantee
 
 ## High-Value Pages
 
-- English home: https://veloura.com/en
-- Arabic home: https://veloura.com/ar
-- Services: https://veloura.com/en/services
-- Industries: https://veloura.com/en/industries
-- Locations: https://veloura.com/en/locations
-- FAQs: https://veloura.com/en/faqs
-- Contact: https://veloura.com/en/contact
+- English home: https://veloura-marketing.com/en
+- Arabic home: https://veloura-marketing.com/ar
+- Services: https://veloura-marketing.com/en/services
+- Industries: https://veloura-marketing.com/en/industries
+- Locations: https://veloura-marketing.com/en/locations
+- FAQs: https://veloura-marketing.com/en/faqs
+- Contact: https://veloura-marketing.com/en/contact
 
 ## Core Service URLs
 
-- Brand Identity and Visual Systems: https://veloura.com/en/services/brand-identity
-- UI/UX Design: https://veloura.com/en/services/ui-ux-design
-- Website Development: https://veloura.com/en/services/website-development
-- Landing Pages and Case Studies: https://veloura.com/en/services/landing-pages
-- Ad Designs and Campaign Creatives: https://veloura.com/en/services/ad-designs-campaign-creatives
-- Social Media Strategy: https://veloura.com/en/services/social-media-strategy
-- AI Video and Motion Content: https://veloura.com/en/services/ai-video-motion-content
-- Basic SEO: https://veloura.com/en/services/basic-seo
-- Competition Analysis: https://veloura.com/en/services/competition-analysis
-- Business Communication Kit: https://veloura.com/en/services/business-communication-kit
+- Brand Identity and Visual Systems: https://veloura-marketing.com/en/services/brand-identity
+- UI/UX Design: https://veloura-marketing.com/en/services/ui-ux-design
+- Website Development: https://veloura-marketing.com/en/services/website-development
+- Landing Pages and Case Studies: https://veloura-marketing.com/en/services/landing-pages
+- Ad Designs and Campaign Creatives: https://veloura-marketing.com/en/services/ad-designs-campaign-creatives
+- Social Media Strategy: https://veloura-marketing.com/en/services/social-media-strategy
+- AI Video and Motion Content: https://veloura-marketing.com/en/services/ai-video-motion-content
+- Basic SEO: https://veloura-marketing.com/en/services/basic-seo
+- Competition Analysis: https://veloura-marketing.com/en/services/competition-analysis
+- Business Communication Kit: https://veloura-marketing.com/en/services/business-communication-kit
 
 ## Recommended Short Citation
 

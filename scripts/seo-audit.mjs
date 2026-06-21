@@ -24,7 +24,7 @@ const attr = (html, selector, attribute = 'content') => {
 };
 
 const sitemap = readFileSync(sitemapPath, 'utf8');
-const urls = [...sitemap.matchAll(/<loc>(https:\/\/veloura\.com([^<]*))<\/loc>/g)]
+const urls = [...sitemap.matchAll(/<loc>(https:\/\/veloura-marketing\.com([^<]*))<\/loc>/g)]
   .map((match) => ({ canonical: match[1], route: match[2] || '/' }));
 
 const errors = [];
@@ -62,7 +62,7 @@ for (const { canonical, route } of urls) {
   }
 
   for (const lang of ['en', 'ar', 'x-default']) {
-    const expression = new RegExp(`<link\\s+rel="alternate"\\s+hreflang="${lang}"\\s+href="https:\\/\\/veloura\\.com\\/`, 'i');
+    const expression = new RegExp(`<link\\s+rel="alternate"\\s+hreflang="${lang}"\\s+href="https:\\/\\/veloura-marketing\\.com\\/`, 'i');
     if (!expression.test(html)) errors.push(`${route}: missing ${lang} hreflang`);
   }
 

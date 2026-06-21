@@ -12,6 +12,8 @@ type StringGetter = () => string;
 interface SeoMetaOptions {
   type?: 'website' | 'article';
   image?: StringGetter;
+  /** Optional canonical URL override. Accepts an absolute URL or site-relative path. */
+  canonicalUrl?: StringGetter;
 }
 
 /**
@@ -59,6 +61,7 @@ export class SeoService {
       const image = options.image?.() || absUrl(SITE.ogImage);
       this.meta.updateTag({ property: 'og:image', content: image });
       this.meta.updateTag({ name: 'twitter:image', content: image });
+      this.setCanonical(options.canonicalUrl?.() || this.currentUrl());
     });
 
     // Canonical + og:url follow the active route. Clear any page-level JSON-LD
@@ -68,7 +71,7 @@ export class SeoService {
       .subscribe(() => this.clearJsonLd());
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
-      .subscribe((e) => this.setCanonical(e.urlAfterRedirects));
+      .subscribe((e) => this.setCanonical(this.options().canonicalUrl?.() || e.urlAfterRedirects));
   }
 
   /** Set the reactive title + description for the current page. */
@@ -76,7 +79,7 @@ export class SeoService {
     this.titleFn.set(title);
     this.descFn.set(description);
     this.options.set(options);
-    this.setCanonical(this.currentUrl());
+    this.setCanonical(options.canonicalUrl?.() || this.currentUrl());
   }
 
   /** Replace the page-level JSON-LD block (e.g. BlogPosting on an article). */
@@ -96,11 +99,21 @@ export class SeoService {
   }
 
   private setCanonical(url: string): void {
-    const path = url.split(/[?#]/)[0] || '/';
+    let path = url.split(/[?#]/)[0] || '/';
+    let explicitHref: string | null = null;
+    if (/^https?:\/\//i.test(url)) {
+      try {
+        const parsed = new URL(url);
+        path = parsed.pathname || '/';
+        explicitHref = `${parsed.origin}${parsed.pathname}${parsed.search}`;
+      } catch {
+        explicitHref = null;
+      }
+    }
     const split = splitLocalizedUrl(path);
     const lang = split.lang || this.t.lang();
     const localizedPath = localizePath(lang, split.path);
-    const href = absUrl(localizedPath);
+    const href = explicitHref || absUrl(localizedPath);
     let link = this.document.querySelector<HTMLLinkElement>("link[rel='canonical']");
     if (!link) {
       link = this.document.createElement('link');
