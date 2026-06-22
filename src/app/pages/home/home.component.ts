@@ -7,10 +7,8 @@ import {
   MODEL_DONT,
   PROCESS,
   SERVICES_PREVIEW,
-  TRUST,
   VALUE_CARDS,
 } from '../../core/content';
-import { CountUpDirective } from '../../core/count-up.directive';
 import { findLegalPage } from '../../core/legal-content';
 import { serviceSlugById } from '../../core/market-content';
 import { RevealDirective } from '../../core/reveal.directive';
@@ -31,7 +29,6 @@ import { ServiceCardComponent } from '../../ui/service-card/service-card.compone
   imports: [
     RouterLink,
     RevealDirective,
-    CountUpDirective,
     SectionHeaderComponent,
     ServiceCardComponent,
     ProcessStepComponent,
@@ -47,7 +44,6 @@ export class HomeComponent {
   protected t = inject(TranslationService);
 
   protected services = SERVICES_PREVIEW;
-  protected trust = TRUST;
   protected process = PROCESS;
   protected values = VALUE_CARDS;
   protected industries = INDUSTRIES;

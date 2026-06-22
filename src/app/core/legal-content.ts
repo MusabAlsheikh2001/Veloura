@@ -183,8 +183,8 @@ export const LEGAL_PAGES: LegalPage[] = [
         a: { en: 'Unless otherwise agreed, the client owns the final approved deliverables after full payment.', ar: 'ما لم يتم الاتفاق خلاف ذلك، يمتلك العميل المخرجات النهائية المعتمدة بعد السداد الكامل.' },
       },
       {
-        q: { en: 'Does Veloura guarantee rankings or AI mentions?', ar: 'هل تضمن Veloura الترتيب أو الظهور في أدوات الذكاء الاصطناعي؟' },
-        a: { en: 'No. Veloura can improve structure, clarity, technical basics, and machine-readable context, but no studio can guarantee search rankings or AI citations.', ar: 'لا. تستطيع Veloura تحسين البنية والوضوح والأساسيات التقنية والسياق القابل للقراءة آلياً، لكن لا يمكن لأي استوديو ضمان ترتيب البحث أو اقتباسات الذكاء الاصطناعي.' },
+        q: { en: 'Does Veloura guarantee SEO rankings?', ar: 'هل تضمن Veloura ترتيب نتائج البحث؟' },
+        a: { en: 'No. Veloura can improve technical basics, metadata, page structure, performance, and content direction, but no studio can guarantee a specific search ranking.', ar: 'لا. تستطيع Veloura تحسين الأساسيات التقنية والبيانات الوصفية وبنية الصفحات والأداء وتوجيه المحتوى، لكن لا يمكن لأي استوديو ضمان ترتيب محدد في نتائج البحث.' },
       },
     ],
   },
@@ -193,12 +193,12 @@ export const LEGAL_PAGES: LegalPage[] = [
     title: { en: 'FAQs', ar: 'الأسئلة الشائعة' },
     h1: { en: 'Frequently Asked Questions', ar: 'الأسئلة الشائعة' },
     metaTitle: {
-      en: 'Veloura FAQs Guide | Services, SEO, GEO and Remote Work',
-      ar: 'دليل أسئلة Veloura | الخدمات والسيو وGEO والعمل عن بُعد',
+      en: 'Veloura FAQs | Branding, Websites, SEO and Delivery',
+      ar: 'أسئلة Veloura | الهوية والمواقع والسيو والتنفيذ',
     },
     metaDesc: {
-      en: 'Find answers about Veloura services, industries, remote GCC delivery, practical SEO, GEO readiness, websites, branding, timelines, and custom project scopes.',
-      ar: 'اعثر على إجابات حول خدمات Veloura والقطاعات والتنفيذ عن بُعد في الخليج والسيو العملي وجاهزية GEO والمواقع والهوية والجداول ونطاقات المشاريع المخصصة هنا.',
+      en: 'Find answers about Veloura branding, UI/UX, websites, landing pages, campaign creatives, practical SEO, bilingual delivery, timelines, and custom project scopes.',
+      ar: 'اعثر على إجابات حول الهوية وUI/UX والمواقع وصفحات الهبوط وإبداع الحملات والسيو العملي والتنفيذ ثنائي اللغة والجداول ونطاقات المشاريع المخصصة.',
     },
     intro: {
       en: 'Short answers for businesses evaluating whether Veloura is the right fit.',
@@ -223,8 +223,8 @@ export const LEGAL_PAGES: LegalPage[] = [
         a: { en: 'Yes, but as practical website SEO: technical basics, metadata, headings, on-page structure, performance checks, local SEO basics, and content direction. Veloura is not positioned as a search-only agency.', ar: 'نعم، ولكن كسيو عملي للمواقع: أساسيات تقنية، ميتا، عناوين، بنية صفحات، فحوص أداء، أساسيات السيو المحلي، وتوجيه محتوى. لا تتموضع Veloura كوكالة متخصصة فقط في البحث.' },
       },
       {
-        q: { en: 'What does GEO mean for this website?', ar: 'ماذا يعني GEO لهذا الموقع؟' },
-        a: { en: 'GEO, or generative engine optimization, means making the website easier for AI systems and search assistants to understand through clear entity facts, structured data, FAQ content, crawlable service pages, sitemap hygiene, and llms.txt files. It improves readiness but does not guarantee inclusion in ChatGPT, Claude, or other tools.', ar: 'GEO أو تحسين الظهور في محركات الذكاء التوليدي يعني جعل الموقع أسهل فهماً لأنظمة الذكاء الاصطناعي ومساعدات البحث عبر حقائق واضحة عن الكيان وبيانات منظمة ومحتوى أسئلة وصفحات خدمات قابلة للزحف وخريطة موقع وملفات llms.txt. هذا يحسن الجاهزية لكنه لا يضمن الظهور في ChatGPT أو Claude أو غيرهما.' },
+        q: { en: 'Does Veloura offer social media strategy and campaign creatives?', ar: 'هل تقدم Veloura استراتيجية للسوشيال ميديا وإبداعاً للحملات؟' },
+        a: { en: 'Yes. Veloura develops content direction, campaign ideas, post structure, calendars, captions, reels direction, and branded static or motion creatives. The work is shaped around the business strategy rather than fixed posting packages.', ar: 'نعم. تطور Veloura توجيه المحتوى وأفكار الحملات وبنية المنشورات والجداول والكابشن واتجاه الريلز والإبداعات الثابتة أو المتحركة المتوافقة مع الهوية. يُبنى العمل حول استراتيجية النشاط بدلاً من باقات نشر ثابتة.' },
       },
       {
         q: { en: 'Can Veloura support English and Arabic websites?', ar: 'هل تدعم Veloura المواقع العربية والإنجليزية؟' },

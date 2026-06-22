@@ -1,16 +1,5 @@
 <!-- 1. Hero -->
 <section class="hero">
-  <span class="hero__art" aria-hidden="true">
-    <img
-      class="hero__img"
-      src="https://nayalrouh.b-cdn.net/Veloura/ChatGPT%20Image%20Jun%2021%2C%202026%2C%2002_18_53%20PM.png"
-      alt=""
-      fetchpriority="high"
-      decoding="async"
-    />
-  </span>
-  <span class="hero__scrim" aria-hidden="true"></span>
-
   <div class="container hero__inner">
     <div class="hero__copy">
       <span class="eyebrow hero__eyebrow" appReveal>{{ t.ui().brand.tagline }}</span>
@@ -29,46 +18,7 @@
           {{ t.ui().common.viewAllServices }}
         </a>
       </div>
-
-      <dl class="hero__stats" [appReveal]="340">
-        <div class="hstat">
-          <dt class="hstat__n" appCountUp>10+</dt>
-          <dd class="hstat__l">{{ t.ui().home.heroStat1 }}</dd>
-        </div>
-        <span class="hstat__rule" aria-hidden="true"></span>
-        <div class="hstat">
-          <dt class="hstat__n" appCountUp>2</dt>
-          <dd class="hstat__l">{{ t.ui().home.heroStat2 }}</dd>
-        </div>
-        <span class="hstat__rule" aria-hidden="true"></span>
-        <div class="hstat">
-          <dt class="hstat__n" appCountUp>100%</dt>
-          <dd class="hstat__l">{{ t.ui().home.heroStat3 }}</dd>
-        </div>
-      </dl>
     </div>
-  </div>
-
-  <span class="hero__scroll" aria-hidden="true">
-    <span class="hero__scroll-line"></span>
-    {{ t.ui().home.scrollHint }}
-  </span>
-</section>
-
-<!-- 2. Trust / positioning strip -->
-<section class="trust" aria-label="The Veloura standard">
-  <div class="container trust__inner">
-    @for (item of trust; track item.en) {
-      <div class="trust__item" [appReveal]="$index * 80">
-        <span class="trust__mark" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6L9 17l-5-5" />
-          </svg>
-        </span>
-        {{ t.pick(item) }}
-      </div>
-    }
   </div>
 </section>
 

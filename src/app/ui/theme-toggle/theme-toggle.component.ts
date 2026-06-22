@@ -39,20 +39,20 @@ import { TranslationService } from '../../core/translation.service';
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--border-strong);
-        background: var(--surface);
+        border: 0;
+        background: transparent;
         color: var(--text);
-        transition: border-color 0.3s var(--ease), color 0.3s var(--ease),
-          background 0.3s var(--ease), transform 0.3s var(--ease);
+        transition: color 0.3s var(--ease), background 0.3s var(--ease),
+          transform 0.3s var(--ease);
       }
       .theme-toggle:hover {
-        border-color: var(--gold);
         color: var(--gold);
+        background: color-mix(in srgb, var(--text) 5%, transparent);
         transform: translateY(-1px);
       }
       .ico {
-        width: 19px;
-        height: 19px;
+        width: 21px;
+        height: 21px;
         display: inline-flex;
         transition: transform 0.5s var(--ease);
       }

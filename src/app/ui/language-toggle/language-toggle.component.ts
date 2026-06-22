@@ -27,30 +27,41 @@ import { TranslationService } from '../../core/translation.service';
       .lang {
         display: inline-flex;
         align-items: center;
-        padding: 3px;
-        border-radius: 100px;
-        border: 1px solid var(--border-strong);
-        background: var(--surface);
+        gap: 0.1rem;
       }
       .lang__btn {
-        min-width: 38px;
-        padding: 0.34rem 0.6rem;
-        border-radius: 100px;
+        position: relative;
+        min-width: 34px;
+        min-height: 40px;
+        padding: 0.4rem 0.45rem;
+        border-radius: 0;
         font-size: 0.78rem;
         font-weight: 600;
         letter-spacing: 0.04em;
         color: var(--text-mute);
-        transition: color 0.3s var(--ease), background 0.3s var(--ease);
+        transition: color 0.3s var(--ease);
+      }
+      .lang__btn::after {
+        content: '';
+        position: absolute;
+        inset-inline: 0.45rem;
+        bottom: 3px;
+        height: 1.5px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transition: transform 0.3s var(--ease);
       }
       .lang__btn:hover {
         color: var(--text);
       }
       .lang__btn.is-active {
-        background: var(--accent);
-        color: var(--btn-text);
+        color: var(--text);
       }
-      [data-theme='dark'] .lang__btn.is-active {
-        color: var(--btn-text);
+      .lang__btn.is-active::after {
+        transform: scaleX(1);
+      }
+      :host-context([data-theme='dark']) .lang__btn.is-active {
+        color: var(--gold-bright);
       }
     `,
   ],

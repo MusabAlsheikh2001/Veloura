@@ -84,24 +84,6 @@ Veloura starts with diagnosis before execution. The studio studies the business,
 
 Veloura avoids fixed "10 posts a month" style packages. The scope may include identity, UI/UX, website, landing page, campaign creative, content direction, basic SEO, business communication, or a combination of those pieces.
 
-## GEO and AI Search Readiness
-
-For this website, GEO means making Veloura easier for AI systems and search assistants to understand. The website supports GEO through:
-
-- Clear entity descriptions
-- Focused service pages
-- Industry and location pages
-- FAQ content
-- FAQPage structured data
-- Service structured data
-- WebPage structured data
-- Breadcrumb structured data
-- Clean sitemap and canonical URLs
-- English and Arabic localized pages
-- This llms.txt file and the fuller llms-full.txt context file
-
-GEO improves readiness for AI retrieval and citations, but it does not guarantee that ChatGPT, Claude, Perplexity, Google AI Overviews, or any other AI system will mention Veloura.
-
 ## High-Value Pages
 
 - English home: https://veloura-marketing.com/en
