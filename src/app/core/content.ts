@@ -1116,7 +1116,7 @@ export const CONTACT_METHOD_OPTIONS: { id: string; label: Localized }[] = [
 
 /* Contact + WhatsApp details (placeholders) */
 export const CONTACT = {
-  email: 'info@veloura-marketing.com',
+  email: 'connect@veloura-marketing.com',
   whatsapp: '',
   whatsappDisplay: '',
 };

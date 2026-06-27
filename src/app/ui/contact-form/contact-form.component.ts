@@ -3,7 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslationService } from '../../core/translation.service';
 
 const AUDIT_ENDPOINT =
-  'https://script.google.com/macros/s/AKfycbwcaPjai5s6F081ofKvOrSWdNbr3KtkTHGX7-AiZRGzs2YlpYTjqQhtFAhG-VLW9vWsAg/exec';
+  'https://script.google.com/macros/s/AKfycbwIFZs8iPTeYnevFiCmhd2UC8JvDBpV8SvUaIapVZ04xn8vk2FGevl3c5bmDU3OgqIHOg/exec';
 const FORM_SOURCE = 'Veloura Website - Strategic Audit Form';
 
 @Component({
@@ -61,7 +61,9 @@ export class ContactFormComponent {
       fullName: name,
       email,
       message,
+      website: '',
       source: FORM_SOURCE,
+      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
     };
 
@@ -72,6 +74,9 @@ export class ContactFormComponent {
         body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+      const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
+      if (result?.success === false) throw new Error('Form submission was rejected.');
 
       this.form.reset();
       this.attempted.set(false);

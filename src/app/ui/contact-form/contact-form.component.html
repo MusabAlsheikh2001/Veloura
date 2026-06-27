@@ -21,7 +21,7 @@
     (ngSubmit)="submit()"
     novalidate
   >
-    <p class="visually-hidden" aria-hidden="true">
+    <p class="honeypot" aria-hidden="true">
       <label>
         Website
         <input
@@ -30,7 +30,9 @@
           type="text"
           formControlName="website"
           tabindex="-1"
-          autocomplete="off"
+          autocomplete="new-password"
+          inputmode="none"
+          readonly
         />
       </label>
     </p>

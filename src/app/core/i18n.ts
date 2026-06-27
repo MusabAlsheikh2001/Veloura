@@ -255,7 +255,7 @@ const UI_EN = {
     successTitle: 'Thank you.',
     successBody:
       'We received your request and will reply within one business day.',
-    submitError: 'Something went wrong. Please email us directly at info@veloura-marketing.com.',
+    submitError: 'Something went wrong. Please email us directly at connect@veloura-marketing.com.',
     sendAnother: 'Send another enquiry',
     errName: 'Please enter your name.',
     errEmail: 'Please enter a valid email address.',
@@ -520,7 +520,7 @@ const UI_AR: Dict = {
     sending: 'جارٍ الإرسال…',
     successTitle: 'شكراً لك — وصلنا استفسارك.',
     successBody: 'استلمنا تفاصيلك وسنردّ عليك خلال يوم عمل واحد.',
-    submitError: 'حدث خطأ. راسلنا مباشرة عبر info@veloura-marketing.com.',
+    submitError: 'حدث خطأ. راسلنا مباشرة عبر connect@veloura-marketing.com.',
     sendAnother: 'إرسال استفسار آخر',
     errName: 'الرجاء إدخال اسمك.',
     errEmail: 'الرجاء إدخال بريد إلكتروني صحيح.',

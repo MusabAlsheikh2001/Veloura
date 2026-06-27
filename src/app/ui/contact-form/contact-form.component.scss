@@ -9,6 +9,17 @@
   font-weight: 600;
 }
 
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
