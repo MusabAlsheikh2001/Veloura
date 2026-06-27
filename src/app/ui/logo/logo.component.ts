@@ -21,7 +21,16 @@ import { TranslationService } from '../../core/translation.service';
         />
       </span>
       @if (showWord) {
-        <span class="logo__word">{{ t.ui().brand.name }}</span>
+        <span class="logo__word" aria-hidden="true">
+          <img
+            src="/img/veloura-wordmark.png"
+            alt=""
+            width="569"
+            height="104"
+            loading="eager"
+            decoding="async"
+          />
+        </span>
       }
     </a>
   `,
@@ -71,18 +80,18 @@ import { TranslationService } from '../../core/translation.service';
           drop-shadow(0 0 34px rgba(111, 26, 43, 0.58));
       }
       .logo__word {
-        font-family: var(--font-display);
-        font-size: var(--logo-word-size, 1.08rem);
-        font-weight: 500;
-        letter-spacing: 0.18em;
-        line-height: 1;
-        text-transform: uppercase;
-        color: var(--text);
+        display: inline-flex;
+        height: var(--logo-word-height, 1.24rem);
+        flex-shrink: 0;
       }
-      html[lang='ar'] .logo__word {
-        font-family: var(--font-display);
-        letter-spacing: 0.18em;
-        font-weight: 500;
+      .logo__word img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+        transition: filter 0.5s var(--ease);
+      }
+      :host-context([data-theme='dark']) .logo__word img {
+        filter: brightness(0) invert(1);
       }
     `,
   ],
