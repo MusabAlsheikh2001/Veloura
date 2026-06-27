@@ -1,8 +1,8 @@
-import { DOCUMENT } from '@angular/common';
-import { computed, effect, inject, Injectable, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { computed, DOCUMENT, effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { Lang, Localized, UI } from './i18n';
+import { htmlLocale, Lang, Localized, UI } from './i18n';
 import { localizePath, splitLocalizedUrl } from './localized-routes';
 
 const STORAGE_KEY = 'veloura-lang';
@@ -15,6 +15,7 @@ const STORAGE_KEY = 'veloura-lang';
 export class TranslationService {
   private readonly router = inject(Router);
   private readonly document = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   readonly lang = signal<Lang>(this.readInitial());
 
   /** Current UI dictionary — reactive; read in templates as `t.ui().nav.home`. */
@@ -22,6 +23,7 @@ export class TranslationService {
 
   /** 'rtl' for Arabic, otherwise 'ltr'. */
   readonly dir = computed<'rtl' | 'ltr'>(() => (this.lang() === 'ar' ? 'rtl' : 'ltr'));
+  readonly locale = computed(() => htmlLocale(this.lang()));
 
   readonly isArabic = computed(() => this.lang() === 'ar');
 
@@ -35,12 +37,14 @@ export class TranslationService {
     effect(() => {
       const lang = this.lang();
       const root = this.document.documentElement;
-      root.setAttribute('lang', lang);
+      root.setAttribute('lang', htmlLocale(lang));
       root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-      try {
-        localStorage.setItem(STORAGE_KEY, lang);
-      } catch {
-        /* storage unavailable — ignore */
+      if (this.isBrowser) {
+        try {
+          this.document.defaultView?.localStorage?.setItem(STORAGE_KEY, lang);
+        } catch {
+          /* storage unavailable - ignore */
+        }
       }
     });
   }
@@ -81,11 +85,13 @@ export class TranslationService {
       splitLocalizedUrl(this.router.url).lang || splitLocalizedUrl(this.currentDocumentPath()).lang;
     if (routeLang) return routeLang;
 
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'en' || stored === 'ar') return stored;
-    } catch {
-      /* ignore */
+    if (this.isBrowser) {
+      try {
+        const stored = this.document.defaultView?.localStorage?.getItem(STORAGE_KEY);
+        if (stored === 'en' || stored === 'ar') return stored;
+      } catch {
+        /* ignore */
+      }
     }
     return 'en';
   }

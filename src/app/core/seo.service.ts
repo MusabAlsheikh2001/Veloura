@@ -1,8 +1,8 @@
-import { DOCUMENT } from '@angular/common';
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { htmlLocale, openGraphLocale } from './i18n';
 import { localizePath, splitLocalizedUrl, SUPPORTED_LANGS } from './localized-routes';
 import { absUrl, SITE } from './site.config';
 import { TranslationService } from './translation.service';
@@ -51,11 +51,11 @@ export class SeoService {
       }
       this.meta.updateTag({
         property: 'og:locale',
-        content: this.t.isArabic() ? 'ar_AR' : 'en_US',
+        content: openGraphLocale(this.t.lang()),
       });
       this.meta.updateTag({
         property: 'og:locale:alternate',
-        content: this.t.isArabic() ? 'en_US' : 'ar_AR',
+        content: openGraphLocale(this.t.isArabic() ? 'en' : 'ar'),
       });
       this.meta.updateTag({ property: 'og:type', content: options.type || 'website' });
       const image = options.image?.() || absUrl(SITE.ogImage);
@@ -125,11 +125,12 @@ export class SeoService {
 
     for (const code of SUPPORTED_LANGS) {
       const alternateHref = absUrl(localizePath(code, split.path));
-      let alt = this.document.querySelector<HTMLLinkElement>(`link[rel='alternate'][hreflang='${code}']`);
+      const hrefLang = htmlLocale(code);
+      let alt = this.document.querySelector<HTMLLinkElement>(`link[rel='alternate'][hreflang='${hrefLang}']`);
       if (!alt) {
         alt = this.document.createElement('link');
         alt.rel = 'alternate';
-        alt.hreflang = code;
+        alt.hreflang = hrefLang;
         this.document.head.appendChild(alt);
       }
       alt.href = alternateHref;

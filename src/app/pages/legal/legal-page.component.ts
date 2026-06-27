@@ -60,7 +60,7 @@ export class LegalPageComponent {
           url,
           name: this.t.pick(page.h1),
           description: this.t.pick(page.metaDesc),
-          inLanguage: this.t.lang(),
+          inLanguage: this.t.locale(),
           publisher: { '@id': SITE.url + '/#organization' },
         },
       ];

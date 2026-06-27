@@ -4,6 +4,8 @@
    ============================================================ */
 
 export type Lang = 'en' | 'ar';
+export type HtmlLocale = 'en-AE' | 'ar-AE';
+export type OpenGraphLocale = 'en_AE' | 'ar_AE';
 
 export interface Localized {
   en: string;
@@ -14,6 +16,14 @@ export const LANGUAGES: { code: Lang; label: string; short: string }[] = [
   { code: 'en', label: 'English', short: 'EN' },
   { code: 'ar', label: 'العربية', short: 'AR' },
 ];
+
+export function htmlLocale(lang: Lang): HtmlLocale {
+  return lang === 'ar' ? 'ar-AE' : 'en-AE';
+}
+
+export function openGraphLocale(lang: Lang): OpenGraphLocale {
+  return lang === 'ar' ? 'ar_AE' : 'en_AE';
+}
 
 type Dict = typeof UI_EN;
 

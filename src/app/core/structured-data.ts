@@ -1,4 +1,5 @@
 import { absUrl, SITE } from './site.config';
+import { htmlLocale, Lang } from './i18n';
 
 export type SchemaNode = Record<string, unknown>;
 
@@ -17,7 +18,7 @@ interface PageSchemaOptions {
   url: string;
   name: string;
   description: string;
-  language: 'en' | 'ar';
+  language: Lang;
   breadcrumbs: SchemaBreadcrumb[];
   additional?: SchemaNode[];
   mainEntityId?: string;
@@ -32,7 +33,7 @@ export function pageSchema(options: PageSchemaOptions): SchemaNode {
     url: options.url,
     name: options.name,
     description: options.description,
-    inLanguage: options.language,
+    inLanguage: htmlLocale(options.language),
     isPartOf: { '@id': `${SITE.url}/#website` },
     about: { '@id': `${SITE.url}/#organization` },
     publisher: { '@id': `${SITE.url}/#organization` },

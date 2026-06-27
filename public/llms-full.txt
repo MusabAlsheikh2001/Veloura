@@ -86,26 +86,26 @@ Veloura avoids fixed "10 posts a month" style packages. The scope may include id
 
 ## High-Value Pages
 
-- English home: https://veloura-marketing.com/en
+- English home: https://veloura-marketing.com
 - Arabic home: https://veloura-marketing.com/ar
-- Services: https://veloura-marketing.com/en/services
-- Industries: https://veloura-marketing.com/en/industries
-- Locations: https://veloura-marketing.com/en/locations
-- FAQs: https://veloura-marketing.com/en/faqs
-- Contact: https://veloura-marketing.com/en/contact
+- Services: https://veloura-marketing.com/services
+- Industries: https://veloura-marketing.com/industries
+- Locations: https://veloura-marketing.com/locations
+- FAQs: https://veloura-marketing.com/faqs
+- Contact: https://veloura-marketing.com/contact
 
 ## Core Service URLs
 
-- Brand Identity and Visual Systems: https://veloura-marketing.com/en/services/brand-identity
-- UI/UX Design: https://veloura-marketing.com/en/services/ui-ux-design
-- Website Development: https://veloura-marketing.com/en/services/website-development
-- Landing Pages and Case Studies: https://veloura-marketing.com/en/services/landing-pages
-- Ad Designs and Campaign Creatives: https://veloura-marketing.com/en/services/ad-designs-campaign-creatives
-- Social Media Strategy: https://veloura-marketing.com/en/services/social-media-strategy
-- AI Video and Motion Content: https://veloura-marketing.com/en/services/ai-video-motion-content
-- Basic SEO: https://veloura-marketing.com/en/services/basic-seo
-- Competition Analysis: https://veloura-marketing.com/en/services/competition-analysis
-- Business Communication Kit: https://veloura-marketing.com/en/services/business-communication-kit
+- Brand Identity and Visual Systems: https://veloura-marketing.com/services/brand-identity
+- UI/UX Design: https://veloura-marketing.com/services/ui-ux-design
+- Website Development: https://veloura-marketing.com/services/website-development
+- Landing Pages and Case Studies: https://veloura-marketing.com/services/landing-pages
+- Ad Designs and Campaign Creatives: https://veloura-marketing.com/services/ad-designs-campaign-creatives
+- Social Media Strategy: https://veloura-marketing.com/services/social-media-strategy
+- AI Video and Motion Content: https://veloura-marketing.com/services/ai-video-motion-content
+- Basic SEO: https://veloura-marketing.com/services/basic-seo
+- Competition Analysis: https://veloura-marketing.com/services/competition-analysis
+- Business Communication Kit: https://veloura-marketing.com/services/business-communication-kit
 
 ## Recommended Short Citation
 

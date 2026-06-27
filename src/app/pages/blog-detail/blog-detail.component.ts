@@ -83,7 +83,7 @@ export class BlogDetailComponent {
           image: absUrl(post.image),
           datePublished: post.date,
           dateModified: post.date,
-          inLanguage: this.t.lang(),
+          inLanguage: this.t.locale(),
           articleSection: this.t.pick(post.category),
           author: { '@type': 'Organization', '@id': `${SITE.url}/#organization`, name: SITE.name },
           publisher: { '@id': `${SITE.url}/#organization` },

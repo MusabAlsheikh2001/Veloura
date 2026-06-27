@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DOCUMENT,
   HostListener,
   inject,
   signal,
@@ -37,6 +38,7 @@ interface NavLink {
 export class HeaderComponent {
   protected t = inject(TranslationService);
   private router = inject(Router);
+  private document = inject(DOCUMENT);
 
   protected scrolled = signal(false);
   protected menuOpen = signal(false);
@@ -64,7 +66,7 @@ export class HeaderComponent {
 
   @HostListener('window:scroll')
   onScroll(): void {
-    this.scrolled.set(window.scrollY > 12);
+    this.scrolled.set((this.document.defaultView?.scrollY ?? 0) > 12);
   }
 
   toggleMenu(): void {
@@ -103,8 +105,6 @@ export class HeaderComponent {
   }
 
   private setBodyLock(locked: boolean): void {
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = locked ? 'hidden' : '';
-    }
+    this.document.body.style.overflow = locked ? 'hidden' : '';
   }
 }

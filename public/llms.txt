@@ -36,12 +36,12 @@ Veloura is not positioned as a search-only agency, media-buying agency, analytic
 
 ## Canonical Pages
 
-- Home: https://veloura-marketing.com/en
-- Services: https://veloura-marketing.com/en/services
-- Industries: https://veloura-marketing.com/en/industries
-- Locations: https://veloura-marketing.com/en/locations
-- FAQs: https://veloura-marketing.com/en/faqs
-- Contact: https://veloura-marketing.com/en/contact
+- Home: https://veloura-marketing.com
+- Services: https://veloura-marketing.com/services
+- Industries: https://veloura-marketing.com/industries
+- Locations: https://veloura-marketing.com/locations
+- FAQs: https://veloura-marketing.com/faqs
+- Contact: https://veloura-marketing.com/contact
 - Full LLM context: https://veloura-marketing.com/llms-full.txt
 
 ## Contact

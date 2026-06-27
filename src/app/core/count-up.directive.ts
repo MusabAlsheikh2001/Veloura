@@ -1,7 +1,9 @@
 import {
   AfterViewInit,
+  DOCUMENT,
   Directive,
   ElementRef,
+  inject,
   Input,
   OnDestroy,
 } from '@angular/core';
@@ -25,6 +27,7 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
   private frame?: number;
   private started = false;
+  private readonly document = inject(DOCUMENT);
 
   constructor(private el: ElementRef<HTMLElement>) {}
 
@@ -42,14 +45,13 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
     const suffix = raw.slice(match.index! + numStr.length);
     const decimals = (numStr.split('.')[1] ?? '').length;
 
-    const reduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (reduced || typeof IntersectionObserver === 'undefined') return;
+    const view = this.document.defaultView;
+    const reduced = view?.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !view?.IntersectionObserver) return;
 
     node.textContent = `${prefix}0${suffix}`;
 
-    this.observer = new IntersectionObserver(
+    this.observer = new view.IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting && !this.started) {
@@ -71,7 +73,10 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
     suffix: string,
     decimals: number
   ): void {
-    const start = performance.now();
+    const view = this.document.defaultView;
+    if (!view) return;
+
+    const start = view.performance.now();
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
     const tick = (now: number) => {
@@ -79,16 +84,16 @@ export class CountUpDirective implements AfterViewInit, OnDestroy {
       const value = target * easeOutCubic(p);
       node.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
       if (p < 1) {
-        this.frame = requestAnimationFrame(tick);
+        this.frame = view.requestAnimationFrame(tick);
       } else {
         node.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
       }
     };
-    this.frame = requestAnimationFrame(tick);
+    this.frame = view.requestAnimationFrame(tick);
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
-    if (this.frame) cancelAnimationFrame(this.frame);
+    if (this.frame) this.document.defaultView?.cancelAnimationFrame(this.frame);
   }
 }

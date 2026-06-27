@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DOCUMENT, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslationService } from '../../core/translation.service';
 
@@ -17,6 +17,7 @@ const FORM_SOURCE = 'Veloura Website - Strategic Audit Form';
 export class ContactFormComponent {
   protected t = inject(TranslationService);
   private fb = inject(FormBuilder);
+  private document = inject(DOCUMENT);
 
   protected submitted = signal(false);
   protected submitting = signal(false);
@@ -49,22 +50,21 @@ export class ContactFormComponent {
       const firstInvalid = Object.keys(this.form.controls).find((key) =>
         this.form.get(key)?.invalid
       );
-      if (firstInvalid && typeof document !== 'undefined') {
-        document.getElementById(firstInvalid)?.focus();
-      }
+      this.document.getElementById(firstInvalid ?? '')?.focus();
       return;
     }
 
     this.submitting.set(true);
     const { name, email, message } = this.form.getRawValue();
+    const view = this.document.defaultView;
     const payload = {
       fullName: name,
       email,
       message,
       website: '',
       source: FORM_SOURCE,
-      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      pageUrl: view?.location.href ?? '',
+      userAgent: view?.navigator.userAgent ?? '',
     };
 
     try {
@@ -81,9 +81,7 @@ export class ContactFormComponent {
       this.form.reset();
       this.attempted.set(false);
       this.submitted.set(true);
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: window.scrollY - 80, behavior: 'smooth' });
-      }
+      view?.scrollTo({ top: view.scrollY - 80, behavior: 'smooth' });
     } catch {
       this.submitFailed.set(true);
     } finally {

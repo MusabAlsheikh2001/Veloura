@@ -1,7 +1,9 @@
 import {
   AfterViewInit,
+  DOCUMENT,
   Directive,
   ElementRef,
+  inject,
   Input,
   OnDestroy,
   Renderer2,
@@ -22,14 +24,14 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
   @Input() appReveal: number | '' = 0;
 
   private observer?: IntersectionObserver;
+  private readonly document = inject(DOCUMENT);
 
   constructor(private el: ElementRef<HTMLElement>, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     const node = this.el.nativeElement;
-    const reduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const view = this.document.defaultView;
+    const reduced = view?.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
     this.renderer.addClass(node, 'reveal');
 
@@ -38,12 +40,12 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
       this.renderer.setStyle(node, '--reveal-delay', `${delay}ms`);
     }
 
-    if (reduced || typeof IntersectionObserver === 'undefined') {
+    if (reduced || !view?.IntersectionObserver) {
       this.renderer.addClass(node, 'is-visible');
       return;
     }
 
-    this.observer = new IntersectionObserver(
+    this.observer = new view.IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {

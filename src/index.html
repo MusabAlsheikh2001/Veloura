@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en-AE" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title>Branding & Web Growth Studio for GCC Businesses | Veloura</title>
@@ -9,10 +10,10 @@
 
   <meta name="description"
     content="Veloura helps GCC and international businesses grow through premium branding, UI/UX, websites, landing pages, campaign creatives, content systems, and SEO.">
-  <link rel="canonical" href="https://veloura-marketing.com/en">
-  <link rel="alternate" hreflang="en" href="https://veloura-marketing.com/en">
-  <link rel="alternate" hreflang="ar" href="https://veloura-marketing.com/ar">
-  <link rel="alternate" hreflang="x-default" href="https://veloura-marketing.com/en">
+  <link rel="canonical" href="https://veloura-marketing.com/">
+  <link rel="alternate" hreflang="en-AE" href="https://veloura-marketing.com/">
+  <link rel="alternate" hreflang="ar-AE" href="https://veloura-marketing.com/ar">
+  <link rel="alternate" hreflang="x-default" href="https://veloura-marketing.com/">
   <link rel="alternate" type="text/plain" title="Veloura LLM context" href="/llms.txt">
   <meta name="theme-color" content="#FBF7F4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#120B0D" media="(prefers-color-scheme: dark)">
@@ -23,13 +24,13 @@
   <meta property="og:title" content="Branding & Web Growth Studio for GCC Businesses | Veloura">
   <meta property="og:description"
     content="Veloura helps GCC and international businesses grow through premium branding, UI/UX, websites, landing pages, campaign creatives, content systems, and SEO.">
-  <meta property="og:url" content="https://veloura-marketing.com/en">
+  <meta property="og:url" content="https://veloura-marketing.com/">
   <meta property="og:image" content="https://veloura-marketing.com/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Veloura — Marketing that feels refined, performs with purpose.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ar_AR">
+  <meta property="og:locale" content="en_AE">
+  <meta property="og:locale:alternate" content="ar_AE">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -80,7 +81,7 @@
           "areaServed": ["United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman", "Jordan", "Worldwide"]
         },
         "description": "Veloura is a premium boutique marketing and digital growth agency serving GCC-focused and international businesses.",
-        "knowsLanguage": ["en", "ar"],
+        "knowsLanguage": ["en-AE", "ar-AE"],
         "areaServed": ["United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman", "Jordan", "Worldwide"],
         "knowsAbout": ["Brand identity and visual systems", "UI/UX design", "Website development", "Landing pages and case studies", "Campaign creatives", "Social media strategy and management", "AI video and motion content", "Paid advertising", "SEO, analytics, and growth systems", "CRM and lead-flow automation", "Business communication kits"]
       },
@@ -89,7 +90,7 @@
         "@id": "https://veloura-marketing.com/#website",
         "name": "Veloura",
         "url": "https://veloura-marketing.com/",
-        "inLanguage": ["en", "ar"],
+        "inLanguage": ["en-AE", "ar-AE"],
         "publisher": { "@id": "https://veloura-marketing.com/#organization" }
       },
       {
@@ -115,17 +116,28 @@
           t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
         var p = window.location.pathname.split('/').filter(Boolean)[0];
-        var l = (p === 'en' || p === 'ar') ? p : localStorage.getItem('veloura-lang');
-        if (l !== 'en' && l !== 'ar') { l = 'en'; }
+        var l = p === 'ar' ? 'ar-AE' : 'en-AE';
         var root = document.documentElement;
         root.setAttribute('data-theme', t);
         root.setAttribute('lang', l);
-        root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+        root.setAttribute('dir', l === 'ar-AE' ? 'rtl' : 'ltr');
       } catch (e) { }
     })();
   </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNT7ZJEYX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RNT7ZJEYX9');
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>
