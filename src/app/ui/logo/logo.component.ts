@@ -11,7 +11,7 @@ import { TranslationService } from '../../core/translation.service';
     <a class="logo" [routerLink]="t.path('/')" [attr.aria-label]="t.ui().brand.name">
       <span class="logo__mark" aria-hidden="true">
         <img
-          src="https://nayalrouh.b-cdn.net/Veloura/veloura_v_icon_transparent.png"
+          src="/img/veloura-v-icon.png"
           alt=""
           width="668"
           height="678"
@@ -72,14 +72,17 @@ import { TranslationService } from '../../core/translation.service';
       }
       .logo__word {
         font-family: var(--font-display);
-        font-size: 1.4rem;
-        font-weight: 600;
-        letter-spacing: 0.01em;
+        font-size: var(--logo-word-size, 1.08rem);
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        line-height: 1;
+        text-transform: uppercase;
         color: var(--text);
       }
       html[lang='ar'] .logo__word {
-        font-family: var(--font-ar);
-        font-weight: 700;
+        font-family: var(--font-display);
+        letter-spacing: 0.18em;
+        font-weight: 500;
       }
     `,
   ],

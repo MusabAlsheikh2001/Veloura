@@ -2,7 +2,9 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslationService } from '../../core/translation.service';
 
-const FORM_NAME = 'veloura-contact';
+const AUDIT_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbwcaPjai5s6F081ofKvOrSWdNbr3KtkTHGX7-AiZRGzs2YlpYTjqQhtFAhG-VLW9vWsAg/exec';
+const FORM_SOURCE = 'Veloura Website - Strategic Audit Form';
 
 @Component({
   selector: 'app-contact-form',
@@ -25,6 +27,7 @@ export class ContactFormComponent {
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.minLength(10)]],
+    website: [''],
   });
 
   invalid(control: string): boolean {
@@ -33,8 +36,13 @@ export class ContactFormComponent {
   }
 
   async submit(): Promise<void> {
+    if (this.form.controls.website.value.trim()) {
+      return;
+    }
+
     this.attempted.set(true);
     this.submitFailed.set(false);
+    this.normalizeFields();
 
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -48,19 +56,25 @@ export class ContactFormComponent {
     }
 
     this.submitting.set(true);
-    const body = new URLSearchParams({
-      'form-name': FORM_NAME,
-      ...this.form.getRawValue(),
-    });
+    const { name, email, message } = this.form.getRawValue();
+    const payload = {
+      fullName: name,
+      email,
+      message,
+      source: FORM_SOURCE,
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+    };
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch(AUDIT_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
 
+      this.form.reset();
+      this.attempted.set(false);
       this.submitted.set(true);
       if (typeof window !== 'undefined') {
         window.scrollTo({ top: window.scrollY - 80, behavior: 'smooth' });
@@ -77,5 +91,14 @@ export class ContactFormComponent {
     this.attempted.set(false);
     this.submitFailed.set(false);
     this.submitted.set(false);
+  }
+
+  private normalizeFields(): void {
+    const { name, email, message } = this.form.getRawValue();
+    this.form.patchValue({
+      name: name.trim(),
+      email: email.trim(),
+      message: message.trim(),
+    });
   }
 }

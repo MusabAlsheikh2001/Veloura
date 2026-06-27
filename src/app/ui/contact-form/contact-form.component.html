@@ -17,15 +17,22 @@
     class="form card"
     name="veloura-contact"
     method="POST"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
     [formGroup]="form"
     (ngSubmit)="submit()"
     novalidate
   >
-    <input type="hidden" name="form-name" value="veloura-contact" />
     <p class="visually-hidden" aria-hidden="true">
-      <label>Do not fill this field <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      <label>
+        Website
+        <input
+          id="website"
+          name="website"
+          type="text"
+          formControlName="website"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </label>
     </p>
 
     <h3 class="form__title">{{ t.ui().contact.formTitle }}</h3>

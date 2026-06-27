@@ -1,6 +1,6 @@
 <header class="hdr" [class.is-scrolled]="scrolled()" [class.menu-open]="menuOpen()">
   <div class="hdr__inner container">
-    <app-logo [showWord]="false" />
+    <app-logo [showWord]="true" />
 
     <nav class="hdr__nav" [attr.aria-label]="t.ui().nav.primaryNav">
       @for (link of links; track link.key) {
