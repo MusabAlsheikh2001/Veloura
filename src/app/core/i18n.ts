@@ -126,15 +126,15 @@ const UI_EN = {
     metaTitle: 'About Veloura | Boutique Digital Growth Studio',
     metaDesc:
       'Meet Veloura, a boutique digital growth studio helping GCC and international businesses build sharper brands, websites, landing pages, and content systems.',
-    heroEyebrow: 'About Veloura',
-    heroTitle: 'A boutique studio built on clarity and craft.',
+    heroEyebrow: "About the studio",
+    heroTitle: "A design-led technology studio with a creative edge.",
     heroSubtitle:
-      'We are a small, senior-led studio that treats digital growth as a system — where strategy, design, web, content, and communication reinforce one another.',
+      "We bring product thinking, UI/UX, frontend engineering, brand identity, and digital operations together to build experiences that look exceptional and work in the real world.",
     whoTitle: 'Who we are',
     whoBody1:
-      'Veloura is a premium boutique digital growth studio. We help ambitious Gulf and international businesses present themselves with confidence and grow with intent.',
+      "Veloura is a design-led digital technology and creative studio working with GCC and international businesses on websites, product interfaces, operational tools, and brand experiences.",
     whoBody2:
-      'We combine brand strategy, UI/UX design, website development, campaign creative, content direction, and operational clarity — under one roof, with one standard.',
+      "Our strength is connecting the visual craft with the technical work: clear product thinking, purposeful interfaces, frontend development, useful integrations, and coherent brand systems.",
     believeTitle: 'What we believe',
     believeBody1:
       'We believe good marketing is quiet confidence. It does not shout; it earns attention through clarity, taste, and consistency.',
@@ -170,16 +170,16 @@ const UI_EN = {
       'Strategy, brand, UI/UX, web, content, creative, and digital operations — under one roof, with one standard. You work directly with the people doing the work.',
   },
   services: {
-    metaTitle: 'Branding, Web & Growth Services for GCC Businesses | Veloura',
+    metaTitle: "Web Development, UX & Digital Systems | Veloura",
     metaDesc:
-      'Explore Veloura services for GCC businesses: branding, UI/UX, websites, landing pages, campaign creative, social strategy, AI video, SEO, and communication.',
-    heroEyebrow: 'Capabilities',
-    heroTitle: 'Focused services for businesses that need to look sharper and convert better.',
+      "Explore Veloura's web applications, frontend development, UI/UX, dashboard, automation, brand design, and connected digital experience services.",
+    heroEyebrow: "Capabilities / What we build",
+    heroTitle: "Beautiful interfaces. Capable systems. One connected approach.",
     heroSubtitle:
-      'Brand identity, UI/UX, websites, landing pages, campaign creatives, social media strategy, AI video, competition analysis, basic SEO, and business communication. No inflated promise — just a custom scope around what the business actually needs.',
-    ctaTitle: 'Not sure what the brand needs first?',
+      "From web applications and dashboards to product interfaces, websites, automation, and visual identity—we bring design and practical engineering together. Every engagement starts with the actual business problem.",
+    ctaTitle: "Let’s design what your business actually needs.",
     ctaSubtitle:
-      "Start with a strategic audit. We'll diagnose the highest-leverage path before recommending a scope.",
+      "Tell us the workflow, the audience, or the idea. We’ll translate it into a clear, achievable scope.",
   },
   industries: {
     metaTitle: 'Industries Served by Veloura | Digital Growth by Industry',
@@ -394,15 +394,15 @@ const UI_AR: Dict = {
     metaTitle: 'عن Veloura | استوديو نمو رقمي بوتيك',
     metaDesc:
       'Veloura استوديو نمو رقمي بوتيك يساعد الأعمال الخليجية والدولية على بناء هوية أوضح ومواقع مصقولة وصفحات هبوط وإبداع حملات وأنظمة محتوى وتواصل مؤسسي.',
-    heroEyebrow: 'عن فيلورا',
-    heroTitle: 'استوديو بوتيك مبني على الوضوح والإتقان.',
+    heroEyebrow: "عن الاستوديو",
+    heroTitle: "استوديو تقني يقوده التصميم بروح إبداعية.",
     heroSubtitle:
-      'نحن فريق صغير وخبير ينظر إلى النمو الرقمي كنظام تتكامل فيه الاستراتيجية والتصميم والويب والمحتوى والتواصل.',
+      "نجمع التفكير في المنتجات وتصميم التجارب وتطوير الواجهات والهوية والعمليات الرقمية لنصنع تجارب استثنائية تعمل في الواقع.",
     whoTitle: 'من نحن',
     whoBody1:
-      'Veloura استوديو نمو رقمي بوتيك راقٍ. نساعد الأعمال الطموحة في الخليج والعالم على تقديم نفسها بثقة والنمو بهدف واضح.',
+      "Veloura استوديو للتقنية والتصميم والإبداع يعمل مع شركات في الخليج والعالم على المواقع وواجهات المنتجات والأدوات التشغيلية وتجارب العلامة.",
     whoBody2:
-      'نجمع بين استراتيجية الهوية وتصميم UI/UX وتطوير المواقع وإبداع الحملات وتوجيه المحتوى والوضوح التشغيلي — تحت سقف واحد وبمعيار واحد.',
+      "قوتنا في وصل الإتقان البصري بالتنفيذ التقني: التفكير في المنتج وواجهات واضحة وتطوير الويب وتكاملات عملية وأنظمة هوية متسقة.",
     believeTitle: 'بماذا نؤمن',
     believeBody1:
       'نؤمن أن التسويق الجيد ثقة هادئة؛ لا يصرخ، بل يكسب الانتباه بالوضوح والذوق والثبات.',
@@ -438,15 +438,15 @@ const UI_AR: Dict = {
       'استراتيجية، هوية، UI/UX، ويب، محتوى، إبداع، وعمليات رقمية — تحت سقف واحد وبمعيار واحد. تتعامل مباشرةً مع من ينفّذ العمل.',
   },
   services: {
-    metaTitle: 'خدمات هوية ومواقع ونمو رقمي للأعمال الخليجية | Veloura',
+    metaTitle: "تطوير الويب وتجربة المستخدم والأنظمة الرقمية | Veloura",
     metaDesc:
-      'استكشف خدمات Veloura في الهوية وUI/UX والمواقع وصفحات الهبوط وإبداع الحملات واستراتيجية السوشيال وفيديو AI وتحليل المنافسين والسيو الأساسي والتواصل المؤسسي.',
-    heroEyebrow: 'القدرات',
-    heroTitle: 'خدمات مركزة للأعمال التي تحتاج أن تبدو أرقى وتحوّل بشكل أوضح.',
+      "خدمات Veloura تشمل تطوير تطبيقات الويب والواجهات ولوحات التحكم وتصميم تجربة المستخدم والأتمتة والهوية الرقمية وربط الأنظمة.",
+    heroEyebrow: "قدراتنا / ما نبنيه",
+    heroTitle: "واجهات جميلة، وأنظمة فعالة، وتجربة مترابطة.",
     heroSubtitle:
-      'هوية، UI/UX، مواقع، صفحات هبوط، إبداع حملات، استراتيجية سوشيال، فيديو AI، تحليل منافسين، سيو أساسي، وتواصل مؤسسي. لا نبيع وعداً مبالغاً؛ نبني نطاقاً حول ما يحتاجه العمل فعلاً.',
-    ctaTitle: 'لست متأكداً مما تحتاجه علامتك أولاً؟',
-    ctaSubtitle: 'ابدأ بتدقيق استراتيجي. نشخّص أعلى مسار تأثير قبل أن نقترح النطاق.',
+      "من تطبيقات الويب ولوحات التحكم إلى تصميم المنتجات والمواقع والأتمتة والهوية البصرية، نجمع التصميم مع التنفيذ التقني العملي. يبدأ كل مشروع بفهم التحدي الحقيقي.",
+    ctaTitle: "لنصمم ما يحتاجه عملك فعلاً.",
+    ctaSubtitle: "أخبرنا عن سير العمل أو الجمهور أو الفكرة، وسنحوّلها إلى نطاق عمل واضح وقابل للتنفيذ.",
   },
   industries: {
     metaTitle: 'القطاعات التي تخدمها Veloura | نمو رقمي حسب القطاع',
