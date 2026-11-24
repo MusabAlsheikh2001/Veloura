@@ -11,7 +11,7 @@ https://veloura-marketing.com
 
 - Brand Identity and Visual Systems: strategy, logo direction, color palette, typography, brand voice, and consistent visual systems.
 - UI/UX Design: wireframes, user journeys, prototypes, and conversion-focused Figma interfaces.
-- Website Development: refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
+- Website Development: refined custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
 - Landing Pages and Case Studies: focused persuasive pages for offers, launches, services, and case studies.
 - Ad Designs and Campaign Creatives: static ads, stories, carousels, and creative angles for Meta, TikTok, Snapchat, and Google campaign use.
 - Social Media Strategy: content direction, campaign ideas, post structure, calendars, captions, reels direction, and brand-consistent visual planning.

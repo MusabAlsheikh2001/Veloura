@@ -212,7 +212,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       },
       {
         q: { en: 'What services does Veloura offer?', ar: 'ما الخدمات التي تقدمها Veloura؟' },
-        a: { en: 'Veloura focuses on brand identity, UI/UX design, WordPress and custom websites, landing pages, case studies, campaign creatives, social media strategy, AI video and motion content, competition analysis, basic SEO, and business communication kits.', ar: 'تركز Veloura على الهوية، تصميم UI/UX، مواقع ووردبريس والمواقع المخصصة، صفحات الهبوط، دراسات الحالة، إبداع الحملات، استراتيجية السوشيال، فيديو وموشن AI، تحليل المنافسين، السيو الأساسي، وحقائب التواصل المؤسسي.' },
+        a: { en: 'Veloura focuses on brand identity, UI/UX design, custom websites, landing pages, case studies, campaign creatives, social media strategy, AI video and motion content, competition analysis, basic SEO, and business communication kits.', ar: 'تركز Veloura على الهوية، تصميم UI/UX، المواقع المخصصة، صفحات الهبوط، دراسات الحالة، إبداع الحملات، استراتيجية السوشيال، فيديو وموشن AI، تحليل المنافسين، السيو الأساسي، وحقائب التواصل المؤسسي.' },
       },
       {
         q: { en: 'Does Veloura work with individuals?', ar: 'هل تعمل Veloura مع الأفراد؟' },
@@ -231,8 +231,8 @@ export const LEGAL_PAGES: LegalPage[] = [
         a: { en: 'Yes. Veloura designs bilingual English and Arabic structures with attention to LTR and RTL layout, tone, hierarchy, and conversion paths.', ar: 'نعم. تصمم Veloura هياكل عربية وإنجليزية مع مراعاة تخطيط LTR وRTL والنبرة والتسلسل ومسارات التحويل.' },
       },
       {
-        q: { en: 'Does Veloura build WordPress websites?', ar: 'هل تبني Veloura مواقع ووردبريس؟' },
-        a: { en: 'Yes. Veloura builds refined WordPress websites and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.', ar: 'نعم. تبني Veloura مواقع ووردبريس مصقولة ومواقع مخصصة للشركات والعيادات ومعارض الأعمال والأعمال الخدمية والمواقع المبنية حول صفحات هبوط.' },
+        q: { en: 'Does Veloura build custom websites?', ar: 'هل تبني Veloura مواقع مخصصة؟' },
+        a: { en: 'Yes. Veloura builds refined custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.', ar: 'نعم. تبني Veloura مواقع مخصصة مصقولة للشركات والعيادات ومعارض الأعمال والأعمال الخدمية والمواقع المبنية حول صفحات هبوط.' },
       },
       {
         q: { en: 'How does a project start?', ar: 'كيف يبدأ المشروع؟' },

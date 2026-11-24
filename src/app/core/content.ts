@@ -6,7 +6,7 @@ import { Localized } from './i18n';
 
 export type IconName =
   | 'uiux' | 'ads' | 'branding' | 'mockup' | 'whatsapp'
-  | 'wordpress' | 'vibe' | 'landing' | 'seo' | 'analysis'
+  | 'vibe' | 'landing' | 'seo' | 'analysis'
   | 'discover' | 'position' | 'design' | 'launch'
   | 'clarity' | 'presence' | 'performance'
   | 'social' | 'video' | 'paidads' | 'analytics' | 'comms' | 'automation';
@@ -52,12 +52,12 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'web-development',
-    icon: 'wordpress',
+    icon: 'design',
     featured: true,
     title: { en: 'Website Development', ar: 'تطوير المواقع' },
     desc: {
-      en: 'Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.',
-      ar: 'مواقع ووردبريس ومواقع مبرمجة سريعة وأنيقة للشركات والعيادات ومعارض الأعمال والخدمات والمواقع المبنية حول صفحات هبوط.',
+      en: 'Fast, refined custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.',
+      ar: 'مواقع مبرمجة سريعة وأنيقة للشركات والعيادات ومعارض الأعمال والخدمات والمواقع المبنية حول صفحات هبوط.',
     },
   },
   {
@@ -134,7 +134,7 @@ export const SERVICES_PREVIEW: Service[] = [
     desc: { en: 'Connected interfaces and operational workspaces that make complex work feel effortless.', ar: 'واجهات ومساحات عمل مترابطة تجعل المهام المعقدة أسهل وأوضح.' },
   },
   {
-    id: 'web-development', icon: 'wordpress',
+    id: 'web-development', icon: 'design',
     title: { en: 'Custom Websites & Frontend Engineering', ar: 'مواقع مخصصة وتطوير الواجهات' },
     desc: { en: 'Distinctive, high-performance websites built for accessibility, speed, and real customer journeys.', ar: 'مواقع مميزة وعالية الأداء تُبنى للسرعة وسهولة الوصول ورحلات العملاء الحقيقية.' },
   },
@@ -300,8 +300,8 @@ export const DISCIPLINES: Discipline[] = [
     icon: 'uiux',
     title: { en: 'Web & Interfaces', ar: 'الويب والواجهات' },
     desc: {
-      en: 'UI/UX, WordPress, coded sites, and conversion-built pages.',
-      ar: 'واجهات وتجربة، ووردبريس، مواقع مبرمجة، وصفحات مبنية للتحويل.',
+      en: 'UI/UX, custom-coded websites, and conversion-built pages.',
+      ar: 'واجهات وتجربة، مواقع مبرمجة، وصفحات مبنية للتحويل.',
     },
   },
   {
