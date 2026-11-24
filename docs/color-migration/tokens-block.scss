@@ -1,0 +1,146 @@
+/* ---------- Veloura design tokens (technology system) ----------
+   Primitive palette -> semantic roles. Components consume semantic
+   tokens only; never hard-code a hex value in a component. */
+:root {
+  /* Primitives */
+  --navy-950: #0B1020;     /* Midnight Navy */
+  --graphite-900: #151C2E; /* Deep Graphite */
+  --cloud-50: #F6F8FC;     /* Cloud White */
+  --ice-100: #F1F5FF;      /* Ice White */
+  --slate-400: #9CA9BD;    /* Cool Slate */
+  --cobalt-500: #526CFF;   /* Electric Cobalt (decorative) */
+  --cobalt-600: #3B51E0;   /* Cobalt, AA text + buttons on light */
+  --cobalt-300: #8193FF;   /* Cobalt, AA text on dark */
+  --cyan-400: #32C9DA;     /* Digital Cyan (decorative / status) */
+  --cyan-700: #087C8F;     /* Cyan, AA text on light */
+  --violet-400: #8275EF;   /* Soft Violet (supporting) */
+  --violet-600: #6556D6;   /* Violet, AA text on light */
+
+  /* Fonts */
+  --font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-ar: 'Tajawal', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-display: 'Fraunces', 'Inter', Georgia, 'Times New Roman', serif;
+  --font: var(--font-en);
+
+  /* Semantic — Light (default) */
+  --bg: var(--cloud-50);
+  --bg-2: #EDF2FA;
+  --surface: #FFFFFF;
+  --surface-2: var(--ice-100);
+  --surface-deep: var(--navy-950);
+  --on-dark: var(--ice-100);
+  --on-light: var(--navy-950);
+  --text: var(--navy-950);
+  --text-soft: rgba(11, 16, 32, 0.74);
+  --text-mute: #5B6579;
+  --accent: var(--cobalt-600);
+  --accent-deep: #2F45C9;
+  --accent-soft: rgba(59, 81, 224, 0.10);
+  --accent-2: var(--cyan-700);
+  --accent-2-bright: var(--cyan-400);
+  --accent-2-soft: rgba(50, 201, 218, 0.14);
+  --accent-3: var(--violet-600);
+  --gold: var(--accent-2);          /* legacy alias: eyebrow / highlight text */
+  --gold-bright: var(--accent-2-bright);
+  --gold-soft: var(--accent-2-soft);
+  --border: rgba(11, 16, 32, 0.10);
+  --border-strong: rgba(11, 16, 32, 0.18);
+
+  /* Interactive */
+  --btn-bg: var(--cobalt-600);
+  --btn-text: #FFFFFF;
+  --btn-hover: #2F45C9;
+  --ring-focus: rgba(82, 108, 255, 0.55);
+  --card-hi: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  /* Atmosphere */
+  --glow-primary: rgba(82, 108, 255, 0.22);
+  --glow-secondary: rgba(50, 201, 218, 0.20);
+  --glow-burgundy: var(--glow-primary);
+  --glow-gold: var(--glow-secondary);
+  --nav-bg: rgba(246, 248, 252, 0.82);
+  --nav-border: rgba(11, 16, 32, 0.08);
+  --gradient-brand: linear-gradient(135deg, #526CFF 0%, #8275EF 55%, #32C9DA 100%);
+  --gradient-panel: linear-gradient(150deg, #0B1020 0%, #151C2E 58%, #1E2F63 100%);
+
+  --shadow-sm: 0 1px 2px rgba(11, 16, 32, 0.05), 0 2px 8px rgba(11, 16, 32, 0.05);
+  --shadow-md: 0 10px 28px -14px rgba(11, 16, 32, 0.22), 0 2px 8px rgba(11, 16, 32, 0.05);
+  --shadow-lg: 0 28px 64px -26px rgba(11, 16, 32, 0.34), 0 8px 24px -16px rgba(11, 16, 32, 0.12);
+
+  --sel-bg: #526CFF;
+  --sel-fg: #FFFFFF;
+  --scrollbar-thumb: rgba(59, 81, 224, 0.30);
+  --scrollbar-thumb-hover: rgba(59, 81, 224, 0.55);
+
+  /* Fluid type scale */
+  --fs-display: clamp(2.8rem, 7.5vw, 6rem);
+  --fs-h1: clamp(2.3rem, 5.2vw, 4rem);
+  --fs-h2: clamp(1.9rem, 3.8vw, 3rem);
+  --fs-h3: clamp(1.3rem, 2vw, 1.6rem);
+  --fs-lead: clamp(1.05rem, 1.6vw, 1.4rem);
+  --fs-body: 1.0625rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.78rem;
+
+  /* Spacing / shape */
+  --container: 1200px;
+  --container-narrow: 880px;
+  --radius-sm: 12px;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --section-y: clamp(4.25rem, 7vw, 7rem);
+  --section-content-gap: clamp(2.25rem, 3.5vw, 3rem);
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark theme — deliberate, not an inversion: navy depth, cobalt light, cyan signal */
+:root:not([data-theme='light']) {
+  color-scheme: dark;
+}
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: var(--navy-950);
+  --bg-2: #080C18;
+  --surface: var(--graphite-900);
+  --surface-2: #1C2640;
+  --surface-deep: #080C18;
+  --on-dark: var(--ice-100);
+  --on-light: var(--navy-950);
+  --text: var(--ice-100);
+  --text-soft: rgba(241, 245, 255, 0.76);
+  --text-mute: var(--slate-400);
+  --accent: var(--cobalt-300);
+  --accent-deep: var(--cobalt-500);
+  --accent-soft: rgba(129, 147, 255, 0.14);
+  --accent-2: var(--cyan-400);
+  --accent-2-bright: #7FE3EE;
+  --accent-2-soft: rgba(50, 201, 218, 0.14);
+  --accent-3: #A89CFF;
+  --border: rgba(241, 245, 255, 0.10);
+  --border-strong: rgba(241, 245, 255, 0.20);
+
+  --btn-bg: var(--cobalt-300);
+  --btn-text: var(--navy-950);
+  --btn-hover: #A3B1FF;
+  --ring-focus: rgba(129, 147, 255, 0.65);
+  --card-hi: inset 0 1px 0 rgba(241, 245, 255, 0.08);
+
+  --glow-primary: rgba(82, 108, 255, 0.34);
+  --glow-secondary: rgba(50, 201, 218, 0.18);
+  --nav-bg: rgba(11, 16, 32, 0.74);
+  --nav-border: rgba(241, 245, 255, 0.09);
+  --gradient-brand: linear-gradient(135deg, #526CFF 0%, #8275EF 55%, #32C9DA 100%);
+  --gradient-panel: linear-gradient(150deg, #0B1020 0%, #151C2E 55%, #22347A 100%);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 30px -14px rgba(0, 0, 0, 0.6), 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 30px 70px -28px rgba(0, 0, 0, 0.75), 0 10px 30px -18px rgba(82, 108, 255, 0.18);
+
+  --sel-bg: #526CFF;
+  --sel-fg: #FFFFFF;
+  --scrollbar-thumb: rgba(129, 147, 255, 0.30);
+  --scrollbar-thumb-hover: rgba(129, 147, 255, 0.55);
+}
+
