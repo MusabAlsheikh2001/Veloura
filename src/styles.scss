@@ -24,7 +24,7 @@
   /* Fonts */
   --font-en: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-ar: 'Tajawal', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
-  --font-display: 'Fraunces', 'Inter', Georgia, 'Times New Roman', serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font: var(--font-en);
 
   /* Semantic — Light (default) */
@@ -52,9 +52,9 @@
   --border-strong: rgba(11, 16, 32, 0.18);
 
   /* Interactive */
-  --btn-bg: var(--cobalt-600);
+  --btn-bg: linear-gradient(120deg, #3B51E0 0%, #6556D6 100%);
   --btn-text: #FFFFFF;
-  --btn-hover: #2F45C9;
+  --btn-hover: linear-gradient(120deg, #2F45C9 0%, #5A4BCB 100%);
   --ring-focus: rgba(82, 108, 255, 0.55);
   --card-hi: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 
@@ -123,9 +123,9 @@
   --border: rgba(241, 245, 255, 0.10);
   --border-strong: rgba(241, 245, 255, 0.20);
 
-  --btn-bg: var(--cobalt-300);
+  --btn-bg: linear-gradient(120deg, #8193FF 0%, #A89CFF 100%);
   --btn-text: var(--navy-950);
-  --btn-hover: #A3B1FF;
+  --btn-hover: linear-gradient(120deg, #A3B1FF 0%, #C0B8FF 100%);
   --ring-focus: rgba(129, 147, 255, 0.65);
   --card-hi: inset 0 1px 0 rgba(241, 245, 255, 0.08);
 

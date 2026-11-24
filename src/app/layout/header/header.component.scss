@@ -11,18 +11,29 @@
   min-height: var(--hdr-h);
   display: flex;
   align-items: center;
-  padding-block: 0.55rem;
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  padding-block: 0.7rem;
+  background: transparent;
+  border-bottom: 0;
   transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease),
     border-color 0.4s var(--ease);
 }
 
-.hdr.is-scrolled {
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  box-shadow: 0 12px 34px -28px rgba(11, 16, 32, 0.34);
+/* Floating pill: the bar sits on a raised surface that detaches from the page on scroll */
+.hdr__inner {
+  padding-block: 0.35rem;
+  padding-inline: 0.9rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  transition: box-shadow 0.4s var(--ease), background 0.4s var(--ease);
+}
+
+.hdr.is-scrolled .hdr__inner {
+  box-shadow: var(--shadow-md);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
 }
 
 /* Hairline that fades in under the bar once scrolled — a quiet premium cue. */
