@@ -3,9 +3,9 @@
   overflow: hidden;
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(120% 140% at 100% 0%, rgba(198, 167, 123, 0.16), transparent 55%),
+    radial-gradient(120% 140% at 100% 0%, rgba(34, 199, 214, 0.16), transparent 55%),
     linear-gradient(135deg, var(--surface-deep), var(--accent));
-  border: 1px solid rgba(198, 167, 123, 0.22);
+  border: 1px solid rgba(34, 199, 214, 0.22);
   box-shadow: var(--shadow-lg);
 }
 
@@ -54,7 +54,7 @@
 }
 
 .cta-band__sub {
-  color: rgba(198, 167, 123, 0.78);
+  color: rgba(34, 199, 214, 0.78);
   font-size: var(--fs-lead);
   font-weight: 300;
   max-width: 48ch;
