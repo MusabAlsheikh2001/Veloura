@@ -825,3 +825,37 @@ html[lang='ar'] .studio__heading { font-family: var(--font-ar); letter-spacing: 
   .studio, .hero__float, .hero .btn { transition: none; }
   .hero__visual:hover .studio { transform: none; }
 }
+
+
+/* Selected work — authentic brand marks and editorial project presentation. */
+.portfolio { background: var(--bg); }
+.portfolio__heading { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:clamp(1.2rem,5vw,5rem); align-items:end; margin-block-end:clamp(2rem,4vw,3.5rem); }
+.portfolio__heading > div { display:flex; flex-direction:column; align-items:flex-start; gap:1.2rem; }
+.portfolio__heading h2 { max-width:15ch; font-size:clamp(2.5rem,4.5vw,4.65rem); letter-spacing:-.047em; line-height:1.06; }
+html[lang='ar'] .portfolio__heading h2 { letter-spacing:0; line-height:1.27; }
+.portfolio__heading p { max-width:46ch; color:var(--text-soft); font-size:clamp(.98rem,1.22vw,1.15rem); line-height:1.75; }
+.portfolio__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(.9rem,1.6vw,1.4rem); }
+.portfolio__card { position:relative; display:flex; min-width:0; min-height:485px; flex-direction:column; border:1px solid var(--border); border-radius:17px; overflow:hidden; isolation:isolate; background:var(--surface); color:var(--text); transition:transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease, border-color .3s ease; }
+.portfolio__card:hover { transform:translateY(-8px); box-shadow:0 30px 65px -38px rgba(38,15,24,.35); border-color:color-mix(in srgb,var(--gold) 45%,var(--border)); }
+.portfolio__number { position:absolute; z-index:2; inset-block-start:1.2rem; inset-inline-start:1.4rem; color:var(--text-mute); font-size:.67rem; letter-spacing:.16em; font-weight:700; }
+.portfolio__media { display:grid; place-items:center; width:100%; min-height:220px; padding:clamp(1.8rem,3vw,3rem); overflow:hidden; background:#f4efeb; }
+.portfolio__card--nay .portfolio__media { background:#e5f0ed; }
+.portfolio__card--sukkar .portfolio__media { background:#f8eaf2; }
+.portfolio__card--alma .portfolio__media { background:#efeee3; }
+.portfolio__media img { width:min(100%,230px); max-height:142px; height:auto; object-fit:contain; transition:transform .65s cubic-bezier(.16,1,.3,1); }
+.portfolio__card:hover .portfolio__media img { transform:scale(1.07); }
+.portfolio__details { display:flex; flex:1; flex-direction:column; align-items:flex-start; gap:.65rem; padding:clamp(1.35rem,2vw,2rem); }
+.portfolio__type { color:var(--accent); font-size:.65rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; }
+html[lang='ar'] .portfolio__type { letter-spacing:0; }
+.portfolio__name { font-family:var(--font-display); font-size:clamp(1.65rem,2.15vw,2.15rem); font-weight:500; line-height:1.1; letter-spacing:-.035em; }
+html[lang='ar'] .portfolio__name { font-family:var(--font-ar); letter-spacing:0; line-height:1.3; }
+.portfolio__name [lang='ar'] { font-family:var(--font-ar); font-size:.72em; }
+.portfolio__description { color:var(--text-soft); font-size:.91rem; line-height:1.65; }
+.portfolio__visit { display:flex; width:100%; justify-content:space-between; align-items:center; gap:1rem; margin-block-start:auto; padding-block-start:1.35rem; border-top:1px solid var(--border); font-size:.82rem; font-weight:700; }
+.portfolio__visit > span { font-size:1.4rem; line-height:1; transition:transform .35s cubic-bezier(.16,1,.3,1); }
+.portfolio__card:hover .portfolio__visit > span { transform:translate(3px,-3px); }
+[dir='rtl'] .portfolio__card:hover .portfolio__visit > span { transform:translate(-3px,-3px); }
+.portfolio__card:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }
+@media (max-width:980px) { .portfolio__grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .portfolio__card:last-child { grid-column:span 2; min-height:0; } .portfolio__card:last-child .portfolio__media { min-height:190px; } }
+@media (max-width:680px) { .portfolio__heading { grid-template-columns:1fr; gap:1.3rem; } .portfolio__grid { grid-template-columns:1fr; } .portfolio__card, .portfolio__card:last-child { grid-column:auto; min-height:0; } .portfolio__media { min-height:190px; } .portfolio__details { min-height:235px; } }
+@media (prefers-reduced-motion:reduce) { .portfolio__card,.portfolio__media img,.portfolio__visit > span { transition:none; } .portfolio__card:hover,.portfolio__card:hover .portfolio__media img,.portfolio__card:hover .portfolio__visit > span { transform:none; } }
