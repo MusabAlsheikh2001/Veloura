@@ -19,28 +19,30 @@
         <span><i aria-hidden="true">03</i>{{ t.ui().home.heroStat3 }}</span>
       </div>
     </div>
-    <!-- An original abstract product-interface composition, not a fabricated client dashboard. -->
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__orbit hero__orbit--one"></div>
-      <div class="hero__orbit hero__orbit--two"></div>
-      <div class="studio">
-        <div class="studio__top"><span class="studio__dots"><i></i><i></i><i></i></span><span class="studio__path">veloura / {{ t.isArabic() ? 'مختبر المنتجات' : 'product-lab' }}</span><span class="studio__number">V.01</span></div>
-        <div class="studio__workspace">
-          <div class="studio__rail"><span class="studio__rail-logo">V.</span><span class="studio__rail-line"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span></div>
-          <div class="studio__panel">
-            <div class="studio__row"><span class="studio__overline">{{ t.isArabic() ? 'نظام تصميم متكامل' : 'CONNECTED DESIGN SYSTEM' }}</span><span class="studio__tiny">01 — 04</span></div>
-            <div class="studio__heading">{{ t.isArabic() ? 'تجربة مدروسة.' : 'Craft meets logic.' }}</div>
-            <div class="studio__textbars"><span></span><span></span><span></span></div>
-            <div class="studio__preview">
-              <div class="studio__chart"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="studio__card"><span class="studio__card-circle"></span><span class="studio__card-line"></span><span class="studio__card-line studio__card-line--short"></span></div>
-            </div>
-            <div class="studio__foot"><span><b></b>{{ t.isArabic() ? 'تصميم الواجهات' : 'Interface design' }}</span><span><b></b>{{ t.isArabic() ? 'الأنظمة والربط' : 'Systems & integration' }}</span></div>
-          </div>
+    <!-- Capability constellation: the V at the centre, each capability a live node. -->
+    <div class="hero__visual">
+      <div class="constellation" role="list" [attr.aria-label]="t.isArabic() ? 'الخدمات' : 'Capabilities'">
+        <svg class="constellation__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          @for (n of nodes; track n.i) {
+            <line x1="50" y1="50" [attr.x2]="n.x" [attr.y2]="n.y" [class.is-active]="activeNode() === n.i" />
+          }
+        </svg>
+        <div class="constellation__core" aria-hidden="true"><img src="/img/brand/logo-mark.png" alt="" /></div>
+        @for (n of nodes; track n.i) {
+          <a class="constellation__node" role="listitem"
+             [class.is-active]="activeNode() === n.i"
+             [style.left.%]="n.x" [style.top.%]="n.y" [style.--d]="(n.i * 90) + 'ms'"
+             [routerLink]="t.path('/services/' + n.slug)"
+             (pointerenter)="setNode(n.i)" (focus)="setNode(n.i)">
+            <app-icon [name]="n.s.icon" />
+            <span class="constellation__label">{{ t.pick(n.s.title) }}</span>
+          </a>
+        }
+        <div class="constellation__card" aria-live="polite">
+          <strong>{{ t.pick(nodes[activeNode()].s.title) }}</strong>
+          <span>{{ t.pick(nodes[activeNode()].s.desc) }}</span>
         </div>
       </div>
-      <div class="hero__float hero__float--top"><span class="hero__float-icon">✦</span><span>UI / UX</span><span class="hero__float-arrow">↗</span></div>
-      <div class="hero__float hero__float--bottom"><span class="hero__float-pulse"></span><span>{{ t.isArabic() ? 'تصميم · تطوير · تشغيل' : 'Design → Build → Connect' }}</span></div>
     </div>
   </div>
   <div class="container hero__bottom"><span>{{ t.isArabic() ? 'تجارب رقمية. هندسة واجهات. أنظمة مترابطة.' : 'DIGITAL EXPERIENCES / FRONTEND ENGINEERING / CONNECTED SYSTEMS' }}</span><span class="hero__bottom-number">V / 2026</span></div>
