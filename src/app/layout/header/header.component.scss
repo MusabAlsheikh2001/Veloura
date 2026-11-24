@@ -447,6 +447,7 @@ html[lang='ar'] .mnav__mega .mnav__section-link {
 
   .hdr__inner > app-logo {
     --logo-size: 44px;
+    --logo-height: 2.2rem;
   }
   .hdr__nav { display: none; }
   .hdr__actions { margin-inline-start: auto; }
@@ -478,6 +479,7 @@ html[lang='ar'] .mnav__mega .mnav__section-link {
 
   .hdr__inner > app-logo {
     --logo-size: 42px;
+    --logo-height: 1.9rem;
   }
   .hdr__actions app-language-toggle { display: none; }
   .hdr__actions {
