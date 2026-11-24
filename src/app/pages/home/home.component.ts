@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   INDUSTRIES,
@@ -42,6 +42,30 @@ import { ServiceCardComponent } from '../../ui/service-card/service-card.compone
 })
 export class HomeComponent {
   protected t = inject(TranslationService);
+
+  /** Interface state shown by the hero product panel (0 = overview, 1 = pipeline, 2 = invoices). */
+  protected readonly panelState = signal(0);
+  protected readonly panelStates = [0, 1, 2];
+
+  protected setPanel(state: number): void {
+    this.panelState.set(state);
+  }
+
+  /** Pointer tilt: sets --tilt-x / --tilt-y on the panel, read by its transform. */
+  protected tiltPanel(event: PointerEvent): void {
+    const host = event.currentTarget as HTMLElement;
+    const r = host.getBoundingClientRect();
+    const px = (event.clientX - r.left) / r.width - 0.5;
+    const py = (event.clientY - r.top) / r.height - 0.5;
+    host.style.setProperty('--tilt-x', (px * 8).toFixed(2) + 'deg');
+    host.style.setProperty('--tilt-y', (-py * 6).toFixed(2) + 'deg');
+  }
+
+  protected resetTilt(event: PointerEvent): void {
+    const host = event.currentTarget as HTMLElement;
+    host.style.setProperty('--tilt-x', '0deg');
+    host.style.setProperty('--tilt-y', '0deg');
+  }
 
   protected services = SERVICES_PREVIEW;
   protected process = PROCESS;
