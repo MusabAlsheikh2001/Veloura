@@ -97,6 +97,33 @@ import { IconComponent } from '../icon/icon.component';
         transform: translateX(4px);
         transition: transform 0.3s var(--ease);
       }
+      /* Hairline sweep across the top edge on hover */
+      .svc::before {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        top: 0;
+        height: 1px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.7s var(--ease-out);
+        pointer-events: none;
+      }
+      [dir='rtl'] .svc::before { transform-origin: right center; }
+      .svc:hover::before { transform: scaleX(1); }
+      /* Icon settles into place once its grid cell reveals */
+      :host-context(.reveal.is-visible) .svc__icon {
+        animation: svcIconIn 0.9s var(--ease-out) 0.2s both;
+      }
+      @keyframes svcIconIn {
+        from { opacity: 0; transform: scale(0.6) rotate(-14deg); }
+        to { opacity: 1; transform: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .svc::before { transition: none; }
+        :host-context(.reveal.is-visible) .svc__icon { animation: none; }
+      }
       [dir='rtl'] .svc__more .arrow {
         transform: scaleX(-1);
       }
