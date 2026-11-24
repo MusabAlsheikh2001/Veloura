@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veloura — three hero treatments</title>
+<style>
+  :root { --obsidian:#101115; --graphite:#1B1D23; --porcelain:#F7F7F5; --carbon:#17191E; --burgundy:#641B34; --champagne:#C6A77B; --steel:#9197A3; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: system-ui, -apple-system, 'Inter', sans-serif; background:#0b0b0d; color:#eee; }
+  .treatment { min-height: 100vh; padding: 56px 6vw; position: relative; overflow: hidden; }
+  .label { position:absolute; top:18px; left:6vw; font-size:12px; letter-spacing:.14em; text-transform:uppercase; opacity:.7; }
+  h1 { font-weight:600; letter-spacing:-.03em; line-height:1.02; font-size:clamp(2.6rem,6vw,5.2rem); }
+  p.lead { font-size:clamp(1rem,1.4vw,1.2rem); line-height:1.6; max-width:44ch; }
+  .btn { display:inline-block; padding:14px 26px; border-radius:10px; font-weight:600; text-decoration:none; }
+
+  /* A — Monolith: obsidian, one oversized type statement, mark as the single object */
+  .a { background: var(--obsidian); color: var(--porcelain); display:grid; grid-template-columns: 1.25fr .75fr; align-items:center; gap:4vw; }
+  .a h1 { font-size: clamp(3rem, 8vw, 7.4rem); }
+  .a h1 em { font-style:normal; color: var(--champagne); }
+  .a .mark { width:100%; max-width:360px; justify-self:center; filter: drop-shadow(0 30px 60px rgba(100,27,52,.35)); }
+  .a .btn { background: var(--burgundy); color: var(--porcelain); }
+  .a .ghost { color: var(--porcelain); border:1px solid rgba(247,247,245,.25); margin-left:12px; }
+
+  /* B — Specimen: porcelain editorial, hairline grid, numbered capability index */
+  .b { background: var(--porcelain); color: var(--obsidian); }
+  .b .label { color: var(--obsidian); }
+  .b .grid { display:grid; grid-template-columns: repeat(12,1fr); gap:24px; margin-top:64px; align-items:start; }
+  .b h1 { grid-column: 1 / span 9; font-size: clamp(2.8rem, 6.6vw, 6.2rem); }
+  .b .lead { grid-column: 1 / span 5; color:#3d4149; }
+  .b .idx { grid-column: 7 / span 6; border-top:1px solid #cfd1d6; }
+  .b .idx div { display:grid; grid-template-columns: 44px 1fr; padding:14px 0; border-bottom:1px solid #cfd1d6; font-size:15px; }
+  .b .idx span { color:#8a8f99; font-variant-numeric: tabular-nums; }
+  .b .btn { background: var(--burgundy); color: var(--porcelain); margin-top:28px; }
+  .b .mark { position:absolute; right:6vw; bottom:6vh; width: 180px; opacity:1; }
+
+  /* C — Constellation: obsidian, the V is the centre of a capability map */
+  .c { background: radial-gradient(120% 90% at 70% 40%, #1B1D23 0%, var(--obsidian) 60%); color: var(--porcelain); display:grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items:center; }
+  .c .map { position:relative; width:100%; aspect-ratio:1; max-width:520px; justify-self:center; }
+  .c .map svg { position:absolute; inset:0; width:100%; height:100%; }
+  .c .map line { stroke: rgba(247,247,245,.18); stroke-width: 1; }
+  .c .core { position:absolute; left:50%; top:50%; width:150px; height:150px; transform:translate(-50%,-50%); border-radius:50%; background:var(--graphite); border:1px solid rgba(247,247,245,.12); display:grid; place-items:center; }
+  .c .core img { width:78px; }
+  .c .node { position:absolute; transform:translate(-50%,-50%); padding:10px 14px; border-radius:999px; background:var(--carbon); border:1px solid rgba(198,167,123,.35); font-size:13px; white-space:nowrap; }
+  .c .btn { background: var(--champagne); color: var(--obsidian); }
+  .c h1 { font-size: clamp(2.6rem, 5.4vw, 5rem); }
+  .c h1 em { font-style:normal; color: var(--champagne); }
+</style>
+</head>
+<body>
+
+<section class="treatment a">
+  <div class="label">A · Monolith</div>
+  <div>
+    <h1>Beautifully designed. <em>Seriously engineered.</em></h1>
+    <p class="lead" style="margin-top:28px">We design exceptional digital experiences and build the technology behind them. From distinctive websites to connected business platforms, Veloura brings creative thinking and engineering precision together.</p>
+    <div style="margin-top:36px"><a class="btn" href="#">Start a project</a><a class="btn ghost" href="#">Selected work</a></div>
+  </div>
+  <img class="mark" src="../brand/logo-mark.png" alt="">
+</section>
+
+<section class="treatment b">
+  <div class="label">B · Specimen</div>
+  <h1 style="margin-top:40px">Beautifully designed. Seriously engineered.</h1>
+  <div class="grid">
+    <div class="lead">We design exceptional digital experiences and build the technology behind them. From distinctive websites to connected business platforms, Veloura brings creative thinking and engineering precision together.
+      <br><a class="btn" href="#">Start a project</a></div>
+    <div class="idx">
+      <div><span>01</span>Web applications &amp; dashboards</div>
+      <div><span>02</span>Frontend engineering &amp; websites</div>
+      <div><span>03</span>UI/UX &amp; product design</div>
+      <div><span>04</span>System integrations &amp; automation</div>
+      <div><span>05</span>Brand identity &amp; creative direction</div>
+    </div>
+  </div>
+  <img class="mark" src="../brand/logo-mark.png" alt="">
+</section>
+
+<section class="treatment c">
+  <div class="label">C · Constellation</div>
+  <div>
+    <h1>Beautifully designed. <em>Seriously engineered.</em></h1>
+    <p class="lead" style="margin-top:28px">We design exceptional digital experiences and build the technology behind them. From distinctive websites to connected business platforms, Veloura brings creative thinking and engineering precision together.</p>
+    <div style="margin-top:36px"><a class="btn" href="#">Start a project</a></div>
+  </div>
+  <div class="map">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="50" y1="50" x2="50" y2="8"/><line x1="50" y1="50" x2="89" y2="30"/><line x1="50" y1="50" x2="89" y2="70"/><line x1="50" y1="50" x2="50" y2="92"/><line x1="50" y1="50" x2="11" y2="70"/><line x1="50" y1="50" x2="11" y2="30"/>
+    </svg>
+    <div class="core"><img src="../brand/logo-mark.png" alt=""></div>
+    <div class="node" style="left:50%;top:8%">Web applications</div>
+    <div class="node" style="left:89%;top:30%">Frontend</div>
+    <div class="node" style="left:89%;top:70%">UI/UX</div>
+    <div class="node" style="left:50%;top:92%">Integrations</div>
+    <div class="node" style="left:11%;top:70%">Brand</div>
+    <div class="node" style="left:11%;top:30%">Growth</div>
+  </div>
+</section>
+
+</body>
+</html>
