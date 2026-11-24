@@ -866,3 +866,49 @@ html[lang='ar'] .portfolio__name { font-family:var(--font-ar); letter-spacing:0;
 @media (max-width:980px) { .portfolio__grid { grid-template-columns:1fr; } .portfolio__grid > .portfolio__card { grid-column:auto; min-height:0; flex-direction:column; } .portfolio__grid > .portfolio__card--alma .portfolio__media { flex:none; min-height:190px; } .portfolio__card--nay .portfolio__media, .portfolio__card--sukkar .portfolio__media { min-height:190px; } }
 @media (max-width:680px) { .portfolio__heading { grid-template-columns:1fr; gap:1.3rem; } .portfolio__details { min-height:235px; } .portfolio__card--alma .portfolio__details { min-height:0; } }
 @media (prefers-reduced-motion:reduce) { .portfolio__card,.portfolio__media img,.portfolio__visit > span { transition:none; } .portfolio__card:hover,.portfolio__card:hover .portfolio__media img,.portfolio__card:hover .portfolio__visit > span { transform:none; } }
+
+/* ---------- Motion: hero assembly ----------
+   One authored sequence: the headline rises line-by-line through a mask,
+   the supporting copy and actions follow in order, and the product panel
+   unfolds into its perspective. Opacity/transform/clip-path only.
+   Defaults are the visible end state; keyframes start hidden. */
+@keyframes heroKicker { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes heroTitleReveal {
+  from { clip-path: inset(0 0 100% 0); transform: translateY(0.22em); }
+  to   { clip-path: inset(-0.2em -0.1em -0.3em -0.1em); transform: none; }
+}
+@keyframes heroRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes heroPanelIn {
+  from { opacity: 0; transform: perspective(1400px) rotateY(-16deg) rotateX(6deg) translateY(48px); }
+  to   { opacity: 1; transform: perspective(1400px) rotateY(-7deg) rotateX(3deg); }
+}
+
+.hero__kicker { animation: heroKicker 0.8s var(--ease-out) 0.05s both; }
+.hero__title { animation: heroTitleReveal 1.2s var(--ease-out) 0.15s both; }
+.hero__sub { animation: heroRise 0.9s var(--ease-out) 0.5s both; }
+.hero__cta { animation: heroRise 0.9s var(--ease-out) 0.65s both; }
+.hero__signals { animation: heroRise 0.9s var(--ease-out) 0.8s both; }
+.hero__visual .studio { animation: heroPanelIn 1.5s var(--ease-out) 0.3s both; }
+
+/* ---------- Motion: portfolio unveil ----------
+   Project cards open from the top edge like a sheet lifting off the page,
+   instead of the generic fade-and-rise used elsewhere on the site. */
+.portfolio__card.reveal {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(16% 0 0 0 round 17px);
+  transition: clip-path 1.1s var(--ease-out) var(--reveal-delay, 0s),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease, border-color 0.3s ease;
+}
+.portfolio__card.reveal.is-visible { clip-path: inset(0 0 0 0 round 17px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__kicker, .hero__title, .hero__sub, .hero__cta, .hero__signals, .hero__visual .studio {
+    animation: none;
+  }
+  .portfolio__card.reveal, .portfolio__card.reveal.is-visible {
+    clip-path: none;
+    transition: transform 0s, box-shadow 0s, border-color 0s;
+  }
+}
