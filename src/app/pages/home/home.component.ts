@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   INDUSTRIES,
@@ -44,6 +44,23 @@ export class HomeComponent {
   protected t = inject(TranslationService);
 
   protected services = SERVICES_PREVIEW;
+
+  /** Constellation: each service sits on a ring around the V mark. */
+  protected readonly nodes = SERVICES_PREVIEW.map((s, i) => {
+    const angle = ((-90 + (i * 360) / SERVICES_PREVIEW.length) * Math.PI) / 180;
+    return {
+      s,
+      i,
+      x: (50 + 36 * Math.cos(angle)).toFixed(2),
+      y: (50 + 36 * Math.sin(angle)).toFixed(2),
+      slug: serviceSlugById(s.id),
+    };
+  });
+  protected readonly activeNode = signal(0);
+
+  protected setNode(i: number): void {
+    this.activeNode.set(i);
+  }
   protected process = PROCESS;
   protected values = VALUE_CARDS;
   protected industries = INDUSTRIES;
