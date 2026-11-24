@@ -57,6 +57,19 @@ export class HomeComponent {
     };
   });
   protected readonly activeNode = signal(0);
+  protected readonly activeService = signal(0);
+  protected readonly activeProject = signal(0);
+
+  /** Selected Work: the three projects, with their real URLs and authentic logos. */
+  protected get projects() {
+    const h = this.t.ui().home;
+    return [
+      { key: 'nay', name: 'Nay Alrouh', host: 'nayalrouh.com', url: 'https://nayalrouh.com/', logo: 'https://nayalrouh.b-cdn.net/logo.png', alt: 'Nay Alrouh logo', type: h.portfolioNayType, desc: h.portfolioNayDesc },
+      { key: 'sukkar', name: 'Sukkar', host: 'sukkar.space', url: 'https://sukkar.space/', logo: '/img/portfolio-sukkar-logo.svg', alt: 'Sukkar logo', type: h.portfolioSukkarType, desc: h.portfolioSukkarDesc },
+      { key: 'alma', name: 'Alma Alrouh', host: 'alma-alrouh.com', url: 'https://alma-alrouh.com/', logo: '/img/portfolio-alma-logo.png', alt: 'Alma Alrouh logo', type: h.portfolioAlmaType, desc: h.portfolioAlmaDesc },
+    ];
+  }
+  protected readonly slug = serviceSlugById;
 
   protected setNode(i: number): void {
     this.activeNode.set(i);
