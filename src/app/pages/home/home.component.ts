@@ -58,6 +58,15 @@ export class HomeComponent {
   });
   protected readonly activeNode = signal(0);
   protected readonly activeService = signal(0);
+
+  /** Technologies the studio can verify it uses in this codebase (Simple Icons, CC0). */
+  protected readonly stack = [
+    { name: 'Angular', src: '/img/logos/tech/angular.svg' },
+    { name: 'TypeScript', src: '/img/logos/tech/typescript.svg' },
+    { name: 'Node.js', src: '/img/logos/tech/nodedotjs.svg' },
+    { name: 'Git', src: '/img/logos/tech/git.svg' },
+    { name: 'GitHub', src: '/img/logos/tech/github.svg' },
+  ];
   protected readonly activeProject = signal(0);
 
   /** Selected Work: the three projects, with their real URLs and authentic logos. */

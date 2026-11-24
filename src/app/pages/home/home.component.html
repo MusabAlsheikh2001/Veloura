@@ -43,6 +43,23 @@
   </div>
 </section>
 
+<section class="stack" aria-label="{{ t.isArabic() ? 'التقنيات' : 'Technologies' }}">
+  <p class="stack__label">{{ t.isArabic() ? 'نبني باستخدام' : 'Built with' }}</p>
+  <div class="stack__viewport" dir="ltr">
+    <div class="stack__track">
+      @for (group of [0, 1]; track group) {
+        <ul class="stack__list" [attr.aria-hidden]="group === 1 ? 'true' : null">
+          @for (item of stack; track item.name) {
+            <li class="stack__item">
+              <span class="stack__logo" role="img" [attr.aria-label]="group === 0 ? item.name : null" [style.--logo]="'url(' + item.src + ')'"></span>
+              <span class="stack__name">{{ item.name }}</span>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</section>
 <section class="capability-index" aria-label="Capabilities">
   <div class="container capability-index__inner">
     <span class="capability-index__intro">{{ t.isArabic() ? 'ما يميز عملنا' : 'BUILT AT THE INTERSECTION OF' }}</span>
