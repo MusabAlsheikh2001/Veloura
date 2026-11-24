@@ -103,7 +103,7 @@
   background: var(--surface);
   transition: transform .45s cubic-bezier(.18,.8,.2,1), border-color .35s ease, box-shadow .45s ease;
 }
-.srv:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent-2) 48%, var(--border)); box-shadow: 0 32px 70px -45px rgba(90, 30, 42, 0.4); }
+.srv:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent-2) 48%, var(--border)); box-shadow: 0 32px 70px -45px rgba(107, 31, 47, 0.4); }
 .srv__title { max-width: 24ch; font-size: clamp(1.35rem, 2.35vw, 2.15rem); line-height: 1.13; letter-spacing: -.035em; }
 .srv__desc { max-width: 62ch; font-size: 1rem; line-height: 1.75; }
 .srv__num { color: var(--accent-2); font-weight: 700; }
@@ -111,15 +111,15 @@
 .srv:hover .srv__icon { transform: rotate(0) translateY(-3px); }
 .srv:nth-child(1), .srv:nth-child(2) {
   min-height: 380px;
-  background: radial-gradient(75% 95% at 100% 0%, rgba(198, 167, 123, 0.22), transparent 70%), linear-gradient(135deg, var(--ink-950), #1C1718);
-  border-color: rgba(198, 167, 123, 0.28);
-  color: #C6A77B;
+  background: radial-gradient(75% 95% at 100% 0%, rgba(34, 199, 214, 0.22), transparent 70%), linear-gradient(135deg, var(--ink-950), #1E293B);
+  border-color: rgba(34, 199, 214, 0.28);
+  color: #22C7D6;
 }
-.srv:nth-child(1) .srv__title, .srv:nth-child(2) .srv__title { color: #C6A77B; }
-.srv:nth-child(1) .srv__desc, .srv:nth-child(2) .srv__desc { color: rgba(198, 167, 123, 0.74); }
-.srv:nth-child(1) .srv__icon, .srv:nth-child(2) .srv__icon { color: #C6A77B; background: rgba(198, 167, 123, 0.08); border-color: rgba(198, 167, 123, 0.22); }
-.srv:nth-child(1):hover, .srv:nth-child(2):hover { border-color: rgba(198, 167, 123, 0.62); }
-.srv:nth-child(1) .srv__num, .srv:nth-child(2) .srv__num { color: #C6A77B; }
+.srv:nth-child(1) .srv__title, .srv:nth-child(2) .srv__title { color: #22C7D6; }
+.srv:nth-child(1) .srv__desc, .srv:nth-child(2) .srv__desc { color: rgba(34, 199, 214, 0.74); }
+.srv:nth-child(1) .srv__icon, .srv:nth-child(2) .srv__icon { color: #22C7D6; background: rgba(34, 199, 214, 0.08); border-color: rgba(34, 199, 214, 0.22); }
+.srv:nth-child(1):hover, .srv:nth-child(2):hover { border-color: rgba(34, 199, 214, 0.62); }
+.srv:nth-child(1) .srv__num, .srv:nth-child(2) .srv__num { color: #22C7D6; }
 @media (max-width: 760px) {
   .srv { grid-column: span 12; min-height: 0; }
   .srv:nth-child(1), .srv:nth-child(2) { min-height: 310px; }
