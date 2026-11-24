@@ -83,10 +83,10 @@
       <p>{{ t.ui().home.portfolioSubtitle }}</p>
     </div>
     <div class="portfolio__grid">
-      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
+      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
         <span class="portfolio__number" aria-hidden="true">01 / 03</span>
         <span class="portfolio__media">
-          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="portfolio__domain" aria-hidden="true">nayalrouh.com <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioNayType }}</span>
@@ -95,10 +95,10 @@
           <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
         </span>
       </a>
-      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
+      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
         <span class="portfolio__number" aria-hidden="true">02 / 03</span>
         <span class="portfolio__media">
-          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" />
+          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" /><span class="portfolio__domain" aria-hidden="true">sukkar.space <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioSukkarType }}</span>
@@ -107,10 +107,10 @@
           <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
         </span>
       </a>
-      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
+      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
         <span class="portfolio__number" aria-hidden="true">03 / 03</span>
         <span class="portfolio__media">
-          <img src="/img/portfolio-alma-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+          <img src="/img/portfolio-alma-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="portfolio__domain" aria-hidden="true">alma-alrouh.com <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioAlmaType }}</span>

@@ -973,3 +973,34 @@ html[lang='ar'] .portfolio__name { font-family:var(--font-ar); letter-spacing:0;
   .hero__visual .studio, .studio .studio__chart > span, .studio__rail-dot { transition: none; }
   .studio .studio__chart > span { animation: none; }
 }
+
+/* ---------- Motion: portfolio hover preview ----------
+   The logo drifts toward the pointer inside its plate, and the project's
+   domain surfaces as a preview line. Keyboard focus shows the same state. */
+.portfolio__media { position: relative; }
+.portfolio__media img { transition: transform 0.6s var(--ease-out); }
+.portfolio__card:hover .portfolio__media img,
+.portfolio__card:focus-visible .portfolio__media img {
+  transform: translate(calc(var(--px, 0) * 14px), calc(var(--py, 0) * 10px)) scale(1.06);
+}
+.portfolio__domain {
+  position: absolute;
+  inset-inline-start: 1.2rem;
+  inset-block-end: 0.9rem;
+  display: inline-flex;
+  gap: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-mute);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s var(--ease), transform 0.5s var(--ease-out);
+}
+.portfolio__card:hover .portfolio__domain,
+.portfolio__card:focus-visible .portfolio__domain { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .portfolio__media img { transition: none; }
+  .portfolio__card:hover .portfolio__media img, .portfolio__card:focus-visible .portfolio__media img { transform: scale(1.02); }
+  .portfolio__domain { transition: none; }
+}
