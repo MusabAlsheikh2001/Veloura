@@ -80,6 +80,7 @@
           {{ t.ui().nav[link.key] }}
         </a>
       }
+      <a class="hdr__link" [routerLink]="t.path('/')" fragment="selected-work">{{ t.ui().nav.work }}</a>
     </nav>
 
     <div class="hdr__actions">
@@ -155,6 +156,7 @@
         {{ t.ui().nav[link.key] }}
       </a>
     }
+    <a class="mnav__link" [routerLink]="t.path('/')" fragment="selected-work" (click)="closeMenu()">{{ t.ui().nav.work }}</a>
   </nav>
   <div class="mnav__footer">
     <div class="mnav__controls">
