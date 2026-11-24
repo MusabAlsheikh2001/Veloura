@@ -72,9 +72,9 @@ const UI_EN = {
     metaTitle: "Digital Product Design & Web Engineering Studio | Veloura",
     metaDesc:
       "Veloura designs and builds premium websites, digital products, business dashboards, and connected workflows for GCC and international companies.",
-    heroTitle: "Design-led technology. Built for the real world.",
+    heroTitle: "Beautifully designed. Seriously engineered.",
     heroSubtitle:
-      "We craft memorable digital experiences and engineer the systems behind them: high-performance websites, web applications, intuitive interfaces, and connected business workflows.",
+      "We design exceptional digital experiences and build the technology behind them. From distinctive websites to connected business platforms, Veloura brings creative thinking and engineering precision together.",
     scrollHint: 'Scroll to explore',
     heroStat1: "Product thinking, end to end",
     heroStat2: "Designed for EN & AR",
@@ -351,9 +351,9 @@ const UI_AR: Dict = {
     metaTitle: "Veloura | تصميم المنتجات الرقمية وتطوير مواقع الأعمال",
     metaDesc:
       "تصمم Veloura مواقع احترافية ومنتجات رقمية ولوحات تحكم وأنظمة عمل مترابطة للشركات في الخليج والعالم، مع اهتمام بالتجربة والأداء.",
-    heroTitle: "تقنية تُصمَّم بوعي، وتُبنى لتعمل.",
+    heroTitle: "مصمَّم بإتقان. مُهندَس بجدية.",
     heroSubtitle:
-      "نصمم تجارب رقمية مميزة ونطوّر الأنظمة التي تقف خلفها: مواقع سريعة وتطبيقات ويب وواجهات واضحة وسير عمل مترابط مع احتياجات الأعمال.",
+      "نصمم تجارب رقمية استثنائية، ونبني التقنية التي تقف خلفها. من المواقع المميزة إلى المنصات التجارية المترابطة، تجمع Veloura التفكير الإبداعي ودقة الهندسة معاً.",
     scrollHint: 'مرّر للاستكشاف',
     heroStat1: "تفكير متكامل في المنتج",
     heroStat2: "تجارب عربية وإنجليزية",

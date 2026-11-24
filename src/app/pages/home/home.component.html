@@ -4,7 +4,8 @@
   <div class="container hero__inner">
     <div class="hero__copy">
       <span class="hero__kicker"><span class="hero__spark" aria-hidden="true"></span>{{ t.ui().brand.tagline }}</span>
-      <h1 class="hero__title" id="home-hero-title">{{ t.ui().home.heroTitle }}</h1>
+      <h1 class="visually-hidden">{{ t.ui().brand.name }}: {{ t.ui().brand.tagline }}</h1>
+      <h2 class="hero__title" id="home-hero-title">{{ t.ui().home.heroTitle }}</h2>
       <p class="hero__sub">{{ t.ui().home.heroSubtitle }}</p>
       <div class="hero__cta">
         <a class="btn btn-primary btn-lg" [routerLink]="t.path('/contact')">
@@ -13,37 +14,33 @@
         </a>
         <a class="btn btn-ghost btn-lg hero__ghost" [routerLink]="t.path('/services')">{{ t.ui().common.exploreServices }}</a>
       </div>
-      <div class="hero__signals" aria-label="Veloura strengths">
-        <span><i aria-hidden="true">01</i>{{ t.ui().home.heroStat1 }}</span>
-        <span><i aria-hidden="true">02</i>{{ t.ui().home.heroStat2 }}</span>
-        <span><i aria-hidden="true">03</i>{{ t.ui().home.heroStat3 }}</span>
-      </div>
     </div>
-    <!-- An original abstract product-interface composition, not a fabricated client dashboard. -->
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__orbit hero__orbit--one"></div>
-      <div class="hero__orbit hero__orbit--two"></div>
-      <div class="studio">
-        <div class="studio__top"><span class="studio__dots"><i></i><i></i><i></i></span><span class="studio__path">veloura / {{ t.isArabic() ? 'مختبر المنتجات' : 'product-lab' }}</span><span class="studio__number">V.01</span></div>
-        <div class="studio__workspace">
-          <div class="studio__rail"><span class="studio__rail-logo">V.</span><span class="studio__rail-line"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span></div>
-          <div class="studio__panel">
-            <div class="studio__row"><span class="studio__overline">{{ t.isArabic() ? 'نظام تصميم متكامل' : 'CONNECTED DESIGN SYSTEM' }}</span><span class="studio__tiny">01 — 04</span></div>
-            <div class="studio__heading">{{ t.isArabic() ? 'تجربة مدروسة.' : 'Craft meets logic.' }}</div>
-            <div class="studio__textbars"><span></span><span></span><span></span></div>
-            <div class="studio__preview">
-              <div class="studio__chart"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="studio__card"><span class="studio__card-circle"></span><span class="studio__card-line"></span><span class="studio__card-line studio__card-line--short"></span></div>
-            </div>
-            <div class="studio__foot"><span><b></b>{{ t.isArabic() ? 'تصميم الواجهات' : 'Interface design' }}</span><span><b></b>{{ t.isArabic() ? 'الأنظمة والربط' : 'Systems & integration' }}</span></div>
-          </div>
+    <!-- Capability constellation: the V at the centre, each capability a live node. -->
+    <div class="hero__visual">
+      <div class="constellation" role="list" [attr.aria-label]="t.isArabic() ? 'الخدمات' : 'Capabilities'">
+        <svg class="constellation__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          @for (n of nodes; track n.i) {
+            <line x1="50" y1="50" [attr.x2]="n.x" [attr.y2]="n.y" [class.is-active]="activeNode() === n.i" />
+          }
+        </svg>
+        <div class="constellation__core" aria-hidden="true"><img src="/img/brand/logo-mark.png" alt="" /></div>
+        @for (n of nodes; track n.i) {
+          <a class="constellation__node" role="listitem"
+             [class.is-active]="activeNode() === n.i"
+             [style.left.%]="n.x" [style.top.%]="n.y" [style.--d]="(n.i * 90) + 'ms'"
+             [routerLink]="t.path('/services/' + n.slug)"
+             (pointerenter)="setNode(n.i)" (focus)="setNode(n.i)">
+            <app-icon [name]="n.s.icon" />
+            <span class="constellation__label">{{ t.pick(n.s.title) }}</span>
+          </a>
+        }
+        <div class="constellation__card" aria-live="polite">
+          <strong>{{ t.pick(nodes[activeNode()].s.title) }}</strong>
+          <span>{{ t.pick(nodes[activeNode()].s.desc) }}</span>
         </div>
       </div>
-      <div class="hero__float hero__float--top"><span class="hero__float-icon">✦</span><span>UI / UX</span><span class="hero__float-arrow">↗</span></div>
-      <div class="hero__float hero__float--bottom"><span class="hero__float-pulse"></span><span>{{ t.isArabic() ? 'تصميم · تطوير · تشغيل' : 'Design → Build → Connect' }}</span></div>
     </div>
   </div>
-  <div class="container hero__bottom"><span>{{ t.isArabic() ? 'تجارب رقمية. هندسة واجهات. أنظمة مترابطة.' : 'DIGITAL EXPERIENCES / FRONTEND ENGINEERING / CONNECTED SYSTEMS' }}</span><span class="hero__bottom-number">V / 2026</span></div>
 </section>
 
 <section class="capability-index" aria-label="Capabilities">
@@ -82,43 +79,33 @@
       </div>
       <p>{{ t.ui().home.portfolioSubtitle }}</p>
     </div>
-    <div class="portfolio__grid">
-      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
-        <span class="portfolio__number" aria-hidden="true">01 / 03</span>
-        <span class="portfolio__media">
-          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-        </span>
-        <span class="portfolio__details">
-          <span class="portfolio__type">{{ t.ui().home.portfolioNayType }}</span>
-          <strong class="portfolio__name">Nay Alrouh</strong>
-          <span class="portfolio__description">{{ t.ui().home.portfolioNayDesc }}</span>
-          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
-        </span>
-      </a>
-      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
-        <span class="portfolio__number" aria-hidden="true">02 / 03</span>
-        <span class="portfolio__media">
-          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" />
-        </span>
-        <span class="portfolio__details">
-          <span class="portfolio__type">{{ t.ui().home.portfolioSukkarType }}</span>
-          <strong class="portfolio__name">Sukkar <span lang="ar">/ سُكّر</span></strong>
-          <span class="portfolio__description">{{ t.ui().home.portfolioSukkarDesc }}</span>
-          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
-        </span>
-      </a>
-      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
-        <span class="portfolio__number" aria-hidden="true">03 / 03</span>
-        <span class="portfolio__media">
-          <img src="/img/portfolio-alma-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
-        </span>
-        <span class="portfolio__details">
-          <span class="portfolio__type">{{ t.ui().home.portfolioAlmaType }}</span>
-          <strong class="portfolio__name">Alma Alrouh</strong>
-          <span class="portfolio__description">{{ t.ui().home.portfolioAlmaDesc }}</span>
-          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
-        </span>
-      </a>
+    <div class="work" appReveal>
+      <ol class="work__index">
+        @for (p of projects; track p.key; let i = $index) {
+          <li>
+            <button type="button" class="work__item" [class.is-active]="activeProject() === i"
+                    [attr.aria-pressed]="activeProject() === i"
+                    (pointerenter)="activeProject.set(i)" (click)="activeProject.set(i)">
+              <span class="work__num">{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }} / 03</span>
+              <span class="work__name">{{ p.name }}</span>
+              <span class="work__cat">{{ p.type }}</span>
+            </button>
+          </li>
+        }
+      </ol>
+      <div class="work__stage" aria-live="polite">
+        @for (p of [projects[activeProject()]]; track p.key) {
+          <article class="work__panel">
+            <div class="work__plate"><img [src]="p.logo" [alt]="p.alt" width="280" height="160" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></div>
+            <div class="work__copy">
+              <span class="work__type">{{ p.type }}</span>
+              <h3 class="work__title">{{ p.name }}</h3>
+              <p class="work__desc">{{ p.desc }}</p>
+              <a class="work__visit" [href]="p.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="t.ui().home.portfolioVisit + ' ' + p.host">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        }
+      </div>
     </div>
   </div>
 </section>
@@ -131,12 +118,30 @@
       [title]="t.ui().home.servicesTitle"
       [subtitle]="t.ui().home.servicesSubtitle"
     />
-    <div class="grid grid-3 svc-grid">
-      @for (s of services; track s.id) {
-        <div [appReveal]="$index % 3 * 90">
-          <app-service-card [service]="s" />
-        </div>
-      }
+    <div class="svc-index" appReveal>
+      <ol class="svc-index__list">
+        @for (s of services; track s.id; let i = $index) {
+          <li>
+            <a class="svc-index__row" [class.is-active]="activeService() === i"
+               [routerLink]="t.path('/services/' + slug(s.id))"
+               (pointerenter)="activeService.set(i)" (focus)="activeService.set(i)">
+              <span class="svc-index__num">{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
+              <span class="svc-index__name">{{ t.pick(s.title) }}</span>
+              <span class="svc-index__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        }
+      </ol>
+      <div class="svc-index__stage" aria-live="polite">
+        @for (s of [services[activeService()]]; track s.id) {
+          <div class="svc-index__panel">
+            <span class="svc-index__icon" aria-hidden="true"><app-icon [name]="s.icon" /></span>
+            <h3 class="svc-index__title">{{ t.pick(s.title) }}</h3>
+            <p class="svc-index__desc">{{ t.pick(s.desc) }}</p>
+            <a class="svc-index__more" [routerLink]="t.path('/services/' + slug(s.id))">{{ t.ui().common.learnMore }} <span aria-hidden="true">→</span></a>
+          </div>
+        }
+      </div>
     </div>
     <div class="center-cta" appReveal>
       <a class="btn btn-ghost btn-lg" [routerLink]="t.path('/services')">
