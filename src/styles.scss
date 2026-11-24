@@ -279,19 +279,6 @@ html[lang='ar'] .eyebrow { letter-spacing: 0.06em; }
   font-weight: 300;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 120%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-[data-theme='dark'] .text-gradient {
-  background: linear-gradient(135deg, var(--accent-2-bright) 0%, #32C9DA 110%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
