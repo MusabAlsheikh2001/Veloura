@@ -912,3 +912,8 @@ html[lang='ar'] .portfolio__name { font-family:var(--font-ar); letter-spacing:0;
     transition: transform 0s, box-shadow 0s, border-color 0s;
   }
 }
+
+/* Portfolio hover: the media plate warms with the accent, the logo stays put */
+.portfolio__media { transition: background-color 0.6s var(--ease-out); }
+.portfolio__card:hover .portfolio__media { background-color: color-mix(in srgb, var(--accent) 5%, var(--cloud-50)); }
+@media (prefers-reduced-motion: reduce) { .portfolio__media { transition: none; } }
