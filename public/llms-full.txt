@@ -28,7 +28,7 @@ Veloura works on the digital assets a serious business needs to be understood an
    Wireframes, user journeys, prototypes, and conversion-focused interfaces designed in Figma.
 
 3. Website Development
-   Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
+   Fast, refined custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.
 
 4. Landing Pages and Case Studies
    Focused pages that turn an offer, launch, service, or case study into one clear persuasive story.

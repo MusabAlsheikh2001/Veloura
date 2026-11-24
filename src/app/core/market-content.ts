@@ -233,23 +233,23 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     id: 'web-development',
     slug: 'website-development',
-    icon: 'wordpress',
+    icon: 'design',
     title: { en: 'Website Development', ar: 'تطوير المواقع' },
     h1: {
       en: 'Website Development for Companies, Clinics, and Service Businesses',
       ar: 'تطوير مواقع للشركات والعيادات والأعمال الخدمية',
     },
     metaTitle: {
-      en: 'WordPress and Custom Website Development | Veloura',
-      ar: 'تطوير مواقع ووردبريس ومواقع مخصصة | Veloura',
+      en: 'Custom Website Development | Veloura',
+      ar: 'تطوير مواقع مخصصة | Veloura',
     },
     metaDesc: {
-      en: 'Fast, refined WordPress and custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.',
-      ar: 'مواقع ووردبريس ومواقع مبرمجة سريعة ومصقولة للشركات والعيادات ومعارض الأعمال والخدمات والمواقع المبنية حول صفحات هبوط.',
+      en: 'Fast, refined custom-coded websites for companies, clinics, portfolios, service businesses, and landing-driven business sites.',
+      ar: 'مواقع مبرمجة سريعة ومصقولة للشركات والعيادات ومعارض الأعمال والخدمات والمواقع المبنية حول صفحات هبوط.',
     },
     intro: {
-      en: 'A website should make the business easier to understand, trust, and contact. Veloura builds WordPress and custom-coded websites with refined design, practical SEO basics, fast performance, and clear conversion paths.',
-      ar: 'يجب أن يجعل الموقع العمل أسهل فهماً وثقة وتواصلاً. تبني Veloura مواقع ووردبريس ومواقع مبرمجة بتصميم مصقول وسيو عملي وأداء سريع ومسارات تحويل واضحة.',
+      en: 'A website should make the business easier to understand, trust, and contact. Veloura builds custom-coded websites with refined design, practical SEO basics, fast performance, and clear conversion paths.',
+      ar: 'يجب أن يجعل الموقع العمل أسهل فهماً وثقة وتواصلاً. تبني Veloura مواقع مبرمجة بتصميم مصقول وسيو عملي وأداء سريع ومسارات تحويل واضحة.',
     },
     audience: [
       { en: 'Companies with outdated, slow, or unclear websites.', ar: 'شركات لديها مواقع قديمة أو بطيئة أو غير واضحة.' },
@@ -262,7 +262,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { en: 'Pages, forms, and calls to action are not structured for enquiries.', ar: 'الصفحات والنماذج والدعوات ليست منظمة للاستفسارات.' },
     ],
     deliverables: [
-      { en: 'Website strategy, UX direction, responsive design, WordPress or custom-coded build, and launch support.', ar: 'استراتيجية موقع، توجه UX، تصميم متجاوب، تطوير ووردبريس أو برمجة مخصصة، ودعم إطلاق.' },
+      { en: 'Website strategy, UX direction, responsive design, custom-coded build, and launch support.', ar: 'استراتيجية موقع، توجه UX، تصميم متجاوب، برمجة مخصصة، ودعم إطلاق.' },
       { en: 'Service sections, case-study structures, contact paths, and practical SEO setup.', ar: 'أقسام خدمات، هياكل دراسات حالة، مسارات تواصل، وإعداد سيو عملي.' },
       { en: 'Performance, metadata, headings, and mobile checks before launch.', ar: 'فحص الأداء والميتا والعناوين والموبايل قبل الإطلاق.' },
     ],
@@ -860,7 +860,7 @@ export const LOCATION_PAGES: LocationPage[] = [
     title: { en: 'Saudi Arabia', ar: 'السعودية' },
     h1: { en: 'Branding, Websites, and Landing Pages for Saudi Businesses', ar: 'هوية ومواقع وصفحات هبوط للأعمال السعودية' },
     metaTitle: { en: 'Branding and Website Studio for Saudi Businesses | Veloura', ar: 'استوديو هوية ومواقع للأعمال السعودية | Veloura' },
-    metaDesc: { en: 'Remote-first branding, UI/UX, WordPress and custom websites, landing pages, campaign creatives, content direction, and basic SEO for Saudi businesses.', ar: 'هوية وUI/UX ومواقع ووردبريس ومواقع مخصصة وصفحات هبوط وإبداع حملات وتوجيه محتوى وسيو أساسي للأعمال السعودية عن بُعد.' },
+    metaDesc: { en: 'Remote-first branding, UI/UX, custom websites, landing pages, campaign creatives, content direction, and basic SEO for Saudi businesses.', ar: 'هوية وUI/UX ومواقع مخصصة وصفحات هبوط وإبداع حملات وتوجيه محتوى وسيو أساسي للأعمال السعودية عن بُعد.' },
     intro: { en: 'Veloura supports Saudi companies with refined design, clear messaging, and digital assets built for credibility and conversion.', ar: 'تدعم Veloura الشركات السعودية بتصميم راقٍ ورسائل واضحة وأصول رقمية مبنية للمصداقية والتحويل.' },
     markets: [
       { en: 'Useful for Riyadh, Jeddah, and Saudi-wide companies that need premium bilingual execution.', ar: 'مناسب للرياض وجدة والشركات السعودية التي تحتاج تنفيذاً ثنائي اللغة راقياً.' },
