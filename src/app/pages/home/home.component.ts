@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   INDUSTRIES,
@@ -44,6 +44,36 @@ export class HomeComponent {
   protected t = inject(TranslationService);
 
   protected services = SERVICES_PREVIEW;
+
+  /** Constellation: each service sits on a ring around the V mark. */
+  protected readonly nodes = SERVICES_PREVIEW.map((s, i) => {
+    const angle = ((-90 + (i * 360) / SERVICES_PREVIEW.length) * Math.PI) / 180;
+    return {
+      s,
+      i,
+      x: (50 + 36 * Math.cos(angle)).toFixed(2),
+      y: (50 + 36 * Math.sin(angle)).toFixed(2),
+      slug: serviceSlugById(s.id),
+    };
+  });
+  protected readonly activeNode = signal(0);
+  protected readonly activeService = signal(0);
+  protected readonly activeProject = signal(0);
+
+  /** Selected Work: the three projects, with their real URLs and authentic logos. */
+  protected get projects() {
+    const h = this.t.ui().home;
+    return [
+      { key: 'nay', name: 'Nay Alrouh', host: 'nayalrouh.com', url: 'https://nayalrouh.com/', logo: 'https://nayalrouh.b-cdn.net/logo.png', alt: 'Nay Alrouh logo', type: h.portfolioNayType, desc: h.portfolioNayDesc },
+      { key: 'sukkar', name: 'Sukkar', host: 'sukkar.space', url: 'https://sukkar.space/', logo: '/img/portfolio-sukkar-logo.svg', alt: 'Sukkar logo', type: h.portfolioSukkarType, desc: h.portfolioSukkarDesc },
+      { key: 'alma', name: 'Alma Alrouh', host: 'alma-alrouh.com', url: 'https://alma-alrouh.com/', logo: '/img/portfolio-alma-logo.png', alt: 'Alma Alrouh logo', type: h.portfolioAlmaType, desc: h.portfolioAlmaDesc },
+    ];
+  }
+  protected readonly slug = serviceSlugById;
+
+  protected setNode(i: number): void {
+    this.activeNode.set(i);
+  }
   protected process = PROCESS;
   protected values = VALUE_CARDS;
   protected industries = INDUSTRIES;
