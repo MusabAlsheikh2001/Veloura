@@ -87,3 +87,44 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* IT-first capability index: strong hierarchy without fake project metrics. */
+.svc-list {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  counter-reset: service-card;
+}
+.srv {
+  grid-column: span 6;
+  min-height: 300px;
+  padding: clamp(1.65rem, 3.2vw, 3rem);
+  border-radius: clamp(14px, 1.8vw, 24px);
+  background: var(--surface);
+  transition: transform .45s cubic-bezier(.18,.8,.2,1), border-color .35s ease, box-shadow .45s ease;
+}
+.srv:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--gold) 48%, var(--border)); box-shadow: 0 32px 70px -45px rgba(66,20,36,.4); }
+.srv__title { max-width: 24ch; font-size: clamp(1.35rem, 2.35vw, 2.15rem); line-height: 1.13; letter-spacing: -.035em; }
+.srv__desc { max-width: 62ch; font-size: 1rem; line-height: 1.75; }
+.srv__num { color: var(--gold); font-weight: 700; }
+.srv__icon { border-radius: 12px; transform: rotate(-5deg); }
+.srv:hover .srv__icon { transform: rotate(0) translateY(-3px); }
+.srv:nth-child(1), .srv:nth-child(2) {
+  min-height: 380px;
+  background: radial-gradient(75% 95% at 100% 0%, rgba(197,146,113,.22), transparent 70%), linear-gradient(135deg, #1c111a, #3b1b2b);
+  border-color: rgba(231,188,148,.28);
+  color: #f8f0e9;
+}
+.srv:nth-child(1) .srv__title, .srv:nth-child(2) .srv__title { color: #f8f0e9; }
+.srv:nth-child(1) .srv__desc, .srv:nth-child(2) .srv__desc { color: rgba(248,240,233,.74); }
+.srv:nth-child(1) .srv__icon, .srv:nth-child(2) .srv__icon { color: #f3cd9c; background: rgba(243,205,156,.08); border-color: rgba(243,205,156,.22); }
+.srv:nth-child(1):hover, .srv:nth-child(2):hover { border-color: rgba(243,205,156,.62); }
+.srv:nth-child(1) .srv__num, .srv:nth-child(2) .srv__num { color: #f3cd9c; }
+@media (max-width: 760px) {
+  .srv { grid-column: span 12; min-height: 0; }
+  .srv:nth-child(1), .srv:nth-child(2) { min-height: 310px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .srv, .srv__icon { transition: none; }
+  .srv:hover { transform: none; }
+}
