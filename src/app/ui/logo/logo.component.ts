@@ -2,6 +2,11 @@ import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core
 import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../core/translation.service';
 
+/**
+ * Veloura logo. Uses the approved lockup (V mark + wordmark) as transparent
+ * PNGs: a dark-wordmark version for light surfaces and a porcelain-wordmark
+ * version for dark surfaces. The mark on its own is used when showWord is false.
+ */
 @Component({
   selector: 'app-logo',
   standalone: true,
@@ -9,90 +14,30 @@ import { TranslationService } from '../../core/translation.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <a class="logo" [routerLink]="t.path('/')" [attr.aria-label]="t.ui().brand.name">
-      <span class="logo__mark" aria-hidden="true">
-        <img
-          src="/img/veloura-v-icon.png"
-          alt=""
-          width="668"
-          height="678"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </span>
       @if (showWord) {
-        <span class="logo__word" aria-hidden="true">
-          <img
-            src="/img/veloura-wordmark.png"
-            alt=""
-            width="569"
-            height="104"
-            loading="eager"
-            decoding="async"
-          />
+        <span class="logo__lockup" aria-hidden="true">
+          <img class="logo__img logo__img--light" src="/img/brand/logo-lockup-light.png" alt="" width="1042" height="217" loading="eager" decoding="async" />
+          <img class="logo__img logo__img--dark" src="/img/brand/logo-lockup-dark.png" alt="" width="1042" height="217" loading="eager" decoding="async" />
+        </span>
+      } @else {
+        <span class="logo__mark" aria-hidden="true">
+          <img src="/img/brand/logo-mark.png" alt="" width="260" height="217" loading="eager" decoding="async" />
         </span>
       }
     </a>
   `,
   styles: [
     `
-      .logo {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.62rem;
-      }
-      :host {
-        display: inline-flex;
-      }
-      .logo__mark {
-        width: var(--logo-size, 44px);
-        height: var(--logo-size, 44px);
-        display: inline-flex;
-        flex-shrink: 0;
-        filter: drop-shadow(0 7px 15px rgba(100, 27, 52, 0.2));
-        transition: transform 0.5s var(--ease-out), filter 0.5s var(--ease);
-      }
-      .logo__mark img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transition: filter 0.5s var(--ease);
-      }
-      :host-context([data-theme='dark']) .logo__mark {
-        filter:
-          drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
-          drop-shadow(0 0 7px rgba(255, 255, 255, 0.46))
-          drop-shadow(0 0 17px #1B1D23)
-          drop-shadow(0 0 28px rgba(100, 27, 52, 0.48));
-      }
-      :host-context([data-theme='dark']) .logo__mark img {
-        filter: brightness(1.1) saturate(1.08) contrast(1.04);
-      }
-      .logo:hover .logo__mark {
-        transform: translateY(-2px) scale(1.04) rotate(-1.5deg);
-        filter: drop-shadow(0 12px 26px rgba(100, 27, 52, 0.4));
-      }
-      :host-context([data-theme='dark']) .logo:hover .logo__mark {
-        filter:
-          drop-shadow(0 0 1px rgba(255, 255, 255, 1))
-          drop-shadow(0 0 10px rgba(255, 255, 255, 0.56))
-          drop-shadow(0 0 21px #1B1D23)
-          drop-shadow(0 0 34px rgba(100, 27, 52, 0.58));
-      }
-      .logo__word {
-        display: inline-flex;
-        height: var(--logo-word-height, 1.24rem);
-        flex-shrink: 0;
-      }
-      .logo__word img {
-        width: auto;
-        height: 100%;
-        object-fit: contain;
-        transition: filter 0.5s var(--ease);
-      }
-      :host-context([data-theme='dark']) .logo__word img {
-        filter: brightness(0) invert(1);
-      }
+      :host { display: inline-flex; }
+      .logo { display: inline-flex; align-items: center; }
+      .logo__lockup { position: relative; display: inline-flex; height: var(--logo-height, 44px); aspect-ratio: 1042 / 217; }
+      .logo__img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity 0.4s var(--ease); }
+      .logo__img--dark { position: absolute; inset: 0; opacity: 0; }
+      :host-context([data-theme='dark']) .logo__img--light { opacity: 0; }
+      :host-context([data-theme='dark']) .logo__img--dark { opacity: 1; }
+      .logo__mark { display: inline-flex; width: var(--logo-size, 44px); height: var(--logo-size, 44px); }
+      .logo__mark img { width: 100%; height: 100%; object-fit: contain; }
+      .logo:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 6px; border-radius: 6px; }
     `,
   ],
 })
