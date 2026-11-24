@@ -12,7 +12,7 @@
   inset-inline: 0;
   top: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 60%, transparent), transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-2) 60%, transparent), transparent);
 }
 
 .ft__main {
@@ -46,7 +46,7 @@
   color: var(--accent);
 }
 
-[data-theme='dark'] .ft__tagline { color: var(--gold); }
+[data-theme='dark'] .ft__tagline { color: var(--accent-2); }
 
 html[lang='ar'] .ft__tagline { letter-spacing: 0.04em; }
 
@@ -87,13 +87,13 @@ html[lang='ar'] .ft__tagline { letter-spacing: 0.04em; }
   color: var(--btn-text);
   background: var(--accent);
   border-color: transparent;
-  box-shadow: 0 10px 22px -10px var(--glow-burgundy);
+  box-shadow: 0 10px 22px -10px var(--glow-primary);
 }
 
 [data-theme='dark'] .ft__social:hover {
-  color: #1A1011;
-  background: var(--gold);
-  box-shadow: 0 10px 22px -10px var(--glow-gold);
+  color: var(--on-dark);
+  background: var(--accent-2);
+  box-shadow: 0 10px 22px -10px var(--glow-secondary);
 }
 
 /* ---------- Link columns ---------- */
@@ -141,7 +141,7 @@ html[lang='ar'] .ft__heading {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--accent-2);
   transition: width 0.3s var(--ease);
 }
 
@@ -158,7 +158,7 @@ html[lang='ar'] .ft__heading {
 [data-theme='dark'] .ft__legal a:hover,
 [data-theme='dark'] .ft__top-btn:hover,
 [data-theme='dark'] .ft__email:hover {
-  color: var(--gold);
+  color: var(--accent-2);
 }
 
 /* ---------- Contact column ---------- */

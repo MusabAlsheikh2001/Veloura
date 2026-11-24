@@ -4,8 +4,8 @@
   padding: 14px;
   border-radius: 18px;
   color: var(--accent);
-  background: var(--gold-soft);
-  border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+  background: var(--accent-2-soft);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 28%, transparent);
 }
 
 .detail-hero__actions {
@@ -32,7 +32,7 @@
 .detail-card__kicker {
   display: block;
   margin-bottom: 1rem;
-  color: var(--gold);
+  color: var(--accent-2);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -65,7 +65,7 @@ html[lang='ar'] .detail-card__kicker {
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent-2);
 }
 
 .detail-band {
@@ -118,7 +118,7 @@ html[lang='ar'] .detail-card__kicker {
 .step-card__num {
   display: block;
   margin-bottom: 0.8rem;
-  color: var(--gold);
+  color: var(--accent-2);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -156,9 +156,9 @@ html[lang='ar'] .detail-card__kicker {
 }
 
 [data-theme='dark'] .related-card__icon {
-  color: var(--gold);
-  background: var(--gold-soft);
-  border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+  color: var(--accent-2);
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 24%, transparent);
 }
 
 .faq-list {

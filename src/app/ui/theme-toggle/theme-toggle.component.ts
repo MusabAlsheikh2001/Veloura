@@ -46,7 +46,7 @@ import { TranslationService } from '../../core/translation.service';
           transform 0.3s var(--ease);
       }
       .theme-toggle:hover {
-        color: var(--gold);
+        color: var(--accent-2);
         background: color-mix(in srgb, var(--text) 5%, transparent);
         transform: translateY(-1px);
       }

@@ -55,11 +55,11 @@ import { TranslationService } from '../../core/translation.service';
         text-transform: uppercase;
         padding: 0.34rem 0.72rem;
         border-radius: 100px;
-        color: var(--bone-ivory);
-        background: rgba(12, 8, 9, 0.42);
+        color: var(--on-dark);
+        background: rgba(11, 16, 32, 0.42);
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(245, 239, 231, 0.22);
+        border: 1px solid rgba(50, 201, 218, 0.22);
       }
       .post:hover .post__thumb img {
         transform: scale(1.06);
@@ -99,7 +99,7 @@ import { TranslationService } from '../../core/translation.service';
         color: var(--accent);
       }
       [data-theme='dark'] .post__more {
-        color: var(--gold);
+        color: var(--accent-2);
       }
       .post:hover .arrow {
         transform: translateX(4px);

@@ -36,7 +36,7 @@
 }
 
 .market-item span {
-  color: var(--gold);
+  color: var(--accent-2);
   font-size: var(--fs-xs);
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -73,9 +73,9 @@
 }
 
 [data-theme='dark'] .service-card__icon {
-  color: var(--gold);
-  background: var(--gold-soft);
-  border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+  color: var(--accent-2);
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 24%, transparent);
 }
 
 .service-card h2 {

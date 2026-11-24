@@ -3,9 +3,9 @@
   overflow: hidden;
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(120% 140% at 100% 0%, rgba(198, 167, 123, 0.16), transparent 55%),
-    linear-gradient(135deg, var(--dark-wine), var(--velvet-burgundy));
-  border: 1px solid rgba(198, 167, 123, 0.22);
+    radial-gradient(120% 140% at 100% 0%, rgba(50, 201, 218, 0.16), transparent 55%),
+    linear-gradient(135deg, var(--surface-deep), var(--accent));
+  border: 1px solid rgba(50, 201, 218, 0.22);
   box-shadow: var(--shadow-lg);
 }
 
@@ -31,7 +31,7 @@
   inset-inline-end: -100px;
   border-radius: 50%;
   filter: blur(90px);
-  background: var(--glow-gold);
+  background: var(--glow-secondary);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -49,12 +49,12 @@
 
 .cta-band__title {
   font-size: var(--fs-h1);
-  color: var(--bone-ivory);
+  color: var(--on-dark);
   max-width: 18ch;
 }
 
 .cta-band__sub {
-  color: rgba(245, 239, 231, 0.78);
+  color: rgba(50, 201, 218, 0.78);
   font-size: var(--fs-lead);
   font-weight: 300;
   max-width: 48ch;
@@ -62,11 +62,11 @@
 
 .cta-band__btn {
   margin-top: 0.6rem;
-  background: var(--champagne-gold);
-  color: var(--smoky-black);
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 
 .cta-band__btn:hover {
-  background: #d8bd97;
+  background: var(--btn-hover);
   transform: translateY(-2px);
 }

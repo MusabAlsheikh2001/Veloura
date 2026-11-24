@@ -22,7 +22,7 @@
 
 .hdr.is-scrolled {
   background: color-mix(in srgb, var(--bg) 88%, transparent);
-  box-shadow: 0 12px 34px -28px rgba(22, 19, 19, 0.34);
+  box-shadow: 0 12px 34px -28px rgba(11, 16, 32, 0.34);
 }
 
 /* Hairline that fades in under the bar once scrolled — a quiet premium cue. */
@@ -32,7 +32,7 @@
   inset-inline: 0;
   bottom: 0;
   height: 1px;
-  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 42%, transparent);
   opacity: 0.45;
 }
 
@@ -198,7 +198,7 @@ html[lang='ar'] .hdr__mega-more {
   align-items: center;
   gap: 0.4rem;
   margin-top: 0.55rem;
-  color: var(--gold);
+  color: var(--accent-2);
 }
 
 .hdr__mega-arrow {
@@ -226,7 +226,7 @@ html[dir='rtl'] .hdr__mega-more:hover .hdr__mega-arrow {
   width: 0;
   height: 1.5px;
   border-radius: 2px;
-  background: var(--gold);
+  background: var(--accent-2);
   transform: translateX(-50%);
   transition: width 0.3s var(--ease);
 }
@@ -244,7 +244,7 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
 .hdr__link.is-active::after { width: 16px; }
 
 :host-context([data-theme='dark']) .hdr__link.is-active {
-  color: var(--gold);
+  color: var(--accent-2);
 }
 
 .hdr__actions {
@@ -257,12 +257,12 @@ html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
 .hdr__cta {
   min-height: 44px;
   padding-inline: 1.3rem;
-  background: var(--champagne-gold);
-  color: #1a1011;
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 
 .hdr__cta:hover {
-  background: #d8bd97;
+  background: var(--btn-hover);
 }
 
 .hdr__burger {
@@ -399,7 +399,7 @@ html[lang='ar'] .mnav__mega .mnav__section-link {
 
 :host-context([data-theme='dark']) .mnav__link:hover,
 :host-context([data-theme='dark']) .mnav__link.is-active {
-  color: var(--gold);
+  color: var(--accent-2);
 }
 
 .mnav__footer {

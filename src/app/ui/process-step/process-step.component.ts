@@ -44,13 +44,13 @@ import { IconComponent } from '../icon/icon.component';
         color: var(--accent);
       }
       [data-theme='dark'] .step__icon {
-        color: var(--gold);
+        color: var(--accent-2);
       }
       .step__num {
         font-size: 0.85rem;
         font-weight: 600;
         letter-spacing: 0.1em;
-        color: var(--gold);
+        color: var(--accent-2);
       }
       .step__title {
         font-size: 1.25rem;
