@@ -11,7 +11,7 @@
 }
 
 .ind-card__kicker {
-  color: var(--gold);
+  color: var(--accent-2);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -43,7 +43,7 @@ html[lang='ar'] .ind-card__kicker {
 }
 
 [data-theme='dark'] .ind-card__more {
-  color: var(--gold);
+  color: var(--accent-2);
 }
 
 .ind-card:hover .arrow {

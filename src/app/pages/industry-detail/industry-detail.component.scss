@@ -11,7 +11,7 @@
 .panel-kicker {
   display: block;
   margin-bottom: 1rem;
-  color: var(--gold);
+  color: var(--accent-2);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -41,7 +41,7 @@ html[lang='ar'] .panel-kicker {
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent-2);
 }
 
 .journey-sec {
@@ -83,9 +83,9 @@ html[lang='ar'] .panel-kicker {
 }
 
 [data-theme='dark'] .service-link__icon {
-  color: var(--gold);
-  background: var(--gold-soft);
-  border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+  color: var(--accent-2);
+  background: var(--accent-2-soft);
+  border-color: color-mix(in srgb, var(--accent-2) 24%, transparent);
 }
 
 .service-link h2 {

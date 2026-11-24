@@ -21,9 +21,9 @@
   z-index: 3;
   background:
     linear-gradient(to top,
-      rgba(9, 5, 6, 0.94) 0%, rgba(9, 5, 6, 0.55) 38%,
-      rgba(9, 5, 6, 0.15) 72%, rgba(9, 5, 6, 0.04) 100%),
-    radial-gradient(120% 80% at 50% 120%, rgba(9, 5, 6, 0.5), transparent 64%);
+      rgba(11, 16, 32, 0.94) 0%, rgba(11, 16, 32, 0.55) 38%,
+      rgba(11, 16, 32, 0.15) 72%, rgba(11, 16, 32, 0.04) 100%),
+    radial-gradient(120% 80% at 50% 120%, rgba(11, 16, 32, 0.5), transparent 64%);
 }
 
 .article__head-inner {
@@ -42,12 +42,12 @@
   gap: 0.45rem;
   font-size: var(--fs-sm);
   font-weight: 500;
-  color: rgba(245, 239, 231, 0.78);
+  color: rgba(50, 201, 218, 0.78);
   transition: color 0.3s var(--ease), gap 0.3s var(--ease);
 }
 
 .back:hover {
-  color: var(--gold-bright);
+  color: var(--accent-2-bright);
   gap: 0.7rem;
 }
 
@@ -60,13 +60,13 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold-bright);
+  color: var(--accent-2-bright);
 }
 
 .article__title {
   font-size: clamp(2rem, 4.6vw, 3.5rem);
   line-height: 1.04;
-  color: var(--bone-ivory);
+  color: var(--on-dark);
   max-width: 22ch;
   text-wrap: balance;
 }
@@ -76,7 +76,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: var(--fs-sm);
-  color: rgba(245, 239, 231, 0.68);
+  color: rgba(50, 201, 218, 0.68);
 }
 
 /* ---------- Article body ---------- */
@@ -111,7 +111,7 @@
   margin: 2.4rem 0;
   padding-inline-start: 1.6rem;
   padding-block: 0.3rem;
-  border-inline-start: 2px solid var(--gold);
+  border-inline-start: 2px solid var(--accent-2);
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-style: italic;
@@ -150,7 +150,7 @@ html[lang='ar'] .article__quote {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent-2);
 }
 
 .article__cta {

@@ -74,23 +74,23 @@
 
 [data-theme='dark'] .field input:focus,
 [data-theme='dark'] .field textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px var(--gold-soft);
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px var(--accent-2-soft);
 }
 
 .field [aria-invalid='true'] {
-  border-color: #b3403f;
+  border-color: #8193FF;
 }
 
 .field__err,
 .form__error {
-  color: #b3403f;
+  color: var(--text-mute);
   font-size: 0.8rem;
 }
 
 [data-theme='dark'] .field__err,
 [data-theme='dark'] .form__error {
-  color: #e08e8c;
+  color: var(--text-mute);
 }
 
 .form__error {
@@ -121,12 +121,12 @@
   place-items: center;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-  color: var(--bone-ivory);
+  color: var(--on-dark);
 }
 
 [data-theme='dark'] .success__mark {
-  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-  color: var(--smoky-black);
+  background: linear-gradient(135deg, var(--accent-2-bright), var(--accent-2));
+  color: var(--on-light);
 }
 
 .success__mark svg {

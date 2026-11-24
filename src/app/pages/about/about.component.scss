@@ -18,7 +18,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: var(--accent-2);
   margin-bottom: 0.8rem;
 }
 
@@ -71,8 +71,8 @@
 }
 
 [data-theme='dark'] .vcard__icon {
-  color: var(--gold);
-  background: var(--gold-soft);
+  color: var(--accent-2);
+  background: var(--accent-2-soft);
 }
 
 .vcard__title {
@@ -110,7 +110,7 @@
   width: 42px;
   height: 2px;
   margin: 0 auto 1.6rem;
-  background: linear-gradient(90deg, var(--gold), var(--accent));
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
   border-radius: 2px;
 }
 

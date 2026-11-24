@@ -47,7 +47,7 @@ import { TranslationService } from '../../core/translation.service';
         inset-inline: 0.45rem;
         bottom: 3px;
         height: 1.5px;
-        background: var(--gold);
+        background: var(--accent-2);
         transform: scaleX(0);
         transition: transform 0.3s var(--ease);
       }
@@ -61,7 +61,7 @@ import { TranslationService } from '../../core/translation.service';
         transform: scaleX(1);
       }
       :host-context([data-theme='dark']) .lang__btn.is-active {
-        color: var(--gold-bright);
+        color: var(--accent-2-bright);
       }
     `,
   ],

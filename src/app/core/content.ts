@@ -21,6 +21,16 @@ export interface Service {
 
 export const SERVICES: Service[] = [
   {
+    id: 'digital-platforms', icon: 'uiux', featured: true,
+    title: { en: 'Web Applications & Business Dashboards', ar: 'تطبيقات الويب ولوحات تحكم الأعمال' },
+    desc: { en: 'Purpose-built portals, dashboards, and web applications that connect customers, teams, data, and daily operations.', ar: 'بوابات ولوحات تحكم وتطبيقات ويب مخصصة تربط العملاء والفرق والبيانات والعمليات اليومية.' },
+  },
+  {
+    id: 'automation-integrations', icon: 'automation', featured: true,
+    title: { en: 'Workflow Automation & Integrations', ar: 'أتمتة سير العمل والتكاملات التقنية' },
+    desc: { en: 'Practical integrations, structured workflows, and internal tools that reduce repetitive work and connect business systems.', ar: 'تكاملات عملية وسير عمل منظم وأدوات داخلية تقلل المهام المتكررة وتربط أنظمة الأعمال.' },
+  },
+  {
     id: 'brand-identity',
     icon: 'branding',
     featured: true,
@@ -119,76 +129,52 @@ export const SERVICES: Service[] = [
 /** Six concise homepage categories. Each links to the closest detailed service page. */
 export const SERVICES_PREVIEW: Service[] = [
   {
-    id: 'brand-identity',
-    icon: 'branding',
-    title: { en: 'Brand Identity & Visual Systems', ar: 'الهوية والأنظمة البصرية' },
-    desc: {
-      en: 'Positioning, visual identity, and practical rules that make every brand touchpoint feel intentional.',
-      ar: 'تموضع وهوية بصرية وقواعد عملية تجعل كل نقطة تواصل مع العلامة مقصودة ومتّسقة.',
-    },
+    id: 'digital-platforms', icon: 'uiux',
+    title: { en: 'Web Applications & Dashboards', ar: 'تطبيقات الويب ولوحات التحكم' },
+    desc: { en: 'Connected interfaces and operational workspaces that make complex work feel effortless.', ar: 'واجهات ومساحات عمل مترابطة تجعل المهام المعقدة أسهل وأوضح.' },
   },
   {
-    id: 'ui-ux',
-    icon: 'uiux',
-    title: { en: 'UI/UX Design', ar: 'تصميم UI/UX' },
-    desc: {
-      en: 'Clear journeys and conversion-minded interfaces shaped around real customer decisions.',
-      ar: 'رحلات واضحة وواجهات تراعي التحويل وتُبنى حول قرارات العملاء الحقيقية.',
-    },
+    id: 'web-development', icon: 'wordpress',
+    title: { en: 'Custom Websites & Frontend Engineering', ar: 'مواقع مخصصة وتطوير الواجهات' },
+    desc: { en: 'Distinctive, high-performance websites built for accessibility, speed, and real customer journeys.', ar: 'مواقع مميزة وعالية الأداء تُبنى للسرعة وسهولة الوصول ورحلات العملاء الحقيقية.' },
   },
   {
-    id: 'web-development',
-    icon: 'wordpress',
-    title: { en: 'Websites & Landing Pages', ar: 'المواقع وصفحات الهبوط' },
-    desc: {
-      en: 'Refined websites and focused landing pages built to earn trust and prompt action.',
-      ar: 'مواقع مصقولة وصفحات هبوط مركّزة مصممة لبناء الثقة ودفع الخطوة التالية.',
-    },
+    id: 'ui-ux', icon: 'uiux',
+    title: { en: 'Digital Product & UX Design', ar: 'تصميم المنتجات وتجربة المستخدم' },
+    desc: { en: 'Thoughtful interaction systems, prototypes, and polished experiences designed around people.', ar: 'أنظمة تفاعل ونماذج وتجارب متقنة تتمحور حول احتياجات المستخدمين.' },
   },
   {
-    id: 'ad-designs',
-    icon: 'ads',
-    title: { en: 'Campaign Creatives & Content Direction', ar: 'إبداع الحملات وتوجيه المحتوى' },
-    desc: {
-      en: 'Campaign concepts, branded creative, and content direction that keep the message coherent.',
-      ar: 'مفاهيم حملات وإبداع بصري وتوجيه محتوى يحافظ على وضوح الرسالة واتساقها.',
-    },
+    id: 'automation-integrations', icon: 'automation',
+    title: { en: 'Automation & System Integrations', ar: 'الأتمتة وربط الأنظمة' },
+    desc: { en: 'Practical workflows and integrations that help tools, data, and teams work together.', ar: 'سير عمل وتكاملات عملية تساعد الأدوات والبيانات والفرق على العمل معاً.' },
   },
   {
-    id: 'ai-video',
-    icon: 'video',
-    title: { en: 'AI Video & Motion Content', ar: 'فيديو AI ومحتوى الموشن' },
-    desc: {
-      en: 'Premium AI-assisted video and motion content designed to feel polished, useful, and on-brand.',
-      ar: 'فيديو وموشن بمساعدة الذكاء الاصطناعي يبدو مصقولاً وعملياً ومتّسقاً مع العلامة.',
-    },
+    id: 'brand-identity', icon: 'branding',
+    title: { en: 'Brand Identity & Design Systems', ar: 'الهوية البصرية وأنظمة التصميم' },
+    desc: { en: 'Visual identities and design foundations that make digital products unmistakably yours.', ar: 'هويات بصرية وأسس تصميم تجعل منتجاتك الرقمية تعبّر عن علامتك بوضوح.' },
   },
   {
-    id: 'basic-seo',
-    icon: 'analysis',
-    title: { en: 'SEO, Competitor Analysis & Communication Kits', ar: 'السيو وتحليل المنافسين وحقائب التواصل' },
-    desc: {
-      en: 'Practical SEO, market analysis, and business materials that strengthen visibility and credibility.',
-      ar: 'سيو عملي وتحليل للسوق ومواد أعمال تعزّز الظهور والمصداقية.',
-    },
+    id: 'landing-pages', icon: 'landing',
+    title: { en: 'Launch Experiences & Landing Pages', ar: 'تجارب الإطلاق وصفحات الهبوط' },
+    desc: { en: 'Focused launch pages and compelling digital narratives built around a clear next action.', ar: 'صفحات إطلاق وتجارب رقمية مقنعة تقود الزائر إلى خطوة واضحة.' },
   },
 ];
 
 /* ---------- The Veloura model: what we refuse vs. how we work ---------- */
 export const MODEL_DONT: Localized[] = [
-  { en: 'Sell fixed “10 posts a month” packages.', ar: 'نبيع باقات ثابتة بعدد منشورات شهري.' },
-  { en: 'Run as a cheap, templated posting service.', ar: 'نعمل كخدمة نشر رخيصة بقوالب جاهزة.' },
-  { en: 'Copy trends with no strategy behind them.', ar: 'نقلّد الترندات دون استراتيجية خلفها.' },
-  { en: 'Overclaim beyond our real specialist scope.', ar: 'نضخّم نطاقنا خارج خبرتنا الحقيقية.' },
-  { en: 'Build websites with no conversion structure.', ar: 'نبني مواقع دون بنية تحويل.' },
+  { en: 'Ship beautiful screens disconnected from real workflows.', ar: 'نسلّم واجهات جميلة منفصلة عن سير العمل الحقيقي.' },
+  { en: 'Add complexity that does not help users.', ar: 'نضيف تعقيداً لا يخدم المستخدم.' },
+  { en: 'Treat a successful build as proof of a working product.', ar: 'نعتبر نجاح البناء البرمجي دليلاً على جاهزية المنتج.' },
+  { en: 'Hide technical limitations behind marketing language.', ar: 'نخفي القيود التقنية خلف عبارات تسويقية.' },
+  { en: 'Design for a screenshot instead of a customer journey.', ar: 'نصمم للقطة شاشة بدلاً من رحلة العميل.' },
 ];
 
 export const MODEL_DO: Localized[] = [
-  { en: 'Start every engagement with an audit, diagnosis, and positioning.', ar: 'نبدأ كل تعاون بتدقيق وتشخيص وتحديد موقع.' },
-  { en: 'Build a custom scope around your goals, budget, and market.', ar: 'نبني نطاقاً مخصّصاً حول أهدافك وميزانيتك وسوقك.' },
-  { en: 'Pair premium design with clear structure and conversion paths.', ar: 'نجمع التصميم الراقي مع بنية واضحة ومسارات تحويل.' },
-  { en: 'Build assets that teams can actually use: sites, pages, kits, and content systems.', ar: 'نبني أصولاً يمكن للفرق استخدامها فعلاً: مواقع وصفحات وحقائب وأنظمة محتوى.' },
-  { en: 'Use basic SEO and operational clarity as support, not as inflated promises.', ar: 'نستخدم السيو الأساسي والوضوح التشغيلي كدعم لا كوعود مبالغ بها.' },
+  { en: 'Study the real users and operational context first.', ar: 'نفهم المستخدمين وبيئة العمل قبل البدء.' },
+  { en: 'Prototype the experience before committing to complexity.', ar: 'نختبر التجربة كنموذج أولي قبل إضافة التعقيد.' },
+  { en: 'Build accessible, fast interfaces with purposeful interactions.', ar: 'نبني واجهات سريعة وسهلة الوصول وتفاعلات ذات هدف.' },
+  { en: 'Connect the product to useful data and existing tools.', ar: 'نربط المنتج بالبيانات والأدوات الموجودة بشكل مفيد.' },
+  { en: 'Verify the running experience and hand it over clearly.', ar: 'نتحقق من التجربة الفعلية ونسلّمها بتوثيق واضح.' },
 ];
 
 /* ---------- Industry-tailored scopes ---------- */

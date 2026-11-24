@@ -90,3 +90,7 @@
 /ar/terms-and-conditions
 /faqs
 /ar/faqs
+/services/web-applications-dashboards
+/ar/services/web-applications-dashboards
+/services/workflow-automation-integrations
+/ar/services/workflow-automation-integrations

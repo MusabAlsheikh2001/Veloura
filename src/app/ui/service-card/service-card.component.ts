@@ -43,7 +43,7 @@ import { IconComponent } from '../icon/icon.component';
         inset: 0;
         background: radial-gradient(
           120% 80% at 100% 0%,
-          var(--gold-soft),
+          var(--accent-2-soft),
           transparent 60%
         );
         opacity: 0;
@@ -64,9 +64,9 @@ import { IconComponent } from '../icon/icon.component';
         transition: transform 0.5s var(--ease), color 0.4s var(--ease);
       }
       [data-theme='dark'] .svc__icon {
-        color: var(--gold);
-        background: var(--gold-soft);
-        border-color: color-mix(in srgb, var(--gold) 24%, transparent);
+        color: var(--accent-2);
+        background: var(--accent-2-soft);
+        border-color: color-mix(in srgb, var(--accent-2) 24%, transparent);
       }
       .svc:hover .svc__icon {
         transform: translateY(-2px) scale(1.04);
@@ -91,7 +91,7 @@ import { IconComponent } from '../icon/icon.component';
         color: var(--accent);
       }
       [data-theme='dark'] .svc__more {
-        color: var(--gold);
+        color: var(--accent-2);
       }
       .svc:hover .arrow {
         transform: translateX(4px);
