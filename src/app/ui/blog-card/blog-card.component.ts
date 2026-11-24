@@ -56,10 +56,10 @@ import { TranslationService } from '../../core/translation.service';
         padding: 0.34rem 0.72rem;
         border-radius: 100px;
         color: var(--on-dark);
-        background: rgba(11, 16, 32, 0.42);
+        background: rgba(18, 18, 18, 0.42);
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(50, 201, 218, 0.22);
+        border: 1px solid rgba(198, 167, 123, 0.22);
       }
       .post:hover .post__thumb img {
         transform: scale(1.06);

@@ -49,7 +49,7 @@ import { TranslationService } from '../../core/translation.service';
         height: var(--logo-size, 44px);
         display: inline-flex;
         flex-shrink: 0;
-        filter: drop-shadow(0 7px 15px rgba(82, 108, 255, 0.2));
+        filter: drop-shadow(0 7px 15px rgba(90, 30, 42, 0.2));
         transition: transform 0.5s var(--ease-out), filter 0.5s var(--ease);
       }
       .logo__mark img {
@@ -62,22 +62,22 @@ import { TranslationService } from '../../core/translation.service';
         filter:
           drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
           drop-shadow(0 0 7px rgba(255, 255, 255, 0.46))
-          drop-shadow(0 0 17px #1B2A55)
-          drop-shadow(0 0 28px rgba(82, 108, 255, 0.48));
+          drop-shadow(0 0 17px #3A0F18)
+          drop-shadow(0 0 28px rgba(90, 30, 42, 0.48));
       }
       :host-context([data-theme='dark']) .logo__mark img {
         filter: brightness(1.1) saturate(1.08) contrast(1.04);
       }
       .logo:hover .logo__mark {
         transform: translateY(-2px) scale(1.04) rotate(-1.5deg);
-        filter: drop-shadow(0 12px 26px rgba(82, 108, 255, 0.4));
+        filter: drop-shadow(0 12px 26px rgba(90, 30, 42, 0.4));
       }
       :host-context([data-theme='dark']) .logo:hover .logo__mark {
         filter:
           drop-shadow(0 0 1px rgba(255, 255, 255, 1))
           drop-shadow(0 0 10px rgba(255, 255, 255, 0.56))
-          drop-shadow(0 0 21px #1B2A55)
-          drop-shadow(0 0 34px rgba(82, 108, 255, 0.58));
+          drop-shadow(0 0 21px #3A0F18)
+          drop-shadow(0 0 34px rgba(90, 30, 42, 0.58));
       }
       .logo__word {
         display: inline-flex;
