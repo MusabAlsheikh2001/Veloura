@@ -72,6 +72,57 @@
   </div>
 </section>
 
+<!-- Selected work: real brand marks, no fabricated customer metrics or testimonials. -->
+<section class="section portfolio" aria-labelledby="selected-work-title">
+  <div class="container">
+    <div class="portfolio__heading" appReveal>
+      <div>
+        <span class="eyebrow">{{ t.ui().home.portfolioEyebrow }}</span>
+        <h2 id="selected-work-title">{{ t.ui().home.portfolioTitle }}</h2>
+      </div>
+      <p>{{ t.ui().home.portfolioSubtitle }}</p>
+    </div>
+    <div class="portfolio__grid">
+      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
+        <span class="portfolio__number" aria-hidden="true">01 / 03</span>
+        <span class="portfolio__media">
+          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </span>
+        <span class="portfolio__details">
+          <span class="portfolio__type">{{ t.ui().home.portfolioNayType }}</span>
+          <strong class="portfolio__name">Nay Alrouh</strong>
+          <span class="portfolio__description">{{ t.ui().home.portfolioNayDesc }}</span>
+          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
+        <span class="portfolio__number" aria-hidden="true">02 / 03</span>
+        <span class="portfolio__media">
+          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" />
+        </span>
+        <span class="portfolio__details">
+          <span class="portfolio__type">{{ t.ui().home.portfolioSukkarType }}</span>
+          <strong class="portfolio__name">Sukkar <span lang="ar">/ سُكّر</span></strong>
+          <span class="portfolio__description">{{ t.ui().home.portfolioSukkarDesc }}</span>
+          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
+        <span class="portfolio__number" aria-hidden="true">03 / 03</span>
+        <span class="portfolio__media">
+          <img src="https://raw.githubusercontent.com/MusabAlsheikh2001/alma--alrouh2/main/public/assets/alma-alrouh-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </span>
+        <span class="portfolio__details">
+          <span class="portfolio__type">{{ t.ui().home.portfolioAlmaType }}</span>
+          <strong class="portfolio__name">Alma Alrouh</strong>
+          <span class="portfolio__description">{{ t.ui().home.portfolioAlmaDesc }}</span>
+          <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- 3. Services preview -->
 <section class="section">
   <div class="container">
