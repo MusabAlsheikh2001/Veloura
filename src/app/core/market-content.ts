@@ -74,6 +74,75 @@ const commonServiceFaqs: FaqItem[] = [
 
 export const SERVICE_PAGES: ServicePage[] = [
   {
+    id: 'digital-platforms',
+    slug: 'web-applications-dashboards',
+    icon: 'uiux',
+    title: { en: 'Web Applications & Business Dashboards', ar: 'تطبيقات الويب ولوحات تحكم الأعمال' },
+    h1: { en: 'Custom Web Applications & Dashboards Designed Around Your Operations', ar: 'تطبيقات ويب ولوحات تحكم مصممة حول طريقة عملك' },
+    metaTitle: { en: 'Custom Web Applications & Dashboards | Veloura', ar: 'تطوير تطبيقات الويب ولوحات التحكم | Veloura' },
+    metaDesc: { en: 'Design-led web applications, business dashboards, internal portals, and connected digital workspaces for teams that need software built around their workflows.', ar: 'نصمم تطبيقات ويب ولوحات تحكم وبوابات داخلية ومساحات عمل رقمية مترابطة للشركات وفق احتياجاتها الفعلية.' },
+    intro: { en: 'Your operations should shape the software, not the other way around. Veloura designs and builds practical web applications, client portals, and dashboards with clear interfaces and considered connections to your existing workflows.', ar: 'يجب أن تتكيّف البرمجيات مع طريقة عملك، لا العكس. نصمم ونطوّر تطبيقات ويب وبوابات عملاء ولوحات تحكم بواجهات واضحة وروابط مدروسة مع سير العمل الحالي.' },
+    audience: [
+      { en: 'Teams relying on disconnected spreadsheets and tools.', ar: 'الفرق التي تعتمد على جداول وأدوات منفصلة.' },
+      { en: 'Businesses that need customer or staff portals.', ar: 'الشركات التي تحتاج بوابات للعملاء أو الموظفين.' },
+      { en: 'Founders validating an operational product idea.', ar: 'المؤسسون الذين يختبرون فكرة منتج تشغيلي.' },
+    ],
+    problems: [
+      { en: 'Important information is spread across too many tools.', ar: 'تتوزع المعلومات المهمة على أدوات كثيرة.' },
+      { en: 'Manual workflows introduce errors and slow teams down.', ar: 'تؤدي الإجراءات اليدوية إلى أخطاء وتأخير.' },
+      { en: 'Off-the-shelf systems do not reflect the actual workflow.', ar: 'لا تعكس الحلول الجاهزة طريقة العمل الحقيقية.' },
+    ],
+    deliverables: [
+      { en: 'User journeys, information architecture, and interactive prototypes.', ar: 'رحلات مستخدم وبنية معلومات ونماذج تفاعلية.' },
+      { en: 'Responsive web application interfaces and dashboards.', ar: 'واجهات تطبيقات ويب ولوحات تحكم متجاوبة.' },
+      { en: 'Role-aware workflows and integrations as scoped.', ar: 'سير عمل بحسب الصلاحيات وتكاملات وفق نطاق المشروع.' },
+      { en: 'Testing, documentation, and handover.', ar: 'اختبارات وتوثيق وتسليم منظم.' },
+    ],
+    process: [
+      { en: 'Map real users, data, permissions, and decisions.', ar: 'نفهم المستخدمين والبيانات والصلاحيات والقرارات.' },
+      { en: 'Prototype and validate the core journey.', ar: 'نصمم نموذجاً ونختبر الرحلة الأساسية.' },
+      { en: 'Build the interface and connect approved systems.', ar: 'نطوّر الواجهة ونربط الأنظمة المتفق عليها.' },
+      { en: 'Verify the running product and hand it over.', ar: 'نتحقق من المنتج الفعلي ونسلّمه بوضوح.' },
+    ],
+    related: ['ui-ux', 'web-development', 'automation-integrations'],
+    faqs: commonServiceFaqs,
+  },
+  {
+    id: 'automation-integrations',
+    slug: 'workflow-automation-integrations',
+    icon: 'automation',
+    title: { en: 'Workflow Automation & Integrations', ar: 'أتمتة سير العمل والتكاملات التقنية' },
+    h1: { en: 'Connected Workflows, Internal Tools & Practical Automation', ar: 'ربط سير العمل والأدوات الداخلية والأتمتة العملية' },
+    metaTitle: { en: 'Workflow Automation & System Integrations | Veloura', ar: 'أتمتة الأعمال وربط الأنظمة | Veloura' },
+    metaDesc: { en: 'Practical business automation and system integration services: workflows, internal interfaces, API connections, and structured handoffs that reduce repetitive work.', ar: 'نساعد الشركات على تنظيم العمليات وأتمتة المهام وربط الأدوات والأنظمة عبر تكاملات تقنية وواجهات داخلية واضحة.' },
+    intro: { en: 'Useful automation starts with understanding the work. We map the handoffs, approvals, and data movement, then connect the right tools and interfaces without automating broken processes.', ar: 'تبدأ الأتمتة المفيدة بفهم العمل. نحدد انتقال المهام والموافقات والبيانات ثم نربط الأدوات والواجهات المناسبة دون أتمتة إجراءات غير فعالة.' },
+    audience: [
+      { en: 'Operations teams handling repetitive manual steps.', ar: 'فرق العمليات التي تنفذ خطوات يدوية متكررة.' },
+      { en: 'Companies connecting websites with internal tools.', ar: 'الشركات التي تربط مواقعها بأدواتها الداخلية.' },
+      { en: 'Businesses seeking clearer reporting and handoffs.', ar: 'الأعمال التي تحتاج تقارير وتسليماً أوضح للمهام.' },
+    ],
+    problems: [
+      { en: 'Information must be entered more than once.', ar: 'تُدخل البيانات نفسها أكثر من مرة.' },
+      { en: 'Approvals and handoffs are hard to track.', ar: 'يصعب تتبّع الموافقات وانتقال المهام.' },
+      { en: 'Systems do not share the right information safely.', ar: 'لا تتبادل الأنظمة المعلومات المناسبة بأمان.' },
+    ],
+    deliverables: [
+      { en: 'Workflow mapping and integration planning.', ar: 'تحليل سير العمل وتخطيط التكاملات.' },
+      { en: 'API and application connections within approved scope.', ar: 'ربط واجهات البرمجة والتطبيقات ضمن النطاق المتفق عليه.' },
+      { en: 'Lightweight operational tools and status views.', ar: 'أدوات تشغيلية وواجهات لمتابعة الحالات.' },
+      { en: 'Error handling, safeguards, and clear documentation.', ar: 'معالجة للأخطاء وضوابط وتوثيق واضح.' },
+    ],
+    process: [
+      { en: 'Audit the current workflow and permissions.', ar: 'ندقق سير العمل الحالي والصلاحيات.' },
+      { en: 'Prioritize a valuable, manageable integration.', ar: 'نحدد التكامل الأكثر جدوى وقابلية للتنفيذ.' },
+      { en: 'Implement, test failures, and validate outputs.', ar: 'ننفّذ ونختبر حالات الفشل ونتحقق من النتائج.' },
+      { en: 'Document ownership and handoff procedures.', ar: 'نوثّق المسؤوليات وآليات التسليم.' },
+    ],
+    related: ['digital-platforms', 'web-development', 'ui-ux'],
+    faqs: commonServiceFaqs,
+  },
+
+  {
     id: 'brand-identity',
     slug: 'brand-identity',
     icon: 'branding',
