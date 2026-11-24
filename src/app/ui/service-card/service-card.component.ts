@@ -11,7 +11,7 @@ import { IconComponent } from '../icon/icon.component';
   imports: [RouterLink, IconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <a class="svc card card-hover" [routerLink]="t.path('/services/' + slug)">
+    <a class="svc card card-hover" [routerLink]="t.path('/services/' + slug)" (pointermove)="spot($event)">
       <span class="svc__icon" aria-hidden="true">
         <app-icon [name]="service.icon" />
       </span>
@@ -41,16 +41,13 @@ import { IconComponent } from '../icon/icon.component';
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(
-          120% 80% at 100% 0%,
-          var(--accent-2-soft),
-          transparent 60%
-        );
+        background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), var(--accent-2-soft), transparent 70%);
         opacity: 0;
         transition: opacity 0.5s var(--ease);
         pointer-events: none;
       }
-      .svc:hover::after {
+      .svc:hover::after,
+      .svc:focus-visible::after {
         opacity: 1;
       }
       .svc__icon {
@@ -134,6 +131,14 @@ import { IconComponent } from '../icon/icon.component';
   ],
 })
 export class ServiceCardComponent {
+  /** Pointer spotlight: positions the card glow under the cursor. */
+  protected spot(event: PointerEvent): void {
+    const el = event.currentTarget as HTMLElement;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (event.clientX - r.left) + 'px');
+    el.style.setProperty('--my', (event.clientY - r.top) + 'px');
+  }
+
   @Input({ required: true }) service!: Service;
   protected t = inject(TranslationService);
 

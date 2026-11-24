@@ -20,13 +20,13 @@
       </div>
     </div>
     <!-- An original abstract product-interface composition, not a fabricated client dashboard. -->
-    <div class="hero__visual" aria-hidden="true">
+    <div class="hero__visual" (pointermove)="tiltPanel($event)" (pointerleave)="resetTilt($event)">
       <div class="hero__orbit hero__orbit--one"></div>
       <div class="hero__orbit hero__orbit--two"></div>
-      <div class="studio">
+      <div class="studio" [class.is-state-1]="panelState()===1" [class.is-state-2]="panelState()===2">
         <div class="studio__top"><span class="studio__dots"><i></i><i></i><i></i></span><span class="studio__path">veloura / {{ t.isArabic() ? 'مختبر المنتجات' : 'product-lab' }}</span><span class="studio__number">V.01</span></div>
         <div class="studio__workspace">
-          <div class="studio__rail"><span class="studio__rail-logo">V.</span><span class="studio__rail-line"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span><span class="studio__rail-dot"></span></div>
+          <div class="studio__rail"><span class="studio__rail-logo">V.</span><span class="studio__rail-line"></span><button type="button" class="studio__rail-dot" [class.is-active]="panelState()===0" [attr.aria-pressed]="panelState()===0" [attr.aria-label]="'Interface view 1'" (click)="setPanel(0)"></button><button type="button" class="studio__rail-dot" [class.is-active]="panelState()===1" [attr.aria-pressed]="panelState()===1" [attr.aria-label]="'Interface view 2'" (click)="setPanel(1)"></button><button type="button" class="studio__rail-dot" [class.is-active]="panelState()===2" [attr.aria-pressed]="panelState()===2" [attr.aria-label]="'Interface view 3'" (click)="setPanel(2)"></button></div>
           <div class="studio__panel">
             <div class="studio__row"><span class="studio__overline">{{ t.isArabic() ? 'نظام تصميم متكامل' : 'CONNECTED DESIGN SYSTEM' }}</span><span class="studio__tiny">01 — 04</span></div>
             <div class="studio__heading">{{ t.isArabic() ? 'تجربة مدروسة.' : 'Craft meets logic.' }}</div>
@@ -35,7 +35,7 @@
               <div class="studio__chart"><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <div class="studio__card"><span class="studio__card-circle"></span><span class="studio__card-line"></span><span class="studio__card-line studio__card-line--short"></span></div>
             </div>
-            <div class="studio__foot"><span><b></b>{{ t.isArabic() ? 'تصميم الواجهات' : 'Interface design' }}</span><span><b></b>{{ t.isArabic() ? 'الأنظمة والربط' : 'Systems & integration' }}</span></div>
+            <div class="studio__foot"><span class="studio__illustrative">{{ t.isArabic() ? 'واجهة توضيحية' : 'Illustrative interface, not a client product' }}</span><span><b></b>{{ t.isArabic() ? 'تصميم الواجهات' : 'Interface design' }}</span><span><b></b>{{ t.isArabic() ? 'الأنظمة والربط' : 'Systems & integration' }}</span></div>
           </div>
         </div>
       </div>
@@ -83,10 +83,10 @@
       <p>{{ t.ui().home.portfolioSubtitle }}</p>
     </div>
     <div class="portfolio__grid">
-      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
+      <a class="portfolio__card portfolio__card--nay" href="https://nayalrouh.com/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Nay Alrouh — open project website" [appReveal]="0">
         <span class="portfolio__number" aria-hidden="true">01 / 03</span>
         <span class="portfolio__media">
-          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+          <img src="https://nayalrouh.b-cdn.net/logo.png" alt="Nay Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="portfolio__domain" aria-hidden="true">nayalrouh.com <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioNayType }}</span>
@@ -95,10 +95,10 @@
           <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
         </span>
       </a>
-      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
+      <a class="portfolio__card portfolio__card--sukkar" href="https://sukkar.space/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Sukkar — open project website" [appReveal]="100">
         <span class="portfolio__number" aria-hidden="true">02 / 03</span>
         <span class="portfolio__media">
-          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" />
+          <img src="/img/portfolio-sukkar-logo.svg" alt="Sukkar logo — سُكّر" width="230" height="126" loading="lazy" decoding="async" /><span class="portfolio__domain" aria-hidden="true">sukkar.space <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioSukkarType }}</span>
@@ -107,10 +107,10 @@
           <span class="portfolio__visit">{{ t.ui().home.portfolioVisit }} <span aria-hidden="true">↗</span></span>
         </span>
       </a>
-      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
+      <a class="portfolio__card portfolio__card--alma" href="https://alma-alrouh.com/" (pointermove)="aimPortfolio($event)" (pointerleave)="resetPortfolio($event)" target="_blank" rel="noopener noreferrer" aria-label="Alma Alrouh — open project website" [appReveal]="200">
         <span class="portfolio__number" aria-hidden="true">03 / 03</span>
         <span class="portfolio__media">
-          <img src="/img/portfolio-alma-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+          <img src="/img/portfolio-alma-logo.png" alt="Alma Alrouh logo" width="210" height="120" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="portfolio__domain" aria-hidden="true">alma-alrouh.com <span>↗</span></span>
         </span>
         <span class="portfolio__details">
           <span class="portfolio__type">{{ t.ui().home.portfolioAlmaType }}</span>

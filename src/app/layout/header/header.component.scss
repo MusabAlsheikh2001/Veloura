@@ -234,15 +234,22 @@ html[dir='rtl'] .hdr__mega-more:hover .hdr__mega-arrow {
   position: absolute;
   inset-block-end: 0.08rem;
   inset-inline-start: 50%;
-  width: 0;
+  width: 16px;
   height: 1.5px;
   border-radius: 2px;
   background: var(--accent-2);
-  transform: translateX(-50%);
-  transition: width 0.3s var(--ease);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.45s var(--ease-out);
 }
 
-html[dir='rtl'] .hdr__link::after { transform: translateX(50%); }
+.hdr__link:hover::after,
+.hdr__link.is-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+html[dir='rtl'] .hdr__link::after { transform: translateX(50%) scaleX(0); }
+html[dir='rtl'] .hdr__link:hover::after, html[dir='rtl'] .hdr__link.is-active::after { transform: translateX(50%) scaleX(1); }
 
 .hdr__link:hover {
   color: var(--text);
