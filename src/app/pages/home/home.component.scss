@@ -594,7 +594,7 @@ html[lang='ar'] .faq-home__q {
 .hero__title {
   max-width: 12ch;
   margin: 0 0 clamp(1.5rem, 2.2vw, 2.25rem);
-  color: #C6A77B;
+  color: var(--on-dark);
   font-size: clamp(3.6rem, 5.5vw, 6.9rem);
   line-height: .99;
   letter-spacing: -.065em;
