@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from
 import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { TranslationService } from '../../core/translation.service';
-import { LogoComponent } from '../../ui/logo/logo.component';
 
 @Component({
   selector:'app-header',
   standalone:true,
-  imports:[RouterLink,RouterLinkActive,LogoComponent],
+  imports:[RouterLink,RouterLinkActive],
   templateUrl:'./header.component.html',
   styleUrl:'./header.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush,
