@@ -2,7 +2,7 @@
   <div class="vs-footer__wrap">
     <div class="vs-footer__main">
       <div class="vs-footer__brand">
-        <app-logo [showWord]="true" />
+        <a [routerLink]="t.path('/')" [attr.aria-label]="text('Veloura home','الرئيسية - فيلورا')"><img class="vs-footer__logo" src="/img/brand/logo-lockup-dark.png" alt="Veloura" width="1042" height="217" loading="lazy" decoding="async" /></a>
         <p>{{ text('Custom software. Thoughtful design. Creative growth. Made to work together.', 'برمجيات مخصصة وتصميم مدروس ونمو إبداعي. منظومة متكاملة.') }}</p>
       </div>
       <div class="vs-footer__links">
