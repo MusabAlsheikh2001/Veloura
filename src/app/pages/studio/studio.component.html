@@ -1,0 +1,218 @@
+<div class="v-studio">
+  @if (page === 'home') {
+    <section class="v-hero" aria-labelledby="v-hero-title">
+      <div class="v-hero__noise" aria-hidden="true"></div>
+      <div class="v-wrap v-hero__body">
+        <div class="v-hero__eyebrow"><span class="v-dot" aria-hidden="true"></span>{{ copy('INDEPENDENT DIGITAL ENGINEERING STUDIO', 'استوديو مستقل للهندسة الرقمية') }} <span class="v-hero__eyebrow-end">EST. IN DIGITAL</span></div>
+        <div class="v-hero__layout">
+          <div class="v-hero__copy">
+            <p class="v-meta v-hero__index">{{ copy('DESIGN / TECHNOLOGY / GROWTH', 'التصميم / التقنية / النمو') }}</p>
+            <h1 id="v-hero-title">{{ copy('We build what', 'نصنع التجارب') }} <em>{{ copy('comes next.', 'التي تصنع الفرق.') }}</em></h1>
+            <p class="v-hero__lead">{{ copy('Beautifully designed. Seriously engineered. From ambitious digital products to connected business systems—and the brands that bring them to life.', 'تصميم متقن وهندسة جادة. من المنتجات الرقمية الطموحة إلى أنظمة الأعمال المتكاملة والهويات التي تمنحها حضوراً مميزاً.') }}</p>
+            <div class="v-hero__actions">
+              <a class="v-button v-button--light" [routerLink]="t.path('/work')">{{ copy('Explore our work', 'اكتشف أعمالنا') }} <span aria-hidden="true">↗</span></a>
+              <a class="v-textlink v-textlink--light" [routerLink]="t.path('/contact')">{{ copy('Start a conversation', 'ابدأ الحديث معنا') }} <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="v-hero__footer"><span class="v-line" aria-hidden="true"></span>{{ copy('BUILT FOR PEOPLE. ENGINEERED FOR POSSIBILITY.', 'لأجل الناس. وبإمكانات بلا حدود.') }}</div>
+          </div>
+
+          <div class="v-lab" [attr.aria-label]="copy('Interactive disciplines showcase','عرض تفاعلي لتخصصاتنا')">
+            <div class="v-lab__topbar"><span class="v-lab__signal"><i aria-hidden="true"></i>{{ copy('VELOURA / SYSTEMS LAB', 'فيلورا / مختبر الأنظمة') }}</span><span>001 — 003</span></div>
+            <div class="v-lab__stage" [class.is-design]="mode() === 0" [class.is-engineering]="mode() === 1" [class.is-growth]="mode() === 2">
+              <div class="v-lab__field" aria-hidden="true">
+                <span class="v-lab__axis v-lab__axis--x"></span><span class="v-lab__axis v-lab__axis--y"></span>
+                <span class="v-lab__orbit v-lab__orbit--outer"></span><span class="v-lab__orbit v-lab__orbit--inner"></span>
+                <span class="v-lab__core"><span>{{ modes[mode()].number }}</span><strong>{{ copy('IDEA → REALITY','الفكرة ← الواقع') }}</strong><small>{{ copy('ACTIVE SYSTEM','نظام فعّال') }}</small></span>
+                <span class="v-lab__satellite v-lab__satellite--a"></span><span class="v-lab__satellite v-lab__satellite--b"></span>
+                <span class="v-lab__readout v-lab__readout--top">V / {{ modes[mode()].number }}</span><span class="v-lab__readout v-lab__readout--bottom">DESIGN ∞ SYSTEMS</span>
+              </div>
+              <div class="v-lab__summary" aria-live="polite">
+                <span class="v-meta">{{ text(modes[mode()].caption) }}</span>
+                <h2>{{ text(modes[mode()].heading) }}</h2>
+                <p>{{ text(modes[mode()].body) }}</p>
+              </div>
+            </div>
+            <div class="v-lab__controls" role="group" [attr.aria-label]="copy('Explore disciplines', 'استكشف التخصصات')">
+              @for (item of modes; track item.number; let i = $index) {
+                <button type="button" class="v-lab__tab" [class.is-active]="mode() === i" [attr.aria-pressed]="mode() === i" (click)="selectMode(i)">
+                  <span>{{ item.number }}</span><strong>{{ text(item.name) }}</strong><span aria-hidden="true">↗</span>
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="v-hero__baseline"><span>{{ copy('SCROLL TO EXPLORE','مرّر للاستكشاف') }}</span><span aria-hidden="true">↓</span><span class="v-hero__baseline-right">{{ copy('ENGINEERING · EXPERIENCE · IDENTITY', 'الهندسة · التجربة · الهوية') }}</span></div>
+      </div>
+    </section>
+
+    <section class="v-statement" aria-labelledby="v-statement-title">
+      <div class="v-wrap v-statement__inner">
+        <div class="v-section-label"><span class="v-num">01 /</span>{{ copy('A DIFFERENT KIND OF TECHNOLOGY PARTNER','شريك تقني بأسلوب مختلف') }}</div>
+        <h2 id="v-statement-title">{{ copy('The experience is everything.', 'التجربة هي كل شيء.') }} <span>{{ copy('So is what powers it.', 'وكذلك التقنية التي تصنعها.') }}</span></h2>
+        <div class="v-statement__bottom"><p>{{ copy('Good technology disappears into great experiences. We bring product strategy, detailed design, production engineering and creative growth into one connected practice.', 'أفضل تقنية هي التي تجعل التجربة أسهل وأوضح. نجمع استراتيجية المنتج والتصميم المتقن والهندسة البرمجية والنمو الإبداعي في منظومة واحدة.') }}</p><a class="v-textlink" [routerLink]="t.path('/about')">{{ copy('Our approach','نهجنا') }} <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="v-showcase" aria-labelledby="v-showcase-title">
+      <div class="v-wrap">
+        <div class="v-heading-row"><div><p class="v-section-label"><span class="v-num">02 /</span>{{ copy('SELECTED WORK', 'أعمال مختارة') }}</p><h2 id="v-showcase-title">{{ copy('Made for the real world.', 'أعمال تصنع فرقاً حقيقياً.') }}</h2></div><a class="v-textlink" [routerLink]="t.path('/work')">{{ copy('Explore all work','تصفّح الأعمال') }} <span aria-hidden="true">↗</span></a></div>
+        <div class="v-showcase__grid">
+          @for (project of projects; track project.name; let i = $index) {
+            <article class="v-project" [class]="'v-project v-project--' + project.theme">
+              <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="v-project__art" [attr.aria-label]="copy('Visit ', 'زيارة ') + project.name">
+                <span class="v-project__number">{{ project.number }} / 03</span>
+                <span class="v-project__frame"><img [src]="project.logo" [alt]="project.name + ' logo'" loading="lazy" decoding="async" /></span>
+                <span class="v-project__corner" aria-hidden="true">↗</span>
+              </a>
+              <div class="v-project__info"><div><span class="v-meta">{{ text(project.tag) }}</span><h3>{{ project.name }}</h3><p>{{ text(project.description) }}</p></div><a [href]="project.link" target="_blank" rel="noopener noreferrer">{{ project.domain }} <span aria-hidden="true">↗</span></a></div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="v-capabilities" aria-labelledby="v-capabilities-title">
+      <div class="v-wrap">
+        <div class="v-capabilities__head"><p class="v-section-label"><span class="v-num">03 /</span>{{ copy('WHAT WE DO','مجالات عملنا') }}</p><h2 id="v-capabilities-title">{{ copy('One team. Many disciplines.', 'فريق واحد. تخصصات متكاملة.') }}</h2><p>{{ copy('Software comes first. Design brings clarity. Marketing helps the right people find it.', 'الهندسة أولاً. التصميم يمنح الوضوح. والتسويق يصل بما نبنيه إلى جمهوره.') }}</p></div>
+        <div class="v-capabilities__list">
+          @for (service of services; track service.id) {
+            <a class="v-capabilities__row" [routerLink]="t.path('/services')" [fragment]="service.id">
+              <span class="v-capabilities__number">{{ service.number }}</span><span class="v-capabilities__title">{{ text(service.name) }}</span><span class="v-capabilities__kind">{{ text(service.kind) }}</span><span class="v-capabilities__arrow" aria-hidden="true">↗</span>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="v-stack" aria-labelledby="v-stack-title">
+      <div class="v-wrap">
+        <div class="v-stack__intro"><div><p class="v-section-label"><span class="v-num">04 /</span>{{ copy('THE TOOLS BEHIND THE THINKING','التقنيات التي نعتمد عليها') }}</p><h2 id="v-stack-title">{{ copy('Engineered with intent.', 'هندسة بأدوات مدروسة.') }}</h2></div><p>{{ copy('An adaptable stack selected for the problem—not the trend. From interface to infrastructure.', 'نختار التقنية المناسبة للمشكلة، لا لأنها رائجة. من الواجهة إلى البنية التحتية.') }}</p></div>
+        <ul class="v-stack__grid">
+          @for (technology of stack; track technology.name) {
+            <li class="v-stack__item"><img [src]="'/img/logos/tech/' + technology.icon" [alt]="technology.name + ' logo'" width="26" height="26" loading="lazy" /><span>{{ technology.name }}</span></li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="v-process" aria-labelledby="v-process-title">
+      <div class="v-wrap">
+        <div class="v-process__top"><p class="v-section-label"><span class="v-num">05 /</span>{{ copy('OUR WAY OF WORKING','طريقة عملنا') }}</p><h2 id="v-process-title">{{ copy('Clarity, built in.', 'الوضوح في كل خطوة.') }}</h2></div>
+        <div class="v-process__grid">
+          @for (step of steps; track step.number) {
+            <div class="v-process__step"><span>{{ step.number }}</span><h3>{{ text(step.title) }}</h3><p>{{ text(step.body) }}</p></div>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  @if (page === 'services') {
+    <section class="v-pagehead v-pagehead--dark" aria-labelledby="services-title">
+      <div class="v-wrap">
+        <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('CAPABILITIES','مجالات العمل') }}</p>
+        <h1 id="services-title">{{ copy('Complex problems.', 'تحديات معقّدة.') }} <em>{{ copy('Clear solutions.', 'حلول واضحة.') }}</em></h1>
+        <p>{{ copy('Digital products, exceptional interfaces and the systems behind them. Our creative and marketing expertise makes the work go further.', 'منتجات رقمية وواجهات متقنة وأنظمة تدعمها. ونضيف خبرات الهوية والتسويق لتصل هذه الحلول إلى جمهورها.') }}</p>
+        <div class="v-pagehead__foot">{{ copy('BUILD / DESIGN / CONNECT / GROW','نبني / نصمّم / نربط / ننمّي') }} <span aria-hidden="true">↘</span></div>
+      </div>
+    </section>
+    <section class="v-detailservices" aria-labelledby="services-list-title">
+      <div class="v-wrap">
+        <div class="v-heading-row"><div><p class="v-section-label"><span class="v-num">02 /</span>{{ copy('EXPLORE CAPABILITIES','استكشف خدماتنا') }}</p><h2 id="services-list-title">{{ copy('The right expertise. Together.', 'الخبرات الصحيحة. معاً.') }}</h2></div><p>{{ copy('Select a discipline to see what we build.','اختر أحد المجالات لمعرفة ما نقدمه.') }}</p></div>
+        <div class="v-detailservices__layout">
+          <div class="v-detailservices__menu" role="group" [attr.aria-label]="copy('Services','الخدمات')">
+            @for (service of services; track service.id; let i = $index) {
+              <button [id]="service.id" type="button" class="v-detailservices__button" [class.is-active]="activeService() === i" [attr.aria-pressed]="activeService() === i" (click)="selectService(i)">
+                <span>{{ service.number }}</span><strong>{{ text(service.name) }}</strong><span aria-hidden="true">↗</span>
+              </button>
+            }
+          </div>
+          <article class="v-detailservices__panel" aria-live="polite">
+            <p class="v-meta">{{ text(services[activeService()].kind) }} / {{ services[activeService()].number }}</p>
+            <h3>{{ text(services[activeService()].name) }}</h3>
+            <p>{{ text(services[activeService()].desc) }}</p>
+            <ul>@for (point of services[activeService()].points; track point.en) {<li><span aria-hidden="true">↗</span>{{ text(point) }}</li>}</ul>
+            <a class="v-button v-button--dark" [routerLink]="t.path('/contact')">{{ copy('Discuss this service', 'ناقش مشروعك معنا') }} <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  }
+
+  @if (page === 'work') {
+    <section class="v-pagehead v-pagehead--dark" aria-labelledby="work-title"><div class="v-wrap">
+      <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('SELECTED WORK','أعمال مختارة') }}</p>
+      <h1 id="work-title">{{ copy('Better experiences', 'تجارب أفضل') }} <em>{{ copy('start with purpose.', 'تبدأ بهدف واضح.') }}</em></h1>
+      <p>{{ copy('A selection of real digital initiatives. Every project has its own people, context and purpose.', 'مجموعة من المبادرات الرقمية الحقيقية، لكل منها جمهورها وسياقها وهدفها.') }}</p>
+      <div class="v-pagehead__foot">{{ copy('REAL ORGANIZATIONS / REAL PURPOSE','مشاريع حقيقية / أهداف واضحة') }} <span aria-hidden="true">↘</span></div>
+    </div></section>
+    <section class="v-workpage" aria-label="Selected projects"><div class="v-wrap">
+      @for (project of projects; track project.number; let i = $index) {
+        <article class="v-workcase" [class]="'v-workcase v-workcase--' + project.theme">
+          <div class="v-workcase__main">
+            <div class="v-workcase__copy">
+              <p class="v-meta">{{ project.number }} / 03 — {{ text(project.tag) }}</p>
+              <h2>{{ text(project.title) }}</h2>
+              <p>{{ text(project.description) }}</p>
+              <a class="v-textlink" [href]="project.link" target="_blank" rel="noopener noreferrer">{{ copy('Explore the project','استكشف المشروع') }} <span aria-hidden="true">↗</span></a>
+            </div>
+            <a class="v-workcase__visual" [href]="project.link" target="_blank" rel="noopener noreferrer" [attr.aria-label]="copy('Visit ','زيارة ') + project.name">
+              <div class="v-workcase__art"><span class="v-workcase__label">{{ project.domain }}</span><img [src]="project.logo" [alt]="project.name + ' logo'" loading="lazy" decoding="async" /><span class="v-workcase__count">{{ project.number }}</span></div>
+            </a>
+          </div>
+        </article>
+      }
+      <p class="v-workpage__note">{{ copy('Project descriptions reflect public, verified information. No performance metrics or delivery claims are assumed.', 'تستند أوصاف المشاريع إلى معلومات معلنة ومتحققة، دون افتراض نتائج أو مؤشرات أداء غير موثقة.') }}</p>
+    </div></section>
+  }
+
+  @if (page === 'about') {
+    <section class="v-pagehead v-pagehead--dark" aria-labelledby="about-title"><div class="v-wrap">
+      <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('THE STUDIO','عن الشركة') }}</p>
+      <h1 id="about-title">{{ copy('Technology', 'التقنية') }} <em>{{ copy('with taste.', 'برؤية إبداعية.') }}</em></h1>
+      <p>{{ copy('We are an engineering-led creative company. We make useful digital systems feel remarkable—and remarkable ideas genuinely useful.', 'نحن شركة تقنية تقودها الهندسة ويثريها الإبداع. نحول الأنظمة المفيدة إلى تجارب مميزة، والأفكار المميزة إلى حلول عملية.') }}</p>
+      <div class="v-pagehead__foot">{{ copy('PRODUCT / ENGINEERING / CREATIVE','المنتج / الهندسة / الإبداع') }} <span aria-hidden="true">↘</span></div>
+    </div></section>
+    <section class="v-about"><div class="v-wrap v-about__intro">
+      <p class="v-section-label"><span class="v-num">02 /</span>{{ copy('WHY VELOURA','لماذا فيلورا؟') }}</p>
+      <h2>{{ copy('One connected practice. Not disconnected deliverables.', 'منظومة عمل متكاملة، لا خدمات منفصلة.') }}</h2>
+      <div><p>{{ copy('A digital product is more than its screens. It depends on the decisions behind them, the systems underneath, and the clarity of how it reaches people. That is where our disciplines meet.', 'المنتج الرقمي ليس مجرد شاشات. بل يعتمد على القرارات التي تشكّله والأنظمة التي تدعمه والطريقة التي يصل بها إلى الناس. هنا تلتقي تخصصاتنا.') }}</p><a class="v-textlink" [routerLink]="t.path('/services')">{{ copy('Explore what we do', 'اكتشف خدماتنا') }} <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+    <section class="v-values"><div class="v-wrap">
+      <div class="v-heading-row"><div><p class="v-section-label"><span class="v-num">03 /</span>{{ copy('WHAT WE BELIEVE','ما نؤمن به') }}</p><h2>{{ copy('The details are the difference.', 'التفاصيل تصنع الفارق.') }}</h2></div></div>
+      <div class="v-values__grid">
+        <article><span>01</span><h3>{{ copy('Craft is a discipline.', 'الإتقان منهج.') }}</h3><p>{{ copy('Every interaction, line of copy, and implementation detail deserves intention.','كل تفاعل وكلمة وتفصيلة برمجية تستحق اهتماماً مدروساً.') }}</p></article>
+        <article><span>02</span><h3>{{ copy('Technology serves people.', 'التقنية في خدمة الإنسان.') }}</h3><p>{{ copy('Good engineering reduces friction and makes complex work easier.','الهندسة الجيدة تبسط التعقيد وتجعل العمل أسهل.') }}</p></article>
+        <article><span>03</span><h3>{{ copy('Design must work.', 'التصميم يجب أن يعمل.') }}</h3><p>{{ copy('Beauty matters, but clarity, accessibility and practical usefulness matter just as much.','الجمال مهم، وكذلك الوضوح وإمكانية الوصول والفائدة العملية.') }}</p></article>
+      </div>
+    </div></section>
+  }
+
+  @if (page === 'contact') {
+    <section class="v-pagehead v-pagehead--dark v-pagehead--contact" aria-labelledby="contact-title"><div class="v-wrap">
+      <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('LET’S MAKE SOMETHING MEANINGFUL','لنبنِ شيئاً يستحق') }}</p>
+      <h1 id="contact-title">{{ copy('Have a challenge?', 'لديك فكرة أو تحدٍ؟') }} <em>{{ copy('Let’s build.', 'لنعمل معاً.') }}</em></h1>
+      <p>{{ copy('Tell us what you are trying to make possible. We will start with understanding the problem.', 'شاركنا ما تطمح إلى تحقيقه. نبدأ بفهم المشكلة ثم نحدد الحل المناسب.') }}</p>
+    </div></section>
+    <section class="v-contact"><div class="v-wrap v-contact__layout">
+      <aside class="v-contact__info">
+        <p class="v-section-label"><span class="v-num">02 /</span>{{ copy('CONNECT','تواصل') }}</p>
+        <h2>{{ copy('Good work starts with a conversation.', 'كل عمل مميز يبدأ بحوار.') }}</h2>
+        <p>{{ copy('Custom software, digital products, websites, design and marketing. Bring us your challenge.', 'البرمجيات المخصصة والمنتجات الرقمية والمواقع والتصميم والتسويق. أخبرنا عن مشروعك.') }}</p>
+        <a class="v-contact__email" [href]="'mailto:' + email">{{ email }} <span aria-hidden="true">↗</span></a>
+        <p class="v-contact__location">{{ copy('Serving GCC and international teams, remotely.', 'نعمل عن بُعد مع الشركات في الخليج والعالم.') }}</p>
+      </aside>
+      <div class="v-contact__form"><app-contact-form /></div>
+    </div></section>
+  }
+
+  <section class="v-close" aria-labelledby="v-close-title">
+    <div class="v-wrap v-close__inner">
+      <p class="v-section-label"><span class="v-num">↗ /</span>{{ copy('YOUR NEXT IDEA STARTS HERE','خطوتك القادمة تبدأ هنا') }}</p>
+      <h2 id="v-close-title">{{ copy('Let’s make it', 'لنصنع') }} <em>{{ copy('matter.', 'الفرق.') }}</em></h2>
+      <a class="v-close__link" [routerLink]="t.path('/contact')">{{ copy('Start a project', 'ابدأ مشروعك') }} <span aria-hidden="true">↗</span></a>
+      <div class="v-close__divider" aria-hidden="true"></div>
+      <span>{{ copy('ENGINEERING / DESIGN / GROWTH', 'الهندسة / التصميم / النمو') }}</span>
+    </div>
+  </section>
+</div>
