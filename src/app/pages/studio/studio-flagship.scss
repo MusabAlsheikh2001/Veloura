@@ -152,3 +152,37 @@ html[dir='rtl'] .v-studio .v-flagship__display-top,html[dir='rtl'] .v-studio .v-
 @media(prefers-reduced-motion:reduce){
   .v-studio .v-flagship *, .v-studio .v-owned-work *{animation:none!important;transition:none!important;}
 }
+
+
+/* Hero engineering sculpture: three physically layered planes.
+   No fake dashboard data; each plane names a real discipline. */
+.v-studio .v-lab__field .v-lab__core,
+.v-studio .v-lab__field .v-lab__satellite{opacity:.05;}
+.v-studio .v-lab__field .v-lab__orbit{opacity:.27;}
+.v-studio .v-lab__layers{position:absolute;inset:0;perspective:1100px;z-index:5;pointer-events:none;overflow:hidden;}
+.v-studio .v-lab__layers::before{content:'';position:absolute;inset:7% 17% 6%;background:radial-gradient(ellipse at 50% 66%,rgba(199,116,146,.18),transparent 67%);filter:blur(10px);}
+.v-studio .v-lab__layer{--vl-accent:#c18a9f;position:absolute;left:50%;width:min(66%,425px);height:120px;display:flex;align-items:center;padding:19px 24px;background:linear-gradient(127deg,rgba(58,65,82,.93),rgba(21,27,39,.97));border:1px solid rgba(255,226,237,.34);box-shadow:10px 19px 22px rgba(0,0,0,.38),inset 0 1px rgba(247,245,247,.08);transform-origin:center;transform:translateX(-50%) rotateX(51deg) rotateZ(-17deg);border-radius:7px;transition:background .35s,border-color .35s,box-shadow .35s,translate .45s;}
+.v-studio .v-lab__layer::before{position:absolute;content:'';inset-block-start:8px;inset-inline-start:10px;inset-block-end:8px;width:3px;background:var(--vl-accent);opacity:.9;}
+.v-studio .v-lab__layer::after{content:'';position:absolute;inset:-1px;border:1px solid rgba(222,175,193,.22);border-radius:7px;transform:translateY(10px);z-index:-1;opacity:.4;}
+.v-studio .v-lab__layer-inside{display:flex;flex-direction:column;gap:5px;line-height:1.15;max-width:100%;}
+.v-studio .v-lab__layer-inside small{font-family:'Inter',sans-serif;font-size:.61rem;letter-spacing:.17em;color:#b0afc2;font-weight:650;}
+.v-studio .v-lab__layer-inside strong{font-family:'Inter',sans-serif;color:#f9f6f7;letter-spacing:.02em;font-size:clamp(.93rem,1.18vw,1.15rem);font-weight:700;}
+.v-studio .v-lab__layer-inside span{font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.09em;color:#a9b4c3;font-weight:600;}
+.v-studio .v-lab__layer--experience{top:3%;z-index:3;translate:0 -7px;}
+.v-studio .v-lab__layer--logic{top:28%;z-index:2;background:linear-gradient(130deg,#2d4051,#1a2733);}
+.v-studio .v-lab__layer--data{top:53%;z-index:1;background:linear-gradient(128deg,#2f3245,#1d2333);}
+.v-studio .v-lab__stage.is-design .v-lab__layer--experience{translate:0 -20px;border-color:rgba(241,168,194,.75);box-shadow:0 0 45px rgba(235,149,180,.18),12px 24px 24px rgba(0,0,0,.38);}
+.v-studio .v-lab__stage.is-engineering .v-lab__layer--logic{translate:0 -12px;border-color:rgba(147,207,226,.75);box-shadow:0 0 45px rgba(105,170,196,.22),12px 24px 24px rgba(0,0,0,.38);}
+.v-studio .v-lab__stage.is-growth .v-lab__layer--data{translate:0 -13px;border-color:rgba(228,188,149,.75);box-shadow:0 0 40px rgba(204,162,111,.17),12px 24px 24px rgba(0,0,0,.38);}
+.v-studio .v-lab__stage.is-engineering .v-lab__layers::before{background:radial-gradient(ellipse at 50% 66%,rgba(95,165,201,.2),transparent 65%);}
+.v-studio .v-lab__stage.is-growth .v-lab__layers::before{background:radial-gradient(ellipse at 50% 66%,rgba(207,163,121,.2),transparent 65%);}
+.v-studio .v-lab__readout{z-index:7;}
+@media(max-width:700px){
+ .v-studio .v-lab__layer{width:min(74%,370px);height:90px;padding:13px 16px;transform:translateX(-50%) rotateX(40deg) rotateZ(-12deg);}
+ .v-studio .v-lab__layer--experience{top:4%;}
+ .v-studio .v-lab__layer--logic{top:30%;}
+ .v-studio .v-lab__layer--data{top:54%;}
+ .v-studio .v-lab__layer-inside small{font-size:.48rem;}
+ .v-studio .v-lab__layer-inside strong{font-size:.8rem;}
+ .v-studio .v-lab__layer-inside span{font-size:.44rem;}
+}
