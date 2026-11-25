@@ -18,6 +18,8 @@ const cases = [
   ['services-ar', '/ar/services', 1440, 900],
   ['work-ar', '/ar/work', 1440, 900],
   ['contact-ar', '/ar/contact', 1440, 900],
+  ['home-wide-en', '/', 1920, 1080],
+  ['home-compact-en', '/', 375, 812],
   ['home-mobile-en', '/', 390, 844],
   ['home-mobile-ar', '/ar', 390, 844],
   ['services-mobile-en', '/services', 390, 844],
@@ -60,6 +62,18 @@ try {
   }
   const after = await page.locator('.v-lab__summary h2').innerText();
   if (before === after) failures.push('Interactive engineering lab did not change headline');
+  // VeloBase is an actual owned product, with user-controlled product module views.
+  await page.locator('#velobase').scrollIntoViewIfNeeded();
+  if (!(await page.locator('.v-flagship__identity', { hasText: 'VeloBase' }).count())) failures.push('VeloBase flagship identity missing');
+  const platformBefore = await page.locator('.v-flagship__canvas h3').innerText();
+  await page.locator('.v-flagship__rail button').nth(1).click();
+  try {
+    await page.waitForFunction(text => document.querySelector('.v-flagship__canvas h3')?.textContent?.trim() !== text, platformBefore, { timeout: 8_000 });
+  } catch (error) {
+    failures.push('VeloBase workspace view did not update: ' + String(error));
+  }
+  const platformAfter = await page.locator('.v-flagship__canvas h3').innerText();
+  if (platformBefore === platformAfter) failures.push('VeloBase interactive module selection did not change the visible presentation');
   await page.locator('.vs-header__nav a[href="/work"]').click();
   await page.waitForURL('**/work', { timeout: 12_000 });
   if (!(await page.locator('#work-title').count())) failures.push('Work navigation arrived without work page');
