@@ -1,6 +1,6 @@
 <header class="vs-header" [class.is-open]="menuOpen()">
   <div class="vs-header__inner">
-    <div class="vs-header__identity"><app-logo [showWord]="true" /></div>
+    <div class="vs-header__identity"><a [routerLink]="t.path('/')" [attr.aria-label]="text('Veloura home','الرئيسية - فيلورا')"><img src="/img/brand/logo-lockup-light.png" alt="Veloura" width="1042" height="217" decoding="async" /></a></div>
     <nav class="vs-header__nav" [attr.aria-label]="text('Primary navigation','التنقل الرئيسي')">
       @for (link of links; track link.path) {
         <a [routerLink]="t.path(link.path)" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: link.exact }">{{ text(link.en,link.ar) }}</a>
