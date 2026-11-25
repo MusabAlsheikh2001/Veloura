@@ -50,10 +50,16 @@ try {
   await page.goto(origin + '/', { waitUntil: 'networkidle' });
   const before = await page.locator('.v-lab__summary h2').innerText();
   await page.locator('.v-lab__tab').nth(1).click();
-  const after = await page.locator('.v-lab__summary h2').innerText();
-  if (before === after || !(await page.locator('.v-lab__stage.is-engineering').count())) {
-    failures.push('Interactive engineering lab failed to change on click');
+  // Angular signal updates can flush on a later microtask after the browser click.
+  // Test the rendered state, not a synchronous DOM snapshot.
+  try {
+    await page.locator('.v-lab__stage.is-engineering').waitFor({ state: 'visible', timeout: 8_000 });
+    await page.waitForFunction((text) => document.querySelector('.v-lab__summary h2')?.textContent?.trim() !== text, before, { timeout: 8_000 });
+  } catch (error) {
+    failures.push('Interactive lab did not update within 8s: ' + String(error));
   }
+  const after = await page.locator('.v-lab__summary h2').innerText();
+  if (before === after) failures.push('Interactive engineering lab did not change headline');
   await page.locator('.vs-header__nav a[href="/work"]').click();
   await page.waitForURL('**/work', { timeout: 12_000 });
   if (!(await page.locator('#work-title').count())) failures.push('Work navigation arrived without work page');
@@ -66,7 +72,7 @@ try {
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
   await mobile.goto(origin + '/', { waitUntil: 'networkidle' });
   await mobile.locator('.vs-header__menu').click();
-  if (!(await mobile.locator('.vs-header__drawer a').count())) failures.push('Mobile navigation drawer did not open');
+  await mobile.locator('.vs-header__drawer a[href="/services"]').waitFor({ state: 'visible', timeout: 8_000 });
   await mobile.locator('.vs-header__drawer a[href="/services"]').click();
   await mobile.waitForURL('**/services', { timeout: 12_000 });
   if (!(await mobile.locator('#services-title').count())) failures.push('Mobile navigation did not reach services');
