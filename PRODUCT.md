@@ -13,12 +13,13 @@ web
 The Veloura website represents an IT and digital solutions company **that also provides marketing**. Visitors should understand Veloura's technical depth, see credible selected work, understand complementary creative/growth services, and make a qualified inquiry.
 
 ## Positioning
-Technology and software engineering lead. Product design, branding, and marketing are integrated capabilities rather than unrelated agency divisions. Custom-coded digital products, engineering-grade websites, platforms, dashboards, API integrations, and workflows are primary offerings. WordPress is explicitly excluded.
+Technology and software engineering lead. Product design, branding, and marketing are integrated capabilities rather than unrelated agency divisions. Full-stack development is a primary offering: frontend, backend, application logic, APIs, databases, deployment, and operations. Custom-coded digital products, engineering-grade websites, platforms, dashboards, integrations, and workflows are primary offerings. WordPress is explicitly excluded.
 
 ## Operating Context
 - Public corporate website: English and Arabic, GCC-focused and globally accessible.
 - Existing production origin: https://veloura-marketing.com.
 - Existing application: Angular 21 SSR/prerender with bilingual routing, deployed independently from this review branch.
+- Veloura also builds **VeloBase**, its own multi-workspace business management platform at https://velobase.space. Verified internal repo documentation describes control-center, client workspaces, enquiries, content, team permissions, audit/activity and operational modules; some external frontend site integrations remain pending and must not be described as completed.
 - Existing contact form posts to a Google Apps Script endpoint; end-to-end receipt has NOT been verified by this work.
 - Existing sitemap contains significant historical service and market URLs. Preserve crawlability/redirect strategy; never destroy URLs casually.
 - Selected real properties: https://nayalrouh.com, https://sukkar.space, https://alma-alrouh.com. No unsupported results/claims may be invented.
@@ -41,6 +42,7 @@ Technology and software engineering lead. Product design, branding, and marketin
 ## Evidence on Hand
 - Authentic Veloura brand assets in `public/img/brand/`.
 - Sukkar/Alma Alrouh logo assets in `public/img/`, Nay Alrouh logo on the organization's CDN.
+- VeloBase is independently verified via the separate private VeloBase repository (README, current module layout). It is **our own software platform**, not client work. Public descriptions must avoid unreleased features or invented KPIs.
 - Project names and official URLs are established. Specific Veloura contributions and quantitative outcomes must be individually verified before publication.
 - Existing services and bilingual copy in `src/app/core`.
 - Existing contact-form logic in `src/app/ui/contact-form`.
