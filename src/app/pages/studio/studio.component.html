@@ -3,12 +3,12 @@
     <section class="v-hero" aria-labelledby="v-hero-title">
       <div class="v-hero__noise" aria-hidden="true"></div>
       <div class="v-wrap v-hero__body">
-        <div class="v-hero__eyebrow"><span class="v-dot" aria-hidden="true"></span>{{ copy('INDEPENDENT DIGITAL ENGINEERING STUDIO', 'استوديو مستقل للهندسة الرقمية') }} <span class="v-hero__eyebrow-end">EST. IN DIGITAL</span></div>
+        <div class="v-hero__eyebrow"><span class="v-dot" aria-hidden="true"></span>{{ copy('FULL-STACK ENGINEERING · PRODUCT DESIGN · GROWTH', 'الهندسة البرمجية المتكاملة · تصميم المنتجات · النمو') }} <span class="v-hero__eyebrow-end">EST. IN DIGITAL</span></div>
         <div class="v-hero__layout">
           <div class="v-hero__copy">
-            <p class="v-meta v-hero__index">{{ copy('DESIGN / TECHNOLOGY / GROWTH', 'التصميم / التقنية / النمو') }}</p>
-            <h1 id="v-hero-title">{{ copy('We build what', 'نصنع التجارب') }} <em>{{ copy('comes next.', 'التي تصنع الفرق.') }}</em></h1>
-            <p class="v-hero__lead">{{ copy('Beautifully designed. Seriously engineered. From ambitious digital products to connected business systems—and the brands that bring them to life.', 'تصميم متقن وهندسة جادة. من المنتجات الرقمية الطموحة إلى أنظمة الأعمال المتكاملة والهويات التي تمنحها حضوراً مميزاً.') }}</p>
+            <p class="v-meta v-hero__index">{{ copy('WE MAKE THE COMPLEX FEEL EFFORTLESS', 'نحوّل التعقيد إلى تجربة سلسة') }}</p>
+            <h1 id="v-hero-title">{{ copy('Every layer.', 'كل التفاصيل.') }} <em>{{ copy('One vision.', 'رؤية واحدة.') }}</em></h1>
+            <p class="v-hero__lead">{{ copy('Full-stack software engineering, exceptional product experiences and the creative strategy behind their growth. We design the interface, build the infrastructure and connect everything in between.', 'هندسة برمجية متكاملة وتجارب منتجات استثنائية واستراتيجية إبداعية تدعم نموها. نصمّم الواجهة، ونطوّر البنية الخلفية، ونربط جميع الأجزاء في منظومة واحدة.') }}</p>
             <div class="v-hero__actions">
               <a class="v-button v-button--light" [routerLink]="t.path('/work')">{{ copy('Explore our work', 'اكتشف أعمالنا') }} <span aria-hidden="true">↗</span></a>
               <a class="v-textlink v-textlink--light" [routerLink]="t.path('/contact')">{{ copy('Start a conversation', 'ابدأ الحديث معنا') }} <span aria-hidden="true">↗</span></a>
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <div class="v-hero__baseline"><span>{{ copy('SCROLL TO EXPLORE','مرّر للاستكشاف') }}</span><span aria-hidden="true">↓</span><span class="v-hero__baseline-right">{{ copy('ENGINEERING · EXPERIENCE · IDENTITY', 'الهندسة · التجربة · الهوية') }}</span></div>
+        <div class="v-hero__baseline"><span>{{ copy('SCROLL TO EXPLORE','مرّر للاستكشاف') }}</span><span aria-hidden="true">↓</span><span class="v-hero__baseline-right">{{ copy('FRONTEND · BACKEND · DATABASES · GROWTH', 'الواجهات · الأنظمة الخلفية · قواعد البيانات · النمو') }}</span></div>
       </div>
     </section>
 
@@ -50,6 +50,68 @@
         <div class="v-section-label"><span class="v-num">01 /</span>{{ copy('A DIFFERENT KIND OF TECHNOLOGY PARTNER','شريك تقني بأسلوب مختلف') }}</div>
         <h2 id="v-statement-title">{{ copy('The experience is everything.', 'التجربة هي كل شيء.') }} <span>{{ copy('So is what powers it.', 'وكذلك التقنية التي تصنعها.') }}</span></h2>
         <div class="v-statement__bottom"><p>{{ copy('Good technology disappears into great experiences. We bring product strategy, detailed design, production engineering and creative growth into one connected practice.', 'أفضل تقنية هي التي تجعل التجربة أسهل وأوضح. نجمع استراتيجية المنتج والتصميم المتقن والهندسة البرمجية والنمو الإبداعي في منظومة واحدة.') }}</p><a class="v-textlink" [routerLink]="t.path('/about')">{{ copy('Our approach','نهجنا') }} <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+
+    <!-- VeloBase is a real, independently developed Veloura product, not a client logo. -->
+    <section class="v-flagship" id="velobase" aria-labelledby="v-flagship-title">
+      <div class="v-flagship__grain" aria-hidden="true"></div>
+      <div class="v-wrap">
+        <div class="v-flagship__top">
+          <p class="v-section-label"><span class="v-num">02 /</span>{{ copy('OUR OWN TECHNOLOGY / VELOBASE', 'تقنيتنا الخاصة / فيلوبايس') }}</p>
+          <a href="https://velobase.space/" class="v-flagship__site" target="_blank" rel="noopener noreferrer">{{ copy('Visit the platform', 'زيارة المنصة') }} <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="v-flagship__intro">
+          <div>
+            <div class="v-flagship__identity">
+              <svg aria-hidden="true" viewBox="0 0 32 32" width="43" height="43"><rect width="32" height="32" rx="9" fill="#d3ddeb"/><path d="M9.5 10.5 16 22l6.5-11.5" fill="none" stroke="#172b41" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 10.5h6.8" fill="none" stroke="#172b41" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1.2 2.2"/></svg>
+              <span>VeloBase<small>{{ copy('BY VELOURA', 'من فيلورا') }}</small></span>
+            </div>
+            <h2 id="v-flagship-title">{{ copy('We don’t just build software.', 'لا نكتفي بتطوير البرمجيات.') }} <em>{{ copy('We build our own.', 'بل نطوّر منتجاتنا أيضاً.') }}</em></h2>
+          </div>
+          <p>{{ copy('Meet VeloBase: our multi-workspace business platform connecting website content, teams, enquiries and operational workflows. A product that puts our full-stack thinking to work.', 'تعرّف على VeloBase: منصتنا لإدارة مساحات العمل المتعددة، حيث تلتقي إدارة محتوى المواقع والفرق والاستفسارات والعمليات. منتج حقيقي يُظهر خبرتنا في التطوير المتكامل.') }}</p>
+        </div>
+        <div class="v-flagship__experience">
+          <div class="v-flagship__rail" role="group" [attr.aria-label]="copy('Explore VeloBase functionality','استكشف وظائف VeloBase')">
+            @for (item of platformViews; track item.label.en; let i = $index) {
+              <button type="button" [class.is-active]="activePlatformView() === i" [attr.aria-pressed]="activePlatformView() === i" (click)="selectPlatformView(i)">
+                <span class="v-flagship__rail-count">0{{ i + 1 }}</span>
+                <span>{{ text(item.label) }}</span>
+                <span class="v-flagship__rail-arrow" aria-hidden="true">↗</span>
+              </button>
+            }
+            <p>{{ copy('PURPOSE-BUILT PRODUCT · FULL-STACK ARCHITECTURE', 'منتج مخصص · هندسة برمجية متكاملة') }}</p>
+          </div>
+          <div class="v-flagship__display" [class.is-shifted]="activePlatformView() === 1" [class.is-operations]="activePlatformView() === 2" aria-live="polite">
+            <div class="v-flagship__display-top"><span><span class="v-flagship__blink" aria-hidden="true"></span>VELOBASE / {{ copy('SYSTEM OVERVIEW', 'عرض النظام') }}</span><span>{{ copy('ILLUSTRATIVE PRODUCT MODEL', 'عرض توضيحي للمنصة') }}</span></div>
+            <div class="v-flagship__window">
+              <aside class="v-flagship__sidebar" aria-hidden="true">
+                <span class="v-flagship__side-mark">V</span>
+                <span class="v-flagship__side-line is-current"></span><span class="v-flagship__side-line"></span><span class="v-flagship__side-line"></span>
+                <span class="v-flagship__side-line is-short"></span><span class="v-flagship__side-line"></span>
+                <span class="v-flagship__side-bottom"></span>
+              </aside>
+              <div class="v-flagship__canvas">
+                <div class="v-flagship__canvas-head"><span>{{ text(platformViews[activePlatformView()].eyebrow) }}</span><span class="v-flagship__canvas-dots" aria-hidden="true">•••</span></div>
+                <h3>{{ text(platformViews[activePlatformView()].title) }}</h3>
+                <p>{{ text(platformViews[activePlatformView()].description) }}</p>
+                <div class="v-flagship__modules">
+                  @for (module of platformViews[activePlatformView()].modules; track module.en; let i = $index) {
+                    <div class="v-flagship__module" [class.is-featured]="i === 0">
+                      <span>0{{ i + 1 }}</span>
+                      <strong>{{ text(module) }}</strong>
+                      <span aria-hidden="true">↗</span>
+                    </div>
+                  }
+                </div>
+                <div class="v-flagship__canvas-tail"><span>{{ copy('MULTI-WORKSPACE / MODULAR / CONTROLLED ACCESS', 'مساحات متعددة / وحدات مستقلة / صلاحيات محددة') }}</span><span aria-hidden="true">◈</span></div>
+              </div>
+            </div>
+            <div class="v-flagship__display-bottom"><span>{{ copy('DESIGNED · ENGINEERED · OPERATED', 'تصميم · تطوير · تشغيل') }}</span><span>{{ copy('EXPLORE THE SYSTEM', 'استكشف النظام') }} ↗</span></div>
+          </div>
+        </div>
+        <div class="v-flagship__footer"><span>{{ copy('ONE PLATFORM. DISTINCT WORKSPACES. PURPOSEFUL OPERATIONS.', 'منصة واحدة. مساحات مستقلة. عمليات مدروسة.') }}</span><a href="https://velobase.space/" target="_blank" rel="noopener noreferrer">{{ copy('Discover VeloBase', 'اكتشف VeloBase') }} <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -142,10 +204,23 @@
   @if (page === 'work') {
     <section class="v-pagehead v-pagehead--dark" aria-labelledby="work-title"><div class="v-wrap">
       <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('SELECTED WORK','أعمال مختارة') }}</p>
-      <h1 id="work-title">{{ copy('Better experiences', 'تجارب أفضل') }} <em>{{ copy('start with purpose.', 'تبدأ بهدف واضح.') }}</em></h1>
+      <h1 id="work-title">{{ copy('Products with purpose.', 'منتجات لها هدف.') }} <em>{{ copy('Systems with depth.', 'وأنظمة بعمق تقني.') }}</em></h1>
       <p>{{ copy('A selection of real digital initiatives. Every project has its own people, context and purpose.', 'مجموعة من المبادرات الرقمية الحقيقية، لكل منها جمهورها وسياقها وهدفها.') }}</p>
       <div class="v-pagehead__foot">{{ copy('REAL ORGANIZATIONS / REAL PURPOSE','مشاريع حقيقية / أهداف واضحة') }} <span aria-hidden="true">↘</span></div>
     </div></section>
+
+    <section class="v-owned-work" aria-labelledby="v-owned-work-title">
+      <div class="v-wrap v-owned-work__layout">
+        <div class="v-owned-work__copy">
+          <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('OUR OWN PRODUCT', 'منتجنا الخاص') }}</p>
+          <p class="v-owned-work__identity"><span class="v-owned-work__symbol" aria-hidden="true">V</span> VELOBASE</p>
+          <h2 id="v-owned-work-title">{{ copy('A platform for the business behind the business.', 'منصة تدير الأعمال من خلف الكواليس.') }}</h2>
+          <p>{{ copy('Our own full-stack platform for multiple organizations and client workspaces, with content, enquiries, teams and tailored operational modules. Built with Next.js, React, PostgreSQL and Prisma.', 'منصتنا المتكاملة لإدارة المؤسسات ومساحات العملاء، بما يشمل المحتوى والاستفسارات والفرق ووحدات العمليات المخصصة. بُنيت باستخدام Next.js وReact وPostgreSQL وPrisma.') }}</p>
+          <a class="v-button v-button--light" href="https://velobase.space/" target="_blank" rel="noopener noreferrer">{{ copy('Visit VeloBase', 'زيارة VeloBase') }} <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="v-owned-work__art" aria-hidden="true"><span>VEL/01</span><div class="v-owned-work__orbit"><i>V</i></div><strong>VeloBase</strong><span class="v-owned-work__caption">DESIGN → BUILD → CONNECT</span></div>
+      </div>
+    </section>
     <section class="v-workpage" aria-label="Selected projects"><div class="v-wrap">
       @for (project of projects; track project.number; let i = $index) {
         <article class="v-workcase" [class]="'v-workcase v-workcase--' + project.theme">
