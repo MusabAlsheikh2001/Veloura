@@ -22,8 +22,8 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     id: 'digital-platforms', icon: 'uiux', featured: true,
-    title: { en: 'Web Applications & Business Dashboards', ar: 'تطبيقات الويب ولوحات تحكم الأعمال' },
-    desc: { en: 'Purpose-built portals, dashboards, and web applications that connect customers, teams, data, and daily operations.', ar: 'بوابات ولوحات تحكم وتطبيقات ويب مخصصة تربط العملاء والفرق والبيانات والعمليات اليومية.' },
+    title: { en: 'Full-stack Development & Business Platforms', ar: 'التطوير البرمجي المتكامل ومنصات الأعمال' },
+    desc: { en: 'Complete software engineering—from frontend interfaces and backend services to APIs, PostgreSQL databases, and deployable business platforms.', ar: 'هندسة برمجية متكاملة من الواجهات والخدمات الخلفية إلى واجهات البرمجة وقواعد بيانات PostgreSQL ومنصات الأعمال.' },
   },
   {
     id: 'automation-integrations', icon: 'automation', featured: true,

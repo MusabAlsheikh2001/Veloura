@@ -1,0 +1,56 @@
+name: Veloura V2 Build
+
+on:
+  push:
+    branches:
+      - feat/impeccable-veloura-studio-v2
+  pull_request:
+    branches:
+      - review/all-work
+      - main
+
+jobs:
+  build:
+    name: Angular SSR Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      # Existing repository lockfile is out of sync; resolve it in CI
+      # before running the actual Angular compile. Lockfile repair remains a follow-up.
+      - name: Resolve dependencies
+        run: npm install --no-audit --no-fund
+      - name: Production build
+        run: npm run build
+      - name: Install browser tooling
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+      - name: Start local dev server
+        run: |
+          npm start -- --host 127.0.0.1 > /tmp/veloura-dev.log 2>&1 &
+          for attempt in $(seq 1 90); do
+            if curl --silent --fail --output /dev/null http://127.0.0.1:4250/; then
+              echo "Angular dev server ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/veloura-dev.log
+          exit 1
+      - name: Browser smoke and screenshots
+        run: node scripts/v2-browser-smoke.mjs
+      - name: Upload visual review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: veloura-v2-browser-evidence
+          path: v2-browser-evidence/
+          if-no-files-found: ignore
+

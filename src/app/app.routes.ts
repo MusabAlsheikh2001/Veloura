@@ -4,19 +4,29 @@ const localizedRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then((m) => m.HomeComponent),
-    title: 'Veloura — Premium Digital Growth Studio',
+      import('./pages/studio/studio.component').then((m) => m.StudioComponent),
+    data: { studioPage: 'home' },
+    title: 'Veloura — Digital Products & Software Engineering',
+  },
+  {
+    path: 'work',
+    loadComponent: () =>
+      import('./pages/studio/studio.component').then((m) => m.StudioComponent),
+    data: { studioPage: 'work' },
+    title: 'Selected Work — Veloura',
   },
   {
     path: 'about',
     loadComponent: () =>
-      import('./pages/about/about.component').then((m) => m.AboutComponent),
+      import('./pages/studio/studio.component').then((m) => m.StudioComponent),
+    data: { studioPage: 'about' },
     title: 'About — Veloura',
   },
   {
     path: 'services',
     loadComponent: () =>
-      import('./pages/services/services.component').then((m) => m.ServicesComponent),
+      import('./pages/studio/studio.component').then((m) => m.StudioComponent),
+    data: { studioPage: 'services' },
     title: 'Services — Veloura',
   },
   {
@@ -72,7 +82,8 @@ const localizedRoutes: Routes = [
   {
     path: 'contact',
     loadComponent: () =>
-      import('./pages/contact/contact.component').then((m) => m.ContactComponent),
+      import('./pages/studio/studio.component').then((m) => m.StudioComponent),
+    data: { studioPage: 'contact' },
     title: 'Contact — Veloura',
   },
   {
@@ -100,6 +111,7 @@ const localizedRoutes: Routes = [
 
 export const routes: Routes = [
   { path: 'en', pathMatch: 'full', redirectTo: '' },
+  { path: 'en/work', pathMatch: 'full', redirectTo: 'work' },
   { path: 'en/about', pathMatch: 'full', redirectTo: 'about' },
   { path: 'en/services', pathMatch: 'full', redirectTo: 'services' },
   { path: 'en/services/:slug', redirectTo: 'services/:slug' },
