@@ -20,3 +20,6 @@
 @media(max-width:900px){.vs-footer__main{grid-template-columns:1.4fr 1fr;}.vs-footer__contact{grid-column:span 2;}.vs-footer__wrap{width:calc(100% - 52px);}}
 @media(max-width:580px){.vs-footer{padding-top:60px;}.vs-footer__wrap{width:calc(100% - 38px);}.vs-footer__main{grid-template-columns:1fr;gap:50px;padding-bottom:75px;}.vs-footer__contact{grid-column:auto;}.vs-footer__bottom{gap:20px;}.vs-footer__bottom>span:nth-child(2){display:none;}}
 @media(prefers-reduced-motion:reduce){.vs-footer *{transition:none!important;}}
+
+.vs-footer__contact>a.vs-footer__platform-link{display:inline-flex;justify-content:flex-start;gap:14px;color:#c6d8ef;font-size:.84rem;margin-top:26px;border-bottom:1px solid rgba(198,216,239,.45);padding-bottom:8px;}
+.vs-footer__contact>a.vs-footer__platform-link:hover{color:#fff;border-color:#fff;}
