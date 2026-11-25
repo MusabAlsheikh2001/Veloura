@@ -23,6 +23,30 @@ export class StudioComponent {
   protected readonly mode = signal(0);
   protected readonly activeService = signal(0);
   protected readonly activeProject = signal(0);
+  protected readonly activePlatformView = signal(0);
+  protected readonly platformViews = [
+    {
+      label: {en: 'Control center', ar: 'مركز التحكم'},
+      eyebrow: {en: 'ONE PLACE FOR COMPLEX OPERATIONS', ar: 'مركز واحد للعمليات المتعددة'},
+      title: {en: 'Every moving part. In view.', ar: 'كل تفاصيل العمل. بوضوح.'},
+      description: {en: 'A shared administrative perspective across projects, roles, activity and reporting.', ar: 'إدارة منظّمة للمشاريع والصلاحيات والأنشطة والتقارير من مكان واحد.'},
+      modules: [{en: 'Organizations', ar: 'المنظمات'}, {en: 'Projects', ar: 'المشاريع'}, {en: 'Activity', ar: 'النشاط'}, {en: 'Reporting', ar: 'التقارير'}],
+    },
+    {
+      label: {en: 'Client workspaces', ar: 'مساحات العملاء'},
+      eyebrow: {en: 'A WORKSPACE FOR EVERY BUSINESS', ar: 'مساحة مخصصة لكل عمل'},
+      title: {en: 'Control without the complexity.', ar: 'تحكم واضح دون تعقيد.'},
+      description: {en: 'Purpose-built workspaces for content, enquiries, teams, and project-specific workflows.', ar: 'مساحات عمل متخصصة للمحتوى والاستفسارات والفرق والمهام المرتبطة بكل مشروع.'},
+      modules: [{en: 'Website content', ar: 'محتوى الموقع'}, {en: 'Enquiries', ar: 'الاستفسارات'}, {en: 'Team', ar: 'الفريق'}, {en: 'Access control', ar: 'الصلاحيات'}],
+    },
+    {
+      label: {en: 'Business operations', ar: 'عمليات الأعمال'},
+      eyebrow: {en: 'SYSTEMS THAT WORK TOGETHER', ar: 'أنظمة تعمل بتناغم'},
+      title: {en: 'From storefront to operations.', ar: 'من واجهة العميل إلى العمليات.'},
+      description: {en: 'Connected operational modules for restaurant menus, orders and customer workflows.', ar: 'وحدات تشغيل مترابطة للقوائم والطلبات ومسارات خدمة العملاء في قطاع المطاعم.'},
+      modules: [{en: 'Menus', ar: 'القوائم'}, {en: 'Orders', ar: 'الطلبات'}, {en: 'Customers', ar: 'العملاء'}, {en: 'Integrations', ar: 'التكاملات'}],
+    },
+  ];
   protected readonly email = CONTACT.email;
 
   protected readonly modes = [
@@ -52,9 +76,9 @@ export class StudioComponent {
   protected readonly services = [
     {
       id: 'engineering', number: '01', kind: { en: 'TECHNOLOGY', ar: 'التقنية' },
-      name: { en: 'Custom software & platforms', ar: 'البرمجيات والمنصات المخصصة' },
-      desc: { en: 'Full-featured web applications, business systems and SaaS experiences built around real operational needs.', ar: 'تطبيقات ويب وأنظمة أعمال ومنصات رقمية تُبنى لتلبية احتياجات تشغيلية حقيقية.' },
-      points: [{en:'Web applications & SaaS',ar:'تطبيقات الويب والمنصات'}, {en:'Business portals & dashboards',ar:'بوابات الأعمال ولوحات التحكم'}, {en:'APIs & connected systems',ar:'واجهات البرمجة والأنظمة المتكاملة'}],
+      name: { en: 'Full-stack software & platforms', ar: 'تطوير متكامل للبرمجيات والمنصات' },
+      desc: { en: 'We engineer the entire product: sophisticated interfaces, backend logic, APIs, data architecture, deployment and the systems connecting them. Real software for real business operations.', ar: 'نطوّر المنتج كاملاً: الواجهات المتقنة والخدمات الخلفية وواجهات البرمجة وقواعد البيانات والنشر والأنظمة التي تربطها. برمجيات حقيقية تدعم أعمالاً حقيقية.' },
+      points: [{en:'Frontend & backend engineering',ar:'تطوير الواجهات والخدمات الخلفية'}, {en:'SaaS platforms & dashboards',ar:'منصات SaaS ولوحات التحكم'}, {en:'APIs, databases & deployment',ar:'واجهات البرمجة وقواعد البيانات والنشر'}],
     },
     {
       id: 'web', number: '02', kind: { en: 'ENGINEERING', ar: 'الهندسة' },
@@ -142,7 +166,7 @@ export class StudioComponent {
       home: {
         en: 'Veloura | Digital Products, Software Engineering & Creative Technology',
         ar: 'فيلورا | المنتجات الرقمية وهندسة البرمجيات والحلول الإبداعية',
-        description: {en:'Veloura engineers custom websites, web applications, connected platforms and distinctive digital experiences. UI/UX, brand and marketing expertise across the GCC and beyond.', ar:'فيلورا شركة تقنية تطوّر المواقع المخصصة وتطبيقات الويب والمنصات المترابطة وتجارب رقمية مميزة، مع خبرة في التصميم والهوية والتسويق.'},
+        description: {en:'Veloura is a full-stack software development company building digital products, frontend and backend systems, SaaS platforms and VeloBase, with UI/UX, branding and marketing expertise.', ar:'فيلورا شركة تقنية تطوّر المواقع المخصصة وتطبيقات الويب والمنصات المترابطة وتجارب رقمية مميزة، مع خبرة في التصميم والهوية والتسويق.'},
       },
       services: {
         en:'Services | Veloura — Software, Digital Products & Growth',
@@ -173,4 +197,5 @@ export class StudioComponent {
   protected selectMode(index: number): void { this.mode.set(index); }
   protected selectService(index: number): void { this.activeService.set(index); }
   protected selectProject(index: number): void { this.activeProject.set(index); }
+  protected selectPlatformView(index: number): void { this.activePlatformView.set(index); }
 }
