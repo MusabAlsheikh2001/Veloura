@@ -24,7 +24,12 @@
                 <span class="v-lab__orbit v-lab__orbit--outer"></span><span class="v-lab__orbit v-lab__orbit--inner"></span>
                 <span class="v-lab__core"><span>{{ modes[mode()].number }}</span><strong>{{ copy('IDEA → REALITY','الفكرة ← الواقع') }}</strong><small>{{ copy('ACTIVE SYSTEM','نظام فعّال') }}</small></span>
                 <span class="v-lab__satellite v-lab__satellite--a"></span><span class="v-lab__satellite v-lab__satellite--b"></span>
-                <span class="v-lab__readout v-lab__readout--top">V / {{ modes[mode()].number }}</span><span class="v-lab__readout v-lab__readout--bottom">DESIGN ∞ SYSTEMS</span>
+                <span class="v-lab__readout v-lab__readout--top">V / {{ modes[mode()].number }}</span><span class="v-lab__readout v-lab__readout--bottom">FRONTEND / BACKEND / DATA</span>
+                <div class="v-lab__layers" aria-hidden="true">
+                  <div class="v-lab__layer v-lab__layer--experience"><div class="v-lab__layer-inside"><small>01 / EXPERIENCE</small><strong>INTERFACE</strong><span>UX · ANGULAR · REACT</span></div></div>
+                  <div class="v-lab__layer v-lab__layer--logic"><div class="v-lab__layer-inside"><small>02 / ENGINE</small><strong>APPLICATION</strong><span>NODE.JS · API · LOGIC</span></div></div>
+                  <div class="v-lab__layer v-lab__layer--data"><div class="v-lab__layer-inside"><small>03 / FOUNDATION</small><strong>DATA SYSTEM</strong><span>POSTGRESQL · PRISMA</span></div></div>
+                </div>
               </div>
               <div class="v-lab__summary" aria-live="polite">
                 <span class="v-meta">{{ text(modes[mode()].caption) }}</span>
