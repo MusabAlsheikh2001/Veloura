@@ -1,7 +1,7 @@
 # Veloura — Design System V2
 
 ## Creative territory
-**Digital craftsmanship / architectural precision.** A modern technology studio: cinematic restraint, exacting interface geometry, memorable interactions, credible product storytelling. Avoid startup-template gradients, boutique-like gold headlines, overrounded cards, fake dashboards, and decorative blobs.
+**Digital craftsmanship / architectural precision.** A full-stack product engineering studio with a flagship owned platform: cinematic restraint, exacting interface geometry, memorable interactions, credible product storytelling. Avoid startup-template gradients, boutique-like gold headlines, overrounded cards, fake dashboards, and decorative blobs.
 
 ## Visual identity
 - Canvas: porcelain `#F6F6F3`, obsidian `#101114`, graphite `#1D2026`.
@@ -17,10 +17,11 @@ Global header: actual logo, Home / Services / Work / About / Contact, EN/AR swit
 Home:
 1. Dark full-view introduction and a working interactive engineering showcase.
 2. Technology practice, separated into Engineering / Product / Growth.
-3. Project-led selected work with authentic identities and links.
-4. Service capabilities explorer.
-5. Verified tool stack with real SVG logos.
-6. Firm process and inquiry CTA.
+3. Distinctive cinematic owned-product VeloBase section with a demonstrative, interactive *illustrative* multi-workspace overview; never mislabel it a screenshot.
+4. Project-led selected client work with authentic identities and links.
+5. Service capabilities explorer.
+6. Verified tool stack with real SVG logos.
+7. Firm process and inquiry CTA.
 
 Dedicated Services / Work / About / Contact pages share the identical header/footer, tokens, and layouts. Legacy SEO routes remain reachable without inventing content.
 
