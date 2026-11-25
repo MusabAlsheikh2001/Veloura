@@ -1,7 +1,9 @@
 :host {display:block;position:sticky;inset-block-start:0;z-index:130;}
 .vs-header {font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;position:relative;background:#f8f8f5;border-bottom:1px solid rgba(16,18,22,.11);color:#17181a;box-shadow:0 8px 35px rgba(16,18,22,.015);}
 .vs-header__inner {width:min(1500px,calc(100% - clamp(36px,7.2vw,168px)));margin:auto;min-height:83px;display:flex;align-items:center;justify-content:space-between;gap:26px;}
-.vs-header__identity {display:flex;align-items:center;flex:none;--logo-height:38px;}
+.vs-header__identity {display:flex;align-items:center;flex:none;}
+.vs-header__identity a {display:inline-flex;align-items:center;}
+.vs-header__identity img {display:block;width:auto;height:38px;max-width:235px;object-fit:contain;}
 .vs-header__nav {display:flex;align-items:center;gap:clamp(20px,2.6vw,45px);margin-inline-start:auto;}
 .vs-header__nav a {position:relative;font-size:.83rem;color:#55585c;font-weight:580;line-height:1.2;padding:13px 0;transition:color .2s;}
 .vs-header__nav a::after {content:'';position:absolute;bottom:4px;left:0;right:0;height:1px;background:#6b2037;transform:scaleX(0);transform-origin:left;transition:transform .25s;}
@@ -25,5 +27,5 @@
 :host-context(html[dir='rtl']) .vs-header__nav a::after {transform-origin:right;}
 @media(max-width:1100px) {.vs-header__inner {width:calc(100% - 52px);}.vs-header__nav {gap:19px;}.vs-header__actions {gap:9px;margin-inline-start:5px;}.vs-header__cta {gap:12px;}}
 @media(max-width:860px) {.vs-header__nav {display:none;}.vs-header__menu {display:flex;}.vs-header__inner {min-height:76px;}.vs-header__actions {margin-inline-start:auto;}}
-@media(max-width:560px) {.vs-header__inner {width:calc(100% - 38px);min-height:72px;}.vs-header__identity {--logo-height:31px;}.vs-header__cta {display:none;}.vs-header__language {padding:8px;}.vs-header__actions {gap:9px;}}
+@media(max-width:560px) {.vs-header__inner {width:calc(100% - 38px);min-height:72px;}.vs-header__identity img {height:31px;}.vs-header__cta {display:none;}.vs-header__language {padding:8px;}.vs-header__actions {gap:9px;}}
 @media(prefers-reduced-motion:reduce) {.vs-header * {transition:none!important;}}
