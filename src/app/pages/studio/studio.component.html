@@ -117,7 +117,7 @@
 
     <section class="v-showcase" aria-labelledby="v-showcase-title">
       <div class="v-wrap">
-        <div class="v-heading-row"><div><p class="v-section-label"><span class="v-num">02 /</span>{{ copy('SELECTED WORK', 'أعمال مختارة') }}</p><h2 id="v-showcase-title">{{ copy('Made for the real world.', 'أعمال تصنع فرقاً حقيقياً.') }}</h2></div><a class="v-textlink" [routerLink]="t.path('/work')">{{ copy('Explore all work','تصفّح الأعمال') }} <span aria-hidden="true">↗</span></a></div>
+        <div class="v-heading-row"><div><p class="v-section-label"><span class="v-num">03 /</span>{{ copy('SELECTED WORK', 'أعمال مختارة') }}</p><h2 id="v-showcase-title">{{ copy('Made for the real world.', 'أعمال تصنع فرقاً حقيقياً.') }}</h2></div><a class="v-textlink" [routerLink]="t.path('/work')">{{ copy('Explore all work','تصفّح الأعمال') }} <span aria-hidden="true">↗</span></a></div>
         <div class="v-showcase__grid">
           @for (project of projects; track project.name; let i = $index) {
             <article class="v-project" [class]="'v-project v-project--' + project.theme">
@@ -135,7 +135,7 @@
 
     <section class="v-capabilities" aria-labelledby="v-capabilities-title">
       <div class="v-wrap">
-        <div class="v-capabilities__head"><p class="v-section-label"><span class="v-num">03 /</span>{{ copy('WHAT WE DO','مجالات عملنا') }}</p><h2 id="v-capabilities-title">{{ copy('One team. Many disciplines.', 'فريق واحد. تخصصات متكاملة.') }}</h2><p>{{ copy('Software comes first. Design brings clarity. Marketing helps the right people find it.', 'الهندسة أولاً. التصميم يمنح الوضوح. والتسويق يصل بما نبنيه إلى جمهوره.') }}</p></div>
+        <div class="v-capabilities__head"><p class="v-section-label"><span class="v-num">04 /</span>{{ copy('WHAT WE DO','مجالات عملنا') }}</p><h2 id="v-capabilities-title">{{ copy('One team. Many disciplines.', 'فريق واحد. تخصصات متكاملة.') }}</h2><p>{{ copy('Software comes first. Design brings clarity. Marketing helps the right people find it.', 'الهندسة أولاً. التصميم يمنح الوضوح. والتسويق يصل بما نبنيه إلى جمهوره.') }}</p></div>
         <div class="v-capabilities__list">
           @for (service of services; track service.id) {
             <a class="v-capabilities__row" [routerLink]="t.path('/services')" [fragment]="service.id">
@@ -148,7 +148,7 @@
 
     <section class="v-stack" aria-labelledby="v-stack-title">
       <div class="v-wrap">
-        <div class="v-stack__intro"><div><p class="v-section-label"><span class="v-num">04 /</span>{{ copy('THE TOOLS BEHIND THE THINKING','التقنيات التي نعتمد عليها') }}</p><h2 id="v-stack-title">{{ copy('Engineered with intent.', 'هندسة بأدوات مدروسة.') }}</h2></div><p>{{ copy('An adaptable stack selected for the problem—not the trend. From interface to infrastructure.', 'نختار التقنية المناسبة للمشكلة، لا لأنها رائجة. من الواجهة إلى البنية التحتية.') }}</p></div>
+        <div class="v-stack__intro"><div><p class="v-section-label"><span class="v-num">05 /</span>{{ copy('THE TOOLS BEHIND THE THINKING','التقنيات التي نعتمد عليها') }}</p><h2 id="v-stack-title">{{ copy('Engineered with intent.', 'هندسة بأدوات مدروسة.') }}</h2></div><p>{{ copy('An adaptable stack selected for the problem—not the trend. From interface to infrastructure.', 'نختار التقنية المناسبة للمشكلة، لا لأنها رائجة. من الواجهة إلى البنية التحتية.') }}</p></div>
         <ul class="v-stack__grid">
           @for (technology of stack; track technology.name) {
             <li class="v-stack__item"><img [src]="'/img/logos/tech/' + technology.icon" [alt]="technology.name + ' logo'" width="26" height="26" loading="lazy" /><span>{{ technology.name }}</span></li>
@@ -159,7 +159,7 @@
 
     <section class="v-process" aria-labelledby="v-process-title">
       <div class="v-wrap">
-        <div class="v-process__top"><p class="v-section-label"><span class="v-num">05 /</span>{{ copy('OUR WAY OF WORKING','طريقة عملنا') }}</p><h2 id="v-process-title">{{ copy('Clarity, built in.', 'الوضوح في كل خطوة.') }}</h2></div>
+        <div class="v-process__top"><p class="v-section-label"><span class="v-num">06 /</span>{{ copy('OUR WAY OF WORKING','طريقة عملنا') }}</p><h2 id="v-process-title">{{ copy('Clarity, built in.', 'الوضوح في كل خطوة.') }}</h2></div>
         <div class="v-process__grid">
           @for (step of steps; track step.number) {
             <div class="v-process__step"><span>{{ step.number }}</span><h3>{{ text(step.title) }}</h3><p>{{ text(step.body) }}</p></div>
@@ -174,7 +174,7 @@
       <div class="v-wrap">
         <p class="v-section-label"><span class="v-num">01 /</span>{{ copy('CAPABILITIES','مجالات العمل') }}</p>
         <h1 id="services-title">{{ copy('Complex problems.', 'تحديات معقّدة.') }} <em>{{ copy('Clear solutions.', 'حلول واضحة.') }}</em></h1>
-        <p>{{ copy('Digital products, exceptional interfaces and the systems behind them. Our creative and marketing expertise makes the work go further.', 'منتجات رقمية وواجهات متقنة وأنظمة تدعمها. ونضيف خبرات الهوية والتسويق لتصل هذه الحلول إلى جمهورها.') }}</p>
+        <p>{{ copy('Full-stack development from frontend and backend engineering to databases, integrations and deployment. Our UI/UX, branding and marketing capabilities complete the experience.', 'تطوير برمجي متكامل من الواجهات والخدمات الخلفية إلى قواعد البيانات والتكاملات والنشر، وتكتمل التجربة بخبراتنا في التصميم والهوية والتسويق.') }}</p>
         <div class="v-pagehead__foot">{{ copy('BUILD / DESIGN / CONNECT / GROW','نبني / نصمّم / نربط / ننمّي') }} <span aria-hidden="true">↘</span></div>
       </div>
     </section>
