@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../core/translation.service';
-import { LogoComponent } from '../../ui/logo/logo.component';
 import { CONTACT } from '../../core/content';
 
 @Component({
   selector:'app-footer',
   standalone:true,
-  imports:[RouterLink, LogoComponent],
+  imports:[RouterLink],
   templateUrl:'./footer.component.html',
   styleUrl:'./footer.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush,
