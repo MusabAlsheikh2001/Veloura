@@ -94,3 +94,5 @@
 /ar/services/web-applications-dashboards
 /services/workflow-automation-integrations
 /ar/services/workflow-automation-integrations
+/work
+/ar/work
